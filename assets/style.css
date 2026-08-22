@@ -1,0 +1,22 @@
+.kototsugi-callout {
+	border-left: 4px solid #2f7d6d;
+	background: #edf8f5;
+	margin-block: 1.5em;
+	padding: 1em 1.125em;
+}
+
+.kototsugi-callout p {
+	margin: 0;
+}
+
+.kototsugi-callout--tip,
+.kototsugi-callout--important {
+	border-left-color: #235d9f;
+	background: #edf4fc;
+}
+
+.kototsugi-callout--warning,
+.kototsugi-callout--caution {
+	border-left-color: #bb5b16;
+	background: #fff5e8;
+}
