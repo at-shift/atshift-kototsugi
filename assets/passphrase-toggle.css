@@ -1,0 +1,90 @@
+.kototsugi-passphrase-field {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	--kototsugi-mask-inset: 14px;
+}
+
+.kototsugi-passphrase-field::before {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: var(--kototsugi-mask-inset);
+	max-width: calc(100% - var(--kototsugi-mask-inset) - 48px);
+	transform: translateY(-50%);
+	color: #1d2327;
+	content: attr(data-mask);
+	overflow: hidden;
+	pointer-events: none;
+	white-space: nowrap;
+}
+
+.kototsugi-passphrase-field > input {
+	position: relative;
+	z-index: 1;
+	padding-right: 46px !important;
+}
+
+.kototsugi-passphrase-input.is-masked {
+	color: transparent !important;
+	caret-color: #1d2327;
+	-webkit-text-fill-color: transparent;
+}
+
+.kototsugi-passphrase-field.is-composing::before {
+	content: "";
+}
+
+.kototsugi-passphrase-field.is-composing > .kototsugi-passphrase-input {
+	color: #1d2327 !important;
+	-webkit-text-fill-color: #1d2327;
+}
+
+.kototsugi-passphrase-toggle {
+	position: absolute;
+	z-index: 3;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	display: grid;
+	width: 42px;
+	padding: 0;
+	place-items: center;
+	border: 0;
+	border-left: 1px solid #dcdcde;
+	border-radius: 0 3px 3px 0;
+	background: transparent;
+	color: #50575e;
+	cursor: pointer;
+}
+
+.kototsugi-passphrase-toggle:hover {
+	background: #f0f0f1;
+	color: #1d2327;
+}
+
+.kototsugi-passphrase-toggle:focus-visible {
+	box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3858e9;
+	outline: 0;
+}
+
+.kototsugi-passphrase-toggle .dashicons {
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+}
+
+.wp-admin .kototsugi-passphrase-field {
+	width: 25em;
+	--kototsugi-mask-inset: 9px;
+}
+
+.wp-admin .kototsugi-passphrase-field > input,
+.kototsugi-quick-login .kototsugi-passphrase-field,
+.kototsugi-quick-login .kototsugi-passphrase-field > input {
+	width: 100%;
+}
+
+.kototsugi-quick-login .kototsugi-passphrase-field {
+	display: block;
+}

@@ -1,26 +1,10 @@
 (function (wp) {
 	'use strict';
 
-	if (!wp || !wp.apiFetch || !wp.blocks || !wp.components || !wp.data || (!wp.editor && !wp.editPost) || !wp.element || !wp.plugins) {
+	if (!wp) {
 		return;
 	}
 
-	var apiFetch = wp.apiFetch;
-	var el = wp.element.createElement;
-	var Fragment = wp.element.Fragment;
-	var useRef = wp.element.useRef;
-	var useState = wp.element.useState;
-	var Button = wp.components.Button;
-	var CheckboxControl = wp.components.CheckboxControl;
-	var FormTokenField = wp.components.FormTokenField;
-	var Modal = wp.components.Modal;
-	var Notice = wp.components.Notice;
-	var TextControl = wp.components.TextControl;
-	var TextareaControl = wp.components.TextareaControl;
-	var editorPackage = wp.editor && wp.editor.PluginSidebar ? wp.editor : wp.editPost;
-	var PluginSidebar = editorPackage.PluginSidebar;
-	var PluginSidebarMoreMenuItem = editorPackage.PluginSidebarMoreMenuItem;
-	var registerPlugin = wp.plugins.registerPlugin;
 	var MAX_FILE_SIZE = 2 * 1024 * 1024;
 	var editorConfig = window.kototsugiEditorConfig || {};
 
@@ -40,7 +24,7 @@
 	function sanitizeUrl(value) {
 		var url = String(value || '').trim();
 
-		if (/^(https?:|mailto:|#|\/)/i.test(url)) {
+		if (/^(https?:|mailto:|tel:|#|\/)/i.test(url)) {
 			return url;
 		}
 
@@ -684,9 +668,246 @@
 		return document.title || (match ? plainText(match[1]) : '');
 	}
 
-	function htmlToBlocks(html) {
-		return wp.blocks.rawHandler({ HTML: html });
+	function findSimpleNotation(value) {
+		var line = String(value || '').trim();
+		var match;
+
+		match = line.match(/^@\s+(.+)$/);
+		if (match) {
+			return { type: 'place', value: match[1].trim() };
+		}
+		match = line.match(/^(?:場所|会場|所在地|place|location|venue)\s*[:：]\s*(.+)$/i);
+		if (match) {
+			return { type: 'place', value: match[1].trim() };
+		}
+		match = line.match(/^!\s+(.+)$/);
+		if (match) {
+			return { type: 'important', value: match[1].trim() };
+		}
+		match = line.match(/^(?:重要|注意|警告|important|warning)\s*[:：]\s*(.+)$/i);
+		if (match) {
+			return { type: 'important', value: match[1].trim() };
+		}
+		match = line.match(/^※\s*(.+)$/);
+		if (match) {
+			return { type: 'note', value: match[1].trim() };
+		}
+		match = line.match(/^(?:補足|注記|note)\s*[:：]\s*(.+)$/i);
+		if (match) {
+			return { type: 'note', value: match[1].trim() };
+		}
+		match = line.match(/^[¥￥]\s*(.+)$/);
+		if (match) {
+			return { type: 'price', value: match[1].trim() };
+		}
+		match = line.match(/^(?:料金|価格|費用|price|cost)\s*[:：]\s*(.+)$/i);
+		if (match) {
+			return { type: 'price', value: match[1].trim() };
+		}
+		match = line.match(/^☎\s*(.+)$/);
+		if (match) {
+			return { type: 'phone', value: match[1].trim() };
+		}
+		match = line.match(/^(?:電話|電話番号|tel|phone)\s*[:：]\s*(.+)$/i);
+		if (match) {
+			return { type: 'phone', value: match[1].trim() };
+		}
+
+		return null;
 	}
+
+	function renderSimpleNotation(notation, labels) {
+		var value = notation.value;
+		var linkLabel = value.replace(/[\[\]]/g, '');
+		var phone;
+
+		if (notation.type === 'place') {
+			return '**' + labels.place + ':** [' + linkLabel + '](https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(plainText(value)) + ')';
+		}
+		if (notation.type === 'important') {
+			return '> [!IMPORTANT]\n> ' + value;
+		}
+		if (notation.type === 'note') {
+			return '> [!NOTE]\n> ' + value;
+		}
+		if (notation.type === 'price') {
+			return '**' + labels.price + ':** ' + value;
+		}
+		if (notation.type === 'phone') {
+			phone = value.replace(/[０-９]/g, function (character) {
+				return String.fromCharCode(character.charCodeAt(0) - 65248);
+			}).replace(/＋/g, '+').replace(/[^\d+*#]/g, '');
+			return '**' + labels.phone + ':** ' + (phone ? '[' + linkLabel + '](tel:' + phone + ')' : value);
+		}
+
+		return value;
+	}
+
+	function isSimpleHeadingCandidate(value) {
+		var line = String(value || '').trim();
+
+		if (!line || line.indexOf('\n') !== -1 || Array.from(line).length > 40) {
+			return false;
+		}
+		if (findSimpleNotation(line)) {
+			return false;
+		}
+		if (/^(?:#{1,6}\s|```|[-+*>]\s|\d+\.\s|!\[|\|)/.test(line) || /^https?:\/\//i.test(line)) {
+			return false;
+		}
+		if (/^[A-Za-z0-9_-]+\s*:/.test(line) || /[。．.!?！？]$/.test(line)) {
+			return false;
+		}
+		if (/(?:です|ます|でした|ました|ください|でしょう|だ|である)$/.test(line)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	function prepareSimpleText(source, suppliedTitle, labels) {
+		var normalized = String(source || '').replace(/\r\n?/g, '\n');
+		var document = parseFrontMatter(normalized);
+		var body = document.content;
+		var title = plainText(suppliedTitle);
+		var detectedTitle = document.title;
+		var lines;
+		var index;
+		var match;
+		var looseTitle = '';
+		var foundLooseMetadata = false;
+		var blocks;
+		var firstBlock;
+		var displaySource;
+		var removedTitleFromBody = false;
+		var simpleLabels = {
+			place: labels && labels.place ? plainText(labels.place) : 'Place',
+			price: labels && labels.price ? plainText(labels.price) : 'Price',
+			phone: labels && labels.phone ? plainText(labels.phone) : 'Phone'
+		};
+		var preparedLines = [];
+		var notation;
+
+		if (!document.hasFrontMatter) {
+			lines = body.split('\n');
+			index = 0;
+			while (index < lines.length && !lines[index].trim()) {
+				index += 1;
+			}
+			while (index < lines.length) {
+				match = lines[index].match(/^\s*(title|status|author)\s*:\s*(.*?)\s*$/i);
+				if (!match) {
+					break;
+				}
+				foundLooseMetadata = true;
+				if (match[1].toLowerCase() === 'title') {
+					looseTitle = plainText(match[2]);
+				}
+				index += 1;
+			}
+			if (foundLooseMetadata) {
+				while (index < lines.length && !lines[index].trim()) {
+					index += 1;
+				}
+				body = lines.slice(index).join('\n');
+				detectedTitle = looseTitle;
+			}
+		}
+
+		displaySource = body.trim();
+		body.split('\n').forEach(function (line) {
+			var normalizedLine = line.replace(/^(\s*)[・●○]\s*/, '$1- ');
+
+			notation = findSimpleNotation(normalizedLine);
+			if (notation && preparedLines.length && preparedLines[preparedLines.length - 1].trim()) {
+				preparedLines.push('');
+			}
+			preparedLines.push(normalizedLine);
+			if (notation) {
+				preparedLines.push('');
+			}
+		});
+		body = preparedLines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+		blocks = body ? body.split(/\n{2,}/) : [];
+		firstBlock = blocks.length ? blocks[0].trim() : '';
+
+		if (!detectedTitle) {
+			detectedTitle = findTitle(body);
+		}
+		if (!detectedTitle && !title && isSimpleHeadingCandidate(firstBlock)) {
+			detectedTitle = plainText(firstBlock);
+			blocks.shift();
+			removedTitleFromBody = true;
+		} else if (title && firstBlock && plainText(firstBlock) === title && isSimpleHeadingCandidate(firstBlock)) {
+			blocks.shift();
+			removedTitleFromBody = true;
+		} else if (detectedTitle && firstBlock && plainText(firstBlock) === detectedTitle && isSimpleHeadingCandidate(firstBlock)) {
+			blocks.shift();
+			removedTitleFromBody = true;
+		}
+		if (removedTitleFromBody) {
+			displaySource = displaySource.split(/\n{2,}/).slice(1).join('\n\n').trim();
+		}
+
+		blocks = blocks.map(function (block, blockIndex) {
+			var trimmed = block.trim();
+			var simpleNotation = findSimpleNotation(trimmed);
+
+			if (simpleNotation) {
+				return renderSimpleNotation(simpleNotation, simpleLabels);
+			}
+
+			if (blockIndex < blocks.length - 1 && isSimpleHeadingCandidate(trimmed)) {
+				return '## ' + trimmed;
+			}
+			return trimmed;
+		}).filter(Boolean);
+
+		return {
+			cleanedInput: document.hasFrontMatter || foundLooseMetadata || removedTitleFromBody,
+			cleanedMetadata: document.hasFrontMatter || foundLooseMetadata,
+			displaySource: displaySource,
+			source: blocks.join('\n\n'),
+			title: title || detectedTitle
+		};
+	}
+
+	function htmlToBlocks(html) {
+		return wp.blocks && wp.blocks.rawHandler ? wp.blocks.rawHandler({ HTML: html }) : [];
+	}
+
+	window.KototsugiMarkdown = {
+		analyzeMarkdown: analyzeMarkdown,
+		createPostSettings: createPostSettings,
+		extractRemoteImages: extractRemoteImages,
+		findTitle: findTitle,
+		htmlToBlocks: htmlToBlocks,
+		isSupportedMarkdownFile: isSupportedMarkdownFile,
+		markdownToHtml: markdownToHtml,
+		parseFrontMatter: parseFrontMatter,
+		prepareSimpleText: prepareSimpleText
+	};
+
+	if (!wp.apiFetch || !wp.blocks || !wp.components || !wp.data || (!wp.editor && !wp.editPost) || !wp.element || !wp.plugins) {
+		return;
+	}
+
+	var apiFetch = wp.apiFetch;
+	var el = wp.element.createElement;
+	var Fragment = wp.element.Fragment;
+	var useRef = wp.element.useRef;
+	var useState = wp.element.useState;
+	var Button = wp.components.Button;
+	var CheckboxControl = wp.components.CheckboxControl;
+	var FormTokenField = wp.components.FormTokenField;
+	var Modal = wp.components.Modal;
+	var Notice = wp.components.Notice;
+	var TextControl = wp.components.TextControl;
+	var TextareaControl = wp.components.TextareaControl;
+	var editorPackage = wp.editor && wp.editor.PluginSidebar ? wp.editor : wp.editPost;
+	var PluginSidebar = editorPackage.PluginSidebar;
+	var PluginSidebarMoreMenuItem = editorPackage.PluginSidebarMoreMenuItem;
+	var registerPlugin = wp.plugins.registerPlugin;
 
 	function KototsugiSidebar() {
 		var sourceState = useState('');

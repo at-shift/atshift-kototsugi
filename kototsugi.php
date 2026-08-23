@@ -3,7 +3,7 @@
  * Plugin Name: KOTOTSUGI
  * Plugin URI: https://github.com/at-shift/atshift-kototsugi
  * Description: Turn AI-friendly Markdown into editable WordPress blocks.
- * Version: 0.4.1
+ * Version: 0.5.0
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: @shift
@@ -20,10 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KOTOTSUGI_VERSION', '0.4.1' );
+define( 'KOTOTSUGI_VERSION', '0.5.0' );
 define( 'KOTOTSUGI_FILE', __FILE__ );
 define( 'KOTOTSUGI_URL', plugin_dir_url( __FILE__ ) );
 define( 'KOTOTSUGI_MAX_REMOTE_IMAGE_BYTES', 10 * MB_IN_BYTES );
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/quick-post.php';
 
 /**
  * Loads the bundled Japanese translation.

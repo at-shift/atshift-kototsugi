@@ -1,14 +1,80 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KOTOTSUGI 0.4.1\n"
+"Project-Id-Version: KOTOTSUGI 0.5.0\n"
 "Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
-"POT-Creation-Date: 2026-08-23 11:30+0900\n"
+"POT-Creation-Date: 2026-08-23 13:20+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: kototsugi\n"
 
 msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr ""
+
+msgid "More ways to write"
+msgstr ""
+
+msgid "Place"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr ""
+
+msgid "Display language"
+msgstr ""
+
+msgid "Use the site language"
+msgstr ""
+
+msgid "Japanese"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr ""
+
+msgid "New article"
+msgstr ""
+
+msgid "Create an article"
+msgstr ""
+
+msgid "Article title"
+msgstr ""
+
+msgid "Article text"
+msgstr ""
+
+msgid "Write the article here"
+msgstr ""
+
+msgid "Writing hints"
+msgstr ""
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr ""
+
+msgid "Leave a blank line between paragraphs."
+msgstr ""
+
+msgid "Start a line with ・ to make a list."
+msgstr ""
+
+msgid "A short line on its own becomes a heading."
 msgstr ""
 
 msgid "The imported image URL could not be created."
@@ -50,10 +116,14 @@ msgstr ""
 msgid "AI authoring rules could not be copied."
 msgstr ""
 
-msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgid ""
+"The H1 matching the Front Matter title will be removed automatically to "
+"avoid duplication in the post body."
 msgstr ""
 
-msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgid ""
+"The Front Matter title differs from the first H1. The H1 will be removed "
+"from the post body when applied."
 msgstr ""
 
 msgid "The closing --- for Front Matter was not found."
@@ -101,7 +171,9 @@ msgstr ""
 msgid "Drop here"
 msgstr ""
 
-msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgid ""
+"This code block will be inserted as a regular code block because no "
+"dedicated block is available."
 msgstr ""
 
 msgid ". Check the heading hierarchy."
@@ -149,7 +221,9 @@ msgstr ""
 msgid "Apply tags"
 msgstr ""
 
-msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgid ""
+"Task lists will be converted to regular lists without preserving checkbox "
+"states."
 msgstr ""
 
 msgid "Sample Markdown loaded."
@@ -182,13 +256,16 @@ msgstr ""
 msgid "There is no source to preview."
 msgstr ""
 
-msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgid ""
+"Some post settings could not be applied for this post type or with your "
+"current permissions."
 msgstr ""
 
 msgid "Some images or post settings could not be applied."
 msgstr ""
 
-msgid "The draft was created, but not all conversion steps could be completed. "
+msgid ""
+"The draft was created, but not all conversion steps could be completed. "
 msgstr ""
 
 msgid "Open draft"
@@ -305,7 +382,8 @@ msgstr ""
 msgid "Confirm replacement before replacing the existing post body."
 msgstr ""
 
-msgid "The first H1 will be used as the post title and removed from the post body."
+msgid ""
+"The first H1 will be used as the post title and removed from the post body."
 msgstr ""
 
 msgid "Use first H1 as post title"
@@ -356,7 +434,9 @@ msgstr ""
 msgid "The image syntax could not be parsed. Check its parentheses and URL."
 msgstr ""
 
-msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgid ""
+"Relative images will keep their original paths and will not be saved to the "
+"Media Library."
 msgstr ""
 
 msgid "Review and adjust"
@@ -383,10 +463,14 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgid ""
+"These post details were read from Front Matter. Review each item, edit it if "
+"needed, or clear its checkbox to leave it unchanged."
 msgstr ""
 
-msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgid ""
+"Review warnings and expected changes, then choose how the article should be "
+"applied and which conversion options to use."
 msgstr ""
 
 msgid "Review before applying"
@@ -395,16 +479,25 @@ msgstr ""
 msgid "Source, post settings, and review before applying"
 msgstr ""
 
-msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgid ""
+"Add blocks at the current cursor position. Existing content remains, and the "
+"post will not be saved automatically."
 msgstr ""
 
-msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgid ""
+"Replace all blocks in the current post. Confirmation is required, and the "
+"post will not be saved automatically."
 msgstr ""
 
-msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgid ""
+"Leave the current post unchanged and save the content and selected post "
+"settings as a new draft."
 msgstr ""
 
-msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgid ""
+"# Article title\n"
+"\n"
+"Paste Markdown here or drop a file."
 msgstr ""
 
 msgid "The bundled Markdown is unavailable."
@@ -420,4 +513,286 @@ msgid "The draft ID was not found."
 msgstr ""
 
 msgid "The draft blocks were not found."
+msgstr ""
+
+msgid "KOTOTSUGI Quick Post"
+msgstr ""
+
+msgid "KOTOTSUGI"
+msgstr ""
+
+msgid "Quick Post settings"
+msgstr ""
+
+msgid "You are not allowed to change these settings."
+msgstr ""
+
+msgid "Quick Post settings saved."
+msgstr ""
+
+msgid "Every Quick Post browser was signed out."
+msgstr ""
+
+msgid "Choose an author who can edit the selected content type."
+msgstr ""
+
+msgid "The selected author cannot publish the selected content type."
+msgstr ""
+
+msgid "Choose an available publishing destination."
+msgstr ""
+
+msgid "Choose an available category."
+msgstr ""
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr ""
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr ""
+
+msgid ""
+"Quick Post reduces the learning and memory required to publish. It is "
+"intended for people who find the WordPress admin screen difficult, "
+"including older users, people with disabilities, and anyone who needs a "
+"simpler interface."
+msgstr ""
+
+msgid ""
+"Anyone can start with only a title and article text. As they become "
+"comfortable, blank lines, lists, short headings, and images add more "
+"structure. Learning Markdown is not required."
+msgstr ""
+
+msgid "Quick Post"
+msgstr ""
+
+msgid "Enable the standalone posting page"
+msgstr ""
+
+msgid "Posting URL"
+msgstr ""
+
+msgid "Open Quick Post"
+msgstr ""
+
+msgid "Passphrase"
+msgstr ""
+
+msgid "Show passphrase"
+msgstr ""
+
+msgid "Hide passphrase"
+msgstr ""
+
+msgid "Publishing destination"
+msgstr ""
+
+msgid ""
+"Posts, Pages, and custom post types that support titles and the editor are "
+"shown. The contributor cannot change this choice."
+msgstr ""
+
+msgid ""
+"Leave blank to keep the current passphrase. Entering a new one signs out "
+"every browser."
+msgstr ""
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr ""
+
+msgid "Post author"
+msgstr ""
+
+msgid "Choose an author"
+msgstr ""
+
+msgid "After submission"
+msgstr ""
+
+msgid "Save as a draft"
+msgstr ""
+
+msgid "Publish immediately"
+msgstr ""
+
+msgid ""
+"This choice is fixed on the posting page so the contributor cannot change it "
+"by mistake."
+msgstr ""
+
+msgid "Default category"
+msgstr ""
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr ""
+
+msgid "Use the site default"
+msgstr ""
+
+msgid "Save Quick Post settings"
+msgstr ""
+
+msgid "Sign out every Quick Post browser"
+msgstr ""
+
+msgid "Enter a post title."
+msgstr ""
+
+msgid "Enter an article draft up to 2 MB."
+msgstr ""
+
+msgid "The article could not be converted into a safe post."
+msgstr ""
+
+msgid "Reload the page and try again."
+msgstr ""
+
+msgid "The configured post author is no longer available."
+msgstr ""
+
+msgid "The configured publishing destination is no longer available."
+msgstr ""
+
+msgid "The converted article contains an unsupported block."
+msgstr ""
+
+msgid ""
+"This article was already submitted. Start a new post before submitting again."
+msgstr ""
+
+msgid "Enter the passphrase"
+msgstr ""
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr ""
+
+msgid "Continue"
+msgstr ""
+
+msgid "This browser stays signed in for 30 days."
+msgstr ""
+
+msgid "Quick Post is unavailable"
+msgstr ""
+
+msgid "Sign out"
+msgstr ""
+
+msgid "Article draft"
+msgstr ""
+
+msgid "Write or paste your article"
+msgstr ""
+
+msgid ""
+"Type or paste an article, or open a text file. Plain text and Markdown are "
+"accepted."
+msgstr ""
+
+msgid "Write or paste the article here"
+msgstr ""
+
+msgid "Open file"
+msgstr ""
+
+msgid "Add images"
+msgstr ""
+
+msgid "Alternative text"
+msgstr ""
+
+msgid "Remove image"
+msgstr ""
+
+msgid "Attach up to 5 images."
+msgstr ""
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr ""
+
+msgid ""
+"One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP "
+"images within the site upload limit."
+msgstr ""
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr ""
+
+msgid "The attached images could not be added to the article."
+msgstr ""
+
+msgid "Review post"
+msgstr ""
+
+msgid "Check before posting"
+msgstr ""
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr ""
+
+msgid "Post title"
+msgstr ""
+
+msgid "Points to check"
+msgstr ""
+
+msgid "I reviewed these points."
+msgstr ""
+
+msgid "Edit draft"
+msgstr ""
+
+msgid "Publish post"
+msgstr ""
+
+msgid "Save draft"
+msgstr ""
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr ""
+
+msgid "Post submitted"
+msgstr ""
+
+msgid "Post published"
+msgstr ""
+
+msgid "Draft saved"
+msgstr ""
+
+msgid "View post"
+msgstr ""
+
+msgid "Create another post"
+msgstr ""
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr ""
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr ""
+
+msgid "The passphrase is not correct."
+msgstr ""
+
+msgid "The page expired. Reload it and try again."
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Paste an article draft before continuing."
+msgstr ""
+
+msgid "Use an article draft up to 2 MB."
+msgstr ""
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr ""
+
+msgid "Publishing..."
+msgstr ""
+
+msgid "Saving..."
 msgstr ""

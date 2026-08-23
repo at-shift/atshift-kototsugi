@@ -13,7 +13,7 @@ assert.ok(source.includes(marker), 'Could not find the KOTOTSUGI test injection 
 
 source = source.replace(
 	marker,
-	"\n\twindow.__kototsugiTestApi = { markdownToHtml: markdownToHtml, findTitle: findTitle, parseFrontMatter: parseFrontMatter, createPostSettings: createPostSettings, analyzeMarkdown: analyzeMarkdown, isSupportedMarkdownFile: isSupportedMarkdownFile, extractRemoteImages: extractRemoteImages };" + marker
+	"\n\twindow.__kototsugiTestApi = { markdownToHtml: markdownToHtml, findTitle: findTitle, parseFrontMatter: parseFrontMatter, createPostSettings: createPostSettings, analyzeMarkdown: analyzeMarkdown, isSupportedMarkdownFile: isSupportedMarkdownFile, extractRemoteImages: extractRemoteImages, prepareSimpleText: prepareSimpleText };" + marker
 );
 
 function noop() {
@@ -46,6 +46,87 @@ vm.runInContext(source, context, { filename: editorPath });
 const parser = context.window.__kototsugiTestApi;
 
 assert.ok(parser, 'KOTOTSUGI parser was not exposed to the test runtime.');
+
+const simpleDraft = parser.prepareSimpleText([
+	'status: draft',
+	'author: editor',
+	'',
+	'夏のお知らせ',
+	'',
+	'営業時間を変更します。',
+	'',
+	'持ち物',
+	'',
+	'・財布',
+	'・鍵'
+].join('\n'), '');
+
+assert.equal(simpleDraft.title, '夏のお知らせ');
+assert.equal(simpleDraft.cleanedMetadata, true);
+assert.equal(simpleDraft.displaySource.indexOf('夏のお知らせ'), -1);
+assert.ok(!simpleDraft.displaySource.includes('status:'));
+assert.ok(!simpleDraft.source.includes('status:'));
+assert.ok(!simpleDraft.source.includes('author:'));
+assert.ok(simpleDraft.source.includes('営業時間を変更します。'));
+assert.ok(simpleDraft.source.includes('## 持ち物'));
+assert.ok(simpleDraft.source.includes('- 財布\n- 鍵'));
+assert.ok(parser.markdownToHtml(simpleDraft.source, false).includes('<h2>持ち物</h2>'));
+assert.ok(parser.markdownToHtml(simpleDraft.source, false).includes('<ul><li>財布</li><li>鍵</li></ul>'));
+
+const looseTitleDraft = parser.prepareSimpleText('title: 店舗のお知らせ\nstatus: publish\n\n本文です。', '');
+assert.equal(looseTitleDraft.title, '店舗のお知らせ');
+assert.equal(looseTitleDraft.source, '本文です。');
+
+const frontMatterSimpleDraft = parser.prepareSimpleText([
+	'---',
+	'title: Front Matterタイトル',
+	'status: draft',
+	'author: editor',
+	'---',
+	'',
+	'本文です。'
+].join('\n'), '');
+assert.equal(frontMatterSimpleDraft.title, 'Front Matterタイトル');
+assert.equal(frontMatterSimpleDraft.displaySource, '本文です。');
+assert.equal(frontMatterSimpleDraft.source, '本文です。');
+
+const frontMatterDuplicateTitle = parser.prepareSimpleText([
+	'---',
+	'title: 重複しないタイトル',
+	'---',
+	'',
+	'重複しないタイトル',
+	'',
+	'本文です。'
+].join('\n'), '');
+assert.equal(frontMatterDuplicateTitle.title, '重複しないタイトル');
+assert.equal(frontMatterDuplicateTitle.source, '本文です。');
+
+const normalSentenceDraft = parser.prepareSimpleText('今日は晴れです。\n\n散歩に出かけました。', '入力したタイトル');
+assert.equal(normalSentenceDraft.title, '入力したタイトル');
+assert.ok(!normalSentenceDraft.source.includes('##'));
+
+const notationDraft = parser.prepareSimpleText([
+	'@ 京都駅',
+	'! 予約が必要です',
+	'※ 雨天中止です',
+	'¥ 1,000円',
+	'☎ 075-000-0000'
+].join('\n'), '店舗案内', { place: '場所', price: '料金', phone: '電話' });
+const notationHtml = parser.markdownToHtml(notationDraft.source, false);
+assert.ok(notationDraft.source.includes('**場所:** [京都駅](https://www.google.com/maps/search/?api=1&query='));
+assert.ok(notationDraft.source.includes('> [!IMPORTANT]'));
+assert.ok(notationDraft.source.includes('> [!NOTE]'));
+assert.ok(notationDraft.source.includes('**料金:** 1,000円'));
+assert.ok(notationDraft.source.includes('**電話:** [075-000-0000](tel:0750000000)'));
+assert.ok(notationHtml.includes('kototsugi-callout--important'));
+assert.ok(notationHtml.includes('kototsugi-callout--note'));
+assert.ok(notationHtml.includes('href="tel:0750000000"'));
+
+const naturalNotationDraft = parser.prepareSimpleText('場所：京都駅\n料金：無料\n電話：075-000-0000', '店舗案内');
+assert.ok(naturalNotationDraft.source.includes('**Place:**'));
+assert.ok(naturalNotationDraft.source.includes('**Price:**'));
+assert.ok(naturalNotationDraft.source.includes('**Phone:**'));
 
 const fullMarkdown = [
 	'# 公開タイトル',

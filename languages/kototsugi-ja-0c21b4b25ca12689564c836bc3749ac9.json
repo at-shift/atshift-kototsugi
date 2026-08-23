@@ -1,5 +1,5 @@
 {
-  "translation-revision-date": "2026-08-23 11:20+0900",
+  "translation-revision-date": "2026-08-23 15:51+0900",
   "generator": "KOTOTSUGI",
   "source": "assets/editor.js",
   "domain": "kototsugi",
@@ -11,13 +11,13 @@
         "plural-forms": "nplurals=1; plural=0;"
       },
       "Turn AI-friendly Markdown into editable WordPress blocks.": [
-        "AIが作成したMarkdownを、編集可能なWordPressブロックへ変換します。"
+        "A.I. が作成したMarkdownを、編集可能なWordPressブロックへ変換します。"
       ],
       "The imported image URL could not be created.": [
-        "取り込んだ画像URLを作成できませんでした。"
+        "取り込んだ画像 URL を作成できませんでした。"
       ],
       "This image URL is not allowed.": [
-        "この画像URLは許可されていません。"
+        "この画像 URL は許可されていません。"
       ],
       "You are not allowed to attach images to this post.": [
         "この投稿に画像を添付する権限がありません。"
@@ -38,67 +38,67 @@
         "ダウンロードしたファイルは対応画像ではありません。"
       ],
       ".md / .markdown / .txt, up to 2 MB": [
-        ".md / .markdown / .txt、最大2MB"
+        ".md / .markdown / .txt、最大 2MB"
       ],
       "Choose a .md, .markdown, or .txt file up to 2 MB.": [
         "2MB以下の .md、.markdown、.txt ファイルを選択してください。"
       ],
       "Copy AI authoring rules": [
-        "AI用ルールをコピー"
+        "A.I. 用ルールをコピー"
       ],
       "AI authoring rules copied.": [
-        "AI用ルールをコピーしました。"
+        "A.I. 用ルールをコピーしました。"
       ],
       "AI authoring rules could not be copied.": [
-        "AI用ルールをコピーできませんでした。"
+        "A.I. 用ルールをコピーできませんでした。"
       ],
       "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
-        "Front Matterのtitleと同じH1は、本文での重複を避けるため自動的に除外します。"
+        "Front Matterのtitleと同じ H1 は、本文での重複を避けるため自動的に除外します。"
       ],
       "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
-        "Front Matterのtitleと最初のH1が異なります。反映時はH1が本文から除外されます。"
+        "Front Matterのtitleと最初の H1 が異なります。反映時は H1 が本文から除外されます。"
       ],
       "The closing --- for Front Matter was not found.": [
         "Front Matterを閉じる --- が見つかりません。"
       ],
       "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
-        "H1が複数あります。投稿タイトルとして使うH1を1つにしてください。"
+        "H1 が複数あります。投稿タイトルとして使う H1 を 1 つにしてください。"
       ],
       "HTML will be inserted as text and will not run as HTML.": [
-        "HTMLはそのまま実行されず、テキストとして挿入されます。"
+        "HTML はそのまま実行されず、テキストとして挿入されます。"
       ],
       "Markdown insertion method": [
-        "Markdownの反映方法"
+        "Markdown の反映方法"
       ],
       "The Markdown import could not be completed.": [
-        "Markdownの取り込み処理を完了できませんでした。"
+        "Markdown の取り込み処理を完了できませんでした。"
       ],
       "Back to Markdown": [
-        "Markdownへ戻る"
+        "Markdown へ戻る"
       ],
       "Markdown could not be converted to blocks.": [
-        "Markdownをブロックへ変換できませんでした。"
+        "Markdown をブロックへ変換できませんでした。"
       ],
       "Enter some Markdown.": [
-        "Markdownを入力してください。"
+        "Markdown を入力してください。"
       ],
       "Markdown file": [
-        "Markdownファイル"
+        "Markdown ファイル"
       ],
       "Load a Markdown file": [
-        "Markdownファイルの読み込み"
+        "Markdown ファイルの読み込み"
       ],
       "Markdown file loaded.": [
-        "Markdownファイルを読み込みました。"
+        "Markdown ファイルを読み込みました。"
       ],
       "Choose a Markdown file": [
-        "Markdownファイルを選択"
+        "Markdown ファイルを選択"
       ],
       "Markdown source": [
-        "Markdown原稿"
+        "Markdown 原稿"
       ],
       "Markdown posting": [
-        "Markdown投稿"
+        "Markdown 投稿"
       ],
       "Drop here": [
         "ここにドロップ"
@@ -128,7 +128,7 @@
         "カーソル位置へ追加"
       ],
       "Copying...": [
-        "コピー中"
+        "コピー中…"
       ],
       "The closing ``` for the code block was not found.": [
         "コードブロックを閉じる ``` が見つかりません。"
@@ -140,7 +140,7 @@
         "スラッグを反映"
       ],
       "Loading sample...": [
-        "セット中"
+        "セット中…"
       ],
       "Title": [
         "タイトル"
@@ -155,16 +155,16 @@
         "タスクリストは通常のリストとして変換され、チェック状態は保持されません。"
       ],
       "Sample Markdown loaded.": [
-        "テスト用Markdownをセットしました。"
+        "テスト用 Markdown をセットしました。"
       ],
       "Sample Markdown could not be loaded.": [
-        "テスト用Markdownを読み込めませんでした。"
+        "テスト用 Markdown を読み込めませんでした。"
       ],
       "Load sample Markdown": [
-        "テスト用mdファイルをセット"
+        "テスト用 md ファイルをセット"
       ],
       "Nested lists will be flattened to one level.": [
-        "ネストしたリストは1階層のリストとして変換されます。"
+        "ネストしたリストは 1 階層のリストとして変換されます。"
       ],
       "The file could not be read.": [
         "ファイルを読み込めませんでした。"
@@ -251,7 +251,7 @@
         "反映方法"
       ],
       "Importing...": [
-        "取り込み中"
+        "取り込み中…"
       ],
       "Conversion options": [
         "変換オプション"
@@ -281,7 +281,7 @@
         "投稿設定"
       ],
       "Applying post settings...": [
-        "投稿設定を反映中"
+        "投稿設定を反映中…"
       ],
       "Excerpt": [
         "抜粋"
@@ -296,7 +296,7 @@
         "文字"
       ],
       "A new draft will be saved to WordPress.": [
-        "新規下書きをWordPressへ保存します。"
+        "新規下書きを WordPress へ保存します。"
       ],
       "Create new draft": [
         "新規下書きを作成"
@@ -308,13 +308,13 @@
         "既存本文を置き換える確認が必要です。"
       ],
       "The first H1 will be used as the post title and removed from the post body.": [
-        "最初のH1を投稿タイトルとして使い、本文からは除外します。"
+        "最初の H1 を投稿タイトルとして使い、本文からは除外します。"
       ],
       "Use first H1 as post title": [
-        "最初のH1を投稿タイトルにする"
+        "最初の H1 を投稿タイトルにする"
       ],
       "Unsupported Front Matter fields will not be applied:": [
-        "未対応のFront Matter項目は反映しません:"
+        "未対応の Front Matter 項目は反映しません:"
       ],
       "Unsupported fields will not be applied:": [
         "未対応の項目は反映しません:"
@@ -338,25 +338,25 @@
         "本文を置き換える"
       ],
       "Current Markdown source": [
-        "現在のMarkdown原稿"
+        "現在の Markdown 原稿"
       ],
       "The current post will not be saved automatically.": [
         "現在の投稿は自動保存されません。"
       ],
       "Image URL": [
-        "画像URL"
+        "画像 URL"
       ],
       "Image URLs must begin with http, https, or /.": [
-        "画像URLはhttp、https、または / から始まるパスを使用してください。"
+        "画像 URLは、http、https、または / から始まるパスを使用してください。"
       ],
       "Importing images...": [
-        "画像を取り込み中"
+        "画像を取り込み中…"
       ],
       "Save images": [
         "画像保存"
       ],
       "The image syntax could not be parsed. Check its parentheses and URL.": [
-        "画像記法を読み取れません。括弧とURLを確認してください。"
+        "画像記法を読み取れません。括弧と URL を確認してください。"
       ],
       "Relative images will keep their original paths and will not be saved to the Media Library.": [
         "相対画像はメディアライブラリへ保存されず、入力されたパスを維持します。"
@@ -374,7 +374,7 @@
         "行目"
       ],
       " line: edit in Markdown": [
-        "行目をMarkdownで編集"
+        "行目を Markdown で編集"
       ],
       "Warning": [
         "警告"
@@ -386,7 +386,7 @@
         "閉じる"
       ],
       "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
-        "Front Matterから読み取った投稿情報です。反映する項目を確認し、必要に応じて編集するか、チェックを外して反映対象から除外します。"
+        "Front Matter から読み取った投稿情報です。反映する項目を確認し、必要に応じて編集するか、チェックを外して反映対象から除外します。"
       ],
       "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
         "警告と反映される内容を確認し、記事への反映方法と変換オプションを選びます。"
@@ -407,19 +407,19 @@
         "現在の投稿は変更せず、本文と選択した投稿設定を新しい下書きとして保存します。"
       ],
       "# Article title\n\nPaste Markdown here or drop a file.": [
-        "# 記事タイトル\n\nここへMarkdownを貼り付けるか、ファイルをドロップします。"
+        "# 記事タイトル\n\nここへ Markdown を貼り付けるか、ファイルをドロップします。"
       ],
       "The bundled Markdown is unavailable.": [
-        "同梱Markdownを利用できません。"
+        "同梱 Markdown を利用できません。"
       ],
       "The bundled Markdown could not be loaded.": [
-        "同梱Markdownを読み込めませんでした。"
+        "同梱 Markdown を読み込めませんでした。"
       ],
       "The clipboard is unavailable.": [
         "クリップボードを利用できません。"
       ],
       "The draft ID was not found.": [
-        "下書きIDが見つかりません。"
+        "下書き ID が見つかりません。"
       ],
       "The draft blocks were not found.": [
         "下書きブロックが見つかりません。"

@@ -1,9 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KOTOTSUGI 0.4.1\n"
+"Project-Id-Version: KOTOTSUGI 0.5.0\n"
 "Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 13:20+0900\n"
+"PO-Revision-Date: 2026-08-23 15:51+0900\n"
 "Last-Translator: @shift\n"
-"PO-Revision-Date: 2026-08-23 11:20+0900\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -11,15 +12,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Domain: kototsugi\n"
+"X-Generator: Poedit 3.9\n"
 
 msgid "Turn AI-friendly Markdown into editable WordPress blocks."
-msgstr "AIが作成したMarkdownを、編集可能なWordPressブロックへ変換します。"
+msgstr "A.I. が作成したMarkdownを、編集可能なWordPressブロックへ変換します。"
+
+msgid "More ways to write"
+msgstr "便利な書き方をもっと見る"
+
+msgid "Place"
+msgstr "場所"
+
+msgid "Important"
+msgstr "重要"
+
+msgid "Note"
+msgstr "補足"
+
+msgid "Price"
+msgstr "料金"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "「場所：」「電話：」のように言葉で書くこともできます。"
+
+msgid "Display language"
+msgstr "表示言語"
+
+msgid "Use the site language"
+msgstr "サイトの言語を使用"
+
+msgid "Japanese"
+msgstr "日本語"
+
+msgid "English"
+msgstr "英語"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "合言葉、記事入力、確認、完了の各画面で使用します。"
+
+msgid "New article"
+msgstr "新しい記事"
+
+msgid "Create an article"
+msgstr "記事を作成"
+
+msgid "Article title"
+msgstr "記事のタイトル"
+
+msgid "Article text"
+msgstr "本文"
+
+msgid "Write the article here"
+msgstr "ここに本文を入力"
+
+msgid "Writing hints"
+msgstr "書き方のヒント"
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr "普通に書くだけで段落になります。もっと整えたいときだけ、次の書き方を使ってください。"
+
+msgid "Leave a blank line between paragraphs."
+msgstr "段落を分けるときは、間を1行空けます。"
+
+msgid "Start a line with ・ to make a list."
+msgstr "行の先頭に「・」を付けると、箇条書きになります。"
+
+msgid "A short line on its own becomes a heading."
+msgstr "短い言葉を 1行だけで書くと、見出しになります。"
 
 msgid "The imported image URL could not be created."
-msgstr "取り込んだ画像URLを作成できませんでした。"
+msgstr "取り込んだ画像 URL を作成できませんでした。"
 
 msgid "This image URL is not allowed."
-msgstr "この画像URLは許可されていません。"
+msgstr "この画像 URL は許可されていません。"
 
 msgid "You are not allowed to attach images to this post."
 msgstr "この投稿に画像を添付する権限がありません。"
@@ -40,72 +108,78 @@ msgid "The downloaded file is not a supported image."
 msgstr "ダウンロードしたファイルは対応画像ではありません。"
 
 msgid ".md / .markdown / .txt, up to 2 MB"
-msgstr ".md / .markdown / .txt、最大2MB"
+msgstr ".md / .markdown / .txt、最大 2MB"
 
 msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
 msgstr "2MB以下の .md、.markdown、.txt ファイルを選択してください。"
 
 msgid "Copy AI authoring rules"
-msgstr "AI用ルールをコピー"
+msgstr "A.I. 用ルールをコピー"
 
 msgid "AI authoring rules copied."
-msgstr "AI用ルールをコピーしました。"
+msgstr "A.I. 用ルールをコピーしました。"
 
 msgid "AI authoring rules could not be copied."
-msgstr "AI用ルールをコピーできませんでした。"
+msgstr "A.I. 用ルールをコピーできませんでした。"
 
-msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
-msgstr "Front Matterのtitleと同じH1は、本文での重複を避けるため自動的に除外します。"
+msgid ""
+"The H1 matching the Front Matter title will be removed automatically to avoid duplication in "
+"the post body."
+msgstr "Front Matterのtitleと同じ H1 は、本文での重複を避けるため自動的に除外します。"
 
-msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
-msgstr "Front Matterのtitleと最初のH1が異なります。反映時はH1が本文から除外されます。"
+msgid ""
+"The Front Matter title differs from the first H1. The H1 will be removed from the post body "
+"when applied."
+msgstr "Front Matterのtitleと最初の H1 が異なります。反映時は H1 が本文から除外されます。"
 
 msgid "The closing --- for Front Matter was not found."
 msgstr "Front Matterを閉じる --- が見つかりません。"
 
 msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
-msgstr "H1が複数あります。投稿タイトルとして使うH1を1つにしてください。"
+msgstr "H1 が複数あります。投稿タイトルとして使う H1 を 1 つにしてください。"
 
 msgid "HTML will be inserted as text and will not run as HTML."
-msgstr "HTMLはそのまま実行されず、テキストとして挿入されます。"
+msgstr "HTML はそのまま実行されず、テキストとして挿入されます。"
 
 msgid "Markdown insertion method"
-msgstr "Markdownの反映方法"
+msgstr "Markdown の反映方法"
 
 msgid "The Markdown import could not be completed."
-msgstr "Markdownの取り込み処理を完了できませんでした。"
+msgstr "Markdown の取り込み処理を完了できませんでした。"
 
 msgid "Back to Markdown"
-msgstr "Markdownへ戻る"
+msgstr "Markdown へ戻る"
 
 msgid "Markdown could not be converted to blocks."
-msgstr "Markdownをブロックへ変換できませんでした。"
+msgstr "Markdown をブロックへ変換できませんでした。"
 
 msgid "Enter some Markdown."
-msgstr "Markdownを入力してください。"
+msgstr "Markdown を入力してください。"
 
 msgid "Markdown file"
-msgstr "Markdownファイル"
+msgstr "Markdown ファイル"
 
 msgid "Load a Markdown file"
-msgstr "Markdownファイルの読み込み"
+msgstr "Markdown ファイルの読み込み"
 
 msgid "Markdown file loaded."
-msgstr "Markdownファイルを読み込みました。"
+msgstr "Markdown ファイルを読み込みました。"
 
 msgid "Choose a Markdown file"
-msgstr "Markdownファイルを選択"
+msgstr "Markdown ファイルを選択"
 
 msgid "Markdown source"
-msgstr "Markdown原稿"
+msgstr "Markdown 原稿"
 
 msgid "Markdown posting"
-msgstr "Markdown投稿"
+msgstr "Markdown 投稿"
 
 msgid "Drop here"
 msgstr "ここにドロップ"
 
-msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgid ""
+"This code block will be inserted as a regular code block because no dedicated block is "
+"available."
 msgstr "このコードブロックは専用ブロックへ変換されず、通常のコードとして挿入されます。"
 
 msgid ". Check the heading hierarchy."
@@ -130,7 +204,7 @@ msgid "Add at cursor"
 msgstr "カーソル位置へ追加"
 
 msgid "Copying..."
-msgstr "コピー中"
+msgstr "コピー中…"
 
 msgid "The closing ``` for the code block was not found."
 msgstr "コードブロックを閉じる ``` が見つかりません。"
@@ -142,7 +216,7 @@ msgid "Apply slug"
 msgstr "スラッグを反映"
 
 msgid "Loading sample..."
-msgstr "セット中"
+msgstr "セット中…"
 
 msgid "Title"
 msgstr "タイトル"
@@ -157,16 +231,16 @@ msgid "Task lists will be converted to regular lists without preserving checkbox
 msgstr "タスクリストは通常のリストとして変換され、チェック状態は保持されません。"
 
 msgid "Sample Markdown loaded."
-msgstr "テスト用Markdownをセットしました。"
+msgstr "テスト用 Markdown をセットしました。"
 
 msgid "Sample Markdown could not be loaded."
-msgstr "テスト用Markdownを読み込めませんでした。"
+msgstr "テスト用 Markdown を読み込めませんでした。"
 
 msgid "Load sample Markdown"
-msgstr "テスト用mdファイルをセット"
+msgstr "テスト用 md ファイルをセット"
 
 msgid "Nested lists will be flattened to one level."
-msgstr "ネストしたリストは1階層のリストとして変換されます。"
+msgstr "ネストしたリストは 1 階層のリストとして変換されます。"
 
 msgid "The file could not be read."
 msgstr "ファイルを読み込めませんでした。"
@@ -186,7 +260,8 @@ msgstr "プレビュー"
 msgid "There is no source to preview."
 msgstr "プレビューする原稿がありません。"
 
-msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgid ""
+"Some post settings could not be applied for this post type or with your current permissions."
 msgstr "一部の投稿設定は、この投稿タイプまたは現在の権限では反映できませんでした。"
 
 msgid "Some images or post settings could not be applied."
@@ -253,7 +328,7 @@ msgid "Insertion method"
 msgstr "反映方法"
 
 msgid "Importing..."
-msgstr "取り込み中"
+msgstr "取り込み中…"
 
 msgid "Conversion options"
 msgstr "変換オプション"
@@ -283,7 +358,7 @@ msgid "Post settings"
 msgstr "投稿設定"
 
 msgid "Applying post settings..."
-msgstr "投稿設定を反映中"
+msgstr "投稿設定を反映中…"
 
 msgid "Excerpt"
 msgstr "抜粋"
@@ -298,7 +373,7 @@ msgid " characters"
 msgstr "文字"
 
 msgid "A new draft will be saved to WordPress."
-msgstr "新規下書きをWordPressへ保存します。"
+msgstr "新規下書きを WordPress へ保存します。"
 
 msgid "Create new draft"
 msgstr "新規下書きを作成"
@@ -310,13 +385,13 @@ msgid "Confirm replacement before replacing the existing post body."
 msgstr "既存本文を置き換える確認が必要です。"
 
 msgid "The first H1 will be used as the post title and removed from the post body."
-msgstr "最初のH1を投稿タイトルとして使い、本文からは除外します。"
+msgstr "最初の H1 を投稿タイトルとして使い、本文からは除外します。"
 
 msgid "Use first H1 as post title"
-msgstr "最初のH1を投稿タイトルにする"
+msgstr "最初の H1 を投稿タイトルにする"
 
 msgid "Unsupported Front Matter fields will not be applied:"
-msgstr "未対応のFront Matter項目は反映しません:"
+msgstr "未対応の Front Matter 項目は反映しません:"
 
 msgid "Unsupported fields will not be applied:"
 msgstr "未対応の項目は反映しません:"
@@ -340,27 +415,28 @@ msgid "Replace the content"
 msgstr "本文を置き換える"
 
 msgid "Current Markdown source"
-msgstr "現在のMarkdown原稿"
+msgstr "現在の Markdown 原稿"
 
 msgid "The current post will not be saved automatically."
 msgstr "現在の投稿は自動保存されません。"
 
 msgid "Image URL"
-msgstr "画像URL"
+msgstr "画像 URL"
 
 msgid "Image URLs must begin with http, https, or /."
-msgstr "画像URLはhttp、https、または / から始まるパスを使用してください。"
+msgstr "画像 URLは、http、https、または / から始まるパスを使用してください。"
 
 msgid "Importing images..."
-msgstr "画像を取り込み中"
+msgstr "画像を取り込み中…"
 
 msgid "Save images"
 msgstr "画像保存"
 
 msgid "The image syntax could not be parsed. Check its parentheses and URL."
-msgstr "画像記法を読み取れません。括弧とURLを確認してください。"
+msgstr "画像記法を読み取れません。括弧と URL を確認してください。"
 
-msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgid ""
+"Relative images will keep their original paths and will not be saved to the Media Library."
 msgstr "相対画像はメディアライブラリへ保存されず、入力されたパスを維持します。"
 
 msgid "Review and adjust"
@@ -376,7 +452,7 @@ msgid " line"
 msgstr "行目"
 
 msgid " line: edit in Markdown"
-msgstr "行目をMarkdownで編集"
+msgstr "行目を Markdown で編集"
 
 msgid "Warning"
 msgstr "警告"
@@ -387,10 +463,16 @@ msgstr "貼り付けた原稿"
 msgid "Close"
 msgstr "閉じる"
 
-msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
-msgstr "Front Matterから読み取った投稿情報です。反映する項目を確認し、必要に応じて編集するか、チェックを外して反映対象から除外します。"
+msgid ""
+"These post details were read from Front Matter. Review each item, edit it if needed, or "
+"clear its checkbox to leave it unchanged."
+msgstr ""
+"Front Matter から読み取った投稿情報です。反映する項目を確認し、必要に応じて編集するか、チェッ"
+"クを外して反映対象から除外します。"
 
-msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgid ""
+"Review warnings and expected changes, then choose how the article should be applied and "
+"which conversion options to use."
 msgstr "警告と反映される内容を確認し、記事への反映方法と変換オプションを選びます。"
 
 msgid "Review before applying"
@@ -399,29 +481,329 @@ msgstr "反映前の確認"
 msgid "Source, post settings, and review before applying"
 msgstr "原稿、投稿設定、反映前の確認"
 
-msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgid ""
+"Add blocks at the current cursor position. Existing content remains, and the post will not "
+"be saved automatically."
 msgstr "現在のカーソル位置へブロックを追加します。既存の本文は残り、投稿は自動保存しません。"
 
-msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgid ""
+"Replace all blocks in the current post. Confirmation is required, and the post will not be "
+"saved automatically."
 msgstr "現在の投稿本文をすべて置き換えます。実行前に確認が必要で、投稿は自動保存しません。"
 
-msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgid ""
+"Leave the current post unchanged and save the content and selected post settings as a new "
+"draft."
 msgstr "現在の投稿は変更せず、本文と選択した投稿設定を新しい下書きとして保存します。"
 
-msgid "# Article title\n\nPaste Markdown here or drop a file."
-msgstr "# 記事タイトル\n\nここへMarkdownを貼り付けるか、ファイルをドロップします。"
+msgid ""
+"# Article title\n"
+"\n"
+"Paste Markdown here or drop a file."
+msgstr ""
+"# 記事タイトル\n"
+"\n"
+"ここへ Markdown を貼り付けるか、ファイルをドロップします。"
 
 msgid "The bundled Markdown is unavailable."
-msgstr "同梱Markdownを利用できません。"
+msgstr "同梱 Markdown を利用できません。"
 
 msgid "The bundled Markdown could not be loaded."
-msgstr "同梱Markdownを読み込めませんでした。"
+msgstr "同梱 Markdown を読み込めませんでした。"
 
 msgid "The clipboard is unavailable."
 msgstr "クリップボードを利用できません。"
 
 msgid "The draft ID was not found."
-msgstr "下書きIDが見つかりません。"
+msgstr "下書き ID が見つかりません。"
 
 msgid "The draft blocks were not found."
 msgstr "下書きブロックが見つかりません。"
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI かんたん投稿"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "かんたん投稿設定"
+
+msgid "You are not allowed to change these settings."
+msgstr "この設定を変更する権限がありません。"
+
+msgid "Quick Post settings saved."
+msgstr "かんたん投稿設定を保存しました。"
+
+msgid "Every Quick Post browser was signed out."
+msgstr "すべてのかんたん投稿ブラウザーからログアウトしました。"
+
+msgid "Choose an author who can edit the selected content type."
+msgstr "選択した投稿タイプを編集できる投稿者を選択してください。"
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "選択した投稿者には、選択した投稿タイプを公開する権限がありません。"
+
+msgid "Choose an available publishing destination."
+msgstr "利用できる投稿先を選択してください。"
+
+msgid "Choose an available category."
+msgstr "利用できるカテゴリーを選択してください。"
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "合言葉は 8 文字以上にしてください。"
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "かんたん投稿を有効にする前に合言葉を設定してください。"
+
+msgid ""
+"Quick Post reduces the learning and memory required to publish. It is intended for people "
+"who find the WordPress admin screen difficult, including older users, people with "
+"disabilities, and anyone who needs a simpler interface."
+msgstr ""
+"かんたん投稿は、記事を投稿するために必要な学習や記憶の負担を減らします。高齢者や障がいのある"
+"方を含め、WordPress 管理画面が難しい方や、より簡単な画面を必要とする方の利用を想定していま"
+"す。"
+
+msgid ""
+"Anyone can start with only a title and article text. As they become comfortable, blank "
+"lines, lists, short headings, and images add more structure. Learning Markdown is not "
+"required."
+msgstr ""
+"誰でもタイトルと本文だけで始められます。慣れてきたら、空行、箇条書き、短い見出し、画像を使っ"
+"て、できることを少しずつ増やせます。Markdown を覚える必要はありません。"
+
+msgid "Quick Post"
+msgstr "かんたん投稿"
+
+msgid "Enable the standalone posting page"
+msgstr "専用の投稿ページを有効にする"
+
+msgid "Posting URL"
+msgstr "投稿 URL"
+
+msgid "Open Quick Post"
+msgstr "かんたん投稿を開く"
+
+msgid "Passphrase"
+msgstr "合言葉"
+
+msgid "Show passphrase"
+msgstr "合言葉を表示"
+
+msgid "Hide passphrase"
+msgstr "合言葉を隠す"
+
+msgid "Publishing destination"
+msgstr "投稿先"
+
+msgid ""
+"Posts, Pages, and custom post types that support titles and the editor are shown. The "
+"contributor cannot change this choice."
+msgstr ""
+"投稿、固定ページ、タイトルとエディターに対応するカスタム投稿タイプを表示します。投稿する人は"
+"この選択を変更できません。"
+
+msgid "Leave blank to keep the current passphrase. Entering a new one signs out every browser."
+msgstr ""
+"空欄のままなら現在の合言葉を維持します。新しく入力すると、すべてのブラウザーからログアウトし"
+"ます。"
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "8 文字以上にしてください。投稿を許可する人だけに共有します。"
+
+msgid "Post author"
+msgstr "投稿者"
+
+msgid "Choose an author"
+msgstr "投稿者を選択"
+
+msgid "After submission"
+msgstr "送信後の扱い"
+
+msgid "Save as a draft"
+msgstr "下書きとして保存"
+
+msgid "Publish immediately"
+msgstr "すぐに公開"
+
+msgid ""
+"This choice is fixed on the posting page so the contributor cannot change it by mistake."
+msgstr "投稿する人が誤って変更しないよう、この選択は投稿ページでは固定されます。"
+
+msgid "Default category"
+msgstr "既定のカテゴリー"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "投稿先がカテゴリーに対応している場合のみ適用されます。"
+
+msgid "Use the site default"
+msgstr "サイトの既定値を使用"
+
+msgid "Save Quick Post settings"
+msgstr "かんたん投稿設定を保存"
+
+msgid "Sign out every Quick Post browser"
+msgstr "すべてのかんたん投稿ブラウザーからログアウト"
+
+msgid "Enter a post title."
+msgstr "投稿タイトルを入力してください。"
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "2MB 以下の記事原稿を入力してください。"
+
+msgid "The article could not be converted into a safe post."
+msgstr "記事を安全な投稿へ変換できませんでした。"
+
+msgid "Reload the page and try again."
+msgstr "ページを再読み込みして、もう一度お試しください。"
+
+msgid "The configured post author is no longer available."
+msgstr "設定された投稿者は現在利用できません。"
+
+msgid "The configured publishing destination is no longer available."
+msgstr "設定された投稿先は現在利用できません。"
+
+msgid "The converted article contains an unsupported block."
+msgstr "変換した記事に未対応のブロックが含まれています。"
+
+msgid "This article was already submitted. Start a new post before submitting again."
+msgstr "この記事はすでに送信されています。新しい投稿を開始してから、もう一度送信してください。"
+
+msgid "Enter the passphrase"
+msgstr "合言葉を入力"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "サイト管理者から共有された合言葉を使用してください。"
+
+msgid "Continue"
+msgstr "続ける"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "このブラウザーでは、30 日間ログイン状態を保持します。"
+
+msgid "Quick Post is unavailable"
+msgstr "かんたん投稿を利用できません"
+
+msgid "Sign out"
+msgstr "ログアウト"
+
+msgid "Article draft"
+msgstr "記事原稿"
+
+msgid "Write or paste your article"
+msgstr "記事を書く・貼り付ける"
+
+msgid "Type or paste an article, or open a text file. Plain text and Markdown are accepted."
+msgstr ""
+"記事を入力または貼り付けるか、テキストファイルを開きます。プレーンテキストと Markdown を利用"
+"できます。"
+
+msgid "Write or paste the article here"
+msgstr "ここに記事を入力または貼り付けます"
+
+msgid "Open file"
+msgstr "ファイルを開く"
+
+msgid "Add images"
+msgstr "画像を追加"
+
+msgid "Alternative text"
+msgstr "代替テキスト"
+
+msgid "Remove image"
+msgstr "画像を削除"
+
+msgid "Attach up to 5 images."
+msgstr "画像は 5 枚まで添付できます。"
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "サイトのアップロード上限以内の、JPEG、PNG、GIF、WebP 画像を使用してください。"
+
+msgid ""
+"One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images within the site "
+"upload limit."
+msgstr ""
+"アップロードできない画像があります。サイトのアップロード上限以内の、JPEG、PNG、GIF、WebP 画像"
+"を使用してください。"
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "画像をメディアライブラリに保存できませんでした。"
+
+msgid "The attached images could not be added to the article."
+msgstr "添付画像を記事へ追加できませんでした。"
+
+msgid "Review post"
+msgstr "投稿を確認"
+
+msgid "Check before posting"
+msgstr "投稿前の確認"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "タイトルとプレビュー、原稿で見つかった注意点を確認します。"
+
+msgid "Post title"
+msgstr "投稿タイトル"
+
+msgid "Points to check"
+msgstr "確認すること"
+
+msgid "I reviewed these points."
+msgstr "上の内容を確認しました。"
+
+msgid "Edit draft"
+msgstr "原稿を編集"
+
+msgid "Publish post"
+msgstr "投稿を公開"
+
+msgid "Save draft"
+msgstr "下書きを保存"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "記事を WordPress ブロックへ変換するには JavaScript が必要です。"
+
+msgid "Post submitted"
+msgstr "投稿を送信しました"
+
+msgid "Post published"
+msgstr "投稿を公開しました"
+
+msgid "Draft saved"
+msgstr "下書きを保存しました"
+
+msgid "View post"
+msgstr "投稿を表示"
+
+msgid "Create another post"
+msgstr "別の投稿を作成"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "サイト管理者に、この投稿ページを有効にするよう依頼してください。"
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "試行回数が多すぎます。15 分待ってから、もう一度お試しください。"
+
+msgid "The passphrase is not correct."
+msgstr "合言葉が正しくありません。"
+
+msgid "The page expired. Reload it and try again."
+msgstr "ページの有効期限が切れました。再読み込みして、もう一度お試しください。"
+
+msgid "Line"
+msgstr "行"
+
+msgid "Paste an article draft before continuing."
+msgstr "続ける前に記事原稿を貼り付けてください。"
+
+msgid "Use an article draft up to 2 MB."
+msgstr "2MB 以下の記事原稿を使用してください。"
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "記事を WordPress ブロックへ変換できませんでした。"
+
+msgid "Publishing..."
+msgstr "公開中..."
+
+msgid "Saving..."
+msgstr "保存中..."
