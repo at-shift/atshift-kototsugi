@@ -13,6 +13,8 @@ define( 'KOTOTSUGI_QUICK_POST_OPTION', 'kototsugi_quick_post_settings' );
 define( 'KOTOTSUGI_QUICK_POST_COOKIE', 'kototsugi_quick_post_session' );
 define( 'KOTOTSUGI_QUICK_POST_MAX_SOURCE_BYTES', 2 * MB_IN_BYTES );
 define( 'KOTOTSUGI_QUICK_POST_MAX_IMAGES', 5 );
+define( 'KOTOTSUGI_QUICK_POST_MAX_BLOCK_DEPTH', 20 );
+define( 'KOTOTSUGI_QUICK_POST_MAX_BLOCKS', 1000 );
 
 /**
  * Returns Quick Post defaults.
@@ -59,6 +61,16 @@ function kototsugi_quick_post_types() {
 	);
 
 	return $post_types;
+}
+
+/**
+ * Returns the capability required to create a selected content type.
+ *
+ * @param WP_Post_Type $post_type Post type object.
+ * @return string
+ */
+function kototsugi_quick_post_create_capability( $post_type ) {
+	return ! empty( $post_type->cap->create_posts ) ? $post_type->cap->create_posts : $post_type->cap->edit_posts;
 }
 
 /**
@@ -223,7 +235,7 @@ add_filter( 'plugin_action_links_' . plugin_basename( KOTOTSUGI_FILE ), 'kototsu
 function kototsugi_quick_post_authors() {
 	$capabilities = array();
 	foreach ( kototsugi_quick_post_types() as $post_type ) {
-		$capabilities[] = $post_type->cap->edit_posts;
+		$capabilities[] = kototsugi_quick_post_create_capability( $post_type );
 	}
 	$capabilities = array_unique( $capabilities );
 
@@ -293,7 +305,7 @@ function kototsugi_save_quick_post_settings() {
 	if ( ! $type_object ) {
 		kototsugi_quick_post_settings_redirect( 'invalid-post-type' );
 	}
-	if ( ! $author || ! user_can( $author, $type_object->cap->edit_posts ) ) {
+	if ( ! $author || ! user_can( $author, kototsugi_quick_post_create_capability( $type_object ) ) ) {
 		kototsugi_quick_post_settings_redirect( 'invalid-author' );
 	}
 	if ( 'publish' === $status && ! user_can( $author, $type_object->cap->publish_posts ) ) {
@@ -311,6 +323,9 @@ function kototsugi_save_quick_post_settings() {
 		kototsugi_quick_post_settings_redirect( 'password-required' );
 	}
 
+	$revoke_sessions = (bool) $current['enabled'] && ! $enabled;
+	$revoke_sessions = $revoke_sessions || $current['status'] !== $status || $current['post_type'] !== $post_type || (int) $current['author_id'] !== $author_id;
+
 	$current['enabled']     = $enabled;
 	$current['status']      = $status;
 	$current['language']    = $language;
@@ -319,7 +334,10 @@ function kototsugi_save_quick_post_settings() {
 	$current['category_id'] = $category_id;
 
 	if ( $password ) {
-		$current['password_hash']   = wp_hash_password( $password );
+		$current['password_hash'] = wp_hash_password( $password );
+		$revoke_sessions          = true;
+	}
+	if ( $revoke_sessions ) {
 		$current['session_version'] = (int) $current['session_version'] + 1;
 	}
 
@@ -362,7 +380,7 @@ function kototsugi_render_quick_post_settings_page() {
 	$messages = array(
 		'saved'                 => array( 'success', __( 'Quick Post settings saved.', 'kototsugi' ) ),
 		'sessions-revoked'      => array( 'success', __( 'Every Quick Post browser was signed out.', 'kototsugi' ) ),
-		'invalid-author'        => array( 'error', __( 'Choose an author who can edit the selected content type.', 'kototsugi' ) ),
+		'invalid-author'        => array( 'error', __( 'Choose an author who can create the selected content type.', 'kototsugi' ) ),
 		'author-cannot-publish' => array( 'error', __( 'The selected author cannot publish the selected content type.', 'kototsugi' ) ),
 		'invalid-post-type'     => array( 'error', __( 'Choose an available publishing destination.', 'kototsugi' ) ),
 		'invalid-category'      => array( 'error', __( 'Choose an available category.', 'kototsugi' ) ),
@@ -513,17 +531,32 @@ function kototsugi_quick_post_signing_key( $settings ) {
 }
 
 /**
+ * Returns the transient key for one server-tracked Quick Post session.
+ *
+ * @param string $session_id Random session identifier.
+ * @return string
+ */
+function kototsugi_quick_post_session_key( $session_id ) {
+	return 'kototsugi_qps_' . substr( hash_hmac( 'sha256', $session_id, wp_salt( 'auth' ) ), 0, 40 );
+}
+
+/**
  * Creates a signed 30-day browser session.
  *
  * @param array<string, mixed> $settings Quick Post settings.
  * @return string
  */
 function kototsugi_create_quick_post_session( $settings ) {
+	$session_id = wp_generate_password( 64, false, false );
+	$expires    = time() + MONTH_IN_SECONDS;
+	set_transient( kototsugi_quick_post_session_key( $session_id ), (int) $settings['session_version'], MONTH_IN_SECONDS );
+
 	$payload   = kototsugi_quick_post_base64url_encode(
 		wp_json_encode(
 			array(
-				'expires' => time() + MONTH_IN_SECONDS,
-				'version' => (int) $settings['session_version'],
+				'expires'    => $expires,
+				'version'    => (int) $settings['session_version'],
+				'session_id' => $session_id,
 			)
 		)
 	);
@@ -533,13 +566,13 @@ function kototsugi_create_quick_post_session( $settings ) {
 }
 
 /**
- * Verifies a browser session.
+ * Returns verified browser session data.
  *
  * @param string               $cookie   Session cookie.
  * @param array<string, mixed> $settings Quick Post settings.
- * @return bool
+ * @return array<string, mixed>|false
  */
-function kototsugi_verify_quick_post_session( $cookie, $settings ) {
+function kototsugi_get_quick_post_session( $cookie, $settings ) {
 	$parts = explode( '.', (string) $cookie, 2 );
 
 	if ( 2 !== count( $parts ) || ! $parts[0] || ! $parts[1] ) {
@@ -554,10 +587,58 @@ function kototsugi_verify_quick_post_session( $cookie, $settings ) {
 	$decoded = kototsugi_quick_post_base64url_decode( $parts[0] );
 	$payload = $decoded ? json_decode( $decoded, true ) : null;
 
-	return is_array( $payload )
-		&& isset( $payload['expires'], $payload['version'] )
-		&& (int) $payload['expires'] >= time()
-		&& (int) $payload['version'] === (int) $settings['session_version'];
+	if ( ! is_array( $payload ) || ! isset( $payload['expires'], $payload['version'], $payload['session_id'] ) ) {
+		return false;
+	}
+	if ( (int) $payload['expires'] < time() || (int) $payload['version'] !== (int) $settings['session_version'] ) {
+		return false;
+	}
+	if ( ! is_string( $payload['session_id'] ) || 1 !== preg_match( '/\A[A-Za-z0-9]{64}\z/D', $payload['session_id'] ) ) {
+		return false;
+	}
+	if ( (int) get_transient( kototsugi_quick_post_session_key( $payload['session_id'] ) ) !== (int) $settings['session_version'] ) {
+		return false;
+	}
+
+	return $payload;
+}
+
+/**
+ * Verifies a browser session.
+ *
+ * @param string               $cookie   Session cookie.
+ * @param array<string, mixed> $settings Quick Post settings.
+ * @return bool
+ */
+function kototsugi_verify_quick_post_session( $cookie, $settings ) {
+	return false !== kototsugi_get_quick_post_session( $cookie, $settings );
+}
+
+/**
+ * Revokes one browser session.
+ *
+ * @param string               $cookie   Session cookie.
+ * @param array<string, mixed> $settings Quick Post settings.
+ */
+function kototsugi_revoke_quick_post_session( $cookie, $settings ) {
+	$session = kototsugi_get_quick_post_session( $cookie, $settings );
+	if ( $session ) {
+		delete_transient( kototsugi_quick_post_session_key( $session['session_id'] ) );
+	}
+}
+
+/**
+ * Returns a session-scoped browser storage key.
+ *
+ * @param string               $cookie   Session cookie.
+ * @param array<string, mixed> $settings Quick Post settings.
+ * @return string
+ */
+function kototsugi_quick_post_storage_key( $cookie, $settings ) {
+	$session = kototsugi_get_quick_post_session( $cookie, $settings );
+	$suffix  = $session ? '-' . substr( hash( 'sha256', $session['session_id'] ), 0, 20 ) : '';
+
+	return 'kototsugi-quick-post-' . md5( home_url( '/' ) ) . $suffix;
 }
 
 /**
@@ -629,6 +710,45 @@ function kototsugi_verify_quick_post_form_token( $token, $action, $cookie ) {
 }
 
 /**
+ * Creates a short-lived completion receipt bound to one session and post.
+ *
+ * @param int    $post_id Post ID.
+ * @param string $cookie  Session cookie.
+ * @param int    $tick    Optional 15-minute tick.
+ * @return string
+ */
+function kototsugi_quick_post_receipt_token( $post_id, $cookie, $tick = 0 ) {
+	$tick      = $tick ? $tick : (int) floor( time() / ( 15 * MINUTE_IN_SECONDS ) );
+	$signature = hash_hmac( 'sha256', (int) $post_id . '|' . $tick, wp_salt( 'nonce' ) . '|' . $cookie );
+
+	return $tick . ':' . $signature;
+}
+
+/**
+ * Verifies a completion receipt.
+ *
+ * @param string $token   Receipt token.
+ * @param int    $post_id Post ID.
+ * @param string $cookie  Session cookie.
+ * @return bool
+ */
+function kototsugi_verify_quick_post_receipt_token( $token, $post_id, $cookie ) {
+	$parts = explode( ':', (string) $token, 2 );
+	$now   = (int) floor( time() / ( 15 * MINUTE_IN_SECONDS ) );
+
+	if ( 2 !== count( $parts ) || ! ctype_digit( $parts[0] ) ) {
+		return false;
+	}
+
+	$tick = (int) $parts[0];
+	if ( $tick !== $now && $tick !== $now - 1 ) {
+		return false;
+	}
+
+	return hash_equals( kototsugi_quick_post_receipt_token( $post_id, $cookie, $tick ), $token );
+}
+
+/**
  * Returns a privacy-preserving login throttle key.
  *
  * @return string
@@ -640,35 +760,106 @@ function kototsugi_quick_post_throttle_key() {
 }
 
 /**
- * Records a failed passphrase attempt.
+ * Acquires a short database-backed lock.
  *
- * @return int Updated failure count.
+ * @param string $resource Resource identifier.
+ * @return array<string, string>|false Lock owner data, or false when already locked.
  */
-function kototsugi_record_quick_post_login_failure() {
-	$key   = kototsugi_quick_post_throttle_key();
-	$count = (int) get_transient( $key ) + 1;
+function kototsugi_quick_post_acquire_lock( $resource ) {
+	$lock_key = 'kototsugi_qpl_' . substr( hash_hmac( 'sha256', $resource, wp_salt( 'nonce' ) ), 0, 40 );
+	$now      = time();
+	$owner    = $now . ':' . wp_generate_password( 32, false, false );
 
-	set_transient( $key, $count, 15 * MINUTE_IN_SECONDS );
+	if ( add_option( $lock_key, $owner, '', false ) ) {
+		return array(
+			'key'   => $lock_key,
+			'owner' => $owner,
+		);
+	}
 
-	return $count;
+	$current = (string) get_option( $lock_key, '' );
+	$parts   = explode( ':', $current, 2 );
+	if ( 2 === count( $parts ) && ctype_digit( $parts[0] ) && (int) $parts[0] < $now - 15 ) {
+		if ( kototsugi_quick_post_release_lock( array( 'key' => $lock_key, 'owner' => $current ) ) && add_option( $lock_key, $owner, '', false ) ) {
+			return array(
+				'key'   => $lock_key,
+				'owner' => $owner,
+			);
+		}
+	}
+
+	return false;
 }
 
 /**
- * Returns whether login attempts are temporarily blocked.
+ * Releases a lock only when the caller still owns it.
  *
+ * @param array<string, string> $lock Lock owner data.
  * @return bool
  */
-function kototsugi_quick_post_login_is_throttled() {
-	return (int) get_transient( kototsugi_quick_post_throttle_key() ) >= 5;
+function kototsugi_quick_post_release_lock( $lock ) {
+	global $wpdb;
+
+	if ( empty( $lock['key'] ) || empty( $lock['owner'] ) ) {
+		return false;
+	}
+
+	// A value-matched delete prevents stale owners from removing a replacement lock.
+	$deleted = $wpdb->delete( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Atomic compare-and-delete cannot be expressed through the Options API; the exact cache entry is cleared below.
+		$wpdb->options,
+		array(
+			'option_name'  => $lock['key'],
+			'option_value' => $lock['owner'],
+		),
+		array( '%s', '%s' )
+	);
+	wp_cache_delete( $lock['key'], 'options' );
+
+	return 1 === $deleted;
+}
+
+/**
+ * Atomically reserves one passphrase verification attempt.
+ *
+ * @return bool Whether the attempt may proceed.
+ */
+function kototsugi_claim_quick_post_login_attempt() {
+	$key      = kototsugi_quick_post_throttle_key();
+	$lock = kototsugi_quick_post_acquire_lock( $key );
+
+	if ( ! $lock ) {
+		return false;
+	}
+
+	try {
+		$count = (int) get_transient( $key );
+		if ( $count >= 5 ) {
+			return false;
+		}
+
+		set_transient( $key, $count + 1, 15 * MINUTE_IN_SECONDS );
+		return true;
+	} finally {
+		kototsugi_quick_post_release_lock( $lock );
+	}
 }
 
 /**
  * Returns whether a block tree is safe for Quick Post.
  *
- * @param array<int, array<string, mixed>> $blocks Parsed WordPress blocks.
+ * @param array<int, array<string, mixed>> $blocks      Parsed WordPress blocks.
+ * @param int                              $depth       Current nesting depth.
+ * @param int|null                         $block_count Running block count.
  * @return bool
  */
-function kototsugi_quick_post_blocks_are_allowed( $blocks ) {
+function kototsugi_quick_post_blocks_are_allowed( $blocks, $depth = 1, &$block_count = null ) {
+	if ( $depth > KOTOTSUGI_QUICK_POST_MAX_BLOCK_DEPTH ) {
+		return false;
+	}
+	if ( null === $block_count ) {
+		$block_count = 0;
+	}
+
 	$allowed = array(
 		'core/code',
 		'core/group',
@@ -683,6 +874,11 @@ function kototsugi_quick_post_blocks_are_allowed( $blocks ) {
 	);
 
 	foreach ( $blocks as $block ) {
+		++$block_count;
+		if ( $block_count > KOTOTSUGI_QUICK_POST_MAX_BLOCKS || ! is_array( $block ) ) {
+			return false;
+		}
+
 		$name = isset( $block['blockName'] ) ? $block['blockName'] : null;
 
 		if ( null === $name ) {
@@ -693,7 +889,7 @@ function kototsugi_quick_post_blocks_are_allowed( $blocks ) {
 			return false;
 		}
 
-		if ( ! empty( $block['innerBlocks'] ) && ! kototsugi_quick_post_blocks_are_allowed( $block['innerBlocks'] ) ) {
+		if ( ! empty( $block['innerBlocks'] ) && ! kototsugi_quick_post_blocks_are_allowed( $block['innerBlocks'], $depth + 1, $block_count ) ) {
 			return false;
 		}
 	}
@@ -816,6 +1012,9 @@ function kototsugi_upload_quick_post_images( $files, $alt_texts, $post_id, $auth
 	if ( ! $images ) {
 		return array();
 	}
+	if ( ! user_can( $author_id, 'upload_files' ) ) {
+		return new WP_Error( 'kototsugi_quick_post_image_forbidden', __( 'The selected post author is not allowed to upload images.', 'kototsugi' ) );
+	}
 	if ( count( $images ) > KOTOTSUGI_QUICK_POST_MAX_IMAGES ) {
 		return new WP_Error( 'kototsugi_quick_post_image_count', __( 'Attach up to 5 images.', 'kototsugi' ) );
 	}
@@ -933,8 +1132,11 @@ function kototsugi_insert_quick_post( $values, $settings, $images = array(), $al
 	if ( ! $type_object || ! isset( kototsugi_quick_post_types()[ $post_type ] ) ) {
 		return new WP_Error( 'kototsugi_quick_post_type_invalid', __( 'The configured publishing destination is no longer available.', 'kototsugi' ) );
 	}
-	if ( ! $author || ! user_can( $author, $type_object->cap->edit_posts ) || ( 'publish' === $settings['status'] && ! user_can( $author, $type_object->cap->publish_posts ) ) ) {
+	if ( ! $author || ! user_can( $author, kototsugi_quick_post_create_capability( $type_object ) ) || ( 'publish' === $settings['status'] && ! user_can( $author, $type_object->cap->publish_posts ) ) ) {
 		return new WP_Error( 'kototsugi_quick_post_author_invalid', __( 'The configured post author is no longer available.', 'kototsugi' ) );
+	}
+	if ( kototsugi_normalize_quick_post_images( $images ) && ! user_can( $author, 'upload_files' ) ) {
+		return new WP_Error( 'kototsugi_quick_post_image_forbidden', __( 'The selected post author is not allowed to upload images.', 'kototsugi' ) );
 	}
 
 	$blocks = parse_blocks( $content );
@@ -943,11 +1145,18 @@ function kototsugi_insert_quick_post( $values, $settings, $images = array(), $al
 	}
 
 	$duplicate_key = 'kototsugi_qp_post_' . substr( hash_hmac( 'sha256', $idempotency, wp_salt( 'nonce' ) ), 0, 32 );
-	$existing      = get_transient( $duplicate_key );
-	if ( $existing ) {
+	$duplicate_lock = kototsugi_quick_post_acquire_lock( $duplicate_key );
+	if ( ! $duplicate_lock ) {
 		return new WP_Error( 'kototsugi_quick_post_duplicate', __( 'This article was already submitted. Start a new post before submitting again.', 'kototsugi' ) );
 	}
-	set_transient( $duplicate_key, 'pending', 10 * MINUTE_IN_SECONDS );
+	try {
+		if ( get_transient( $duplicate_key ) ) {
+			return new WP_Error( 'kototsugi_quick_post_duplicate', __( 'This article was already submitted. Start a new post before submitting again.', 'kototsugi' ) );
+		}
+		set_transient( $duplicate_key, 'pending', 10 * MINUTE_IN_SECONDS );
+	} finally {
+		kototsugi_quick_post_release_lock( $duplicate_lock );
+	}
 
 	$content = wp_kses_post( serialize_blocks( kototsugi_sanitize_quick_post_blocks( $blocks ) ) );
 	if ( ! trim( $content ) ) {
@@ -957,7 +1166,7 @@ function kototsugi_insert_quick_post( $values, $settings, $images = array(), $al
 
 	$post = array(
 		'post_type'    => $post_type,
-		'post_status'  => $settings['status'],
+		'post_status'  => 'draft',
 		'post_author'  => (int) $settings['author_id'],
 		'post_title'   => $title,
 		'post_content' => $content,
@@ -1005,6 +1214,21 @@ function kototsugi_insert_quick_post( $values, $settings, $images = array(), $al
 	}
 
 	update_post_meta( $post_id, '_kototsugi_quick_post', 1 );
+	if ( 'publish' === $settings['status'] ) {
+		$published = wp_update_post(
+			array(
+				'ID'          => $post_id,
+				'post_status' => 'publish',
+			),
+			true
+		);
+		if ( is_wp_error( $published ) || ! $published ) {
+			kototsugi_delete_quick_post_images( $attachment_ids );
+			wp_delete_post( $post_id, true );
+			delete_transient( $duplicate_key );
+			return new WP_Error( 'kototsugi_quick_post_publish_failed', __( 'The article could not be published. Try again or ask the site administrator for help.', 'kototsugi' ) );
+		}
+	}
 	set_transient( $duplicate_key, (int) $post_id, DAY_IN_SECONDS );
 
 	return (int) $post_id;
@@ -1070,7 +1294,7 @@ function kototsugi_enqueue_quick_post_assets( $clear_draft = false, $include_scr
 				),
 				'maxImageBytes' => kototsugi_quick_post_max_image_bytes(),
 				'maxImages'     => KOTOTSUGI_QUICK_POST_MAX_IMAGES,
-				'storageKey'    => 'kototsugi-quick-post-' . md5( home_url( '/' ) ),
+				'storageKey'    => kototsugi_quick_post_storage_key( kototsugi_get_quick_post_cookie(), kototsugi_get_quick_post_settings() ),
 			)
 		) . ';',
 		'before'
@@ -1202,7 +1426,7 @@ function kototsugi_render_quick_post_form( $settings, $error = '', $values = arr
 	?>
 	<header class="kototsugi-quick-header">
 		<a class="kototsugi-quick-brand" href="<?php echo esc_url( kototsugi_quick_post_url() ); ?>">KOTOTSUGI <span><?php esc_html_e( 'Quick Post', 'kototsugi' ); ?></span></a>
-		<form method="post" action="<?php echo esc_url( kototsugi_quick_post_url() ); ?>">
+		<form id="kototsugi-quick-logout-form" method="post" action="<?php echo esc_url( kototsugi_quick_post_url() ); ?>">
 			<input type="hidden" name="kototsugi_action" value="logout">
 			<input type="hidden" name="kototsugi_form_token" value="<?php echo esc_attr( kototsugi_quick_post_form_token( 'logout', $cookie ) ); ?>">
 			<button class="kototsugi-quick-icon-button" type="submit" aria-label="<?php esc_attr_e( 'Sign out', 'kototsugi' ); ?>" title="<?php esc_attr_e( 'Sign out', 'kototsugi' ); ?>"><span class="dashicons dashicons-exit" aria-hidden="true"></span></button>
@@ -1295,7 +1519,8 @@ function kototsugi_render_quick_post_form( $settings, $error = '', $values = arr
  * @param array<string, mixed> $settings Quick Post settings.
  */
 function kototsugi_render_quick_post_success( $post_id, $settings ) {
-	$post = get_post( $post_id );
+	$post        = get_post( $post_id );
+	$storage_key = kototsugi_quick_post_storage_key( kototsugi_get_quick_post_cookie(), $settings );
 	kototsugi_enqueue_quick_post_assets( false, false );
 	kototsugi_quick_post_document_start( __( 'Post submitted', 'kototsugi' ) );
 	?>
@@ -1311,7 +1536,7 @@ function kototsugi_render_quick_post_success( $post_id, $settings ) {
 			</div>
 		</section>
 	</main>
-	<script>try { window.localStorage.removeItem(<?php echo wp_json_encode( 'kototsugi-quick-post-' . md5( home_url( '/' ) ) ); ?>); window.localStorage.removeItem(<?php echo wp_json_encode( 'kototsugi-quick-post-' . md5( home_url( '/' ) ) . '-title' ); ?>); } catch (error) {}</script>
+	<script>try { window.localStorage.removeItem(<?php echo wp_json_encode( $storage_key ); ?>); window.localStorage.removeItem(<?php echo wp_json_encode( $storage_key . '-title' ); ?>); } catch (error) {}</script>
 	<?php
 	kototsugi_quick_post_document_end();
 }
@@ -1348,12 +1573,16 @@ function kototsugi_handle_quick_post_request() {
 		// Passwords must be verified byte-for-byte and must not be altered by text sanitizers.
 		$passphrase = isset( $_POST['passphrase'] ) ? (string) wp_unslash( $_POST['passphrase'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-		if ( kototsugi_quick_post_login_is_throttled() ) {
+		if ( ! wp_verify_nonce( $nonce, 'kototsugi_quick_post_login' ) ) {
+			kototsugi_render_quick_post_login( __( 'The passphrase is not correct.', 'kototsugi' ) );
+			exit;
+		}
+		if ( ! kototsugi_claim_quick_post_login_attempt() ) {
+			status_header( 429 );
 			kototsugi_render_quick_post_login( __( 'Too many attempts. Wait 15 minutes and try again.', 'kototsugi' ) );
 			exit;
 		}
-		if ( ! wp_verify_nonce( $nonce, 'kototsugi_quick_post_login' ) || ! wp_check_password( $passphrase, $settings['password_hash'] ) ) {
-			kototsugi_record_quick_post_login_failure();
+		if ( ! wp_check_password( $passphrase, $settings['password_hash'] ) ) {
 			kototsugi_render_quick_post_login( __( 'The passphrase is not correct.', 'kototsugi' ) );
 			exit;
 		}
@@ -1368,6 +1597,7 @@ function kototsugi_handle_quick_post_request() {
 	if ( 'logout' === $action && $authenticated ) {
 		$token = isset( $_POST['kototsugi_form_token'] ) ? sanitize_text_field( wp_unslash( $_POST['kototsugi_form_token'] ) ) : '';
 		if ( kototsugi_verify_quick_post_form_token( $token, 'logout', $cookie ) ) {
+			kototsugi_revoke_quick_post_session( $cookie, $settings );
 			kototsugi_set_quick_post_cookie( '', time() - HOUR_IN_SECONDS );
 		}
 		wp_safe_redirect( kototsugi_quick_post_url() );
@@ -1405,12 +1635,21 @@ function kototsugi_handle_quick_post_request() {
 			exit;
 		}
 
-		wp_safe_redirect( add_query_arg( 'kototsugi-posted', (int) $post_id, kototsugi_quick_post_url() ) );
+		wp_safe_redirect(
+			add_query_arg(
+				array(
+					'kototsugi-posted'  => (int) $post_id,
+					'kototsugi-receipt' => kototsugi_quick_post_receipt_token( $post_id, $cookie ),
+				),
+				kototsugi_quick_post_url()
+			)
+		);
 		exit;
 	}
 
 	$posted_id = isset( $_GET['kototsugi-posted'] ) ? absint( $_GET['kototsugi-posted'] ) : 0;
-	if ( $posted_id && get_post_meta( $posted_id, '_kototsugi_quick_post', true ) ) {
+	$receipt   = isset( $_GET['kototsugi-receipt'] ) ? sanitize_text_field( wp_unslash( $_GET['kototsugi-receipt'] ) ) : '';
+	if ( $posted_id && kototsugi_verify_quick_post_receipt_token( $receipt, $posted_id, $cookie ) && get_post_meta( $posted_id, '_kototsugi_quick_post', true ) ) {
 		kototsugi_render_quick_post_success( $posted_id, $settings );
 		exit;
 	}

@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,9 +50,9 @@ Front Matter `status` and `author` values are silently ignored in Quick Post bec
 
 The source textarea works with the operating system's standard dictation. KOTOTSUGI does not request microphone access, record audio, or connect to a speech service.
 
-The posting page uses a shared passphrase, throttles repeated login failures, keeps a signed browser session for 30 days, verifies submission tokens, and prevents duplicate submissions. Changing the passphrase or using the administrator's sign-out-all action invalidates existing sessions.
+The posting page uses a shared passphrase, atomically throttles repeated login failures, keeps a server-tracked signed browser session for 30 days, verifies submission tokens, and prevents duplicate submissions. Signing out revokes that browser session. Changing delegated authority, changing the passphrase, or using the administrator's sign-out-all action invalidates existing sessions.
 
-Administrators choose a fixed publishing destination for the posting page. Posts, Pages, and custom post types that support titles and the editor are available. KOTOTSUGI also verifies that the selected author can edit or publish that content type.
+Administrators choose a fixed publishing destination for the posting page. Posts, Pages, and custom post types that support titles and the editor are available. KOTOTSUGI verifies that the selected author can create or publish that content type, and requires the author's upload permission when images are attached.
 
 The free workflow requires a person to supply, review, and submit each draft. Inbound email, webhooks, rule-based automatic publishing, multiple posting profiles, approval flows, delivery logs, and retries are not included in this version.
 
@@ -83,6 +83,15 @@ KOTOTSUGI recognizes a focused YAML-compatible subset intended for AI-generated 
 Unknown Front Matter keys are listed in the workspace and are not applied. KOTOTSUGI does not change the post author, publication status, or publication date from Front Matter.
 
 == Changelog ==
+
+= 0.5.1 =
+* Enforce custom post type creation and media upload capabilities in Quick Post.
+* Add server-tracked sessions with individual logout revocation and session-scoped local drafts.
+* Make login attempt and duplicate-submission reservations atomic.
+* Bind completion receipts to the current session and submission.
+* Limit submitted block depth and count before recursive processing.
+* Complete image handling before transitioning a Quick Post to published status.
+* Require attachment edit permission before reusing an imported remote image.
 
 = 0.5.0 =
 * Add the standalone Quick Post workflow for contributors who do not use wp-admin.

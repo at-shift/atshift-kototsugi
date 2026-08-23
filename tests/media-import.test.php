@@ -39,6 +39,7 @@ if ( ! $admins ) {
 
 $attachment_id = 0;
 $post_id       = 0;
+$restricted_user_id = 0;
 $remote_url    = 'https://93.184.216.34/kototsugi-test.png';
 $png_bytes     = base64_decode( 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', true );
 
@@ -105,6 +106,24 @@ try {
 	$assert( $attachment_id === (int) $second_data['id'], 'The duplicate source URL created another attachment.' );
 	$assert( ! empty( $second_data['reused'] ), 'The duplicate image response was not marked as reused.' );
 
+	$restricted_user_id = wp_insert_user(
+		array(
+			'user_login' => 'kototsugi-uploader-' . strtolower( wp_generate_password( 8, false, false ) ),
+			'user_pass'  => wp_generate_password( 24, true, true ),
+			'user_email' => 'kototsugi-media-' . wp_generate_uuid4() . '@example.test',
+			'role'       => 'author',
+		)
+	);
+	$assert( ! is_wp_error( $restricted_user_id ), 'The restricted media test user could not be created.' );
+	wp_set_current_user( $restricted_user_id );
+	$reuse_request = new WP_REST_Request( 'POST', '/kototsugi/v1/images/import' );
+	$reuse_request->set_param( 'url', $remote_url );
+	$reuse_request->set_param( 'alt', 'Unauthorized replacement text' );
+	$reuse_response = kototsugi_import_remote_image( $reuse_request );
+	$assert( is_wp_error( $reuse_response ) && 'kototsugi_image_reuse_forbidden' === $reuse_response->get_error_code(), 'A user without edit access must not reuse or modify another author\'s attachment.' );
+	$assert( 'KOTOTSUGI test image' === get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ), 'A rejected reuse must not change attachment alternative text.' );
+	wp_set_current_user( $admins[0]->ID );
+
 	$unsafe_request = new WP_REST_Request( 'POST', '/kototsugi/v1/images/import' );
 	$unsafe_request->set_param( 'url', 'http://127.0.0.1/private.png' );
 	$unsafe_response = kototsugi_import_remote_image( $unsafe_request );
@@ -124,5 +143,9 @@ try {
 	}
 	if ( $post_id && ! is_wp_error( $post_id ) ) {
 		wp_delete_post( $post_id, true );
+	}
+	if ( $restricted_user_id && ! is_wp_error( $restricted_user_id ) ) {
+		require_once ABSPATH . 'wp-admin/includes/user.php';
+		wp_delete_user( $restricted_user_id );
 	}
 }

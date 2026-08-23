@@ -5,6 +5,7 @@
 	var config = window.kototsugiQuickPostConfig || {};
 	var storageKey = config.storageKey || 'kototsugi-quick-post';
 	var form = document.getElementById('kototsugi-quick-post-form');
+	var logoutForm = document.getElementById('kototsugi-quick-logout-form');
 
 	function text(value) {
 		return wp && wp.i18n && wp.i18n.__ ? wp.i18n.__(value, 'kototsugi') : value;
@@ -48,6 +49,11 @@
 		} catch (error) {
 			// Storage is optional. The submitted form still retains the title on errors.
 		}
+	}
+
+	function clearStoredDraft() {
+		storeSource('');
+		storeTitle('');
 	}
 
 	function createRequestId() {
@@ -147,8 +153,11 @@
 	}
 
 	if (config.clearDraft) {
-		storeSource('');
-		storeTitle('');
+		clearStoredDraft();
+	}
+
+	if (logoutForm) {
+		logoutForm.addEventListener('submit', clearStoredDraft);
 	}
 
 	if (!form || !parser || !wp) {

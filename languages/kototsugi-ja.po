@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KOTOTSUGI 0.5.0\n"
+"Project-Id-Version: KOTOTSUGI 0.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
-"POT-Creation-Date: 2026-08-23 13:20+0900\n"
-"PO-Revision-Date: 2026-08-23 15:51+0900\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-23 18:05+0900\n"
 "Last-Translator: @shift\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -91,6 +91,9 @@ msgstr "この画像 URL は許可されていません。"
 
 msgid "You are not allowed to attach images to this post."
 msgstr "この投稿に画像を添付する権限がありません。"
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "このメディアライブラリ画像を再利用する権限がありません。"
 
 msgid "The temporary file could not be created."
 msgstr "一時ファイルを作成できませんでした。"
@@ -538,8 +541,8 @@ msgstr "かんたん投稿設定を保存しました。"
 msgid "Every Quick Post browser was signed out."
 msgstr "すべてのかんたん投稿ブラウザーからログアウトしました。"
 
-msgid "Choose an author who can edit the selected content type."
-msgstr "選択した投稿タイプを編集できる投稿者を選択してください。"
+msgid "Choose an author who can create the selected content type."
+msgstr "選択した投稿タイプを作成できる投稿者を選択してください。"
 
 msgid "The selected author cannot publish the selected content type."
 msgstr "選択した投稿者には、選択した投稿タイプを公開する権限がありません。"
@@ -730,8 +733,14 @@ msgstr ""
 msgid "One or more images could not be saved to the Media Library."
 msgstr "画像をメディアライブラリに保存できませんでした。"
 
+msgid "The selected post author is not allowed to upload images."
+msgstr "選択した投稿者には画像をアップロードする権限がありません。"
+
 msgid "The attached images could not be added to the article."
 msgstr "添付画像を記事へ追加できませんでした。"
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
+msgstr "記事を公開できませんでした。もう一度試すか、サイト管理者へ確認してください。"
 
 msgid "Review post"
 msgstr "投稿を確認"

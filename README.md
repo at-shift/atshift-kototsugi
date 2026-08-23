@@ -4,7 +4,7 @@ Turn AI-friendly Markdown into editable WordPress blocks.
 
 KOTOTSUGI adds a focused Markdown import workspace to the WordPress block editor. Paste a draft created by an AI writing tool or load a local Markdown file, review the result in a live preview, and insert it as standard WordPress blocks that remain fully editable.
 
-The current version is 0.5.0.
+The current version is 0.5.1.
 
 ## The Name: KOTOTSUGI (言継ぎ)
 
@@ -29,11 +29,12 @@ For this project, the name represents carrying words from an AI-generated Markdo
 - Keep the original external URL when an image cannot be imported
 - Generate standard WordPress blocks that remain editable after insertion
 - Offer a standalone **Quick Post** page that does not expose the WordPress admin screen
-- Protect Quick Post with a shared passphrase, login throttling, signed 30-day browser sessions, CSRF tokens, and duplicate-submission prevention
+- Protect Quick Post with a shared passphrase, atomic login throttling, revocable signed 30-day browser sessions, CSRF tokens, and duplicate-submission prevention
 - Accept plain text or pasted Markdown, then require a preview and warning review before submission
 - Turn simple Quick Post prefixes into structured content: `@` place, `!` important, `※` note, `¥` price, and `☎` phone
 - Let the administrator select the Quick Post display language independently from the site language
 - Let an administrator fix the author, category, and draft/publish behavior so contributors cannot change them accidentally
+- Enforce the selected content type's creation capability and the author's media upload capability
 
 The default workflow stays deliberately simple: load a draft, review the preview, and insert it. Front Matter values are explained under **Post settings**, while warnings and insertion behavior are grouped under **Review before applying**. Adding at the cursor or replacing the current body never auto-saves the post. Only **Create new draft** saves a separate draft automatically.
 

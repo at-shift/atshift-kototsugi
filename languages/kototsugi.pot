@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KOTOTSUGI 0.5.0\n"
+"Project-Id-Version: KOTOTSUGI 0.5.1\n"
 "Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
-"POT-Creation-Date: 2026-08-23 13:20+0900\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,6 +84,9 @@ msgid "This image URL is not allowed."
 msgstr ""
 
 msgid "You are not allowed to attach images to this post."
+msgstr ""
+
+msgid "You are not allowed to reuse this Media Library image."
 msgstr ""
 
 msgid "The temporary file could not be created."
@@ -533,7 +536,7 @@ msgstr ""
 msgid "Every Quick Post browser was signed out."
 msgstr ""
 
-msgid "Choose an author who can edit the selected content type."
+msgid "Choose an author who can create the selected content type."
 msgstr ""
 
 msgid "The selected author cannot publish the selected content type."
@@ -719,7 +722,13 @@ msgstr ""
 msgid "One or more images could not be saved to the Media Library."
 msgstr ""
 
+msgid "The selected post author is not allowed to upload images."
+msgstr ""
+
 msgid "The attached images could not be added to the article."
+msgstr ""
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
 msgstr ""
 
 msgid "Review post"

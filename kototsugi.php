@@ -3,7 +3,7 @@
  * Plugin Name: KOTOTSUGI
  * Plugin URI: https://github.com/at-shift/atshift-kototsugi
  * Description: Turn AI-friendly Markdown into editable WordPress blocks.
- * Version: 0.5.0
+ * Version: 0.5.1
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: @shift
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KOTOTSUGI_VERSION', '0.5.0' );
+define( 'KOTOTSUGI_VERSION', '0.5.1' );
 define( 'KOTOTSUGI_FILE', __FILE__ );
 define( 'KOTOTSUGI_URL', plugin_dir_url( __FILE__ ) );
 define( 'KOTOTSUGI_MAX_REMOTE_IMAGE_BYTES', 10 * MB_IN_BYTES );
@@ -206,6 +206,13 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 
 	if ( $existing_ids ) {
 		$attachment_id = (int) $existing_ids[0];
+		if ( ! current_user_can( 'edit_post', $attachment_id ) ) {
+			return new WP_Error(
+				'kototsugi_image_reuse_forbidden',
+				__( 'You are not allowed to reuse this Media Library image.', 'kototsugi' ),
+				array( 'status' => 403 )
+			);
+		}
 		if ( $alt && ! get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) {
 			update_post_meta( $attachment_id, '_wp_attachment_image_alt', $alt );
 		}
