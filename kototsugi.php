@@ -2,8 +2,8 @@
 /**
  * Plugin Name: KOTOTSUGI
  * Plugin URI: https://github.com/at-shift/atshift-kototsugi
- * Description: AIが作成したMarkdownを、編集可能なWordPressブロックへ変換します。
- * Version: 0.4.0
+ * Description: Turn AI-friendly Markdown into editable WordPress blocks.
+ * Version: 0.4.1
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: @shift
@@ -11,6 +11,7 @@
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: kototsugi
+ * Domain Path: /languages
  *
  * @package Kototsugi
  */
@@ -19,10 +20,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KOTOTSUGI_VERSION', '0.4.0' );
+define( 'KOTOTSUGI_VERSION', '0.4.1' );
 define( 'KOTOTSUGI_FILE', __FILE__ );
 define( 'KOTOTSUGI_URL', plugin_dir_url( __FILE__ ) );
 define( 'KOTOTSUGI_MAX_REMOTE_IMAGE_BYTES', 10 * MB_IN_BYTES );
+
+/**
+ * Loads the bundled Japanese translation.
+ */
+function kototsugi_load_textdomain() {
+	// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound -- The GitHub package includes its Japanese translation for immediate use.
+	load_plugin_textdomain(
+		'kototsugi',
+		false,
+		dirname( plugin_basename( KOTOTSUGI_FILE ) ) . '/languages'
+	);
+}
+add_action( 'init', 'kototsugi_load_textdomain' );
 
 /**
  * Registers the authenticated endpoint used to sideload remote article images.
@@ -133,7 +147,7 @@ function kototsugi_remote_image_response( $attachment_id, $reused = false ) {
 	if ( ! $url ) {
 		return new WP_Error(
 			'kototsugi_attachment_url_missing',
-			__( '取り込んだ画像URLを作成できませんでした。', 'kototsugi' ),
+			__( 'The imported image URL could not be created.', 'kototsugi' ),
 			array( 'status' => 500 )
 		);
 	}
@@ -161,7 +175,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 	if ( ! kototsugi_is_safe_remote_image_url( $url ) ) {
 		return new WP_Error(
 			'kototsugi_unsafe_image_url',
-			__( 'この画像URLは許可されていません。', 'kototsugi' ),
+			__( 'This image URL is not allowed.', 'kototsugi' ),
 			array( 'status' => 400 )
 		);
 	}
@@ -169,7 +183,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 	if ( $post_id && ! current_user_can( 'edit_post', $post_id ) ) {
 		return new WP_Error(
 			'kototsugi_invalid_image_parent',
-			__( 'この投稿に画像を添付する権限がありません。', 'kototsugi' ),
+			__( 'You are not allowed to attach images to this post.', 'kototsugi' ),
 			array( 'status' => 403 )
 		);
 	}
@@ -206,7 +220,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 	if ( ! $tmp_file ) {
 		return new WP_Error(
 			'kototsugi_image_temp_failed',
-			__( '一時ファイルを作成できませんでした。', 'kototsugi' ),
+			__( 'The temporary file could not be created.', 'kototsugi' ),
 			array( 'status' => 500 )
 		);
 	}
@@ -227,7 +241,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 		wp_delete_file( $tmp_file );
 		return new WP_Error(
 			'kototsugi_image_download_failed',
-			__( '外部画像をダウンロードできませんでした。', 'kototsugi' ),
+			__( 'The remote image could not be downloaded.', 'kototsugi' ),
 			array( 'status' => 502 )
 		);
 	}
@@ -236,7 +250,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 		wp_delete_file( $tmp_file );
 		return new WP_Error(
 			'kototsugi_image_http_error',
-			__( '外部画像から予期しない応答が返されました。', 'kototsugi' ),
+			__( 'The remote image returned an unexpected response.', 'kototsugi' ),
 			array( 'status' => 502 )
 		);
 	}
@@ -246,7 +260,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 		wp_delete_file( $tmp_file );
 		return new WP_Error(
 			'kototsugi_image_too_large',
-			__( '外部画像がアップロードサイズ上限を超えています。', 'kototsugi' ),
+			__( 'The remote image exceeds the upload size limit.', 'kototsugi' ),
 			array( 'status' => 413 )
 		);
 	}
@@ -259,7 +273,7 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 		wp_delete_file( $tmp_file );
 		return new WP_Error(
 			'kototsugi_image_type_not_allowed',
-			__( 'ダウンロードしたファイルは対応画像ではありません。', 'kototsugi' ),
+			__( 'The downloaded file is not a supported image.', 'kototsugi' ),
 			array( 'status' => 415 )
 		);
 	}
@@ -293,7 +307,8 @@ function kototsugi_enqueue_editor_assets() {
 	$editor_script = plugin_dir_path( __FILE__ ) . 'assets/editor.js';
 	$editor_style  = plugin_dir_path( __FILE__ ) . 'assets/editor.css';
 	$shared_style  = plugin_dir_path( __FILE__ ) . 'assets/style.css';
-	$sample_file   = plugin_dir_path( __FILE__ ) . 'examples/kototsugi-sample.md';
+	$sample_name   = 0 === strpos( determine_locale(), 'ja' ) ? 'kototsugi-sample.md' : 'kototsugi-sample-en.md';
+	$sample_file   = plugin_dir_path( __FILE__ ) . 'examples/' . $sample_name;
 	$rules_file    = plugin_dir_path( __FILE__ ) . 'rules/KOTOTSUGI-RULES.md';
 
 	wp_enqueue_script(
@@ -314,6 +329,12 @@ function kototsugi_enqueue_editor_assets() {
 		true
 	);
 
+	wp_set_script_translations(
+		'kototsugi-editor',
+		'kototsugi',
+		plugin_dir_path( __FILE__ ) . 'languages'
+	);
+
 	wp_add_inline_script(
 		'kototsugi-editor',
 		'window.kototsugiEditorConfig = ' . wp_json_encode(
@@ -321,7 +342,7 @@ function kototsugi_enqueue_editor_assets() {
 				'sampleMarkdownUrl' => add_query_arg(
 					'ver',
 					file_exists( $sample_file ) ? (string) filemtime( $sample_file ) : KOTOTSUGI_VERSION,
-					KOTOTSUGI_URL . 'examples/kototsugi-sample.md'
+					KOTOTSUGI_URL . 'examples/' . $sample_name
 				),
 				'rulesMarkdownUrl'  => add_query_arg(
 					'ver',

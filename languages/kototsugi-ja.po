@@ -1,0 +1,427 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 0.4.1\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"Last-Translator: @shift\n"
+"PO-Revision-Date: 2026-08-23 11:20+0900\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: kototsugi\n"
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "AIが作成したMarkdownを、編集可能なWordPressブロックへ変換します。"
+
+msgid "The imported image URL could not be created."
+msgstr "取り込んだ画像URLを作成できませんでした。"
+
+msgid "This image URL is not allowed."
+msgstr "この画像URLは許可されていません。"
+
+msgid "You are not allowed to attach images to this post."
+msgstr "この投稿に画像を添付する権限がありません。"
+
+msgid "The temporary file could not be created."
+msgstr "一時ファイルを作成できませんでした。"
+
+msgid "The remote image could not be downloaded."
+msgstr "外部画像をダウンロードできませんでした。"
+
+msgid "The remote image returned an unexpected response."
+msgstr "外部画像から予期しない応答が返されました。"
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "外部画像がアップロードサイズ上限を超えています。"
+
+msgid "The downloaded file is not a supported image."
+msgstr "ダウンロードしたファイルは対応画像ではありません。"
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt、最大2MB"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "2MB以下の .md、.markdown、.txt ファイルを選択してください。"
+
+msgid "Copy AI authoring rules"
+msgstr "AI用ルールをコピー"
+
+msgid "AI authoring rules copied."
+msgstr "AI用ルールをコピーしました。"
+
+msgid "AI authoring rules could not be copied."
+msgstr "AI用ルールをコピーできませんでした。"
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr "Front Matterのtitleと同じH1は、本文での重複を避けるため自動的に除外します。"
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr "Front Matterのtitleと最初のH1が異なります。反映時はH1が本文から除外されます。"
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "Front Matterを閉じる --- が見つかりません。"
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "H1が複数あります。投稿タイトルとして使うH1を1つにしてください。"
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "HTMLはそのまま実行されず、テキストとして挿入されます。"
+
+msgid "Markdown insertion method"
+msgstr "Markdownの反映方法"
+
+msgid "The Markdown import could not be completed."
+msgstr "Markdownの取り込み処理を完了できませんでした。"
+
+msgid "Back to Markdown"
+msgstr "Markdownへ戻る"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "Markdownをブロックへ変換できませんでした。"
+
+msgid "Enter some Markdown."
+msgstr "Markdownを入力してください。"
+
+msgid "Markdown file"
+msgstr "Markdownファイル"
+
+msgid "Load a Markdown file"
+msgstr "Markdownファイルの読み込み"
+
+msgid "Markdown file loaded."
+msgstr "Markdownファイルを読み込みました。"
+
+msgid "Choose a Markdown file"
+msgstr "Markdownファイルを選択"
+
+msgid "Markdown source"
+msgstr "Markdown原稿"
+
+msgid "Markdown posting"
+msgstr "Markdown投稿"
+
+msgid "Drop here"
+msgstr "ここにドロップ"
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr "このコードブロックは専用ブロックへ変換されず、通常のコードとして挿入されます。"
+
+msgid ". Check the heading hierarchy."
+msgstr "になっています。見出し階層を確認してください。"
+
+msgid " is followed by "
+msgstr "の次が"
+
+msgid "Apply featured image"
+msgstr "アイキャッチ画像を反映"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Categories"
+msgstr "カテゴリー"
+
+msgid "Apply categories"
+msgstr "カテゴリーを反映"
+
+msgid "Add at cursor"
+msgstr "カーソル位置へ追加"
+
+msgid "Copying..."
+msgstr "コピー中"
+
+msgid "The closing ``` for the code block was not found."
+msgstr "コードブロックを閉じる ``` が見つかりません。"
+
+msgid "Slug"
+msgstr "スラッグ"
+
+msgid "Apply slug"
+msgstr "スラッグを反映"
+
+msgid "Loading sample..."
+msgstr "セット中"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Tags"
+msgstr "タグ"
+
+msgid "Apply tags"
+msgstr "タグを反映"
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr "タスクリストは通常のリストとして変換され、チェック状態は保持されません。"
+
+msgid "Sample Markdown loaded."
+msgstr "テスト用Markdownをセットしました。"
+
+msgid "Sample Markdown could not be loaded."
+msgstr "テスト用Markdownを読み込めませんでした。"
+
+msgid "Load sample Markdown"
+msgstr "テスト用mdファイルをセット"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "ネストしたリストは1階層のリストとして変換されます。"
+
+msgid "The file could not be read."
+msgstr "ファイルを読み込めませんでした。"
+
+msgid "Choose file"
+msgstr "ファイルを選択"
+
+msgid "Insert as blocks"
+msgstr "ブロックとして挿入"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "ブロックを現在のカーソル位置に挿入しました。"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "There is no source to preview."
+msgstr "プレビューする原稿がありません。"
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr "一部の投稿設定は、この投稿タイプまたは現在の権限では反映できませんでした。"
+
+msgid "Some images or post settings could not be applied."
+msgstr "一部の画像または投稿設定は反映できませんでした。"
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr "下書きは作成されましたが、すべての変換処理を完了できませんでした。 "
+
+msgid "Open draft"
+msgstr "下書きを開く"
+
+msgid "Alt text"
+msgstr "代替テキスト"
+
+msgid " items"
+msgstr "件"
+
+msgid " categories or tags were created."
+msgstr "件のカテゴリーまたはタグを作成しました。"
+
+msgid " remote images will be saved to the Media Library."
+msgstr "件の外部画像をメディアライブラリへ保存します。"
+
+msgid " post settings were applied."
+msgstr "件の投稿設定を反映しました。"
+
+msgid " existing blocks will be replaced in the editor."
+msgstr "件の既存ブロックをエディター上で置き換えます。"
+
+msgid " existing blocks: confirm replacement"
+msgstr "件の既存ブロックを置き換えることを確認"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr "件の画像は保存できなかったため、本文では外部URLを維持しました。"
+
+msgid " images were saved to the Media Library."
+msgstr "件の画像をメディアライブラリに保存しました。"
+
+msgid " items to review"
+msgstr "件の確認事項"
+
+msgid " settings to apply"
+msgstr "件を適用"
+
+msgid "Workspace"
+msgstr "作業画面"
+
+msgid "Open workspace"
+msgstr "作業画面を開く"
+
+msgid "What will be saved"
+msgstr "保存される内容"
+
+msgid "No issues need fixing"
+msgstr "修正が必要な問題はありません"
+
+msgid "Source, post settings, and review"
+msgstr "原稿、投稿設定、確認と調整"
+
+msgid "Clear source"
+msgstr "原稿をクリア"
+
+msgid "Insertion method"
+msgstr "反映方法"
+
+msgid "Importing..."
+msgstr "取り込み中"
+
+msgid "Conversion options"
+msgstr "変換オプション"
+
+msgid "Preflight checks"
+msgstr "変換前チェック"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "変換前チェックのエラーを修正してください。"
+
+msgid "Save remote images to the Media Library"
+msgstr "外部画像をメディアライブラリに保存"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "The post has not been saved yet."
+msgstr "投稿はまだ保存されていません。"
+
+msgid "Apply post title"
+msgstr "投稿タイトルを反映"
+
+msgid "The post body was replaced with blocks."
+msgstr "投稿本文をブロックで置き換えました。"
+
+msgid "Post settings"
+msgstr "投稿設定"
+
+msgid "Applying post settings..."
+msgstr "投稿設定を反映中"
+
+msgid "Excerpt"
+msgstr "抜粋"
+
+msgid "Apply excerpt"
+msgstr "抜粋を反映"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "数式ブロックは専用表示へ変換されません。"
+
+msgid " characters"
+msgstr "文字"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "新規下書きをWordPressへ保存します。"
+
+msgid "Create new draft"
+msgstr "新規下書きを作成"
+
+msgid "A new draft was created."
+msgstr "新規下書きを作成しました。"
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "既存本文を置き換える確認が必要です。"
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr "最初のH1を投稿タイトルとして使い、本文からは除外します。"
+
+msgid "Use first H1 as post title"
+msgstr "最初のH1を投稿タイトルにする"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "未対応のFront Matter項目は反映しません:"
+
+msgid "Unsupported fields will not be applied:"
+msgstr "未対応の項目は反映しません:"
+
+msgid "Missing categories or tags will be created."
+msgstr "未登録のカテゴリー・タグがある場合は新しく作成します。"
+
+msgid "Create missing categories and tags"
+msgstr "未登録のカテゴリー・タグを作成"
+
+msgid "Create missing terms"
+msgstr "未登録の用語を作成"
+
+msgid "Apply content and settings"
+msgstr "本文と設定を反映"
+
+msgid "Replace content"
+msgstr "本文を置き換え"
+
+msgid "Replace the content"
+msgstr "本文を置き換える"
+
+msgid "Current Markdown source"
+msgstr "現在のMarkdown原稿"
+
+msgid "The current post will not be saved automatically."
+msgstr "現在の投稿は自動保存されません。"
+
+msgid "Image URL"
+msgstr "画像URL"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "画像URLはhttp、https、または / から始まるパスを使用してください。"
+
+msgid "Importing images..."
+msgstr "画像を取り込み中"
+
+msgid "Save images"
+msgstr "画像保存"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "画像記法を読み取れません。括弧とURLを確認してください。"
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr "相対画像はメディアライブラリへ保存されず、入力されたパスを維持します。"
+
+msgid "Review and adjust"
+msgstr "確認と調整"
+
+msgid "Review"
+msgstr "確認事項"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "脚注記法はリンク付き脚注へ変換されません。"
+
+msgid " line"
+msgstr "行目"
+
+msgid " line: edit in Markdown"
+msgstr "行目をMarkdownで編集"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Pasted source"
+msgstr "貼り付けた原稿"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr "Front Matterから読み取った投稿情報です。反映する項目を確認し、必要に応じて編集するか、チェックを外して反映対象から除外します。"
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr "警告と反映される内容を確認し、記事への反映方法と変換オプションを選びます。"
+
+msgid "Review before applying"
+msgstr "反映前の確認"
+
+msgid "Source, post settings, and review before applying"
+msgstr "原稿、投稿設定、反映前の確認"
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr "現在のカーソル位置へブロックを追加します。既存の本文は残り、投稿は自動保存しません。"
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr "現在の投稿本文をすべて置き換えます。実行前に確認が必要で、投稿は自動保存しません。"
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr "現在の投稿は変更せず、本文と選択した投稿設定を新しい下書きとして保存します。"
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr "# 記事タイトル\n\nここへMarkdownを貼り付けるか、ファイルをドロップします。"
+
+msgid "The bundled Markdown is unavailable."
+msgstr "同梱Markdownを利用できません。"
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "同梱Markdownを読み込めませんでした。"
+
+msgid "The clipboard is unavailable."
+msgstr "クリップボードを利用できません。"
+
+msgid "The draft ID was not found."
+msgstr "下書きIDが見つかりません。"
+
+msgid "The draft blocks were not found."
+msgstr "下書きブロックが見つかりません。"

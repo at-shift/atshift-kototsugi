@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.4.0
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ KOTOTSUGIは、ブロックエディターにMarkdown取込専用の作業画面
 
 == 使い方 ==
 
-エディターサイドバーからKOTOTSUGIを開き、`.md`、`.markdown`、`.txt` ファイルを選択するか、作業画面へMarkdownを貼り付けます。デスクトップでは原稿とプレビューを並べて表示し、狭い画面ではタブで切り替えます。通常はプレビューを確認して挿入するだけで、事前チェック、反映方法、変換設定が必要な場合だけ「確認と調整」を開きます。
+エディターサイドバーからKOTOTSUGIを開き、`.md`、`.markdown`、`.txt` ファイルを選択するか、作業画面へMarkdownを貼り付けます。デスクトップでは原稿とプレビューを並べて表示し、狭い画面ではタブで切り替えます。「投稿設定」でFront Matterの値を確認し、「反映前の確認」で警告、反映方法、変換オプションを確認します。
 
 初回確認では「テスト用mdファイルをセット」を選択すると、同梱サンプルを読み込んで作業画面を自動で開きます。「AI用ルールをコピー」では、ChatGPT、Claude、Geminiなどで共通利用できるMarkdown執筆ルールをコピーできます。
 
@@ -62,3 +62,13 @@ KOTOTSUGIは、AIが作成するMarkdown向けの限定的なYAML互換形式に
 * `featured_image_alt` または `image_alt`: アイキャッチ画像の代替テキスト
 
 未対応のFront Matter項目は作業画面へ表示し、投稿には反映しません。KOTOTSUGIはFront Matterから投稿者、公開状態、公開日時を変更しません。
+
+== Changelog ==
+
+= 0.4.1 =
+* WordPressのユーザー言語に従う表示に変更し、英語原文と日本語翻訳を同梱。
+* 投稿設定の件数、各タブの用途、3つの反映方法の動作説明を明確化。
+* 上下に重複していた「確認と調整」を、上部の「反映前の確認」タブに統合。
+
+= 0.4.0 =
+* Front Matter投稿設定、変換前チェック、3つの反映方法、外部画像取込、サンプル原稿、AI向け執筆ルールを追加。

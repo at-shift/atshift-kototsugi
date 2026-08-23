@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.4.0
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,9 +25,9 @@ The importer supports headings, paragraphs, emphasis, links, images, lists, tabl
 
 == Usage ==
 
-Open KOTOTSUGI from the editor sidebar, then choose a `.md`, `.markdown`, or `.txt` file or open the workspace and paste Markdown. The desktop workspace shows the source and preview side by side; narrow screens use workspace tabs. The default workflow remains simple: review the preview and insert. Open "Review and adjust" only when you need preflight results, insertion modes, or conversion settings.
+Open KOTOTSUGI from the editor sidebar, then choose a `.md`, `.markdown`, or `.txt` file or open the workspace and paste Markdown. The desktop workspace shows the source and preview side by side; narrow screens use workspace tabs. Use "Post settings" to review Front Matter values and "Review before applying" to check warnings, choose an insertion method, and adjust conversion options.
 
-For a first trial, choose "Set test Markdown file" in the sidebar. KOTOTSUGI loads a bundled sample and opens the workspace immediately. Choose "Copy AI authoring rules" to copy service-neutral Markdown rules for ChatGPT, Claude, Gemini, or another AI writing tool.
+For a first trial, choose "Load sample Markdown" in the sidebar. KOTOTSUGI loads a bundled sample and opens the workspace immediately. Choose "Copy AI authoring rules" to copy service-neutral Markdown rules for ChatGPT, Claude, Gemini, or another AI writing tool.
 
 The preflight check reports unsupported syntax, malformed or relative image URLs, heading-level jumps, multiple H1 headings, and title conflicts before content is applied. Each result links back to the relevant Markdown line. Informational adjustments do not block insertion; errors do.
 
@@ -62,3 +62,13 @@ KOTOTSUGI recognizes a focused YAML-compatible subset intended for AI-generated 
 * `featured_image_alt` or `image_alt`: featured image alternative text
 
 Unknown Front Matter keys are listed in the workspace and are not applied. KOTOTSUGI does not change the post author, publication status, or publication date from Front Matter.
+
+== Changelog ==
+
+= 0.4.1 =
+* Follow the WordPress user language, with English source strings and a bundled Japanese translation.
+* Clarify Post settings counts, tab purposes, and insertion method effects.
+* Replace the duplicated Review and adjust controls with one persistent Review before applying tab.
+
+= 0.4.0 =
+* Add Front Matter post settings, preflight checks, three insertion methods, remote image import, a sample article, and AI authoring rules.

@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-23 11:20+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "ja",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "AIが作成したMarkdownを、編集可能なWordPressブロックへ変換します。"
+      ],
+      "The imported image URL could not be created.": [
+        "取り込んだ画像URLを作成できませんでした。"
+      ],
+      "This image URL is not allowed.": [
+        "この画像URLは許可されていません。"
+      ],
+      "You are not allowed to attach images to this post.": [
+        "この投稿に画像を添付する権限がありません。"
+      ],
+      "The temporary file could not be created.": [
+        "一時ファイルを作成できませんでした。"
+      ],
+      "The remote image could not be downloaded.": [
+        "外部画像をダウンロードできませんでした。"
+      ],
+      "The remote image returned an unexpected response.": [
+        "外部画像から予期しない応答が返されました。"
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "外部画像がアップロードサイズ上限を超えています。"
+      ],
+      "The downloaded file is not a supported image.": [
+        "ダウンロードしたファイルは対応画像ではありません。"
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt、最大2MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "2MB以下の .md、.markdown、.txt ファイルを選択してください。"
+      ],
+      "Copy AI authoring rules": [
+        "AI用ルールをコピー"
+      ],
+      "AI authoring rules copied.": [
+        "AI用ルールをコピーしました。"
+      ],
+      "AI authoring rules could not be copied.": [
+        "AI用ルールをコピーできませんでした。"
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "Front Matterのtitleと同じH1は、本文での重複を避けるため自動的に除外します。"
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Front Matterのtitleと最初のH1が異なります。反映時はH1が本文から除外されます。"
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "Front Matterを閉じる --- が見つかりません。"
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "H1が複数あります。投稿タイトルとして使うH1を1つにしてください。"
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTMLはそのまま実行されず、テキストとして挿入されます。"
+      ],
+      "Markdown insertion method": [
+        "Markdownの反映方法"
+      ],
+      "The Markdown import could not be completed.": [
+        "Markdownの取り込み処理を完了できませんでした。"
+      ],
+      "Back to Markdown": [
+        "Markdownへ戻る"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Markdownをブロックへ変換できませんでした。"
+      ],
+      "Enter some Markdown.": [
+        "Markdownを入力してください。"
+      ],
+      "Markdown file": [
+        "Markdownファイル"
+      ],
+      "Load a Markdown file": [
+        "Markdownファイルの読み込み"
+      ],
+      "Markdown file loaded.": [
+        "Markdownファイルを読み込みました。"
+      ],
+      "Choose a Markdown file": [
+        "Markdownファイルを選択"
+      ],
+      "Markdown source": [
+        "Markdown原稿"
+      ],
+      "Markdown posting": [
+        "Markdown投稿"
+      ],
+      "Drop here": [
+        "ここにドロップ"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "このコードブロックは専用ブロックへ変換されず、通常のコードとして挿入されます。"
+      ],
+      ". Check the heading hierarchy.": [
+        "になっています。見出し階層を確認してください。"
+      ],
+      " is followed by ": [
+        "の次が"
+      ],
+      "Apply featured image": [
+        "アイキャッチ画像を反映"
+      ],
+      "Error": [
+        "エラー"
+      ],
+      "Categories": [
+        "カテゴリー"
+      ],
+      "Apply categories": [
+        "カテゴリーを反映"
+      ],
+      "Add at cursor": [
+        "カーソル位置へ追加"
+      ],
+      "Copying...": [
+        "コピー中"
+      ],
+      "The closing ``` for the code block was not found.": [
+        "コードブロックを閉じる ``` が見つかりません。"
+      ],
+      "Slug": [
+        "スラッグ"
+      ],
+      "Apply slug": [
+        "スラッグを反映"
+      ],
+      "Loading sample...": [
+        "セット中"
+      ],
+      "Title": [
+        "タイトル"
+      ],
+      "Tags": [
+        "タグ"
+      ],
+      "Apply tags": [
+        "タグを反映"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "タスクリストは通常のリストとして変換され、チェック状態は保持されません。"
+      ],
+      "Sample Markdown loaded.": [
+        "テスト用Markdownをセットしました。"
+      ],
+      "Sample Markdown could not be loaded.": [
+        "テスト用Markdownを読み込めませんでした。"
+      ],
+      "Load sample Markdown": [
+        "テスト用mdファイルをセット"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "ネストしたリストは1階層のリストとして変換されます。"
+      ],
+      "The file could not be read.": [
+        "ファイルを読み込めませんでした。"
+      ],
+      "Choose file": [
+        "ファイルを選択"
+      ],
+      "Insert as blocks": [
+        "ブロックとして挿入"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "ブロックを現在のカーソル位置に挿入しました。"
+      ],
+      "Preview": [
+        "プレビュー"
+      ],
+      "There is no source to preview.": [
+        "プレビューする原稿がありません。"
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "一部の投稿設定は、この投稿タイプまたは現在の権限では反映できませんでした。"
+      ],
+      "Some images or post settings could not be applied.": [
+        "一部の画像または投稿設定は反映できませんでした。"
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "下書きは作成されましたが、すべての変換処理を完了できませんでした。 "
+      ],
+      "Open draft": [
+        "下書きを開く"
+      ],
+      "Alt text": [
+        "代替テキスト"
+      ],
+      " items": [
+        "件"
+      ],
+      " categories or tags were created.": [
+        "件のカテゴリーまたはタグを作成しました。"
+      ],
+      " remote images will be saved to the Media Library.": [
+        "件の外部画像をメディアライブラリへ保存します。"
+      ],
+      " post settings were applied.": [
+        "件の投稿設定を反映しました。"
+      ],
+      " existing blocks will be replaced in the editor.": [
+        "件の既存ブロックをエディター上で置き換えます。"
+      ],
+      " existing blocks: confirm replacement": [
+        "件の既存ブロックを置き換えることを確認"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        "件の画像は保存できなかったため、本文では外部URLを維持しました。"
+      ],
+      " images were saved to the Media Library.": [
+        "件の画像をメディアライブラリに保存しました。"
+      ],
+      " items to review": [
+        "件の確認事項"
+      ],
+      " settings to apply": [
+        "件を適用"
+      ],
+      "Workspace": [
+        "作業画面"
+      ],
+      "Open workspace": [
+        "作業画面を開く"
+      ],
+      "What will be saved": [
+        "保存される内容"
+      ],
+      "No issues need fixing": [
+        "修正が必要な問題はありません"
+      ],
+      "Source, post settings, and review": [
+        "原稿、投稿設定、確認と調整"
+      ],
+      "Clear source": [
+        "原稿をクリア"
+      ],
+      "Insertion method": [
+        "反映方法"
+      ],
+      "Importing...": [
+        "取り込み中"
+      ],
+      "Conversion options": [
+        "変換オプション"
+      ],
+      "Preflight checks": [
+        "変換前チェック"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "変換前チェックのエラーを修正してください。"
+      ],
+      "Save remote images to the Media Library": [
+        "外部画像をメディアライブラリに保存"
+      ],
+      "Info": [
+        "情報"
+      ],
+      "The post has not been saved yet.": [
+        "投稿はまだ保存されていません。"
+      ],
+      "Apply post title": [
+        "投稿タイトルを反映"
+      ],
+      "The post body was replaced with blocks.": [
+        "投稿本文をブロックで置き換えました。"
+      ],
+      "Post settings": [
+        "投稿設定"
+      ],
+      "Applying post settings...": [
+        "投稿設定を反映中"
+      ],
+      "Excerpt": [
+        "抜粋"
+      ],
+      "Apply excerpt": [
+        "抜粋を反映"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "数式ブロックは専用表示へ変換されません。"
+      ],
+      " characters": [
+        "文字"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "新規下書きをWordPressへ保存します。"
+      ],
+      "Create new draft": [
+        "新規下書きを作成"
+      ],
+      "A new draft was created.": [
+        "新規下書きを作成しました。"
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "既存本文を置き換える確認が必要です。"
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "最初のH1を投稿タイトルとして使い、本文からは除外します。"
+      ],
+      "Use first H1 as post title": [
+        "最初のH1を投稿タイトルにする"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "未対応のFront Matter項目は反映しません:"
+      ],
+      "Unsupported fields will not be applied:": [
+        "未対応の項目は反映しません:"
+      ],
+      "Missing categories or tags will be created.": [
+        "未登録のカテゴリー・タグがある場合は新しく作成します。"
+      ],
+      "Create missing categories and tags": [
+        "未登録のカテゴリー・タグを作成"
+      ],
+      "Create missing terms": [
+        "未登録の用語を作成"
+      ],
+      "Apply content and settings": [
+        "本文と設定を反映"
+      ],
+      "Replace content": [
+        "本文を置き換え"
+      ],
+      "Replace the content": [
+        "本文を置き換える"
+      ],
+      "Current Markdown source": [
+        "現在のMarkdown原稿"
+      ],
+      "The current post will not be saved automatically.": [
+        "現在の投稿は自動保存されません。"
+      ],
+      "Image URL": [
+        "画像URL"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "画像URLはhttp、https、または / から始まるパスを使用してください。"
+      ],
+      "Importing images...": [
+        "画像を取り込み中"
+      ],
+      "Save images": [
+        "画像保存"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "画像記法を読み取れません。括弧とURLを確認してください。"
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "相対画像はメディアライブラリへ保存されず、入力されたパスを維持します。"
+      ],
+      "Review and adjust": [
+        "確認と調整"
+      ],
+      "Review": [
+        "確認事項"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "脚注記法はリンク付き脚注へ変換されません。"
+      ],
+      " line": [
+        "行目"
+      ],
+      " line: edit in Markdown": [
+        "行目をMarkdownで編集"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Pasted source": [
+        "貼り付けた原稿"
+      ],
+      "Close": [
+        "閉じる"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "Front Matterから読み取った投稿情報です。反映する項目を確認し、必要に応じて編集するか、チェックを外して反映対象から除外します。"
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "警告と反映される内容を確認し、記事への反映方法と変換オプションを選びます。"
+      ],
+      "Review before applying": [
+        "反映前の確認"
+      ],
+      "Source, post settings, and review before applying": [
+        "原稿、投稿設定、反映前の確認"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "現在のカーソル位置へブロックを追加します。既存の本文は残り、投稿は自動保存しません。"
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "現在の投稿本文をすべて置き換えます。実行前に確認が必要で、投稿は自動保存しません。"
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "現在の投稿は変更せず、本文と選択した投稿設定を新しい下書きとして保存します。"
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# 記事タイトル\n\nここへMarkdownを貼り付けるか、ファイルをドロップします。"
+      ],
+      "The bundled Markdown is unavailable.": [
+        "同梱Markdownを利用できません。"
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "同梱Markdownを読み込めませんでした。"
+      ],
+      "The clipboard is unavailable.": [
+        "クリップボードを利用できません。"
+      ],
+      "The draft ID was not found.": [
+        "下書きIDが見つかりません。"
+      ],
+      "The draft blocks were not found.": [
+        "下書きブロックが見つかりません。"
+      ]
+    }
+  }
+}

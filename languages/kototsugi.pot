@@ -1,0 +1,423 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 0.4.1\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 11:30+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: kototsugi\n"
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr ""
+
+msgid "The imported image URL could not be created."
+msgstr ""
+
+msgid "This image URL is not allowed."
+msgstr ""
+
+msgid "You are not allowed to attach images to this post."
+msgstr ""
+
+msgid "The temporary file could not be created."
+msgstr ""
+
+msgid "The remote image could not be downloaded."
+msgstr ""
+
+msgid "The remote image returned an unexpected response."
+msgstr ""
+
+msgid "The remote image exceeds the upload size limit."
+msgstr ""
+
+msgid "The downloaded file is not a supported image."
+msgstr ""
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ""
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr ""
+
+msgid "Copy AI authoring rules"
+msgstr ""
+
+msgid "AI authoring rules copied."
+msgstr ""
+
+msgid "AI authoring rules could not be copied."
+msgstr ""
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr ""
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr ""
+
+msgid "The closing --- for Front Matter was not found."
+msgstr ""
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr ""
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr ""
+
+msgid "Markdown insertion method"
+msgstr ""
+
+msgid "The Markdown import could not be completed."
+msgstr ""
+
+msgid "Back to Markdown"
+msgstr ""
+
+msgid "Markdown could not be converted to blocks."
+msgstr ""
+
+msgid "Enter some Markdown."
+msgstr ""
+
+msgid "Markdown file"
+msgstr ""
+
+msgid "Load a Markdown file"
+msgstr ""
+
+msgid "Markdown file loaded."
+msgstr ""
+
+msgid "Choose a Markdown file"
+msgstr ""
+
+msgid "Markdown source"
+msgstr ""
+
+msgid "Markdown posting"
+msgstr ""
+
+msgid "Drop here"
+msgstr ""
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr ""
+
+msgid ". Check the heading hierarchy."
+msgstr ""
+
+msgid " is followed by "
+msgstr ""
+
+msgid "Apply featured image"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Apply categories"
+msgstr ""
+
+msgid "Add at cursor"
+msgstr ""
+
+msgid "Copying..."
+msgstr ""
+
+msgid "The closing ``` for the code block was not found."
+msgstr ""
+
+msgid "Slug"
+msgstr ""
+
+msgid "Apply slug"
+msgstr ""
+
+msgid "Loading sample..."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Apply tags"
+msgstr ""
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr ""
+
+msgid "Sample Markdown loaded."
+msgstr ""
+
+msgid "Sample Markdown could not be loaded."
+msgstr ""
+
+msgid "Load sample Markdown"
+msgstr ""
+
+msgid "Nested lists will be flattened to one level."
+msgstr ""
+
+msgid "The file could not be read."
+msgstr ""
+
+msgid "Choose file"
+msgstr ""
+
+msgid "Insert as blocks"
+msgstr ""
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "There is no source to preview."
+msgstr ""
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr ""
+
+msgid "Some images or post settings could not be applied."
+msgstr ""
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr ""
+
+msgid "Open draft"
+msgstr ""
+
+msgid "Alt text"
+msgstr ""
+
+msgid " items"
+msgstr ""
+
+msgid " categories or tags were created."
+msgstr ""
+
+msgid " remote images will be saved to the Media Library."
+msgstr ""
+
+msgid " post settings were applied."
+msgstr ""
+
+msgid " existing blocks will be replaced in the editor."
+msgstr ""
+
+msgid " existing blocks: confirm replacement"
+msgstr ""
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr ""
+
+msgid " images were saved to the Media Library."
+msgstr ""
+
+msgid " items to review"
+msgstr ""
+
+msgid " settings to apply"
+msgstr ""
+
+msgid "Workspace"
+msgstr ""
+
+msgid "Open workspace"
+msgstr ""
+
+msgid "What will be saved"
+msgstr ""
+
+msgid "No issues need fixing"
+msgstr ""
+
+msgid "Source, post settings, and review"
+msgstr ""
+
+msgid "Clear source"
+msgstr ""
+
+msgid "Insertion method"
+msgstr ""
+
+msgid "Importing..."
+msgstr ""
+
+msgid "Conversion options"
+msgstr ""
+
+msgid "Preflight checks"
+msgstr ""
+
+msgid "Fix the preflight errors before continuing."
+msgstr ""
+
+msgid "Save remote images to the Media Library"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "The post has not been saved yet."
+msgstr ""
+
+msgid "Apply post title"
+msgstr ""
+
+msgid "The post body was replaced with blocks."
+msgstr ""
+
+msgid "Post settings"
+msgstr ""
+
+msgid "Applying post settings..."
+msgstr ""
+
+msgid "Excerpt"
+msgstr ""
+
+msgid "Apply excerpt"
+msgstr ""
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr ""
+
+msgid " characters"
+msgstr ""
+
+msgid "A new draft will be saved to WordPress."
+msgstr ""
+
+msgid "Create new draft"
+msgstr ""
+
+msgid "A new draft was created."
+msgstr ""
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr ""
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr ""
+
+msgid "Use first H1 as post title"
+msgstr ""
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr ""
+
+msgid "Unsupported fields will not be applied:"
+msgstr ""
+
+msgid "Missing categories or tags will be created."
+msgstr ""
+
+msgid "Create missing categories and tags"
+msgstr ""
+
+msgid "Create missing terms"
+msgstr ""
+
+msgid "Apply content and settings"
+msgstr ""
+
+msgid "Replace content"
+msgstr ""
+
+msgid "Replace the content"
+msgstr ""
+
+msgid "Current Markdown source"
+msgstr ""
+
+msgid "The current post will not be saved automatically."
+msgstr ""
+
+msgid "Image URL"
+msgstr ""
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr ""
+
+msgid "Importing images..."
+msgstr ""
+
+msgid "Save images"
+msgstr ""
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr ""
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr ""
+
+msgid "Review and adjust"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr ""
+
+msgid " line"
+msgstr ""
+
+msgid " line: edit in Markdown"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "Pasted source"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr ""
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr ""
+
+msgid "Review before applying"
+msgstr ""
+
+msgid "Source, post settings, and review before applying"
+msgstr ""
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr ""
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr ""
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr ""
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr ""
+
+msgid "The bundled Markdown is unavailable."
+msgstr ""
+
+msgid "The bundled Markdown could not be loaded."
+msgstr ""
+
+msgid "The clipboard is unavailable."
+msgstr ""
+
+msgid "The draft ID was not found."
+msgstr ""
+
+msgid "The draft blocks were not found."
+msgstr ""

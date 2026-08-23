@@ -404,7 +404,7 @@
 		}
 
 		if (/^---\n/.test(normalized) && !document.hasFrontMatter) {
-			addIssue('unclosed_front_matter', 'warning', 1, text('Front Matterを閉じる --- が見つかりません。'));
+			addIssue('unclosed_front_matter', 'warning', 1, text('The closing --- for Front Matter was not found.'));
 		}
 
 		document.unknownFields.forEach(function (field) {
@@ -415,7 +415,7 @@
 				'unsupported_front_matter_' + field.toLowerCase(),
 				'info',
 				fieldIndex >= 0 ? fieldIndex + 1 : 1,
-				text('未対応のFront Matter項目は反映しません:') + ' ' + field
+				text('Unsupported Front Matter fields will not be applied:') + ' ' + field
 			);
 		});
 
@@ -429,7 +429,7 @@
 					inFence = true;
 					fenceStartLine = lineNumber;
 					if (/^(mermaid|math)$/i.test(match[1])) {
-						addIssue('unsupported_fenced_language', 'warning', lineNumber, text('このコードブロックは専用ブロックへ変換されず、通常のコードとして挿入されます。'));
+						addIssue('unsupported_fenced_language', 'warning', lineNumber, text('This code block will be inserted as a regular code block because no dedicated block is available.'));
 					}
 				} else {
 					inFence = false;
@@ -452,33 +452,33 @@
 			}
 
 			if (/^\s*[-+*]\s+\[[ xX]\]\s+/.test(line)) {
-				addIssue('unsupported_task_list', 'warning', lineNumber, text('タスクリストは通常のリストとして変換され、チェック状態は保持されません。'));
+				addIssue('unsupported_task_list', 'warning', lineNumber, text('Task lists will be converted to regular lists without preserving checkbox states.'));
 			}
 			if (/^(?:\t|\s{2,})(?:[-+*]|\d+\.)\s+/.test(line)) {
-				addIssue('unsupported_nested_list', 'warning', lineNumber, text('ネストしたリストは1階層のリストとして変換されます。'));
+				addIssue('unsupported_nested_list', 'warning', lineNumber, text('Nested lists will be flattened to one level.'));
 			}
 			if (/\[\^[^\]]+\]/.test(line)) {
-				addIssue('unsupported_footnote', 'warning', lineNumber, text('脚注記法はリンク付き脚注へ変換されません。'));
+				addIssue('unsupported_footnote', 'warning', lineNumber, text('Footnote syntax will not be converted to linked footnotes.'));
 			}
 			if (/^\s*\$\$\s*$/.test(line)) {
-				addIssue('unsupported_math', 'warning', lineNumber, text('数式ブロックは専用表示へ変換されません。'));
+				addIssue('unsupported_math', 'warning', lineNumber, text('Math blocks will not be converted to a dedicated display format.'));
 			}
 			if (/^\s*<\/?[A-Za-z][^>]*>/.test(line)) {
-				addIssue('unsupported_html', 'warning', lineNumber, text('HTMLはそのまま実行されず、テキストとして挿入されます。'));
+				addIssue('unsupported_html', 'warning', lineNumber, text('HTML will be inserted as text and will not run as HTML.'));
 			}
 
 			if (line.indexOf('![') !== -1) {
 				imageExpression = /!\[([^\]]*)\]\(([^)]*)\)/g;
 				imageMatch = imageExpression.exec(line);
 				if (!imageMatch) {
-					addIssue('malformed_image', 'warning', lineNumber, text('画像記法を読み取れません。括弧とURLを確認してください。'));
+					addIssue('malformed_image', 'warning', lineNumber, text('The image syntax could not be parsed. Check its parentheses and URL.'));
 				} else {
 					do {
 						rawUrl = String(imageMatch[2] || '').trim();
 						if (!rawUrl || /\s/.test(rawUrl) || !/^(https?:\/\/|\/)/i.test(rawUrl)) {
-							addIssue('invalid_image_url', 'warning', lineNumber, text('画像URLはhttp、https、または / から始まるパスを使用してください。'));
+							addIssue('invalid_image_url', 'warning', lineNumber, text('Image URLs must begin with http, https, or /.'));
 						} else if (rawUrl.charAt(0) === '/') {
-							addIssue('local_image_url', 'info', lineNumber, text('相対画像はメディアライブラリへ保存されず、入力されたパスを維持します。'));
+							addIssue('local_image_url', 'info', lineNumber, text('Relative images will keep their original paths and will not be saved to the Media Library.'));
 						}
 					} while ((imageMatch = imageExpression.exec(line)) !== null);
 				}
@@ -486,7 +486,7 @@
 		}
 
 		if (inFence) {
-			addIssue('unclosed_code_fence', 'warning', fenceStartLine, text('コードブロックを閉じる ``` が見つかりません。'));
+			addIssue('unclosed_code_fence', 'warning', fenceStartLine, text('The closing ``` for the code block was not found.'));
 		}
 
 		headings.forEach(function (heading) {
@@ -494,7 +494,7 @@
 				if (!firstH1) {
 					firstH1 = heading;
 				} else {
-					addIssue('multiple_h1', 'warning', heading.line, text('H1が複数あります。投稿タイトルとして使うH1を1つにしてください。'));
+					addIssue('multiple_h1', 'warning', heading.line, text('Multiple H1 headings were found. Keep one H1 to use as the post title.'));
 				}
 			}
 			if (previousHeading && heading.level > previousHeading.level + 1) {
@@ -502,7 +502,7 @@
 					'heading_level_jump',
 					'warning',
 					heading.line,
-					'H' + previousHeading.level + text('の次が') + 'H' + heading.level + text('になっています。見出し階層を確認してください。')
+					'H' + previousHeading.level + text(' is followed by ') + 'H' + heading.level + text('. Check the heading hierarchy.')
 				);
 			}
 			previousHeading = heading;
@@ -510,11 +510,11 @@
 
 		if (applyTitle && firstH1) {
 			if (document.title && document.title.toLocaleLowerCase() !== firstH1.text.toLocaleLowerCase()) {
-				addIssue('title_conflict', 'warning', firstH1.line, text('Front Matterのtitleと最初のH1が異なります。反映時はH1が本文から除外されます。'));
+				addIssue('title_conflict', 'warning', firstH1.line, text('The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.'));
 			} else if (document.title) {
-				addIssue('duplicate_document_title', 'info', firstH1.line, text('Front Matterのtitleと同じH1は、本文での重複を避けるため自動的に除外します。'));
+				addIssue('duplicate_document_title', 'info', firstH1.line, text('The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.'));
 			} else {
-				addIssue('heading_used_as_title', 'info', firstH1.line, text('最初のH1を投稿タイトルとして使い、本文からは除外します。'));
+				addIssue('heading_used_as_title', 'info', firstH1.line, text('The first H1 will be used as the post title and removed from the post body.'));
 			}
 		}
 
@@ -801,12 +801,12 @@
 
 		function fetchBundledMarkdown(url) {
 			if (!url || !window.fetch) {
-				return Promise.reject(new Error('同梱Markdownを利用できません。'));
+				return Promise.reject(new Error(text('The bundled Markdown is unavailable.')));
 			}
 
 			return window.fetch(url, { credentials: 'same-origin' }).then(function (response) {
 				if (!response.ok) {
-					throw new Error('同梱Markdownを読み込めませんでした。');
+					throw new Error(text('The bundled Markdown could not be loaded.'));
 				}
 				return response.text();
 			});
@@ -834,7 +834,7 @@
 				if (copied) {
 					resolve();
 				} else {
-					reject(new Error('クリップボードを利用できません。'));
+					reject(new Error(text('The clipboard is unavailable.')));
 				}
 			});
 		}
@@ -844,12 +844,12 @@
 			fetchBundledMarkdown(editorConfig.sampleMarkdownUrl).then(function (contents) {
 				setMarkdownSource(contents);
 				setFileName('kototsugi-sample.md');
-				setNotice({ status: 'success', message: text('テスト用Markdownをセットしました。') });
+				setNotice({ status: 'success', message: text('Sample Markdown loaded.') });
 				setActivePane('source');
 				setSourceView('markdown');
 				setWorkspaceOpen(true);
 			}).catch(function () {
-				setNotice({ status: 'error', message: text('テスト用Markdownを読み込めませんでした。') });
+				setNotice({ status: 'error', message: text('Sample Markdown could not be loaded.') });
 			}).then(function () {
 				setHelperAction('');
 			});
@@ -860,9 +860,9 @@
 			fetchBundledMarkdown(editorConfig.rulesMarkdownUrl).then(function (contents) {
 				return copyText(contents);
 			}).then(function () {
-				setNotice({ status: 'success', message: text('AI用ルールをコピーしました。') });
+				setNotice({ status: 'success', message: text('AI authoring rules copied.') });
 			}).catch(function () {
-				setNotice({ status: 'error', message: text('AI用ルールをコピーできませんでした。') });
+				setNotice({ status: 'error', message: text('AI authoring rules could not be copied.') });
 			}).then(function () {
 				setHelperAction('');
 			});
@@ -874,7 +874,7 @@
 			if (!file || !isSupportedMarkdownFile(file)) {
 				setNotice({
 					status: 'error',
-					message: text('2MB以下の .md、.markdown、.txt ファイルを選択してください。')
+					message: text('Choose a .md, .markdown, or .txt file up to 2 MB.')
 				});
 				return;
 			}
@@ -885,13 +885,13 @@
 
 				setMarkdownSource(contents);
 				setFileName(file.name);
-				setNotice({ status: 'success', message: text('Markdownファイルを読み込みました。') });
+				setNotice({ status: 'success', message: text('Markdown file loaded.') });
 				setActivePane('source');
 				setSourceView('markdown');
 				setWorkspaceOpen(true);
 			};
 			reader.onerror = function () {
-				setNotice({ status: 'error', message: text('ファイルを読み込めませんでした。') });
+				setNotice({ status: 'error', message: text('The file could not be read.') });
 			};
 			reader.readAsText(file, 'UTF-8');
 		}
@@ -1267,7 +1267,7 @@
 				data: data
 			}).then(function (draft) {
 				if (!draft || !draft.id) {
-					throw new Error('下書きIDが見つかりません。');
+					throw new Error(text('The draft ID was not found.'));
 				}
 				return { id: Number(draft.id), endpoint: endpoint };
 			});
@@ -1287,7 +1287,7 @@
 			var messages = [];
 
 			if (!blocks.length) {
-				setNotice({ status: 'error', message: text('Markdownを入力してください。') });
+				setNotice({ status: 'error', message: text('Enter some Markdown.') });
 				return Promise.resolve();
 			}
 
@@ -1296,27 +1296,27 @@
 
 				if (insertionMode === 'replace') {
 					wp.data.dispatch('core/block-editor').resetBlocks(blocks);
-					messages.push(text('投稿本文をブロックで置き換えました。'));
+					messages.push(text('The post body was replaced with blocks.'));
 				} else {
 					wp.data.dispatch('core/block-editor').insertBlocks(blocks);
-					messages.push(text('ブロックを現在のカーソル位置に挿入しました。'));
+					messages.push(text('Blocks were inserted at the current cursor position.'));
 				}
 				if (postResult.appliedCount) {
-					messages.push(postResult.appliedCount + text('件の投稿設定を反映しました。'));
+					messages.push(postResult.appliedCount + text(' post settings were applied.'));
 				}
 				if (postResult.createdTermCount) {
-					messages.push(postResult.createdTermCount + text('件のカテゴリーまたはタグを作成しました。'));
+					messages.push(postResult.createdTermCount + text(' categories or tags were created.'));
 				}
 				if (imageResult.importedCount) {
-					messages.push(imageResult.importedCount + text('件の画像をメディアライブラリに保存しました。'));
+					messages.push(imageResult.importedCount + text(' images were saved to the Media Library.'));
 				}
 				if (imageResult.failedCount) {
-					messages.push(imageResult.failedCount + text('件の画像は保存できなかったため、本文では外部URLを維持しました。'));
+					messages.push(imageResult.failedCount + text(' images could not be saved, so their remote URLs were kept in the post.'));
 				}
 				if (postResult.failedCount) {
-					messages.push(text('一部の投稿設定は、この投稿タイプまたは現在の権限では反映できませんでした。'));
+					messages.push(text('Some post settings could not be applied for this post type or with your current permissions.'));
 				}
-				messages.push(text('投稿はまだ保存されていません。'));
+				messages.push(text('The post has not been saved yet.'));
 
 				setNotice({ status: hasFailures ? 'warning' : 'success', message: messages.join(' ') });
 				resetWorkspaceAfterApply();
@@ -1329,7 +1329,7 @@
 			var blocks = htmlToBlocks(html);
 
 			if (!blocks.length) {
-				return Promise.reject(new Error('下書きブロックが見つかりません。'));
+				return Promise.reject(new Error(text('The draft blocks were not found.')));
 			}
 
 			return collectPostSettingEdits(imageResult).then(function (postResult) {
@@ -1347,9 +1347,9 @@
 					var message = el(
 						Fragment,
 						null,
-						text('新規下書きを作成しました。'),
-						hasFailures ? ' ' + text('一部の画像または投稿設定は反映できませんでした。') : ' ',
-						el('a', { href: draftEditUrl(draft.id), target: '_blank', rel: 'noopener noreferrer' }, text('下書きを開く'))
+						text('A new draft was created.'),
+						hasFailures ? ' ' + text('Some images or post settings could not be applied.') : ' ',
+						el('a', { href: draftEditUrl(draft.id), target: '_blank', rel: 'noopener noreferrer' }, text('Open draft'))
 					);
 
 					setNotice({ status: hasFailures ? 'warning' : 'success', message: message });
@@ -1367,22 +1367,22 @@
 			var createdDraft = null;
 
 			if (!source.trim()) {
-				setNotice({ status: 'error', message: text('Markdownを入力してください。') });
+				setNotice({ status: 'error', message: text('Enter some Markdown.') });
 				return;
 			}
 
 			initialBlocks = htmlToBlocks(markdownToHtml(source, shouldApplyDocumentTitle));
 			if (!initialBlocks.length) {
-				setNotice({ status: 'error', message: text('Markdownをブロックへ変換できませんでした。') });
+				setNotice({ status: 'error', message: text('Markdown could not be converted to blocks.') });
 				return;
 			}
 			if (preflightErrorCount) {
-				setNotice({ status: 'error', message: text('変換前チェックのエラーを修正してください。') });
+				setNotice({ status: 'error', message: text('Fix the preflight errors before continuing.') });
 				openReview();
 				return;
 			}
 			if (insertionMode === 'replace' && currentBlockCount > 0 && !replaceConfirmed) {
-				setNotice({ status: 'warning', message: text('既存本文を置き換える確認が必要です。') });
+				setNotice({ status: 'warning', message: text('Confirm replacement before replacing the existing post body.') });
 				openReview();
 				return;
 			}
@@ -1417,12 +1417,12 @@
 						message: el(
 							Fragment,
 							null,
-							text('下書きは作成されましたが、すべての変換処理を完了できませんでした。 '),
-							el('a', { href: draftEditUrl(createdDraft.id), target: '_blank', rel: 'noopener noreferrer' }, text('下書きを開く'))
+							text('The draft was created, but not all conversion steps could be completed. '),
+							el('a', { href: draftEditUrl(createdDraft.id), target: '_blank', rel: 'noopener noreferrer' }, text('Open draft'))
 						)
 					});
 				} else {
-					setNotice({ status: 'error', message: text('Markdownの取り込み処理を完了できませんでした。') });
+					setNotice({ status: 'error', message: text('The Markdown import could not be completed.') });
 				}
 			}).then(function () {
 				setIsImporting(false);
@@ -1435,7 +1435,7 @@
 				ref: fileInputRef,
 				type: 'file',
 				className: 'kototsugi-file-input',
-				'aria-label': text('Markdownファイルを選択'),
+				'aria-label': text('Choose a Markdown file'),
 				accept: '.md,.markdown,.txt,text/markdown,text/plain',
 				onChange: handleFileChange
 			});
@@ -1464,14 +1464,19 @@
 				el(
 					'div',
 					{ className: 'kototsugi-post-settings__summary' },
-					el('strong', null, text('投稿設定')),
-					el('span', null, detectedSettingCount + text('件を適用'))
+					el('strong', null, text('Post settings')),
+					el('span', null, detectedSettingCount + text(' settings to apply'))
+				),
+				el(
+					'p',
+					{ className: 'kototsugi-post-settings__intro' },
+					text('These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.')
 				),
 				renderPostSettingRow(
 					'title',
-					text('投稿タイトルを反映'),
+					text('Apply post title'),
 					el(TextControl, {
-						label: text('タイトル'),
+						label: text('Title'),
 						value: postSettings.values.title,
 						onChange: function (value) { updatePostSettingValue('title', value); },
 						disabled: isImporting || !postSettings.enabled.title
@@ -1479,9 +1484,9 @@
 				),
 				renderPostSettingRow(
 					'excerpt',
-					text('抜粋を反映'),
+					text('Apply excerpt'),
 					el(TextareaControl, {
-						label: text('抜粋'),
+						label: text('Excerpt'),
 						value: postSettings.values.excerpt,
 						onChange: function (value) { updatePostSettingValue('excerpt', value); },
 						disabled: isImporting || !postSettings.enabled.excerpt,
@@ -1490,9 +1495,9 @@
 				),
 				renderPostSettingRow(
 					'slug',
-					text('スラッグを反映'),
+					text('Apply slug'),
 					el(TextControl, {
-						label: text('スラッグ'),
+						label: text('Slug'),
 						value: postSettings.values.slug,
 						onChange: function (value) { updatePostSettingValue('slug', value); },
 						disabled: isImporting || !postSettings.enabled.slug
@@ -1500,9 +1505,9 @@
 				),
 				renderPostSettingRow(
 					'tags',
-					text('タグを反映'),
+					text('Apply tags'),
 					el(FormTokenField, {
-						label: text('タグ'),
+						label: text('Tags'),
 						value: postSettings.values.tags,
 						onChange: function (value) { updatePostSettingValue('tags', value); },
 						disabled: isImporting || !postSettings.enabled.tags
@@ -1510,9 +1515,9 @@
 				),
 				renderPostSettingRow(
 					'categories',
-					text('カテゴリーを反映'),
+					text('Apply categories'),
 					el(FormTokenField, {
-						label: text('カテゴリー'),
+						label: text('Categories'),
 						value: postSettings.values.categories,
 						onChange: function (value) { updatePostSettingValue('categories', value); },
 						disabled: isImporting || !postSettings.enabled.categories
@@ -1520,7 +1525,7 @@
 				),
 				renderPostSettingRow(
 					'featuredImage',
-					text('アイキャッチ画像を反映'),
+					text('Apply featured image'),
 					el(
 						Fragment,
 						null,
@@ -1530,13 +1535,13 @@
 							alt: postSettings.values.featuredImageAlt || ''
 						}) : null,
 						el(TextControl, {
-							label: text('画像URL'),
+							label: text('Image URL'),
 							value: featuredImageUrl,
 							onChange: function (value) { updatePostSettingValue('featuredImage', value); },
 							disabled: isImporting || !postSettings.enabled.featuredImage
 						}),
 						el(TextControl, {
-							label: text('代替テキスト'),
+							label: text('Alt text'),
 							value: postSettings.values.featuredImageAlt,
 							onChange: function (value) { updatePostSettingValue('featuredImageAlt', value); },
 							disabled: isImporting || !postSettings.enabled.featuredImage
@@ -1546,34 +1551,44 @@
 				postSettings.unknownFields.length ? el(
 					Notice,
 					{ status: 'info', isDismissible: false, className: 'kototsugi-post-settings__notice' },
-					text('未対応の項目は反映しません:') + ' ' + postSettings.unknownFields.join(', ')
+					text('Unsupported fields will not be applied:') + ' ' + postSettings.unknownFields.join(', ')
 				) : null
 			);
 		}
 
 		function getInsertionModeLabel(mode) {
 			if (mode === 'replace') {
-				return text('本文を置き換え');
+				return text('Replace content');
 			}
 			if (mode === 'draft') {
-				return text('新規下書きを作成');
+				return text('Create new draft');
 			}
-			return text('カーソル位置へ追加');
+			return text('Add at cursor');
+		}
+
+		function getInsertionModeDescription(mode) {
+			if (mode === 'replace') {
+				return text('Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.');
+			}
+			if (mode === 'draft') {
+				return text('Leave the current post unchanged and save the content and selected post settings as a new draft.');
+			}
+			return text('Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.');
 		}
 
 		function getPrimaryActionLabel() {
 			if (insertionMode === 'replace') {
-				return text('本文を置き換える');
+				return text('Replace the content');
 			}
 			if (insertionMode === 'draft') {
-				return text('新規下書きを作成');
+				return text('Create new draft');
 			}
-			return postSettings.hasFrontMatter ? text('本文と設定を反映') : text('ブロックとして挿入');
+			return postSettings.hasFrontMatter ? text('Apply content and settings') : text('Insert as blocks');
 		}
 
 		function renderReviewIssue(issue) {
-			var severityLabel = issue.severity === 'error' ? text('エラー') :
-				(issue.severity === 'warning' ? text('警告') : text('情報'));
+			var severityLabel = issue.severity === 'error' ? text('Error') :
+				(issue.severity === 'warning' ? text('Warning') : text('Info'));
 
 			return el(
 				'li',
@@ -1587,37 +1602,42 @@
 				el(Button, {
 					variant: 'link',
 					onClick: function () { focusSourceLine(issue.line); },
-					'aria-label': issue.line + text('行目をMarkdownで編集')
-				}, issue.line + text('行目'))
+					'aria-label': issue.line + text(' line: edit in Markdown')
+				}, issue.line + text(' line'))
 			);
 		}
 
 		function renderReview() {
 			var infoCount = countPreflightIssues('info');
-			var checkTitle = actionableIssueCount ? actionableIssueCount + text('件の確認事項') : text('修正が必要な問題はありません');
+			var checkTitle = actionableIssueCount ? actionableIssueCount + text(' items to review') : text('No issues need fixing');
 			var checkDetail = [];
 
 			if (preflightErrorCount) {
-				checkDetail.push(text('エラー') + ' ' + preflightErrorCount);
+				checkDetail.push(text('Error') + ' ' + preflightErrorCount);
 			}
 			if (preflightWarningCount) {
-				checkDetail.push(text('警告') + ' ' + preflightWarningCount);
+				checkDetail.push(text('Warning') + ' ' + preflightWarningCount);
 			}
 			if (infoCount) {
-				checkDetail.push(text('情報') + ' ' + infoCount);
+				checkDetail.push(text('Info') + ' ' + infoCount);
 			}
 
 			return el(
 				'div',
 				{ className: 'kototsugi-review' },
 				el(
+					'p',
+					{ className: 'kototsugi-review__intro' },
+					text('Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.')
+				),
+				el(
 					'section',
 					{ className: 'kototsugi-review__section', 'aria-labelledby': 'kototsugi-review-check-heading' },
 					el(
 						'div',
 						{ className: 'kototsugi-review__heading' },
-						el('h2', { id: 'kototsugi-review-check-heading' }, text('変換前チェック')),
-						el(Button, { variant: 'tertiary', onClick: function () { setSourceView('markdown'); } }, text('Markdownへ戻る'))
+						el('h2', { id: 'kototsugi-review-check-heading' }, text('Preflight checks')),
+						el(Button, { variant: 'tertiary', onClick: function () { setSourceView('markdown'); } }, text('Back to Markdown'))
 					),
 					el(
 						'div',
@@ -1633,10 +1653,10 @@
 				el(
 					'section',
 					{ className: 'kototsugi-review__section', 'aria-labelledby': 'kototsugi-review-mode-heading' },
-					el('h2', { id: 'kototsugi-review-mode-heading' }, text('反映方法')),
+					el('h2', { id: 'kototsugi-review-mode-heading' }, text('Insertion method')),
 					el(
 						'div',
-						{ className: 'kototsugi-review__mode', role: 'group', 'aria-label': text('Markdownの反映方法') },
+						{ className: 'kototsugi-review__mode', role: 'group', 'aria-label': text('Markdown insertion method') },
 						['cursor', 'replace', 'draft'].map(function (mode) {
 							return el(Button, {
 								key: mode,
@@ -1644,12 +1664,15 @@
 								'aria-pressed': insertionMode === mode,
 								onClick: function () { chooseInsertionMode(mode); },
 								disabled: isImporting
-							}, getInsertionModeLabel(mode));
+							},
+								el('strong', { className: 'kototsugi-review__mode-label' }, getInsertionModeLabel(mode)),
+								el('span', { className: 'kototsugi-review__mode-description' }, getInsertionModeDescription(mode))
+							);
 						})
 					),
 					insertionMode === 'replace' && currentBlockCount ? el(CheckboxControl, {
 						className: 'kototsugi-review__replace-confirmation',
-						label: currentBlockCount + text('件の既存ブロックを置き換えることを確認'),
+						label: currentBlockCount + text(' existing blocks: confirm replacement'),
 						checked: replaceConfirmed,
 						onChange: setReplaceConfirmed,
 						disabled: isImporting
@@ -1658,15 +1681,15 @@
 				el(
 					'section',
 					{ className: 'kototsugi-review__section', 'aria-labelledby': 'kototsugi-review-options-heading' },
-					el('h2', { id: 'kototsugi-review-options-heading' }, text('変換オプション')),
+					el('h2', { id: 'kototsugi-review-options-heading' }, text('Conversion options')),
 					!postSettings.hasFrontMatter ? el(CheckboxControl, {
-						label: text('最初のH1を投稿タイトルにする'),
+						label: text('Use first H1 as post title'),
 						checked: useFirstHeadingAsTitle,
 						onChange: updateTitleSetting,
 						disabled: isImporting
 					}) : null,
 					el(CheckboxControl, {
-						label: text('外部画像をメディアライブラリに保存'),
+						label: text('Save remote images to the Media Library'),
 						checked: importRemoteMedia,
 						onChange: setImportRemoteMedia,
 						disabled: isImporting || !remoteImages.length
@@ -1674,7 +1697,7 @@
 					postSettings.hasFrontMatter &&
 						((postSettings.enabled.tags && postSettings.values.tags.length) ||
 						(postSettings.enabled.categories && postSettings.values.categories.length)) ? el(CheckboxControl, {
-							label: text('未登録のカテゴリー・タグを作成'),
+							label: text('Create missing categories and tags'),
 							checked: createMissingTerms,
 							onChange: setCreateMissingTerms,
 							disabled: isImporting
@@ -1683,15 +1706,15 @@
 				el(
 					'section',
 					{ className: 'kototsugi-review__section', 'aria-labelledby': 'kototsugi-review-save-heading' },
-					el('h2', { id: 'kototsugi-review-save-heading' }, text('保存される内容')),
+					el('h2', { id: 'kototsugi-review-save-heading' }, text('What will be saved')),
 					el(
 						'ul',
 						{ className: 'kototsugi-review__effects' },
-						el('li', null, insertionMode === 'draft' ? text('新規下書きをWordPressへ保存します。') : text('現在の投稿は自動保存されません。')),
-						insertionMode === 'replace' && currentBlockCount ? el('li', null, currentBlockCount + text('件の既存ブロックをエディター上で置き換えます。')) : null,
-						importRemoteMedia && remoteImages.length ? el('li', null, remoteImages.length + text('件の外部画像をメディアライブラリへ保存します。')) : null,
+						el('li', null, insertionMode === 'draft' ? text('A new draft will be saved to WordPress.') : text('The current post will not be saved automatically.')),
+						insertionMode === 'replace' && currentBlockCount ? el('li', null, currentBlockCount + text(' existing blocks will be replaced in the editor.')) : null,
+						importRemoteMedia && remoteImages.length ? el('li', null, remoteImages.length + text(' remote images will be saved to the Media Library.')) : null,
 						createMissingTerms && postSettings.hasFrontMatter &&
-							(postSettings.values.tags.length || postSettings.values.categories.length) ? el('li', null, text('未登録のカテゴリー・タグがある場合は新しく作成します。')) : null
+							(postSettings.values.tags.length || postSettings.values.categories.length) ? el('li', null, text('Missing categories or tags will be created.')) : null
 					)
 				)
 			);
@@ -1733,7 +1756,7 @@
 						'span',
 						{ className: 'kototsugi-workspace-modal__title' },
 						el('span', { className: 'kototsugi-workspace-modal__brand' }, 'KOTOTSUGI'),
-						el('span', { className: 'kototsugi-workspace-modal__subtitle' }, text('Markdown投稿'))
+						el('span', { className: 'kototsugi-workspace-modal__subtitle' }, text('Markdown posting'))
 					),
 					className: 'kototsugi-workspace-modal',
 					onRequestClose: function () {
@@ -1750,30 +1773,28 @@
 						{ className: 'kototsugi-workspace__toolbar' },
 						el(
 							'div',
-							{ className: 'kototsugi-workspace__document', 'aria-label': text('現在のMarkdown原稿') },
-							el('strong', null, fileName || text('Markdown原稿')),
-							el('span', null, source.length.toLocaleString() + text('文字'))
+							{ className: 'kototsugi-workspace__document', 'aria-label': text('Current Markdown source') },
+							el('strong', null, fileName || text('Markdown source')),
+							el('span', null, source.length.toLocaleString() + text(' characters'))
 						),
 						el(
 							'div',
 							{ className: 'kototsugi-workspace__file-actions' },
 							el(Button, {
 								variant: 'secondary',
-								'aria-label': text('Markdownファイルを選択'),
+								'aria-label': text('Choose a Markdown file'),
 								onClick: chooseFile,
 								disabled: isImporting
-							}, text('ファイルを選択')),
-							source ? el(Button, { variant: 'tertiary', onClick: clearSource, disabled: isImporting }, text('原稿をクリア')) : null
+							}, text('Choose file')),
+							source ? el(Button, { variant: 'tertiary', onClick: clearSource, disabled: isImporting }, text('Clear source')) : null
 						)
 					),
 					el(
 						'div',
 						{
-							className: 'kototsugi-workspace__tabs' +
-								(postSettings.hasFrontMatter || sourceView === 'review' ? ' is-three-tabs' : '') +
-								(postSettings.hasFrontMatter && sourceView === 'review' ? ' is-four-tabs' : ''),
+							className: 'kototsugi-workspace__tabs ' + (postSettings.hasFrontMatter ? 'is-four-tabs' : 'is-three-tabs'),
 							role: 'tablist',
-							'aria-label': text('作業画面')
+							'aria-label': text('Workspace')
 						},
 						el(Button, {
 							id: 'kototsugi-mobile-tab-markdown',
@@ -1800,20 +1821,20 @@
 								setSourceView('settings');
 								setActivePane('source');
 							}
-							}, text('投稿設定')) : null,
-							sourceView === 'review' ? el(Button, {
+							}, text('Post settings') + ' ' + detectedSettingCount + text(' items')) : null,
+							el(Button, {
 								id: 'kototsugi-mobile-tab-review',
-								variant: activePane === 'source' ? 'secondary' : 'tertiary',
+								variant: activePane === 'source' && sourceView === 'review' ? 'secondary' : 'tertiary',
 								role: 'tab',
-								'aria-selected': activePane === 'source',
+								'aria-selected': activePane === 'source' && sourceView === 'review',
 								'aria-controls': 'kototsugi-panel-source',
-								tabIndex: activePane === 'source' ? 0 : -1,
+								tabIndex: activePane === 'source' && sourceView === 'review' ? 0 : -1,
 								onKeyDown: handleTabKeyDown,
 								onClick: function () {
 									setSourceView('review');
 									setActivePane('source');
 								}
-							}, text('確認と調整')) : null,
+							}, actionableIssueCount ? text('Review before applying') + ' ' + actionableIssueCount + text(' items') : text('Review before applying')),
 							el(Button, {
 							id: 'kototsugi-mobile-tab-preview',
 							variant: activePane === 'preview' ? 'secondary' : 'tertiary',
@@ -1823,7 +1844,7 @@
 							tabIndex: activePane === 'preview' ? 0 : -1,
 							onKeyDown: handleTabKeyDown,
 							onClick: function () { setActivePane('preview'); }
-						}, text('プレビュー'))
+						}, text('Preview'))
 					),
 					el(
 						'div',
@@ -1834,15 +1855,15 @@
 								id: 'kototsugi-panel-source',
 								className: 'kototsugi-workspace__pane kototsugi-workspace__pane--source' + (activePane === 'source' ? ' is-active' : '') + (isDragging ? ' is-dragging' : ''),
 								role: 'tabpanel',
-								'aria-label': sourceView === 'settings' ? text('投稿設定') :
-									(sourceView === 'review' ? text('確認と調整') : text('Markdown原稿')),
+								'aria-label': sourceView === 'settings' ? text('Post settings') :
+									(sourceView === 'review' ? text('Review before applying') : text('Markdown source')),
 								onDragOver: handleDragOver,
 								onDragLeave: handleDragLeave,
 								onDrop: handleDrop
 							},
-							postSettings.hasFrontMatter || sourceView === 'review' || actionableIssueCount ? el(
+							el(
 								'div',
-								{ className: 'kototsugi-workspace__source-tabs', role: 'tablist', 'aria-label': text('原稿、投稿設定、確認と調整') },
+								{ className: 'kototsugi-workspace__source-tabs', role: 'tablist', 'aria-label': text('Source, post settings, and review before applying') },
 								el(Button, {
 									id: 'kototsugi-desktop-tab-markdown',
 									variant: sourceView === 'markdown' ? 'secondary' : 'tertiary',
@@ -1862,8 +1883,8 @@
 									tabIndex: sourceView === 'settings' ? 0 : -1,
 									onKeyDown: handleTabKeyDown,
 									onClick: function () { setSourceView('settings'); }
-								}, text('投稿設定') + ' ' + detectedSettingCount) : null,
-								sourceView === 'review' || actionableIssueCount ? el(Button, {
+								}, text('Post settings') + ' ' + detectedSettingCount + text(' items')) : null,
+								el(Button, {
 									id: 'kototsugi-desktop-tab-review',
 									variant: sourceView === 'review' ? 'secondary' : 'tertiary',
 									role: 'tab',
@@ -1872,22 +1893,22 @@
 									tabIndex: sourceView === 'review' ? 0 : -1,
 									onKeyDown: handleTabKeyDown,
 									onClick: openReview
-								}, actionableIssueCount ? text('確認と調整') + ' ' + actionableIssueCount : text('確認と調整')) : null
-							) : el('h2', { className: 'kototsugi-workspace__pane-title' }, text('Markdown')),
+								}, actionableIssueCount ? text('Review before applying') + ' ' + actionableIssueCount + text(' items') : text('Review before applying'))
+							),
 							sourceView === 'settings' && postSettings.hasFrontMatter ? renderPostSettings() :
 								sourceView === 'review' ? renderReview() : el(
 								Fragment,
 								null,
 								el(TextareaControl, {
 									className: 'kototsugi-workspace__textarea',
-									label: text('Markdown原稿'),
+									label: text('Markdown source'),
 									hideLabelFromVision: true,
 									value: source,
 									onChange: updateSource,
 									disabled: isImporting,
-									placeholder: '# 記事タイトル\n\nここへMarkdownを貼り付けるか、ファイルをドロップします。'
+					placeholder: text('# Article title\n\nPaste Markdown here or drop a file.')
 								}),
-								isDragging ? el('div', { className: 'kototsugi-workspace__drop-overlay' }, text('ここにドロップ')) : null
+								isDragging ? el('div', { className: 'kototsugi-workspace__drop-overlay' }, text('Drop here')) : null
 							)
 						),
 						el(
@@ -1896,13 +1917,13 @@
 								id: 'kototsugi-panel-preview',
 								className: 'kototsugi-workspace__pane kototsugi-workspace__pane--preview' + (activePane === 'preview' ? ' is-active' : ''),
 								role: 'tabpanel',
-								'aria-label': text('プレビュー')
+								'aria-label': text('Preview')
 							},
-							el('h2', { className: 'kototsugi-workspace__pane-title' }, text('プレビュー')),
+							el('h2', { className: 'kototsugi-workspace__pane-title' }, text('Preview')),
 							previewHtml ? el('div', {
 								className: 'kototsugi-preview kototsugi-preview--workspace',
 								dangerouslySetInnerHTML: { __html: previewHtml }
-							}) : el('div', { className: 'kototsugi-preview__empty' }, text('プレビューする原稿がありません。'))
+							}) : el('div', { className: 'kototsugi-preview__empty' }, text('There is no source to preview.'))
 						)
 					),
 					el(
@@ -1914,35 +1935,29 @@
 								postSettings.hasFrontMatter ? el(
 								'span',
 								{ className: 'kototsugi-workspace__settings-count' },
-								text('Front Matter') + ' ' + detectedSettingCount + text('件')
+								text('Front Matter') + ' ' + detectedSettingCount + text(' items')
 								) : null,
-								el(Button, {
-									variant: 'tertiary',
-									className: 'kototsugi-workspace__review-trigger' + (actionableIssueCount ? ' has-issues' : ''),
-									onClick: openReview,
-									disabled: isImporting
-								}, actionableIssueCount ? text('確認事項') + ' ' + actionableIssueCount : text('確認と調整')),
 								insertionMode !== 'cursor' ? el('span', { className: 'kototsugi-workspace__mode-summary' }, getInsertionModeLabel(insertionMode)) : null,
-								importRemoteMedia && remoteImages.length ? el('span', { className: 'kototsugi-workspace__effect-summary' }, text('画像保存') + ' ' + remoteImages.length + text('件')) : null,
+								importRemoteMedia && remoteImages.length ? el('span', { className: 'kototsugi-workspace__effect-summary' }, text('Save images') + ' ' + remoteImages.length + text(' items')) : null,
 								createMissingTerms && postSettings.hasFrontMatter &&
-									(postSettings.values.tags.length || postSettings.values.categories.length) ? el('span', { className: 'kototsugi-workspace__effect-summary' }, text('未登録の用語を作成')) : null,
+									(postSettings.values.tags.length || postSettings.values.categories.length) ? el('span', { className: 'kototsugi-workspace__effect-summary' }, text('Create missing terms')) : null,
 								isImporting ? el(
 								'span',
 								{ className: 'kototsugi-workspace__progress', role: 'status', 'aria-live': 'polite' },
-								imageProgress.total ? text('画像を取り込み中') + ' ' + imageProgress.current + ' / ' + imageProgress.total : text('投稿設定を反映中')
+								imageProgress.total ? text('Importing images...') + ' ' + imageProgress.current + ' / ' + imageProgress.total : text('Applying post settings...')
 							) : null
 						),
 						el(
 							'div',
 							{ className: 'kototsugi-workspace__footer-actions' },
-							el(Button, { variant: 'tertiary', onClick: function () { setWorkspaceOpen(false); }, disabled: isImporting }, text('閉じる')),
+							el(Button, { variant: 'tertiary', onClick: function () { setWorkspaceOpen(false); }, disabled: isImporting }, text('Close')),
 								el(Button, {
 									variant: 'primary',
 									onClick: importBlocks,
 									disabled: !source.trim() || isImporting || preflightErrorCount > 0 ||
 										(insertionMode === 'replace' && currentBlockCount > 0 && !replaceConfirmed),
 									isBusy: isImporting
-								}, isImporting ? text('取り込み中') : getPrimaryActionLabel())
+								}, isImporting ? text('Importing...') : getPrimaryActionLabel())
 						)
 					)
 				)
@@ -1958,8 +1973,8 @@
 				el(
 					'div',
 					{ className: 'kototsugi-sidebar__intro' },
-					el('p', { className: 'kototsugi-sidebar__eyebrow' }, 'KOTOTSUGI'),
-					el('h2', null, text('Markdown原稿'))
+					el('p', { className: 'kototsugi-sidebar__eyebrow' }, 'KOTOTSUGI · Markdown Posting'),
+					el('h2', null, text('Markdown source'))
 				),
 				renderFileInput(),
 				notice ? el(Notice, {
@@ -1972,41 +1987,41 @@
 					{
 						className: 'kototsugi-dropzone' + (isDragging ? ' is-dragging' : ''),
 						role: 'region',
-						'aria-label': text('Markdownファイルの読み込み'),
+						'aria-label': text('Load a Markdown file'),
 						onDragOver: handleDragOver,
 						onDragLeave: handleDragLeave,
 						onDrop: handleDrop
 					},
-					el('strong', null, text('Markdownファイル')),
-					el('span', null, text('.md / .markdown / .txt、最大2MB')),
-					el(Button, { variant: 'secondary', 'aria-label': text('Markdownファイルを選択'), onClick: chooseFile }, text('ファイルを選択')),
+					el('strong', null, text('Markdown file')),
+					el('span', null, text('.md / .markdown / .txt, up to 2 MB')),
+					el(Button, { variant: 'secondary', 'aria-label': text('Choose a Markdown file'), onClick: chooseFile }, text('Choose file')),
 					!source ? el(Button, {
 						variant: 'tertiary',
 						className: 'kototsugi-dropzone__sample',
 						onClick: loadSampleMarkdown,
 						disabled: Boolean(helperAction),
 						isBusy: helperAction === 'sample'
-					}, helperAction === 'sample' ? text('セット中') : text('テスト用mdファイルをセット')) : null
+					}, helperAction === 'sample' ? text('Loading sample...') : text('Load sample Markdown')) : null
 				),
 				source ? el(
 					'div',
 					{ className: 'kototsugi-sidebar__document' },
-					el('strong', null, fileName || text('貼り付けた原稿')),
-					el('span', null, source.length.toLocaleString() + text('文字'))
+					el('strong', null, fileName || text('Pasted source')),
+					el('span', null, source.length.toLocaleString() + text(' characters'))
 				) : null,
 				el(Button, {
 					variant: 'primary',
 					className: 'kototsugi-sidebar__open',
 					onClick: function () { setWorkspaceOpen(true); }
-				}, text('作業画面を開く')),
-				source ? el(Button, { variant: 'tertiary', onClick: clearSource }, text('原稿をクリア')) : null,
+				}, text('Open workspace')),
+				source ? el(Button, { variant: 'tertiary', onClick: clearSource }, text('Clear source')) : null,
 				el(Button, {
 					variant: 'tertiary',
 					className: 'kototsugi-sidebar__rules',
 					onClick: copyAuthoringRules,
 					disabled: Boolean(helperAction),
 					isBusy: helperAction === 'rules'
-				}, helperAction === 'rules' ? text('コピー中') : text('AI用ルールをコピー'))
+				}, helperAction === 'rules' ? text('Copying...') : text('Copy AI authoring rules'))
 			),
 			isWorkspaceOpen ? renderWorkspace() : null
 		);
