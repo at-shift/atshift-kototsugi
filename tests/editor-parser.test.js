@@ -13,7 +13,7 @@ assert.ok(source.includes(marker), 'Could not find the KOTOTSUGI test injection 
 
 source = source.replace(
 	marker,
-	"\n\twindow.__kototsugiTestApi = { markdownToHtml: markdownToHtml, findTitle: findTitle, parseFrontMatter: parseFrontMatter, isSupportedMarkdownFile: isSupportedMarkdownFile, extractRemoteImages: extractRemoteImages };" + marker
+	"\n\twindow.__kototsugiTestApi = { markdownToHtml: markdownToHtml, findTitle: findTitle, parseFrontMatter: parseFrontMatter, createPostSettings: createPostSettings, analyzeMarkdown: analyzeMarkdown, isSupportedMarkdownFile: isSupportedMarkdownFile, extractRemoteImages: extractRemoteImages };" + marker
 );
 
 function noop() {
@@ -26,8 +26,10 @@ const wp = {
 	components: {
 		Button: noop,
 		CheckboxControl: noop,
+		FormTokenField: noop,
 		Modal: noop,
 		Notice: noop,
+		TextControl: noop,
 		TextareaControl: noop
 	},
 	data: { dispatch: noop },
@@ -119,6 +121,130 @@ assert.ok(!frontMatter.content.includes('description:'));
 assert.equal(parser.findTitle(frontMatterMarkdown), 'Front Matterのタイトル');
 assert.ok(!parser.markdownToHtml(frontMatterMarkdown, true).includes('<hr>'));
 assert.ok(parser.markdownToHtml(frontMatterMarkdown, true).includes('<h2>本文見出し</h2>'));
+
+const extendedFrontMatterMarkdown = [
+	'---',
+	"title: '拡張Front Matter'",
+	'excerpt: >',
+	'  AIが作成した原稿を',
+	'  WordPressへ取り込みます。',
+	'slug: ai-markdown-import',
+	'tags: [AI, "WordPress Tips"]',
+	'categories:',
+	'  - 開発',
+	'  - お知らせ',
+	'featured-image: https://cdn.example.com/cover.jpg',
+	'featured-image-alt: 記事のカバー画像',
+	'status: draft',
+	'---',
+	'',
+	'# 本文タイトル',
+	'',
+	'本文です。'
+].join('\n');
+const extendedFrontMatter = parser.parseFrontMatter(extendedFrontMatterMarkdown);
+const extendedMetadata = JSON.parse(JSON.stringify(extendedFrontMatter.metadata));
+const extendedSettings = JSON.parse(JSON.stringify(parser.createPostSettings(extendedFrontMatterMarkdown)));
+
+assert.equal(extendedFrontMatter.hasFrontMatter, true);
+assert.deepEqual(extendedMetadata, {
+	title: '拡張Front Matter',
+	excerpt: 'AIが作成した原稿を WordPressへ取り込みます。',
+	slug: 'ai-markdown-import',
+	tags: ['AI', 'WordPress Tips'],
+	categories: ['開発', 'お知らせ'],
+	featuredImage: 'https://cdn.example.com/cover.jpg',
+	featuredImageAlt: '記事のカバー画像'
+});
+assert.deepEqual(JSON.parse(JSON.stringify(extendedFrontMatter.unknownFields)), ['status']);
+assert.equal(extendedSettings.enabled.title, true);
+assert.equal(extendedSettings.enabled.featuredImage, true);
+assert.equal(extendedSettings.enabled.categories, true);
+assert.equal(extendedSettings.values.tags.length, 2);
+assert.ok(!parser.markdownToHtml(extendedFrontMatterMarkdown, true).includes('featured-image'));
+
+const emptyFrontMatter = parser.createPostSettings('本文だけです。');
+assert.equal(emptyFrontMatter.hasFrontMatter, false);
+assert.equal(emptyFrontMatter.enabled.title, false);
+
+const fixturePath = path.join(__dirname, '..', 'examples', 'front-matter-test.md');
+const fixtureMarkdown = fs.readFileSync(fixturePath, 'utf8');
+const fixtureSettings = JSON.parse(JSON.stringify(parser.createPostSettings(fixtureMarkdown)));
+const fixtureEnabledCount = Object.keys(fixtureSettings.enabled).filter(function (key) {
+	return fixtureSettings.enabled[key];
+}).length;
+
+assert.equal(fixtureSettings.hasFrontMatter, true);
+assert.equal(fixtureEnabledCount, 6);
+assert.equal(fixtureSettings.values.title, 'KOTOTSUGI Front Matter 動作確認');
+assert.deepEqual(fixtureSettings.values.tags, ['KOTOTSUGI Test', 'AI Markdown', 'WordPress']);
+assert.deepEqual(fixtureSettings.values.categories, ['KOTOTSUGI Demo', 'Markdown Import']);
+assert.deepEqual(fixtureSettings.unknownFields, ['status', 'author']);
+assert.ok(parser.markdownToHtml(fixtureMarkdown, true).includes('<ul>'));
+assert.ok(parser.markdownToHtml(fixtureMarkdown, true).includes('<ol>'));
+
+const samplePath = path.join(__dirname, '..', 'examples', 'kototsugi-sample.md');
+const sampleMarkdown = fs.readFileSync(samplePath, 'utf8');
+const sampleSettings = JSON.parse(JSON.stringify(parser.createPostSettings(sampleMarkdown)));
+const sampleIssues = JSON.parse(JSON.stringify(parser.analyzeMarkdown(sampleMarkdown, { applyTitle: true })));
+const sampleHtml = parser.markdownToHtml(sampleMarkdown, true);
+
+assert.equal(sampleSettings.values.title, 'KOTOTSUGI テスト記事');
+assert.equal(sampleSettings.values.slug, 'kototsugi-sample');
+assert.deepEqual(sampleIssues, []);
+assert.ok(sampleHtml.includes('<h2>KOTOTSUGIで試せること</h2>'));
+assert.ok(sampleHtml.includes('kototsugi-callout--note'));
+assert.ok(sampleHtml.includes('<table>'));
+
+const rulesPath = path.join(__dirname, '..', 'rules', 'KOTOTSUGI-RULES.md');
+const rulesMarkdown = fs.readFileSync(rulesPath, 'utf8');
+
+assert.ok(rulesMarkdown.includes('KOTOTSUGI Article Authoring Rules'));
+assert.ok(rulesMarkdown.includes('featured_image_alt'));
+assert.ok(rulesMarkdown.includes('Do not skip heading levels'));
+assert.ok(rulesMarkdown.includes('Task lists'));
+assert.ok(rulesMarkdown.includes("Detect the target language from the user's article request"));
+assert.ok(rulesMarkdown.includes('Front Matter values, tags, categories, image alternative text'));
+assert.ok(rulesMarkdown.includes('Do not default to English'));
+assert.ok(rulesMarkdown.includes('Treat English text in examples as placeholders'));
+assert.equal(/[\u3040-\u30ff\u3400-\u9fff]/.test(rulesMarkdown), false, 'The AI rules file must remain English-only.');
+
+const reviewMarkdown = [
+	'---',
+	'title: Front Matterタイトル',
+	'status: draft',
+	'---',
+	'# 本文タイトル',
+	'',
+	'### 飛んだ見出し',
+	'',
+	'- [x] タスク',
+	'  - ネスト',
+	'',
+	'脚注です[^1]。',
+	'',
+	'![壊れた画像](image file.png)',
+	'',
+	'<div>HTML</div>',
+	'',
+	'# 二つ目のH1'
+].join('\n');
+const reviewIssues = JSON.parse(JSON.stringify(parser.analyzeMarkdown(reviewMarkdown, { applyTitle: true })));
+const reviewCodes = reviewIssues.map(function (issue) { return issue.code; });
+
+assert.ok(reviewCodes.includes('unsupported_front_matter_status'));
+assert.ok(reviewCodes.includes('title_conflict'));
+assert.ok(reviewCodes.includes('heading_level_jump'));
+assert.ok(reviewCodes.includes('unsupported_task_list'));
+assert.ok(reviewCodes.includes('unsupported_nested_list'));
+assert.ok(reviewCodes.includes('unsupported_footnote'));
+assert.ok(reviewCodes.includes('invalid_image_url'));
+assert.ok(reviewCodes.includes('unsupported_html'));
+assert.ok(reviewCodes.includes('multiple_h1'));
+assert.equal(reviewIssues.find(function (issue) { return issue.code === 'title_conflict'; }).line, 5);
+
+const cleanReviewIssues = JSON.parse(JSON.stringify(parser.analyzeMarkdown('# 同じタイトル\n\n## 本文', { applyTitle: true })));
+assert.deepEqual(cleanReviewIssues.map(function (issue) { return issue.code; }), ['heading_used_as_title']);
 
 assert.equal(parser.isSupportedMarkdownFile({ name: 'draft.md', size: 1024 }), true);
 assert.equal(parser.isSupportedMarkdownFile({ name: 'draft.MARKDOWN', size: 1024 }), true);

@@ -14,7 +14,10 @@ if ( ! $wp_root || ! file_exists( $wp_root . '/wp-load.php' ) ) {
 
 define( 'WP_USE_THEMES', false );
 require $wp_root . '/wp-load.php';
-require dirname( __DIR__ ) . '/kototsugi.php';
+
+if ( ! function_exists( 'kototsugi_register_rest_routes' ) ) {
+	require dirname( __DIR__ ) . '/kototsugi.php';
+}
 
 $assert = static function ( $condition, $message ) {
 	if ( ! $condition ) {
