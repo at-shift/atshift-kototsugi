@@ -11,6 +11,8 @@
 
 ## Overview
 
+KOTOTSUGI is a standalone WordPress plugin. It is not an add-on or module for atshift Fields or atshift User Profile Fields, and neither plugin is required.
+
 KOTOTSUGI adds a focused Markdown posting workspace to the WordPress block editor. Paste a draft from ChatGPT, Claude, Gemini, or another writing tool, or load a local Markdown file. Review the source and article preview together, then carry the result into WordPress as standard blocks that remain fully editable.
 
 Front Matter can bring the title, excerpt, slug, tags, categories, and featured image into the same review flow. Preflight checks identify unsupported syntax, heading problems, image URL issues, and title conflicts before anything is applied.
@@ -160,6 +162,8 @@ Remote images are limited to the lower of the site's upload limit or 10 MB. When
 | Sample article | [English sample](examples/kototsugi-sample-en.md) | [日本語サンプル](examples/kototsugi-sample.md) |
 
 ## Related Projects
+
+These are separate, optional WordPress plugins from the same publisher. KOTOTSUGI does not depend on them.
 
 - [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) creates practical, configurable WordPress user profile screens with frontend editing and account-management tools.
 - [at-shift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) provides a maintained custom-field builder for posts, pages, and custom post types.

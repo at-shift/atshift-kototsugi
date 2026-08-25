@@ -12,6 +12,8 @@ Turn AI-friendly Markdown into editable WordPress blocks.
 
 == Description ==
 
+KOTOTSUGI is a standalone WordPress plugin. It is not an add-on or module for atshift Fields or atshift User Profile Fields, and neither plugin is required.
+
 KOTOTSUGI gives the block editor a focused Markdown import workspace. Paste a draft from ChatGPT, Claude, Gemini, or any Markdown-aware writing tool, or load a local Markdown file. Review the generated article in a wide preview, then add editable blocks at the current cursor position, replace the current body, or create a separate draft.
 
 The importer supports headings, paragraphs, emphasis, links, images, lists, tables, quotes, fenced code blocks, horizontal rules, and GitHub-style callouts such as `[!NOTE]` and `[!WARNING]`.
@@ -88,6 +90,7 @@ Unknown Front Matter keys are listed in the workspace and are not applied. KOTOT
 * Add bundled translations for 13 more locales.
 * Add all 15 bundled languages to the Quick Post display-language setting.
 * Add localized sample Markdown for all 15 supported languages.
+* Clarify that KOTOTSUGI is a standalone plugin and update the author URL.
 
 = 0.5.1 =
 * Enforce custom post type creation and media upload capabilities in Quick Post.

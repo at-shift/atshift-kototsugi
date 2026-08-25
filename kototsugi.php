@@ -7,7 +7,7 @@
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: @shift
- * Author URI: https://cfs.at-shift.net/
+ * Author URI: https://at-shift.net/
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: kototsugi
