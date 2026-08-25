@@ -61,7 +61,7 @@ Quick Post can be used without opening the WordPress admin screen after an admin
 
 ## Languages
 
-English is provided by the plugin source. Bundled translations are included for Japanese, Spanish, German, French, Brazilian Portuguese, Italian, Russian, Dutch, Simplified Chinese, Polish, Turkish, Indonesian, Traditional Chinese (Taiwan), and Korean.
+English is provided by the plugin source. Bundled translations are included for Japanese, Spanish, German, French, Brazilian Portuguese, Italian, Russian, Dutch, Simplified Chinese, Polish, Turkish, Indonesian, Traditional Chinese (Taiwan), and Korean. The one-click sample article is localized for the same 15 languages.
 
 The Markdown workspace follows each WordPress user's profile language. Quick Post uses the display language selected by an administrator, independently from the site's language.
 

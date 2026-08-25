@@ -100,6 +100,28 @@ try {
 	$quick_post_languages = kototsugi_quick_post_languages();
 	$expected_languages   = kototsugi_quick_post_locale_codes();
 	$assert( $expected_languages === array_keys( $quick_post_languages ), 'Quick Post should offer every bundled display language in the intended order.' );
+	$expected_sample_files = array(
+		'ja'    => 'kototsugi-sample.md',
+		'en_US' => 'kototsugi-sample-en.md',
+		'es_ES' => 'kototsugi-sample-es_ES.md',
+		'de_DE' => 'kototsugi-sample-de_DE.md',
+		'fr_FR' => 'kototsugi-sample-fr_FR.md',
+		'pt_BR' => 'kototsugi-sample-pt_BR.md',
+		'it_IT' => 'kototsugi-sample-it_IT.md',
+		'ru_RU' => 'kototsugi-sample-ru_RU.md',
+		'nl_NL' => 'kototsugi-sample-nl_NL.md',
+		'zh_CN' => 'kototsugi-sample-zh_CN.md',
+		'pl_PL' => 'kototsugi-sample-pl_PL.md',
+		'tr_TR' => 'kototsugi-sample-tr_TR.md',
+		'id_ID' => 'kototsugi-sample-id_ID.md',
+		'zh_TW' => 'kototsugi-sample-zh_TW.md',
+		'ko_KR' => 'kototsugi-sample-ko_KR.md',
+	);
+	foreach ( $expected_sample_files as $sample_locale => $sample_file ) {
+		$assert( $sample_file === kototsugi_sample_markdown_name( $sample_locale ), 'Each bundled locale should resolve to its localized sample.' );
+		$assert( file_exists( dirname( __DIR__ ) . '/examples/' . $sample_file ), 'Every localized sample file should exist.' );
+	}
+	$assert( 'kototsugi-sample-en.md' === kototsugi_sample_markdown_name( 'en_GB' ), 'Unsupported locales should use the English sample.' );
 	$original_locale = determine_locale();
 	kototsugi_switch_quick_post_locale( array( 'language' => 'es_ES' ) );
 	$assert( 'es_ES' === determine_locale(), 'Quick Post should switch to a bundled locale without requiring a WordPress language pack.' );

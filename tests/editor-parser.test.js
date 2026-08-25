@@ -277,6 +277,37 @@ assert.ok(sampleHtml.includes('<h2>KOTOTSUGIで試せること</h2>'));
 assert.ok(sampleHtml.includes('kototsugi-callout--note'));
 assert.ok(sampleHtml.includes('<table>'));
 
+const localizedSampleFiles = [
+	'kototsugi-sample.md',
+	'kototsugi-sample-en.md',
+	'kototsugi-sample-es_ES.md',
+	'kototsugi-sample-de_DE.md',
+	'kototsugi-sample-fr_FR.md',
+	'kototsugi-sample-pt_BR.md',
+	'kototsugi-sample-it_IT.md',
+	'kototsugi-sample-ru_RU.md',
+	'kototsugi-sample-nl_NL.md',
+	'kototsugi-sample-zh_CN.md',
+	'kototsugi-sample-pl_PL.md',
+	'kototsugi-sample-tr_TR.md',
+	'kototsugi-sample-id_ID.md',
+	'kototsugi-sample-zh_TW.md',
+	'kototsugi-sample-ko_KR.md'
+];
+
+localizedSampleFiles.forEach(function (sampleFile) {
+	const localizedMarkdown = fs.readFileSync(path.join(__dirname, '..', 'examples', sampleFile), 'utf8');
+	const localizedSettings = JSON.parse(JSON.stringify(parser.createPostSettings(localizedMarkdown)));
+	const localizedIssues = JSON.parse(JSON.stringify(parser.analyzeMarkdown(localizedMarkdown, { applyTitle: true })));
+	const localizedHtml = parser.markdownToHtml(localizedMarkdown, true);
+
+	assert.ok(localizedSettings.values.title, sampleFile + ' should provide a title.');
+	assert.equal(localizedSettings.values.slug, 'kototsugi-sample');
+	assert.deepEqual(localizedIssues, [], sampleFile + ' should pass preflight checks.');
+	assert.ok(localizedHtml.includes('kototsugi-callout--note'));
+	assert.ok(localizedHtml.includes('<table>'));
+});
+
 const rulesPath = path.join(__dirname, '..', 'rules', 'KOTOTSUGI-RULES.md');
 const rulesMarkdown = fs.readFileSync(rulesPath, 'utf8');
 

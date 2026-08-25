@@ -297,13 +297,42 @@ function kototsugi_import_remote_image( WP_REST_Request $request ) {
 }
 
 /**
+ * Returns the bundled sample filename for a WordPress locale.
+ *
+ * @param string|null $locale Locale to resolve. Defaults to the current locale.
+ * @return string
+ */
+function kototsugi_sample_markdown_name( $locale = null ) {
+	$locale = $locale ? str_replace( '-', '_', $locale ) : determine_locale();
+	$samples = array(
+		'ja'    => 'kototsugi-sample.md',
+		'en_US' => 'kototsugi-sample-en.md',
+		'es_ES' => 'kototsugi-sample-es_ES.md',
+		'de_DE' => 'kototsugi-sample-de_DE.md',
+		'fr_FR' => 'kototsugi-sample-fr_FR.md',
+		'pt_BR' => 'kototsugi-sample-pt_BR.md',
+		'it_IT' => 'kototsugi-sample-it_IT.md',
+		'ru_RU' => 'kototsugi-sample-ru_RU.md',
+		'nl_NL' => 'kototsugi-sample-nl_NL.md',
+		'zh_CN' => 'kototsugi-sample-zh_CN.md',
+		'pl_PL' => 'kototsugi-sample-pl_PL.md',
+		'tr_TR' => 'kototsugi-sample-tr_TR.md',
+		'id_ID' => 'kototsugi-sample-id_ID.md',
+		'zh_TW' => 'kototsugi-sample-zh_TW.md',
+		'ko_KR' => 'kototsugi-sample-ko_KR.md',
+	);
+
+	return isset( $samples[ $locale ] ) ? $samples[ $locale ] : $samples['en_US'];
+}
+
+/**
  * Loads the importer only where block editing is available.
  */
 function kototsugi_enqueue_editor_assets() {
 	$editor_script = plugin_dir_path( __FILE__ ) . 'assets/editor.js';
 	$editor_style  = plugin_dir_path( __FILE__ ) . 'assets/editor.css';
 	$shared_style  = plugin_dir_path( __FILE__ ) . 'assets/style.css';
-	$sample_name   = 0 === strpos( determine_locale(), 'ja' ) ? 'kototsugi-sample.md' : 'kototsugi-sample-en.md';
+	$sample_name   = kototsugi_sample_markdown_name();
 	$sample_file   = plugin_dir_path( __FILE__ ) . 'examples/' . $sample_name;
 	$rules_file    = plugin_dir_path( __FILE__ ) . 'rules/KOTOTSUGI-RULES.md';
 
@@ -340,6 +369,7 @@ function kototsugi_enqueue_editor_assets() {
 					file_exists( $sample_file ) ? (string) filemtime( $sample_file ) : KOTOTSUGI_VERSION,
 					KOTOTSUGI_URL . 'examples/' . $sample_name
 				),
+				'sampleMarkdownName' => $sample_name,
 				'rulesMarkdownUrl'  => add_query_arg(
 					'ver',
 					file_exists( $rules_file ) ? (string) filemtime( $rules_file ) : KOTOTSUGI_VERSION,

@@ -87,6 +87,7 @@ Unknown Front Matter keys are listed in the workspace and are not applied. KOTOT
 = 1.0 =
 * Add bundled translations for 13 more locales.
 * Add all 15 bundled languages to the Quick Post display-language setting.
+* Add localized sample Markdown for all 15 supported languages.
 
 = 0.5.1 =
 * Enforce custom post type creation and media upload capabilities in Quick Post.

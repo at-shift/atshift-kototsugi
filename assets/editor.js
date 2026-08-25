@@ -1064,7 +1064,7 @@
 			setHelperAction('sample');
 			fetchBundledMarkdown(editorConfig.sampleMarkdownUrl).then(function (contents) {
 				setMarkdownSource(contents);
-				setFileName('kototsugi-sample.md');
+				setFileName(editorConfig.sampleMarkdownName || 'kototsugi-sample-en.md');
 				setNotice({ status: 'success', message: text('Sample Markdown loaded.') });
 				setActivePane('source');
 				setSourceView('markdown');
