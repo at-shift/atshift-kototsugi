@@ -1,0 +1,807 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-24 10:12+0900\n"
+"Last-Translator: KOTOTSUGI contributors\n"
+"Language-Team: Indonesian\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: kototsugi\n"
+"X-Generator: KOTOTSUGI translation workflow\n"
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "Ubah Markdown yang ramah AI menjadi blok WordPress yang dapat diedit."
+
+msgid "More ways to write"
+msgstr "Cara menulis lainnya"
+
+msgid "Place"
+msgstr "Tempat"
+
+msgid "Important"
+msgstr "Penting"
+
+msgid "Note"
+msgstr "Catatan"
+
+msgid "Price"
+msgstr "Harga"
+
+msgid "Phone"
+msgstr "Telepon"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "Anda juga dapat menulis label seperti Tempat: atau Telepon:."
+
+msgid "Display language"
+msgstr "Bahasa tampilan"
+
+msgid "Use the site language"
+msgstr "Gunakan bahasa situs"
+
+msgid "Japanese"
+msgstr "Bahasa Jepang"
+
+msgid "English"
+msgstr "Bahasa Inggris"
+
+msgid "Spanish"
+msgstr "Bahasa Spanyol"
+
+msgid "German"
+msgstr "Bahasa Jerman"
+
+msgid "French"
+msgstr "Bahasa Prancis"
+
+msgid "Portuguese (Brazil)"
+msgstr "Bahasa Portugis (Brasil)"
+
+msgid "Italian"
+msgstr "Bahasa Italia"
+
+msgid "Russian"
+msgstr "Bahasa Rusia"
+
+msgid "Dutch"
+msgstr "Bahasa Belanda"
+
+msgid "Chinese (Simplified)"
+msgstr "Bahasa Tionghoa (Aksara Sederhana)"
+
+msgid "Polish"
+msgstr "Bahasa Polandia"
+
+msgid "Turkish"
+msgstr "Bahasa Turki"
+
+msgid "Indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "Bahasa Tionghoa (Aksara Tradisional, Taiwan)"
+
+msgid "Korean"
+msgstr "Bahasa Korea"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "Digunakan pada layar untuk memasukkan frasa sandi, menulis artikel, meninjau, dan menyelesaikan penerbitan."
+
+msgid "New article"
+msgstr "Artikel baru"
+
+msgid "Create an article"
+msgstr "Buat artikel"
+
+msgid "Article title"
+msgstr "Judul artikel"
+
+msgid "Article text"
+msgstr "Teks artikel"
+
+msgid "Write the article here"
+msgstr "Tulis artikel di sini"
+
+msgid "Writing hints"
+msgstr "Panduan menulis"
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr "Tulisan biasa akan menjadi paragraf. Gunakan panduan ini hanya jika Anda ingin menambahkan struktur."
+
+msgid "Leave a blank line between paragraphs."
+msgstr "Sisakan baris kosong di antara paragraf."
+
+msgid "Start a line with ・ to make a list."
+msgstr "Awali baris dengan ・ untuk membuat daftar."
+
+msgid "A short line on its own becomes a heading."
+msgstr "Baris pendek yang berdiri sendiri akan menjadi judul bagian."
+
+msgid "The imported image URL could not be created."
+msgstr "URL gambar yang diimpor tidak dapat dibuat."
+
+msgid "This image URL is not allowed."
+msgstr "URL gambar ini tidak diizinkan."
+
+msgid "You are not allowed to attach images to this post."
+msgstr "Anda tidak diizinkan melampirkan gambar pada pos ini."
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "Anda tidak diizinkan menggunakan kembali gambar dari Pustaka Media ini."
+
+msgid "The temporary file could not be created."
+msgstr "File sementara tidak dapat dibuat."
+
+msgid "The remote image could not be downloaded."
+msgstr "Gambar jarak jauh tidak dapat diunduh."
+
+msgid "The remote image returned an unexpected response."
+msgstr "Server gambar jarak jauh memberikan respons yang tidak terduga."
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "Ukuran gambar jarak jauh melebihi batas ukuran unggahan."
+
+msgid "The downloaded file is not a supported image."
+msgstr "File yang diunduh bukan gambar yang didukung."
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt, hingga 2 MB"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "Pilih file .md, .markdown, atau .txt dengan ukuran maksimal 2 MB."
+
+msgid "Copy AI authoring rules"
+msgstr "Salin panduan penulisan untuk AI"
+
+msgid "AI authoring rules copied."
+msgstr "Panduan penulisan untuk AI telah disalin."
+
+msgid "AI authoring rules could not be copied."
+msgstr "Panduan penulisan untuk AI tidak dapat disalin."
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr "H1 yang sama dengan judul Front Matter akan dihapus secara otomatis agar tidak muncul dua kali dalam isi pos."
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr "Judul Front Matter berbeda dengan H1 pertama. H1 tersebut akan dihapus dari isi pos saat diterapkan."
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "Penutup --- untuk Front Matter tidak ditemukan."
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "Ditemukan beberapa tajuk H1. Sisakan satu H1 untuk digunakan sebagai judul pos."
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "HTML akan disisipkan sebagai teks dan tidak akan dijalankan sebagai HTML."
+
+msgid "Markdown insertion method"
+msgstr "Metode penyisipan Markdown"
+
+msgid "The Markdown import could not be completed."
+msgstr "Impor Markdown tidak dapat diselesaikan."
+
+msgid "Back to Markdown"
+msgstr "Kembali ke Markdown"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "Markdown tidak dapat dikonversi menjadi blok."
+
+msgid "Enter some Markdown."
+msgstr "Masukkan Markdown."
+
+msgid "Markdown file"
+msgstr "File Markdown"
+
+msgid "Load a Markdown file"
+msgstr "Muat file Markdown"
+
+msgid "Markdown file loaded."
+msgstr "File Markdown telah dimuat."
+
+msgid "Choose a Markdown file"
+msgstr "Pilih file Markdown"
+
+msgid "Markdown source"
+msgstr "Sumber Markdown"
+
+msgid "Markdown posting"
+msgstr "Publikasi dengan Markdown"
+
+msgid "Drop here"
+msgstr "Letakkan di sini"
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr "Blok kode ini akan disisipkan sebagai blok kode biasa karena tidak tersedia blok khusus."
+
+msgid ". Check the heading hierarchy."
+msgstr ". Periksa hierarki tajuk."
+
+msgid " is followed by "
+msgstr " diikuti oleh "
+
+msgid "Apply featured image"
+msgstr "Terapkan gambar andalan"
+
+msgid "Error"
+msgstr "Kesalahan"
+
+msgid "Categories"
+msgstr "Kategori"
+
+msgid "Apply categories"
+msgstr "Terapkan kategori"
+
+msgid "Add at cursor"
+msgstr "Tambahkan di posisi kursor"
+
+msgid "Copying..."
+msgstr "Menyalin..."
+
+msgid "The closing ``` for the code block was not found."
+msgstr "Penutup ``` untuk blok kode tidak ditemukan."
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Apply slug"
+msgstr "Terapkan slug"
+
+msgid "Loading sample..."
+msgstr "Memuat contoh..."
+
+msgid "Title"
+msgstr "Judul"
+
+msgid "Tags"
+msgstr "Tag"
+
+msgid "Apply tags"
+msgstr "Terapkan tag"
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr "Daftar tugas akan diubah menjadi daftar biasa tanpa mempertahankan status kotak centang."
+
+msgid "Sample Markdown loaded."
+msgstr "Contoh Markdown dimuat."
+
+msgid "Sample Markdown could not be loaded."
+msgstr "Contoh Markdown tidak dapat dimuat."
+
+msgid "Load sample Markdown"
+msgstr "Muat contoh Markdown"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "Daftar bersarang akan diratakan menjadi satu tingkat."
+
+msgid "The file could not be read."
+msgstr "File tidak dapat dibaca."
+
+msgid "Choose file"
+msgstr "Pilih file"
+
+msgid "Insert as blocks"
+msgstr "Sisipkan sebagai blok"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "Blok disisipkan pada posisi kursor saat ini."
+
+msgid "Preview"
+msgstr "Pratinjau"
+
+msgid "There is no source to preview."
+msgstr "Tidak ada sumber untuk pratinjau."
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr "Beberapa pengaturan pos tidak dapat diterapkan pada tipe pos ini atau dengan izin Anda saat ini."
+
+msgid "Some images or post settings could not be applied."
+msgstr "Beberapa gambar atau pengaturan pos tidak dapat diterapkan."
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr "Draf telah dibuat, namun tidak semua langkah konversi dapat diselesaikan. "
+
+msgid "Open draft"
+msgstr "Buka draf"
+
+msgid "Alt text"
+msgstr "Teks alternatif"
+
+msgid " items"
+msgstr " item"
+
+msgid " categories or tags were created."
+msgstr " kategori atau tag telah dibuat."
+
+msgid " remote images will be saved to the Media Library."
+msgstr " gambar jarak jauh akan disimpan ke Pustaka Media."
+
+msgid " post settings were applied."
+msgstr " pengaturan pos telah diterapkan."
+
+msgid " existing blocks will be replaced in the editor."
+msgstr " blok yang ada akan diganti di editor."
+
+msgid " existing blocks: confirm replacement"
+msgstr " blok yang ada: konfirmasi penggantian"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr " gambar tidak dapat disimpan, sehingga URL jarak jauhnya tetap ada di dalam pos."
+
+msgid " images were saved to the Media Library."
+msgstr " gambar telah disimpan ke Pustaka Media."
+
+msgid " items to review"
+msgstr " item untuk ditinjau"
+
+msgid " settings to apply"
+msgstr " pengaturan untuk diterapkan"
+
+msgid "Workspace"
+msgstr "Ruang kerja"
+
+msgid "Open workspace"
+msgstr "Buka ruang kerja"
+
+msgid "What will be saved"
+msgstr "Apa yang akan disimpan"
+
+msgid "No issues need fixing"
+msgstr "Tidak ada masalah yang perlu diperbaiki"
+
+msgid "Source, post settings, and review"
+msgstr "Sumber, pengaturan pos, dan peninjauan"
+
+msgid "Clear source"
+msgstr "Hapus sumber"
+
+msgid "Insertion method"
+msgstr "Metode penyisipan"
+
+msgid "Importing..."
+msgstr "Mengimpor..."
+
+msgid "Conversion options"
+msgstr "Opsi konversi"
+
+msgid "Preflight checks"
+msgstr "Pemeriksaan sebelum penerapan"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "Perbaiki kesalahan hasil pemeriksaan sebelum melanjutkan."
+
+msgid "Save remote images to the Media Library"
+msgstr "Simpan gambar jarak jauh ke Pustaka Media"
+
+msgid "Info"
+msgstr "Informasi"
+
+msgid "The post has not been saved yet."
+msgstr "Pos belum disimpan."
+
+msgid "Apply post title"
+msgstr "Terapkan judul pos"
+
+msgid "The post body was replaced with blocks."
+msgstr "Isi pos telah diganti dengan blok."
+
+msgid "Post settings"
+msgstr "Pengaturan pos"
+
+msgid "Applying post settings..."
+msgstr "Menerapkan pengaturan pos..."
+
+msgid "Excerpt"
+msgstr "Kutipan"
+
+msgid "Apply excerpt"
+msgstr "Terapkan kutipan"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "Blok matematika tidak akan dikonversi ke format tampilan khusus."
+
+msgid " characters"
+msgstr " karakter"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "Draf baru akan disimpan ke WordPress."
+
+msgid "Create new draft"
+msgstr "Buat draf baru"
+
+msgid "A new draft was created."
+msgstr "Draf baru telah dibuat."
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "Konfirmasi penggantian sebelum mengganti isi pos yang ada."
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr "H1 pertama akan digunakan sebagai judul pos dan dihapus dari isi pos."
+
+msgid "Use first H1 as post title"
+msgstr "Gunakan H1 pertama sebagai judul pos"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "Kolom Front Matter yang tidak didukung tidak akan diterapkan:"
+
+msgid "Unsupported fields will not be applied:"
+msgstr "Kolom yang tidak didukung tidak akan diterapkan:"
+
+msgid "Missing categories or tags will be created."
+msgstr "Kategori atau tag yang belum ada akan dibuat."
+
+msgid "Create missing categories and tags"
+msgstr "Buat kategori dan tag yang belum ada"
+
+msgid "Create missing terms"
+msgstr "Buat istilah yang belum ada"
+
+msgid "Apply content and settings"
+msgstr "Terapkan konten dan pengaturan"
+
+msgid "Replace content"
+msgstr "Ganti konten"
+
+msgid "Replace the content"
+msgstr "Ganti konten"
+
+msgid "Current Markdown source"
+msgstr "Sumber Markdown saat ini"
+
+msgid "The current post will not be saved automatically."
+msgstr "Pos saat ini tidak akan disimpan secara otomatis."
+
+msgid "Image URL"
+msgstr "URL gambar"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "URL gambar harus diawali dengan http, https, atau /."
+
+msgid "Importing images..."
+msgstr "Mengimpor gambar..."
+
+msgid "Save images"
+msgstr "Simpan gambar"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "Sintaks gambar tidak dapat diurai. Periksa tanda kurung dan URL-nya."
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr "Gambar dengan jalur relatif akan tetap menggunakan jalur aslinya dan tidak akan disimpan ke Pustaka Media."
+
+msgid "Review and adjust"
+msgstr "Periksa dan sesuaikan"
+
+msgid "Review"
+msgstr "Tinjau"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "Sintaks catatan kaki tidak akan diubah menjadi catatan kaki tertaut."
+
+msgid " line"
+msgstr " baris"
+
+msgid " line: edit in Markdown"
+msgstr " baris: edit dalam Markdown"
+
+msgid "Warning"
+msgstr "Peringatan"
+
+msgid "Pasted source"
+msgstr "Sumber yang ditempel"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr "Detail pos ini dibaca dari Front Matter. Periksa setiap item, edit jika perlu, atau hapus centangnya agar detail tersebut tidak diterapkan."
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr "Tinjau peringatan dan perubahan yang diharapkan, lalu pilih cara penerapan artikel serta opsi konversi yang akan digunakan."
+
+msgid "Review before applying"
+msgstr "Tinjau sebelum menerapkan"
+
+msgid "Source, post settings, and review before applying"
+msgstr "Sumber, pengaturan pos, dan peninjauan sebelum penerapan"
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr "Tambahkan blok pada posisi kursor saat ini. Konten yang ada tetap dipertahankan, dan pos tidak akan disimpan secara otomatis."
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr "Ganti semua blok dalam pos saat ini. Tindakan ini memerlukan konfirmasi, dan pos tidak akan disimpan secara otomatis."
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr "Biarkan pos saat ini tetap seperti semula, lalu simpan konten dan pengaturan pos yang dipilih sebagai draf baru."
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr "# Judul artikel\n\nTempel Markdown di sini atau letakkan file."
+
+msgid "The bundled Markdown is unavailable."
+msgstr "Markdown yang disertakan tidak tersedia."
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "Markdown yang disertakan tidak dapat dimuat."
+
+msgid "The clipboard is unavailable."
+msgstr "Papan klip tidak tersedia."
+
+msgid "The draft ID was not found."
+msgstr "ID draf tidak ditemukan."
+
+msgid "The draft blocks were not found."
+msgstr "Blok draf tidak ditemukan."
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI - Posting Mudah"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "Pengaturan Posting Mudah"
+
+msgid "You are not allowed to change these settings."
+msgstr "Anda tidak diizinkan mengubah pengaturan ini."
+
+msgid "Quick Post settings saved."
+msgstr "Pengaturan Posting Mudah telah disimpan."
+
+msgid "Every Quick Post browser was signed out."
+msgstr "Semua sesi Posting Mudah di setiap peramban telah diakhiri."
+
+msgid "Choose an author who can create the selected content type."
+msgstr "Pilih penulis yang dapat membuat tipe konten yang dipilih."
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "Penulis yang dipilih tidak dapat menerbitkan tipe konten yang dipilih."
+
+msgid "Choose an available publishing destination."
+msgstr "Pilih tujuan penerbitan yang tersedia."
+
+msgid "Choose an available category."
+msgstr "Pilih kategori yang tersedia."
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "Gunakan setidaknya 8 karakter untuk frasa sandi."
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "Tetapkan frasa sandi sebelum mengaktifkan Posting Mudah."
+
+msgid "Quick Post reduces the learning and memory required to publish. It is intended for people who find the WordPress admin screen difficult, including older users, people with disabilities, and anyone who needs a simpler interface."
+msgstr "Posting Mudah mengurangi hal yang perlu dipelajari dan diingat untuk menerbitkan konten. Fitur ini ditujukan bagi orang yang kesulitan menggunakan layar admin WordPress, termasuk pengguna lanjut usia, penyandang disabilitas, dan siapa saja yang memerlukan antarmuka yang lebih sederhana."
+
+msgid "Anyone can start with only a title and article text. As they become comfortable, blank lines, lists, short headings, and images add more structure. Learning Markdown is not required."
+msgstr "Siapa pun dapat memulai hanya dengan judul dan teks artikel. Setelah terbiasa, pengguna dapat memakai baris kosong, daftar, judul bagian singkat, dan gambar untuk menambahkan struktur. Markdown tidak perlu dipelajari."
+
+msgid "Quick Post"
+msgstr "Posting Mudah"
+
+msgid "Enable the standalone posting page"
+msgstr "Aktifkan halaman Posting Mudah"
+
+msgid "Posting URL"
+msgstr "URL halaman Posting Mudah"
+
+msgid "Open Quick Post"
+msgstr "Buka Posting Mudah"
+
+msgid "Passphrase"
+msgstr "Frasa sandi"
+
+msgid "Show passphrase"
+msgstr "Tampilkan frasa sandi"
+
+msgid "Hide passphrase"
+msgstr "Sembunyikan frasa sandi"
+
+msgid "Publishing destination"
+msgstr "Tujuan penerbitan"
+
+msgid "Posts, Pages, and custom post types that support titles and the editor are shown. The contributor cannot change this choice."
+msgstr "Pos, Laman, dan tipe pos kustom yang mendukung judul serta editor akan ditampilkan. Kontributor tidak dapat mengubah pilihan ini."
+
+msgid "Leave blank to keep the current passphrase. Entering a new one signs out every browser."
+msgstr "Biarkan kosong untuk mempertahankan frasa sandi saat ini. Jika Anda memasukkan frasa sandi baru, semua peramban akan dikeluarkan."
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "Gunakan setidaknya 8 karakter. Bagikan hanya kepada orang yang diizinkan mengirim pos."
+
+msgid "Post author"
+msgstr "Penulis pos"
+
+msgid "Choose an author"
+msgstr "Pilih penulis"
+
+msgid "After submission"
+msgstr "Setelah dikirim"
+
+msgid "Save as a draft"
+msgstr "Simpan sebagai draf"
+
+msgid "Publish immediately"
+msgstr "Terbitkan langsung"
+
+msgid "This choice is fixed on the posting page so the contributor cannot change it by mistake."
+msgstr "Pilihan ini dikunci pada halaman Posting Mudah agar pengguna tidak dapat mengubahnya secara tidak sengaja."
+
+msgid "Default category"
+msgstr "Kategori bawaan"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "Diterapkan hanya jika tujuan publikasi mendukung kategori."
+
+msgid "Use the site default"
+msgstr "Gunakan bawaan situs"
+
+msgid "Save Quick Post settings"
+msgstr "Simpan pengaturan Posting Mudah"
+
+msgid "Sign out every Quick Post browser"
+msgstr "Keluarkan semua peramban dari Posting Mudah"
+
+msgid "Enter a post title."
+msgstr "Masukkan judul pos."
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "Masukkan draf artikel berukuran maksimal 2 MB."
+
+msgid "The article could not be converted into a safe post."
+msgstr "Artikel tidak dapat diubah menjadi pos yang aman."
+
+msgid "Reload the page and try again."
+msgstr "Muat ulang halaman dan coba lagi."
+
+msgid "The configured post author is no longer available."
+msgstr "Penulis pos yang ditetapkan tidak lagi tersedia."
+
+msgid "The configured publishing destination is no longer available."
+msgstr "Tujuan penerbitan yang ditetapkan tidak lagi tersedia."
+
+msgid "The converted article contains an unsupported block."
+msgstr "Artikel yang telah diubah berisi blok yang tidak didukung."
+
+msgid "This article was already submitted. Start a new post before submitting again."
+msgstr "Artikel ini sudah dikirim. Buat pos baru sebelum mengirim lagi."
+
+msgid "Enter the passphrase"
+msgstr "Masukkan frasa sandi"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "Gunakan frasa sandi yang dibagikan oleh administrator situs."
+
+msgid "Continue"
+msgstr "Lanjutkan"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "Peramban ini akan tetap masuk selama 30 hari."
+
+msgid "Quick Post is unavailable"
+msgstr "Posting Mudah tidak tersedia"
+
+msgid "Sign out"
+msgstr "Keluar"
+
+msgid "Article draft"
+msgstr "Draf artikel"
+
+msgid "Write or paste your article"
+msgstr "Tulis atau tempel artikel Anda"
+
+msgid "Type or paste an article, or open a text file. Plain text and Markdown are accepted."
+msgstr "Ketik atau tempel artikel, atau buka file teks. Anda dapat menggunakan teks biasa maupun Markdown."
+
+msgid "Write or paste the article here"
+msgstr "Tulis atau tempel artikel di sini"
+
+msgid "Open file"
+msgstr "Buka file"
+
+msgid "Add images"
+msgstr "Tambahkan gambar"
+
+msgid "Alternative text"
+msgstr "Teks alternatif"
+
+msgid "Remove image"
+msgstr "Hapus gambar"
+
+msgid "Attach up to 5 images."
+msgstr "Lampirkan hingga 5 gambar."
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Gunakan gambar JPEG, PNG, GIF, atau WebP sesuai batas unggahan situs."
+
+msgid "One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Satu atau beberapa gambar tidak dapat diunggah. Gunakan gambar JPEG, PNG, GIF, atau WebP sesuai batas unggahan situs."
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "Satu atau beberapa gambar tidak dapat disimpan ke Pustaka Media."
+
+msgid "The selected post author is not allowed to upload images."
+msgstr "Penulis pos yang dipilih tidak diizinkan mengunggah gambar."
+
+msgid "The attached images could not be added to the article."
+msgstr "Gambar yang dilampirkan tidak dapat ditambahkan ke artikel."
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
+msgstr "Artikel tidak dapat diterbitkan. Coba lagi atau minta bantuan administrator situs."
+
+msgid "Review post"
+msgstr "Tinjau pos"
+
+msgid "Check before posting"
+msgstr "Periksa sebelum mengirim"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "Periksa judul, pratinjau, dan hal-hal yang terdeteksi dalam draf."
+
+msgid "Post title"
+msgstr "Judul pos"
+
+msgid "Points to check"
+msgstr "Hal yang perlu diperiksa"
+
+msgid "I reviewed these points."
+msgstr "Saya sudah memeriksa semua hal ini."
+
+msgid "Edit draft"
+msgstr "Sunting draf"
+
+msgid "Publish post"
+msgstr "Terbitkan pos"
+
+msgid "Save draft"
+msgstr "Simpan draf"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "JavaScript diperlukan untuk mengubah artikel menjadi blok WordPress."
+
+msgid "Post submitted"
+msgstr "Pos telah dikirim"
+
+msgid "Post published"
+msgstr "Pos telah diterbitkan"
+
+msgid "Draft saved"
+msgstr "Draf telah disimpan"
+
+msgid "View post"
+msgstr "Lihat pos"
+
+msgid "Create another post"
+msgstr "Buat pos lain"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "Minta administrator situs untuk mengaktifkan halaman Posting Mudah."
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "Terlalu banyak percobaan. Tunggu 15 menit dan coba lagi."
+
+msgid "The passphrase is not correct."
+msgstr "Frasa sandi salah."
+
+msgid "The page expired. Reload it and try again."
+msgstr "Halaman telah kedaluwarsa. Muat ulang dan coba lagi."
+
+msgid "Line"
+msgstr "Baris"
+
+msgid "Paste an article draft before continuing."
+msgstr "Tempel draf artikel sebelum melanjutkan."
+
+msgid "Use an article draft up to 2 MB."
+msgstr "Gunakan draf artikel dengan ukuran hingga 2 MB."
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "Artikel tidak dapat dikonversi menjadi blok WordPress."
+
+msgid "Publishing..."
+msgstr "Menerbitkan..."
+
+msgid "Saving..."
+msgstr "Menyimpan..."

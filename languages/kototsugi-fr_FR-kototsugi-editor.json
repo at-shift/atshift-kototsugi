@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 12:00+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "fr_FR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "Transformez le Markdown adapté à l'IA en blocs WordPress modifiables."
+      ],
+      "The imported image URL could not be created.": [
+        "L'URL de l'image importée n'a pas pu être créée."
+      ],
+      "This image URL is not allowed.": [
+        "Cette URL d'image n'est pas autorisée."
+      ],
+      "You are not allowed to attach images to this post.": [
+        "Vous n'êtes pas autorisé à joindre des images à cette publication."
+      ],
+      "The temporary file could not be created.": [
+        "Le fichier temporaire n'a pas pu être créé."
+      ],
+      "The remote image could not be downloaded.": [
+        "L'image distante n'a pas pu être téléchargée."
+      ],
+      "The remote image returned an unexpected response.": [
+        "Le serveur de l'image distante a renvoyé une réponse inattendue."
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "L'image distante dépasse la taille maximale autorisée pour les fichiers envoyés."
+      ],
+      "The downloaded file is not a supported image.": [
+        "Le fichier téléchargé n'est pas une image prise en charge."
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt, jusqu'à 2 Mo"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Choisissez un fichier .md, .markdown ou .txt d'une taille maximale de 2 Mo."
+      ],
+      "Copy AI authoring rules": [
+        "Copier les consignes de rédaction pour l'IA"
+      ],
+      "AI authoring rules copied.": [
+        "Les consignes de rédaction pour l'IA ont été copiées."
+      ],
+      "AI authoring rules could not be copied.": [
+        "Les consignes de rédaction pour l'IA n'ont pas pu être copiées."
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "Le titre H1 identique au titre du Front Matter sera supprimé automatiquement afin d'éviter sa répétition dans le contenu."
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Le titre du Front Matter est différent du premier H1. Ce H1 sera supprimé du contenu lors de l'application."
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "Le délimiteur de fin --- du Front Matter est introuvable."
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "Plusieurs titres H1 ont été trouvés. Conservez un seul H1 pour l'utiliser comme titre de la publication."
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "Le code HTML sera inséré sous forme de texte et ne sera pas interprété comme du HTML."
+      ],
+      "Markdown insertion method": [
+        "Méthode d'insertion Markdown"
+      ],
+      "The Markdown import could not be completed.": [
+        "L'importation Markdown n'a pas pu être effectuée."
+      ],
+      "Back to Markdown": [
+        "Revenir au Markdown"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Le Markdown n'a pas pu être converti en blocs."
+      ],
+      "Enter some Markdown.": [
+        "Saisissez du Markdown."
+      ],
+      "Markdown file": [
+        "Fichier Markdown"
+      ],
+      "Load a Markdown file": [
+        "Charger un fichier Markdown"
+      ],
+      "Markdown file loaded.": [
+        "Fichier Markdown chargé."
+      ],
+      "Choose a Markdown file": [
+        "Choisir un fichier Markdown"
+      ],
+      "Markdown source": [
+        "Source Markdown"
+      ],
+      "Markdown posting": [
+        "Publication Markdown"
+      ],
+      "Drop here": [
+        "Déposez ici"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "Ce bloc de code sera inséré sous forme de bloc de code standard, car aucun bloc spécifique n'est disponible."
+      ],
+      ". Check the heading hierarchy.": [
+        ". Vérifiez la hiérarchie des titres."
+      ],
+      " is followed by ": [
+        " est suivi de "
+      ],
+      "Apply featured image": [
+        "Définir l'image mise en avant"
+      ],
+      "Error": [
+        "Erreur"
+      ],
+      "Categories": [
+        "Catégories"
+      ],
+      "Apply categories": [
+        "Appliquer les catégories"
+      ],
+      "Add at cursor": [
+        "Ajouter à la position du curseur"
+      ],
+      "Copying...": [
+        "Copie en cours..."
+      ],
+      "The closing ``` for the code block was not found.": [
+        "Le délimiteur de fin ``` du bloc de code est introuvable."
+      ],
+      "Slug": [
+        "Slug"
+      ],
+      "Apply slug": [
+        "Appliquer le slug"
+      ],
+      "Loading sample...": [
+        "Chargement de l'exemple..."
+      ],
+      "Title": [
+        "Titre"
+      ],
+      "Tags": [
+        "Étiquettes"
+      ],
+      "Apply tags": [
+        "Appliquer les étiquettes"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "Les listes de tâches seront converties en listes ordinaires sans conserver l'état des cases à cocher."
+      ],
+      "Sample Markdown loaded.": [
+        "Exemple Markdown chargé."
+      ],
+      "Sample Markdown could not be loaded.": [
+        "Impossible de charger l'exemple Markdown."
+      ],
+      "Load sample Markdown": [
+        "Charger un exemple Markdown"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "Les listes imbriquées seront ramenées à un seul niveau."
+      ],
+      "The file could not be read.": [
+        "Impossible de lire le fichier."
+      ],
+      "Choose file": [
+        "Choisir un fichier"
+      ],
+      "Insert as blocks": [
+        "Insérer sous forme de blocs"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "Les blocs ont été insérés à la position actuelle du curseur."
+      ],
+      "Preview": [
+        "Aperçu"
+      ],
+      "There is no source to preview.": [
+        "Aucune source à prévisualiser."
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "Certains réglages n'ont pas pu être appliqués à ce type de publication ou avec vos droits actuels."
+      ],
+      "Some images or post settings could not be applied.": [
+        "Certaines images ou certains réglages de la publication n'ont pas pu être appliqués."
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "Le brouillon a été créé, mais toutes les étapes de conversion n'ont pas pu être effectuées. "
+      ],
+      "Open draft": [
+        "Ouvrir le brouillon"
+      ],
+      "Alt text": [
+        "Texte alternatif"
+      ],
+      " items": [
+        " éléments"
+      ],
+      " categories or tags were created.": [
+        " catégories ou étiquettes ont été créées."
+      ],
+      " remote images will be saved to the Media Library.": [
+        " images distantes seront enregistrées dans la Médiathèque."
+      ],
+      " post settings were applied.": [
+        " réglages de la publication ont été appliqués."
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " les blocs existants seront remplacés dans l'éditeur."
+      ],
+      " existing blocks: confirm replacement": [
+        " blocs existants : confirmer le remplacement"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " images n'ont pas pu être enregistrées ; leurs URL distantes ont donc été conservées dans l'article."
+      ],
+      " images were saved to the Media Library.": [
+        " images ont été enregistrées dans la Médiathèque."
+      ],
+      " items to review": [
+        " éléments à examiner"
+      ],
+      " settings to apply": [
+        " réglages à appliquer"
+      ],
+      "Workspace": [
+        "Espace de travail"
+      ],
+      "Open workspace": [
+        "Ouvrir l'espace de travail"
+      ],
+      "What will be saved": [
+        "Ce qui sera enregistré"
+      ],
+      "No issues need fixing": [
+        "Aucun problème à corriger"
+      ],
+      "Source, post settings, and review": [
+        "Source, réglages de la publication et vérification"
+      ],
+      "Clear source": [
+        "Effacer la source"
+      ],
+      "Insertion method": [
+        "Méthode d'insertion"
+      ],
+      "Importing...": [
+        "Importation en cours..."
+      ],
+      "Conversion options": [
+        "Options de conversion"
+      ],
+      "Preflight checks": [
+        "Vérifications préalables"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "Corrigez les erreurs détectées avant de continuer."
+      ],
+      "Save remote images to the Media Library": [
+        "Enregistrer les images distantes dans la Médiathèque"
+      ],
+      "Info": [
+        "Informations"
+      ],
+      "The post has not been saved yet.": [
+        "L'article n'a pas encore été enregistré."
+      ],
+      "Apply post title": [
+        "Appliquer le titre de l'article"
+      ],
+      "The post body was replaced with blocks.": [
+        "Le contenu de la publication a été remplacé par des blocs."
+      ],
+      "Post settings": [
+        "Réglages de la publication"
+      ],
+      "Applying post settings...": [
+        "Application des réglages de la publication..."
+      ],
+      "Excerpt": [
+        "Extrait"
+      ],
+      "Apply excerpt": [
+        "Appliquer l'extrait"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "Les blocs mathématiques ne seront pas convertis en un format d'affichage dédié."
+      ],
+      " characters": [
+        " caractères"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "Un nouveau brouillon sera enregistré dans WordPress."
+      ],
+      "Create new draft": [
+        "Créer un nouveau brouillon"
+      ],
+      "A new draft was created.": [
+        "Un nouveau brouillon a été créé."
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "Confirmez le remplacement du contenu actuel avant de continuer."
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "Le premier titre H1 sera utilisé comme titre de l'article et supprimé du corps de l'article."
+      ],
+      "Use first H1 as post title": [
+        "Utiliser le premier H1 comme titre de l'article"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "Les champs Front Matter non pris en charge ne seront pas appliqués :"
+      ],
+      "Unsupported fields will not be applied:": [
+        "Les champs non pris en charge ne seront pas appliqués :"
+      ],
+      "Missing categories or tags will be created.": [
+        "Les catégories ou étiquettes manquantes seront créées."
+      ],
+      "Create missing categories and tags": [
+        "Créer les catégories et étiquettes manquantes"
+      ],
+      "Create missing terms": [
+        "Créer les termes manquants"
+      ],
+      "Apply content and settings": [
+        "Appliquer le contenu et les réglages"
+      ],
+      "Replace content": [
+        "Remplacer le contenu"
+      ],
+      "Replace the content": [
+        "Remplacer le contenu"
+      ],
+      "Current Markdown source": [
+        "Source Markdown actuelle"
+      ],
+      "The current post will not be saved automatically.": [
+        "L'article actuel ne sera pas enregistré automatiquement."
+      ],
+      "Image URL": [
+        "URL de l'image"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "Les URL d'image doivent commencer par http, https ou /."
+      ],
+      "Importing images...": [
+        "Importation des images..."
+      ],
+      "Save images": [
+        "Enregistrer les images"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "La syntaxe de l'image n'a pas pu être analysée. Vérifiez les parenthèses et l'URL."
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "Les images utilisant un chemin relatif conserveront leur chemin d'origine et ne seront pas enregistrées dans la Médiathèque."
+      ],
+      "Review and adjust": [
+        "Vérifier et ajuster"
+      ],
+      "Review": [
+        "Vérification"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "La syntaxe des notes de bas de page ne sera pas convertie en notes liées."
+      ],
+      " line": [
+        " ligne"
+      ],
+      " line: edit in Markdown": [
+        " ligne : modifier en Markdown"
+      ],
+      "Warning": [
+        "Avertissement"
+      ],
+      "Pasted source": [
+        "Source collée"
+      ],
+      "Close": [
+        "Fermer"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "Ces informations proviennent du Front Matter. Vérifiez chaque élément, modifiez-le si nécessaire ou décochez sa case pour ne pas l'appliquer."
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "Vérifiez les avertissements et les modifications prévues, puis choisissez comment ajouter l'article et quelles options de conversion utiliser."
+      ],
+      "Review before applying": [
+        "Vérifier avant d'appliquer"
+      ],
+      "Source, post settings, and review before applying": [
+        "Source, réglages de la publication et vérification avant l'application"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "Les blocs sont ajoutés à la position actuelle du curseur. Le contenu existant est conservé et la publication n'est pas enregistrée automatiquement."
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "Tous les blocs de la publication actuelle sont remplacés. Une confirmation est demandée et la publication n'est pas enregistrée automatiquement."
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "La publication actuelle reste inchangée. Le contenu et les réglages sélectionnés sont enregistrés dans un nouveau brouillon."
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# Titre de l'article\n\nCollez du Markdown ici ou déposez un fichier."
+      ],
+      "The bundled Markdown is unavailable.": [
+        "L'exemple Markdown inclus est indisponible."
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "L'exemple Markdown inclus n'a pas pu être chargé."
+      ],
+      "The clipboard is unavailable.": [
+        "Le presse-papiers est indisponible."
+      ],
+      "The draft ID was not found.": [
+        "L'identifiant du brouillon est introuvable."
+      ],
+      "The draft blocks were not found.": [
+        "Les blocs du brouillon sont introuvables."
+      ]
+    }
+  }
+}

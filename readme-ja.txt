@@ -1,10 +1,10 @@
 === KOTOTSUGI ===
-Contributors: kototsugi
+Contributors: atshift
 Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.5.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,10 @@ KOTOTSUGIは、AIが作成するMarkdown向けの限定的なYAML互換形式に
 未対応のFront Matter項目は作業画面へ表示し、投稿には反映しません。KOTOTSUGIはFront Matterから投稿者、公開状態、公開日時を変更しません。
 
 == Changelog ==
+
+= 1.0 =
+* 13ロケールの翻訳ファイルを追加。
+* かんたん投稿の表示言語設定で、同梱する15言語を選択可能に変更。
 
 = 0.5.1 =
 * かんたん投稿でカスタム投稿タイプの作成権限と画像アップロード権限を確認。

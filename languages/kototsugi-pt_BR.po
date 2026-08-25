@@ -1,0 +1,807 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-24 10:03+0900\n"
+"Last-Translator: KOTOTSUGI contributors\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: kototsugi\n"
+"X-Generator: KOTOTSUGI translation workflow\n"
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "Transforme Markdown criado com ajuda de IA em blocos editáveis do WordPress."
+
+msgid "More ways to write"
+msgstr "Outras formas de escrever"
+
+msgid "Place"
+msgstr "Local"
+
+msgid "Important"
+msgstr "Importante"
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "Price"
+msgstr "Preço"
+
+msgid "Phone"
+msgstr "Telefone"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "Você também pode usar rótulos como Local: ou Telefone:."
+
+msgid "Display language"
+msgstr "Idioma de exibição"
+
+msgid "Use the site language"
+msgstr "Usar o idioma do site"
+
+msgid "Japanese"
+msgstr "Japonês"
+
+msgid "English"
+msgstr "Inglês"
+
+msgid "Spanish"
+msgstr "Espanhol"
+
+msgid "German"
+msgstr "Alemão"
+
+msgid "French"
+msgstr "Francês"
+
+msgid "Portuguese (Brazil)"
+msgstr "Português do Brasil"
+
+msgid "Italian"
+msgstr "Italiano"
+
+msgid "Russian"
+msgstr "Russo"
+
+msgid "Dutch"
+msgstr "Holandês"
+
+msgid "Chinese (Simplified)"
+msgstr "Chinês (simplificado)"
+
+msgid "Polish"
+msgstr "Polonês"
+
+msgid "Turkish"
+msgstr "Turco"
+
+msgid "Indonesian"
+msgstr "Indonésio"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "Chinês (tradicional, Taiwan)"
+
+msgid "Korean"
+msgstr "Coreano"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "Este idioma será usado nas telas de senha de acesso, artigo, revisão e conclusão."
+
+msgid "New article"
+msgstr "Novo artigo"
+
+msgid "Create an article"
+msgstr "Criar um artigo"
+
+msgid "Article title"
+msgstr "Título do artigo"
+
+msgid "Article text"
+msgstr "Texto do artigo"
+
+msgid "Write the article here"
+msgstr "Escreva o artigo aqui"
+
+msgid "Writing hints"
+msgstr "Dicas para escrever"
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr "Escreva normalmente para criar parágrafos. Use estas dicas somente quando quiser organizar melhor o conteúdo."
+
+msgid "Leave a blank line between paragraphs."
+msgstr "Deixe uma linha em branco entre os parágrafos."
+
+msgid "Start a line with ・ to make a list."
+msgstr "Comece uma linha com ・ para criar uma lista."
+
+msgid "A short line on its own becomes a heading."
+msgstr "Uma linha curta e isolada se torna um subtítulo."
+
+msgid "The imported image URL could not be created."
+msgstr "Não foi possível criar a URL da imagem importada."
+
+msgid "This image URL is not allowed."
+msgstr "Esta URL de imagem não é permitida."
+
+msgid "You are not allowed to attach images to this post."
+msgstr "Você não tem permissão para anexar imagens a esta publicação."
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "Você não tem permissão para reutilizar esta imagem da Biblioteca de Mídia."
+
+msgid "The temporary file could not be created."
+msgstr "Não foi possível criar o arquivo temporário."
+
+msgid "The remote image could not be downloaded."
+msgstr "Não foi possível baixar a imagem remota."
+
+msgid "The remote image returned an unexpected response."
+msgstr "A imagem remota retornou uma resposta inesperada."
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "A imagem remota excede o limite de tamanho de upload."
+
+msgid "The downloaded file is not a supported image."
+msgstr "O arquivo baixado não é uma imagem compatível."
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt, até 2 MB"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "Escolha um arquivo .md, .markdown ou .txt de até 2 MB."
+
+msgid "Copy AI authoring rules"
+msgstr "Copiar regras para escrever com IA"
+
+msgid "AI authoring rules copied."
+msgstr "Regras para escrever com IA copiadas."
+
+msgid "AI authoring rules could not be copied."
+msgstr "Não foi possível copiar as regras para escrever com IA."
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr "O H1 que corresponde ao título do Front Matter será removido automaticamente para não duplicar o título no conteúdo da publicação."
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr "O título do Front Matter é diferente do primeiro H1. Ao aplicar, o H1 será removido do conteúdo da publicação."
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "O --- de fechamento do Front Matter não foi encontrado."
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "Foram encontrados vários cabeçalhos H1. Mantenha apenas um H1 para usá-lo como título da publicação."
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "O HTML será inserido como texto e não será executado como HTML."
+
+msgid "Markdown insertion method"
+msgstr "Forma de inserir o Markdown"
+
+msgid "The Markdown import could not be completed."
+msgstr "Não foi possível concluir a importação do Markdown."
+
+msgid "Back to Markdown"
+msgstr "Voltar para Markdown"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "Não foi possível converter o Markdown em blocos."
+
+msgid "Enter some Markdown."
+msgstr "Insira algum conteúdo em Markdown."
+
+msgid "Markdown file"
+msgstr "Arquivo Markdown"
+
+msgid "Load a Markdown file"
+msgstr "Carregar um arquivo Markdown"
+
+msgid "Markdown file loaded."
+msgstr "Arquivo Markdown carregado."
+
+msgid "Choose a Markdown file"
+msgstr "Escolha um arquivo Markdown"
+
+msgid "Markdown source"
+msgstr "Texto em Markdown"
+
+msgid "Markdown posting"
+msgstr "Publicação com Markdown"
+
+msgid "Drop here"
+msgstr "Solte aqui"
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr "Este bloco de código será inserido como um bloco de código padrão porque não há um bloco específico disponível."
+
+msgid ". Check the heading hierarchy."
+msgstr ". Verifique a hierarquia dos cabeçalhos."
+
+msgid " is followed by "
+msgstr " é seguido por "
+
+msgid "Apply featured image"
+msgstr "Aplicar imagem destacada"
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Categories"
+msgstr "Categorias"
+
+msgid "Apply categories"
+msgstr "Aplicar categorias"
+
+msgid "Add at cursor"
+msgstr "Adicionar na posição do cursor"
+
+msgid "Copying..."
+msgstr "Copiando..."
+
+msgid "The closing ``` for the code block was not found."
+msgstr "O ``` de fechamento do bloco de código não foi encontrado."
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Apply slug"
+msgstr "Aplicar slug"
+
+msgid "Loading sample..."
+msgstr "Carregando exemplo..."
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Apply tags"
+msgstr "Aplicar tags"
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr "As listas de tarefas serão convertidas em listas comuns, sem manter o estado das caixas de seleção."
+
+msgid "Sample Markdown loaded."
+msgstr "Exemplo de Markdown carregado."
+
+msgid "Sample Markdown could not be loaded."
+msgstr "Não foi possível carregar o exemplo de Markdown."
+
+msgid "Load sample Markdown"
+msgstr "Carregar Markdown de exemplo"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "Listas aninhadas serão reduzidas a um único nível."
+
+msgid "The file could not be read."
+msgstr "Não foi possível ler o arquivo."
+
+msgid "Choose file"
+msgstr "Escolher arquivo"
+
+msgid "Insert as blocks"
+msgstr "Inserir como blocos"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "Os blocos foram inseridos na posição atual do cursor."
+
+msgid "Preview"
+msgstr "Pré-visualização"
+
+msgid "There is no source to preview."
+msgstr "Não há texto para pré-visualizar."
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr "Algumas configurações da publicação não puderam ser aplicadas a este tipo de conteúdo ou com suas permissões atuais."
+
+msgid "Some images or post settings could not be applied."
+msgstr "Algumas imagens ou configurações da publicação não puderam ser aplicadas."
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr "O rascunho foi criado, mas nem todas as etapas de conversão puderam ser concluídas. "
+
+msgid "Open draft"
+msgstr "Abrir rascunho"
+
+msgid "Alt text"
+msgstr "Texto alternativo"
+
+msgid " items"
+msgstr " itens"
+
+msgid " categories or tags were created."
+msgstr " categorias ou tags foram criadas."
+
+msgid " remote images will be saved to the Media Library."
+msgstr " imagens remotas serão salvas na Biblioteca de Mídia."
+
+msgid " post settings were applied."
+msgstr " configurações da publicação foram aplicadas."
+
+msgid " existing blocks will be replaced in the editor."
+msgstr " blocos existentes serão substituídos no editor."
+
+msgid " existing blocks: confirm replacement"
+msgstr " blocos existentes: confirmar substituição"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr " imagens não puderam ser salvas; por isso, suas URLs remotas foram mantidas na publicação."
+
+msgid " images were saved to the Media Library."
+msgstr " imagens foram salvas na Biblioteca de Mídia."
+
+msgid " items to review"
+msgstr " itens para revisar"
+
+msgid " settings to apply"
+msgstr " configurações para aplicar"
+
+msgid "Workspace"
+msgstr "Área de trabalho"
+
+msgid "Open workspace"
+msgstr "Abrir área de trabalho"
+
+msgid "What will be saved"
+msgstr "O que será salvo"
+
+msgid "No issues need fixing"
+msgstr "Nenhum problema precisa ser corrigido"
+
+msgid "Source, post settings, and review"
+msgstr "Texto, configurações da publicação e revisão"
+
+msgid "Clear source"
+msgstr "Limpar texto"
+
+msgid "Insertion method"
+msgstr "Forma de inserção"
+
+msgid "Importing..."
+msgstr "Importando..."
+
+msgid "Conversion options"
+msgstr "Opções de conversão"
+
+msgid "Preflight checks"
+msgstr "Verificações antes de aplicar"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "Corrija os erros encontrados antes de continuar."
+
+msgid "Save remote images to the Media Library"
+msgstr "Salvar imagens remotas na Biblioteca de Mídia"
+
+msgid "Info"
+msgstr "Informação"
+
+msgid "The post has not been saved yet."
+msgstr "A publicação ainda não foi salva."
+
+msgid "Apply post title"
+msgstr "Aplicar título da publicação"
+
+msgid "The post body was replaced with blocks."
+msgstr "O conteúdo da publicação foi substituído por blocos."
+
+msgid "Post settings"
+msgstr "Configurações da publicação"
+
+msgid "Applying post settings..."
+msgstr "Aplicando configurações da publicação..."
+
+msgid "Excerpt"
+msgstr "Resumo"
+
+msgid "Apply excerpt"
+msgstr "Aplicar resumo"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "Blocos matemáticos não serão convertidos para um formato de exibição dedicado."
+
+msgid " characters"
+msgstr " caracteres"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "Um novo rascunho será salvo no WordPress."
+
+msgid "Create new draft"
+msgstr "Criar novo rascunho"
+
+msgid "A new draft was created."
+msgstr "Um novo rascunho foi criado."
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "Confirme antes de substituir o conteúdo atual da publicação."
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr "O primeiro H1 será usado como título da publicação e removido do conteúdo."
+
+msgid "Use first H1 as post title"
+msgstr "Usar o primeiro H1 como título da publicação"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "Campos do Front Matter sem suporte não serão aplicados:"
+
+msgid "Unsupported fields will not be applied:"
+msgstr "Campos sem suporte não serão aplicados:"
+
+msgid "Missing categories or tags will be created."
+msgstr "Categorias ou tags ausentes serão criadas."
+
+msgid "Create missing categories and tags"
+msgstr "Criar categorias e tags ausentes"
+
+msgid "Create missing terms"
+msgstr "Criar termos ausentes"
+
+msgid "Apply content and settings"
+msgstr "Aplicar conteúdo e configurações"
+
+msgid "Replace content"
+msgstr "Substituir conteúdo"
+
+msgid "Replace the content"
+msgstr "Substituir o conteúdo"
+
+msgid "Current Markdown source"
+msgstr "Texto atual em Markdown"
+
+msgid "The current post will not be saved automatically."
+msgstr "A publicação atual não será salva automaticamente."
+
+msgid "Image URL"
+msgstr "URL da imagem"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "URLs de imagem devem começar com http, https ou /."
+
+msgid "Importing images..."
+msgstr "Importando imagens..."
+
+msgid "Save images"
+msgstr "Salvar imagens"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "Não foi possível interpretar a sintaxe da imagem. Verifique os parênteses e a URL."
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr "Imagens com caminhos relativos manterão seus caminhos originais e não serão salvas na Biblioteca de Mídia."
+
+msgid "Review and adjust"
+msgstr "Revisar e ajustar"
+
+msgid "Review"
+msgstr "Revisão"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "A sintaxe de notas de rodapé não será convertida em notas de rodapé com links."
+
+msgid " line"
+msgstr " linha"
+
+msgid " line: edit in Markdown"
+msgstr " linha: editar no Markdown"
+
+msgid "Warning"
+msgstr "Aviso"
+
+msgid "Pasted source"
+msgstr "Texto colado"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr "Estes dados da publicação foram lidos do Front Matter. Revise cada item, edite-o se necessário ou desmarque a caixa para deixá-lo inalterado."
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr "Revise os avisos e as alterações previstas; em seguida, escolha como o artigo deve ser aplicado e quais opções de conversão utilizar."
+
+msgid "Review before applying"
+msgstr "Revisar antes de aplicar"
+
+msgid "Source, post settings, and review before applying"
+msgstr "Texto, configurações da publicação e revisão antes de aplicar"
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr "Adiciona blocos na posição atual do cursor. O conteúdo existente será mantido e a publicação não será salva automaticamente."
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr "Substitui todos os blocos da publicação atual. Será necessário confirmar, e a publicação não será salva automaticamente."
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr "Mantém a publicação atual sem alterações e salva o conteúdo e as configurações selecionadas como um novo rascunho."
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr "# Título do artigo\n\nCole o Markdown aqui ou solte um arquivo."
+
+msgid "The bundled Markdown is unavailable."
+msgstr "O Markdown incluído no plugin não está disponível."
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "Não foi possível carregar o Markdown incluído no plugin."
+
+msgid "The clipboard is unavailable."
+msgstr "A área de transferência não está disponível."
+
+msgid "The draft ID was not found."
+msgstr "O ID do rascunho não foi encontrado."
+
+msgid "The draft blocks were not found."
+msgstr "Os blocos do rascunho não foram encontrados."
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI: Publicação simples"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "Configurações da Publicação simples"
+
+msgid "You are not allowed to change these settings."
+msgstr "Você não tem permissão para alterar estas configurações."
+
+msgid "Quick Post settings saved."
+msgstr "Configurações da Publicação simples salvas."
+
+msgid "Every Quick Post browser was signed out."
+msgstr "Todas as sessões da Publicação simples foram encerradas."
+
+msgid "Choose an author who can create the selected content type."
+msgstr "Escolha um autor que possa criar o tipo de conteúdo selecionado."
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "O autor selecionado não pode publicar o tipo de conteúdo selecionado."
+
+msgid "Choose an available publishing destination."
+msgstr "Escolha um destino de publicação disponível."
+
+msgid "Choose an available category."
+msgstr "Escolha uma categoria disponível."
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "Use pelo menos 8 caracteres na senha de acesso."
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "Defina uma senha de acesso antes de ativar a Publicação simples."
+
+msgid "Quick Post reduces the learning and memory required to publish. It is intended for people who find the WordPress admin screen difficult, including older users, people with disabilities, and anyone who needs a simpler interface."
+msgstr "A Publicação simples reduz o quanto é preciso aprender e memorizar para publicar. Ela foi pensada para quem tem dificuldade com a tela administrativa do WordPress, incluindo pessoas idosas, pessoas com deficiência e qualquer pessoa que precise de uma interface mais simples."
+
+msgid "Anyone can start with only a title and article text. As they become comfortable, blank lines, lists, short headings, and images add more structure. Learning Markdown is not required."
+msgstr "Qualquer pessoa pode começar usando apenas um título e o texto do artigo. Quando se sentir mais à vontade, pode usar linhas em branco, listas, subtítulos curtos e imagens para organizar melhor o conteúdo. Não é necessário aprender Markdown."
+
+msgid "Quick Post"
+msgstr "Publicação simples"
+
+msgid "Enable the standalone posting page"
+msgstr "Ativar a página independente de publicação"
+
+msgid "Posting URL"
+msgstr "URL de publicação"
+
+msgid "Open Quick Post"
+msgstr "Abrir Publicação simples"
+
+msgid "Passphrase"
+msgstr "Senha de acesso"
+
+msgid "Show passphrase"
+msgstr "Mostrar senha de acesso"
+
+msgid "Hide passphrase"
+msgstr "Ocultar senha de acesso"
+
+msgid "Publishing destination"
+msgstr "Destino de publicação"
+
+msgid "Posts, Pages, and custom post types that support titles and the editor are shown. The contributor cannot change this choice."
+msgstr "Serão exibidos posts, páginas e tipos de post personalizados compatíveis com título e editor. A pessoa que publica não poderá alterar esta escolha."
+
+msgid "Leave blank to keep the current passphrase. Entering a new one signs out every browser."
+msgstr "Deixe em branco para manter a senha de acesso atual. Ao informar uma nova senha, todas as sessões serão encerradas."
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "Use pelo menos 8 caracteres. Compartilhe a senha somente com pessoas autorizadas a publicar."
+
+msgid "Post author"
+msgstr "Autor da publicação"
+
+msgid "Choose an author"
+msgstr "Escolha um autor"
+
+msgid "After submission"
+msgstr "Após o envio"
+
+msgid "Save as a draft"
+msgstr "Salvar como rascunho"
+
+msgid "Publish immediately"
+msgstr "Publicar imediatamente"
+
+msgid "This choice is fixed on the posting page so the contributor cannot change it by mistake."
+msgstr "Essa opção fica bloqueada na página de publicação para evitar que a pessoa que publica a altere por engano."
+
+msgid "Default category"
+msgstr "Categoria padrão"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "Aplicada apenas quando o destino de publicação suporta categorias."
+
+msgid "Use the site default"
+msgstr "Usar o padrão do site"
+
+msgid "Save Quick Post settings"
+msgstr "Salvar configurações da Publicação simples"
+
+msgid "Sign out every Quick Post browser"
+msgstr "Encerrar todas as sessões da Publicação simples"
+
+msgid "Enter a post title."
+msgstr "Digite um título para a publicação."
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "Digite o texto do artigo, com no máximo 2 MB."
+
+msgid "The article could not be converted into a safe post."
+msgstr "Não foi possível converter o artigo em uma publicação segura."
+
+msgid "Reload the page and try again."
+msgstr "Recarregue a página e tente novamente."
+
+msgid "The configured post author is no longer available."
+msgstr "O autor configurado para a publicação não está mais disponível."
+
+msgid "The configured publishing destination is no longer available."
+msgstr "O destino de publicação configurado não está mais disponível."
+
+msgid "The converted article contains an unsupported block."
+msgstr "O artigo convertido contém um bloco incompatível."
+
+msgid "This article was already submitted. Start a new post before submitting again."
+msgstr "Este artigo já foi enviado. Comece uma nova publicação antes de enviar novamente."
+
+msgid "Enter the passphrase"
+msgstr "Digite a senha de acesso"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "Use a senha de acesso compartilhada pelo administrador do site."
+
+msgid "Continue"
+msgstr "Continuar"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "Este navegador continuará conectado por 30 dias."
+
+msgid "Quick Post is unavailable"
+msgstr "A Publicação simples não está disponível"
+
+msgid "Sign out"
+msgstr "Sair"
+
+msgid "Article draft"
+msgstr "Rascunho do artigo"
+
+msgid "Write or paste your article"
+msgstr "Escreva ou cole seu artigo"
+
+msgid "Type or paste an article, or open a text file. Plain text and Markdown are accepted."
+msgstr "Digite ou cole um artigo, ou abra um arquivo de texto. Você pode usar texto simples ou Markdown."
+
+msgid "Write or paste the article here"
+msgstr "Escreva ou cole o artigo aqui"
+
+msgid "Open file"
+msgstr "Abrir arquivo"
+
+msgid "Add images"
+msgstr "Adicionar imagens"
+
+msgid "Alternative text"
+msgstr "Texto alternativo"
+
+msgid "Remove image"
+msgstr "Remover imagem"
+
+msgid "Attach up to 5 images."
+msgstr "Anexe até 5 imagens."
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Use imagens JPEG, PNG, GIF ou WebP que não ultrapassem o limite de upload do site."
+
+msgid "One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Uma ou mais imagens não puderam ser enviadas. Use imagens JPEG, PNG, GIF ou WebP que não ultrapassem o limite de upload do site."
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "Uma ou mais imagens não puderam ser salvas na Biblioteca de Mídia."
+
+msgid "The selected post author is not allowed to upload images."
+msgstr "O autor da publicação selecionado não tem permissão para carregar imagens."
+
+msgid "The attached images could not be added to the article."
+msgstr "As imagens anexadas não puderam ser adicionadas ao artigo."
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
+msgstr "O artigo não pôde ser publicado. Tente novamente ou peça ajuda ao administrador do site."
+
+msgid "Review post"
+msgstr "Revisar publicação"
+
+msgid "Check before posting"
+msgstr "Confira antes de publicar"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "Confira o título, a pré-visualização e os pontos identificados no rascunho."
+
+msgid "Post title"
+msgstr "Título da publicação"
+
+msgid "Points to check"
+msgstr "Pontos para conferir"
+
+msgid "I reviewed these points."
+msgstr "Conferi estes pontos."
+
+msgid "Edit draft"
+msgstr "Editar rascunho"
+
+msgid "Publish post"
+msgstr "Publicar"
+
+msgid "Save draft"
+msgstr "Salvar rascunho"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "O JavaScript é necessário para converter o artigo em blocos do WordPress."
+
+msgid "Post submitted"
+msgstr "Publicação enviada"
+
+msgid "Post published"
+msgstr "Publicação publicada"
+
+msgid "Draft saved"
+msgstr "Rascunho salvo"
+
+msgid "View post"
+msgstr "Ver publicação"
+
+msgid "Create another post"
+msgstr "Criar outra publicação"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "Peça ao administrador do site para ativar esta página de publicação."
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "Muitas tentativas. Aguarde 15 minutos e tente novamente."
+
+msgid "The passphrase is not correct."
+msgstr "A senha de acesso está incorreta."
+
+msgid "The page expired. Reload it and try again."
+msgstr "A página expirou. Recarregue-a e tente novamente."
+
+msgid "Line"
+msgstr "Linha"
+
+msgid "Paste an article draft before continuing."
+msgstr "Cole o texto do artigo antes de continuar."
+
+msgid "Use an article draft up to 2 MB."
+msgstr "Use um texto de artigo com no máximo 2 MB."
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "Não foi possível converter o artigo em blocos do WordPress."
+
+msgid "Publishing..."
+msgstr "Publicando..."
+
+msgid "Saving..."
+msgstr "Salvando..."

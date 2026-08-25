@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "tr_TR",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Alternative text": [
+        "Alternatif metin"
+      ],
+      "Attach up to 5 images.": [
+        "En fazla 5 görsel ekleyebilirsiniz."
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "En fazla 2 MB boyutunda bir .md, .markdown veya .txt dosyası seçin."
+      ],
+      "Enter a post title.": [
+        "Yazı başlığını girin."
+      ],
+      "Line": [
+        "Satır"
+      ],
+      "Paste an article draft before continuing.": [
+        "Devam etmeden önce bir yazı taslağı yapıştırın."
+      ],
+      "Publishing...": [
+        "Yayımlanıyor..."
+      ],
+      "Remove image": [
+        "Görseli kaldır"
+      ],
+      "Saving...": [
+        "Kaydediliyor..."
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "Yazı, WordPress bloklarına dönüştürülemedi."
+      ],
+      "The file could not be read.": [
+        "Dosya okunamadı."
+      ],
+      "Use an article draft up to 2 MB.": [
+        "En fazla 2 MB boyutunda bir yazı taslağı kullanın."
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "Sitenin yükleme sınırını aşmayan JPEG, PNG, GIF veya WebP görselleri kullanın."
+      ]
+    }
+  }
+}

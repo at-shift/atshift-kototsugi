@@ -1,0 +1,807 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-24 10:12+0900\n"
+"Last-Translator: KOTOTSUGI contributors\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: kototsugi\n"
+"X-Generator: KOTOTSUGI translation workflow\n"
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "Преобразуйте Markdown, удобный для ИИ, в редактируемые блоки WordPress."
+
+msgid "More ways to write"
+msgstr "Дополнительное оформление"
+
+msgid "Place"
+msgstr "Место"
+
+msgid "Important"
+msgstr "Важно"
+
+msgid "Note"
+msgstr "Примечание"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "Можно также добавлять обозначения, например «Место:» или «Телефон:»."
+
+msgid "Display language"
+msgstr "Язык интерфейса"
+
+msgid "Use the site language"
+msgstr "Использовать язык сайта"
+
+msgid "Japanese"
+msgstr "Японский"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "Spanish"
+msgstr "Испанский"
+
+msgid "German"
+msgstr "Немецкий"
+
+msgid "French"
+msgstr "Французский"
+
+msgid "Portuguese (Brazil)"
+msgstr "Португальский (Бразилия)"
+
+msgid "Italian"
+msgstr "Итальянский"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "Dutch"
+msgstr "Нидерландский"
+
+msgid "Chinese (Simplified)"
+msgstr "Китайский (упрощённый)"
+
+msgid "Polish"
+msgstr "Польский"
+
+msgid "Turkish"
+msgstr "Турецкий"
+
+msgid "Indonesian"
+msgstr "Индонезийский"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "Китайский (традиционный, Тайвань)"
+
+msgid "Korean"
+msgstr "Корейский"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "Используется на экранах ввода кодовой фразы, подготовки статьи, проверки и завершения."
+
+msgid "New article"
+msgstr "Новая статья"
+
+msgid "Create an article"
+msgstr "Создать статью"
+
+msgid "Article title"
+msgstr "Заголовок статьи"
+
+msgid "Article text"
+msgstr "Текст статьи"
+
+msgid "Write the article here"
+msgstr "Напишите статью здесь"
+
+msgid "Writing hints"
+msgstr "Подсказки по оформлению"
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr "Обычный текст автоматически делится на абзацы. Эти подсказки нужны только для дополнительного оформления."
+
+msgid "Leave a blank line between paragraphs."
+msgstr "Оставляйте пустую строку между абзацами."
+
+msgid "Start a line with ・ to make a list."
+msgstr "Начинайте строку с символа ・, чтобы создать список."
+
+msgid "A short line on its own becomes a heading."
+msgstr "Короткая отдельная строка становится заголовком."
+
+msgid "The imported image URL could not be created."
+msgstr "Не удалось создать URL импортированного изображения."
+
+msgid "This image URL is not allowed."
+msgstr "Этот URL изображения недопустим."
+
+msgid "You are not allowed to attach images to this post."
+msgstr "У вас нет прав на добавление изображений к этой записи."
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "У вас нет прав на повторное использование этого изображения из Библиотеки файлов."
+
+msgid "The temporary file could not be created."
+msgstr "Не удалось создать временный файл."
+
+msgid "The remote image could not be downloaded."
+msgstr "Не удалось загрузить удалённое изображение."
+
+msgid "The remote image returned an unexpected response."
+msgstr "При загрузке удалённого изображения получен неожиданный ответ."
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "Удалённое изображение превышает допустимый размер загрузки."
+
+msgid "The downloaded file is not a supported image."
+msgstr "Формат загруженного изображения не поддерживается."
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt, до 2 МБ"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "Выберите файл .md, .markdown или .txt размером до 2 МБ."
+
+msgid "Copy AI authoring rules"
+msgstr "Скопировать правила подготовки текста для ИИ"
+
+msgid "AI authoring rules copied."
+msgstr "Правила подготовки текста для ИИ скопированы."
+
+msgid "AI authoring rules could not be copied."
+msgstr "Не удалось скопировать правила подготовки текста для ИИ."
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr "H1, совпадающий с заголовком из Front Matter, будет автоматически удалён, чтобы не дублировать заголовок в содержимом записи."
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr "Заголовок из Front Matter отличается от первого H1. При применении H1 будет удалён из содержимого записи."
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "Не найден закрывающий маркер --- для Front Matter."
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "Найдено несколько H1. Оставьте один H1, который станет заголовком записи."
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "HTML будет вставлен как обычный текст и не будет интерпретироваться как HTML."
+
+msgid "Markdown insertion method"
+msgstr "Способ вставки Markdown"
+
+msgid "The Markdown import could not be completed."
+msgstr "Не удалось завершить импорт Markdown."
+
+msgid "Back to Markdown"
+msgstr "Вернуться к Markdown"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "Не удалось преобразовать Markdown в блоки."
+
+msgid "Enter some Markdown."
+msgstr "Введите текст Markdown."
+
+msgid "Markdown file"
+msgstr "Файл Markdown"
+
+msgid "Load a Markdown file"
+msgstr "Загрузить файл Markdown"
+
+msgid "Markdown file loaded."
+msgstr "Файл Markdown загружен."
+
+msgid "Choose a Markdown file"
+msgstr "Выберите файл Markdown"
+
+msgid "Markdown source"
+msgstr "Исходный текст Markdown"
+
+msgid "Markdown posting"
+msgstr "Публикация из Markdown"
+
+msgid "Drop here"
+msgstr "Перетащите сюда"
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr "Этот фрагмент будет вставлен как обычный блок кода, поскольку специальный блок для него недоступен."
+
+msgid ". Check the heading hierarchy."
+msgstr ". Проверьте иерархию заголовков."
+
+msgid " is followed by "
+msgstr " сменяется "
+
+msgid "Apply featured image"
+msgstr "Использовать изображение записи"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Categories"
+msgstr "Рубрики"
+
+msgid "Apply categories"
+msgstr "Применить рубрики"
+
+msgid "Add at cursor"
+msgstr "Добавить в позиции курсора"
+
+msgid "Copying..."
+msgstr "Копирование…"
+
+msgid "The closing ``` for the code block was not found."
+msgstr "Не найден закрывающий маркер ``` для блока кода."
+
+msgid "Slug"
+msgstr "Ярлык"
+
+msgid "Apply slug"
+msgstr "Применить ярлык"
+
+msgid "Loading sample..."
+msgstr "Загрузка примера…"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Tags"
+msgstr "Метки"
+
+msgid "Apply tags"
+msgstr "Применить метки"
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr "Списки задач будут преобразованы в обычные списки; состояние флажков не сохранится."
+
+msgid "Sample Markdown loaded."
+msgstr "Пример Markdown загружен."
+
+msgid "Sample Markdown could not be loaded."
+msgstr "Не удалось загрузить пример Markdown."
+
+msgid "Load sample Markdown"
+msgstr "Загрузить пример Markdown"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "Вложенные списки будут преобразованы в одноуровневые."
+
+msgid "The file could not be read."
+msgstr "Не удалось прочитать файл."
+
+msgid "Choose file"
+msgstr "Выберите файл"
+
+msgid "Insert as blocks"
+msgstr "Вставить как блоки"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "Блоки добавлены в текущей позиции курсора."
+
+msgid "Preview"
+msgstr "Предпросмотр"
+
+msgid "There is no source to preview."
+msgstr "Нет исходного текста для предварительного просмотра."
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr "Некоторые настройки нельзя применить к этому типу записи или с вашими текущими правами."
+
+msgid "Some images or post settings could not be applied."
+msgstr "Не удалось применить некоторые изображения или настройки записи."
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr "Черновик создан, но некоторые этапы преобразования не удалось выполнить. "
+
+msgid "Open draft"
+msgstr "Открыть черновик"
+
+msgid "Alt text"
+msgstr "Альтернативный текст"
+
+msgid " items"
+msgstr " элементов"
+
+msgid " categories or tags were created."
+msgstr " — создано рубрик или меток."
+
+msgid " remote images will be saved to the Media Library."
+msgstr " — удалённые изображения будут сохранены в Библиотеке файлов."
+
+msgid " post settings were applied."
+msgstr " — применены настройки записи."
+
+msgid " existing blocks will be replaced in the editor."
+msgstr " — существующие блоки будут заменены в редакторе."
+
+msgid " existing blocks: confirm replacement"
+msgstr " — существующих блоков: подтвердите замену"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr " — изображения не удалось сохранить, поэтому в записи оставлены их удалённые URL."
+
+msgid " images were saved to the Media Library."
+msgstr " — изображения сохранены в Библиотеке файлов."
+
+msgid " items to review"
+msgstr " — пунктов для проверки"
+
+msgid " settings to apply"
+msgstr " — настроек для применения"
+
+msgid "Workspace"
+msgstr "Рабочая область"
+
+msgid "Open workspace"
+msgstr "Открыть рабочую область"
+
+msgid "What will be saved"
+msgstr "Что сохранится"
+
+msgid "No issues need fixing"
+msgstr "Исправлять ничего не нужно"
+
+msgid "Source, post settings, and review"
+msgstr "Исходный текст, настройки записи и проверка"
+
+msgid "Clear source"
+msgstr "Очистить исходный текст"
+
+msgid "Insertion method"
+msgstr "Способ вставки"
+
+msgid "Importing..."
+msgstr "Импорт…"
+
+msgid "Conversion options"
+msgstr "Параметры преобразования"
+
+msgid "Preflight checks"
+msgstr "Проверка перед импортом"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "Перед продолжением исправьте ошибки, найденные при проверке."
+
+msgid "Save remote images to the Media Library"
+msgstr "Сохранить удалённые изображения в Библиотеке файлов"
+
+msgid "Info"
+msgstr "Информация"
+
+msgid "The post has not been saved yet."
+msgstr "Запись ещё не сохранена."
+
+msgid "Apply post title"
+msgstr "Применить заголовок записи"
+
+msgid "The post body was replaced with blocks."
+msgstr "Содержимое записи заменено блоками."
+
+msgid "Post settings"
+msgstr "Настройки записи"
+
+msgid "Applying post settings..."
+msgstr "Применение настроек записи…"
+
+msgid "Excerpt"
+msgstr "Отрывок"
+
+msgid "Apply excerpt"
+msgstr "Применить отрывок"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "Математические блоки не будут преобразованы в отдельный формат отображения."
+
+msgid " characters"
+msgstr " символов"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "Новый черновик будет сохранён в WordPress."
+
+msgid "Create new draft"
+msgstr "Создать новый черновик"
+
+msgid "A new draft was created."
+msgstr "Новый черновик создан."
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "Подтвердите замену существующего содержимого записи."
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr "Первый H1 станет заголовком записи и будет удалён из её содержимого."
+
+msgid "Use first H1 as post title"
+msgstr "Использовать первый H1 в качестве заголовка записи"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "Неподдерживаемые поля Front Matter будут пропущены:"
+
+msgid "Unsupported fields will not be applied:"
+msgstr "Неподдерживаемые поля будут пропущены:"
+
+msgid "Missing categories or tags will be created."
+msgstr "Недостающие рубрики или метки будут созданы."
+
+msgid "Create missing categories and tags"
+msgstr "Создать недостающие рубрики и метки"
+
+msgid "Create missing terms"
+msgstr "Создать недостающие рубрики и метки"
+
+msgid "Apply content and settings"
+msgstr "Применить содержимое и настройки"
+
+msgid "Replace content"
+msgstr "Заменить содержимое"
+
+msgid "Replace the content"
+msgstr "Заменить содержимое"
+
+msgid "Current Markdown source"
+msgstr "Текущий исходный текст Markdown"
+
+msgid "The current post will not be saved automatically."
+msgstr "Текущая запись не будет сохранена автоматически."
+
+msgid "Image URL"
+msgstr "URL изображения"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "URL изображений должны начинаться с http, https или /."
+
+msgid "Importing images..."
+msgstr "Импорт изображений…"
+
+msgid "Save images"
+msgstr "Сохранить изображения"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "Не удалось распознать запись изображения. Проверьте скобки и URL."
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr "Изображения с относительными путями сохранят исходные пути и не будут добавлены в Библиотеку файлов."
+
+msgid "Review and adjust"
+msgstr "Проверка и правка"
+
+msgid "Review"
+msgstr "Проверка"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "Ссылки между знаками сносок и текстом сносок созданы не будут."
+
+msgid " line"
+msgstr " — строка"
+
+msgid " line: edit in Markdown"
+msgstr " — строка: изменить в Markdown"
+
+msgid "Warning"
+msgstr "Предупреждение"
+
+msgid "Pasted source"
+msgstr "Вставленный исходный текст"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr "Эти данные записи получены из Front Matter. Проверьте каждый пункт, при необходимости измените его или снимите флажок, чтобы не применять его."
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr "Проверьте предупреждения и ожидаемые изменения, затем выберите способ добавления статьи и параметры преобразования."
+
+msgid "Review before applying"
+msgstr "Проверка перед применением"
+
+msgid "Source, post settings, and review before applying"
+msgstr "Исходный текст, настройки записи и проверка перед применением"
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr "Добавить блоки в текущую позицию курсора. Существующее содержимое сохранится, а запись не будет сохранена автоматически."
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr "Заменить все блоки в текущей записи. Требуется подтверждение; запись не будет сохранена автоматически."
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr "Оставить текущую запись без изменений, а содержимое и выбранные настройки сохранить как новый черновик."
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr "# Заголовок статьи\n\nВставьте сюда Markdown или перетащите файл."
+
+msgid "The bundled Markdown is unavailable."
+msgstr "Встроенный файл Markdown недоступен."
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "Не удалось загрузить встроенный файл Markdown."
+
+msgid "The clipboard is unavailable."
+msgstr "Буфер обмена недоступен."
+
+msgid "The draft ID was not found."
+msgstr "Идентификатор черновика не найден."
+
+msgid "The draft blocks were not found."
+msgstr "Блоки черновика не найдены."
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI — Простая публикация"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "Настройки простой публикации"
+
+msgid "You are not allowed to change these settings."
+msgstr "У вас нет прав на изменение этих настроек."
+
+msgid "Quick Post settings saved."
+msgstr "Настройки простой публикации сохранены."
+
+msgid "Every Quick Post browser was signed out."
+msgstr "Сеансы простой публикации завершены во всех браузерах."
+
+msgid "Choose an author who can create the selected content type."
+msgstr "Выберите автора, которому разрешено создавать записи выбранного типа."
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "Выбранному автору не разрешено публиковать записи этого типа."
+
+msgid "Choose an available publishing destination."
+msgstr "Выберите доступное место публикации."
+
+msgid "Choose an available category."
+msgstr "Выберите доступную рубрику."
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "Кодовая фраза должна содержать не менее 8 символов."
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "Задайте кодовую фразу перед включением простой публикации."
+
+msgid "Quick Post reduces the learning and memory required to publish. It is intended for people who find the WordPress admin screen difficult, including older users, people with disabilities, and anyone who needs a simpler interface."
+msgstr "Простая публикация упрощает размещение материалов: пользователю нужно меньше осваивать и запоминать. Она предназначена для тех, кому трудно пользоваться панелью управления WordPress: пожилых людей, людей с инвалидностью и всех, кому нужен более простой интерфейс."
+
+msgid "Anyone can start with only a title and article text. As they become comfortable, blank lines, lists, short headings, and images add more structure. Learning Markdown is not required."
+msgstr "Для начала достаточно заголовка и текста статьи. По мере освоения можно добавлять пустые строки, списки, короткие заголовки и изображения. Знать Markdown не требуется."
+
+msgid "Quick Post"
+msgstr "Простая публикация"
+
+msgid "Enable the standalone posting page"
+msgstr "Включить отдельную страницу для публикации"
+
+msgid "Posting URL"
+msgstr "URL страницы публикации"
+
+msgid "Open Quick Post"
+msgstr "Открыть простую публикацию"
+
+msgid "Passphrase"
+msgstr "Кодовая фраза"
+
+msgid "Show passphrase"
+msgstr "Показать кодовую фразу"
+
+msgid "Hide passphrase"
+msgstr "Скрыть кодовую фразу"
+
+msgid "Publishing destination"
+msgstr "Место публикации"
+
+msgid "Posts, Pages, and custom post types that support titles and the editor are shown. The contributor cannot change this choice."
+msgstr "Показаны записи, страницы и произвольные типы записей, в которых есть заголовок и редактор. На странице простой публикации изменить этот выбор нельзя."
+
+msgid "Leave blank to keep the current passphrase. Entering a new one signs out every browser."
+msgstr "Оставьте поле пустым, чтобы сохранить текущую кодовую фразу. Новая фраза завершит сеансы во всех браузерах."
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "Используйте не менее 8 символов. Сообщайте фразу только тем, кому разрешено публиковать материалы."
+
+msgid "Post author"
+msgstr "Автор записи"
+
+msgid "Choose an author"
+msgstr "Выберите автора"
+
+msgid "After submission"
+msgstr "После отправки"
+
+msgid "Save as a draft"
+msgstr "Сохранить как черновик"
+
+msgid "Publish immediately"
+msgstr "Опубликовать немедленно"
+
+msgid "This choice is fixed on the posting page so the contributor cannot change it by mistake."
+msgstr "На странице публикации этот выбор нельзя изменить, поэтому пользователь не поменяет его случайно."
+
+msgid "Default category"
+msgstr "Рубрика по умолчанию"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "Применяется, только если выбранное место публикации поддерживает рубрики."
+
+msgid "Use the site default"
+msgstr "Использовать рубрику сайта по умолчанию"
+
+msgid "Save Quick Post settings"
+msgstr "Сохранить настройки простой публикации"
+
+msgid "Sign out every Quick Post browser"
+msgstr "Завершить сеансы простой публикации во всех браузерах"
+
+msgid "Enter a post title."
+msgstr "Введите заголовок записи."
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "Введите текст статьи размером не более 2 МБ."
+
+msgid "The article could not be converted into a safe post."
+msgstr "Не удалось безопасно преобразовать статью в запись."
+
+msgid "Reload the page and try again."
+msgstr "Обновите страницу и попробуйте ещё раз."
+
+msgid "The configured post author is no longer available."
+msgstr "Указанный автор записи больше недоступен."
+
+msgid "The configured publishing destination is no longer available."
+msgstr "Указанное место публикации больше недоступно."
+
+msgid "The converted article contains an unsupported block."
+msgstr "Преобразованная статья содержит неподдерживаемый блок."
+
+msgid "This article was already submitted. Start a new post before submitting again."
+msgstr "Эта статья уже отправлена. Перед повторной отправкой начните новую запись."
+
+msgid "Enter the passphrase"
+msgstr "Введите кодовую фразу"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "Используйте кодовую фразу, предоставленную администратором сайта."
+
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "Вход в этом браузере сохранится на 30 дней."
+
+msgid "Quick Post is unavailable"
+msgstr "Простая публикация недоступна"
+
+msgid "Sign out"
+msgstr "Выйти"
+
+msgid "Article draft"
+msgstr "Текст статьи"
+
+msgid "Write or paste your article"
+msgstr "Напишите или вставьте текст статьи"
+
+msgid "Type or paste an article, or open a text file. Plain text and Markdown are accepted."
+msgstr "Напишите или вставьте статью либо откройте текстовый файл. Можно использовать обычный текст или Markdown."
+
+msgid "Write or paste the article here"
+msgstr "Напишите или вставьте текст статьи здесь"
+
+msgid "Open file"
+msgstr "Открыть файл"
+
+msgid "Add images"
+msgstr "Добавить изображения"
+
+msgid "Alternative text"
+msgstr "Альтернативный текст"
+
+msgid "Remove image"
+msgstr "Удалить изображение"
+
+msgid "Attach up to 5 images."
+msgstr "Добавьте не более 5 изображений."
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Используйте изображения JPEG, PNG, GIF или WebP, размер которых не превышает ограничение сайта."
+
+msgid "One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Не удалось загрузить одно или несколько изображений. Используйте файлы JPEG, PNG, GIF или WebP, размер которых не превышает ограничение сайта."
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "Не удалось сохранить одно или несколько изображений в Библиотеке файлов."
+
+msgid "The selected post author is not allowed to upload images."
+msgstr "У выбранного автора записи нет прав на загрузку изображений."
+
+msgid "The attached images could not be added to the article."
+msgstr "Не удалось добавить прикреплённые изображения в статью."
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
+msgstr "Не удалось опубликовать статью. Попробуйте ещё раз или обратитесь за помощью к администратору сайта."
+
+msgid "Review post"
+msgstr "Проверить запись"
+
+msgid "Check before posting"
+msgstr "Проверьте перед отправкой"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "Проверьте заголовок, предварительный просмотр и замечания, найденные в тексте."
+
+msgid "Post title"
+msgstr "Заголовок записи"
+
+msgid "Points to check"
+msgstr "Что нужно проверить"
+
+msgid "I reviewed these points."
+msgstr "Все пункты проверены."
+
+msgid "Edit draft"
+msgstr "Вернуться к тексту"
+
+msgid "Publish post"
+msgstr "Опубликовать запись"
+
+msgid "Save draft"
+msgstr "Сохранить черновик"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "Для преобразования статьи в блоки WordPress требуется JavaScript."
+
+msgid "Post submitted"
+msgstr "Запись отправлена"
+
+msgid "Post published"
+msgstr "Запись опубликована"
+
+msgid "Draft saved"
+msgstr "Черновик сохранён"
+
+msgid "View post"
+msgstr "Просмотреть запись"
+
+msgid "Create another post"
+msgstr "Создать ещё одну запись"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "Попросите администратора сайта включить страницу простой публикации."
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "Слишком много попыток. Подождите 15 минут и повторите попытку."
+
+msgid "The passphrase is not correct."
+msgstr "Неверная кодовая фраза."
+
+msgid "The page expired. Reload it and try again."
+msgstr "Срок действия страницы истёк. Обновите её и попробуйте снова."
+
+msgid "Line"
+msgstr "Строка"
+
+msgid "Paste an article draft before continuing."
+msgstr "Перед продолжением введите или вставьте текст статьи."
+
+msgid "Use an article draft up to 2 MB."
+msgstr "Текст статьи должен быть не больше 2 МБ."
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "Не удалось преобразовать статью в блоки WordPress."
+
+msgid "Publishing..."
+msgstr "Публикация…"
+
+msgid "Saving..."
+msgstr "Сохранение…"

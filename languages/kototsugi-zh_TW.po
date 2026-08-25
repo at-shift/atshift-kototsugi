@@ -1,0 +1,808 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-24 10:11+09:00\n"
+"Last-Translator: KOTOTSUGI contributors\n"
+"Language-Team: Chinese (Traditional, Taiwan)\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: kototsugi\n"
+"X-Generator: KOTOTSUGI translation workflow\n"
+
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "將適合 AI 產生的 Markdown 轉換成可編輯的 WordPress 區塊。"
+
+msgid "More ways to write"
+msgstr "更多撰寫方式"
+
+msgid "Place"
+msgstr "地點"
+
+msgid "Important"
+msgstr "重要"
+
+msgid "Note"
+msgstr "備註"
+
+msgid "Price"
+msgstr "價格"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "也可以加入「地點：」或「電話：」等標示。"
+
+msgid "Display language"
+msgstr "顯示語言"
+
+msgid "Use the site language"
+msgstr "使用網站語言"
+
+msgid "Japanese"
+msgstr "日文"
+
+msgid "English"
+msgstr "英文"
+
+msgid "Spanish"
+msgstr "西班牙文"
+
+msgid "German"
+msgstr "德文"
+
+msgid "French"
+msgstr "法文"
+
+msgid "Portuguese (Brazil)"
+msgstr "葡萄牙文（巴西）"
+
+msgid "Italian"
+msgstr "義大利文"
+
+msgid "Russian"
+msgstr "俄文"
+
+msgid "Dutch"
+msgstr "荷蘭文"
+
+msgid "Chinese (Simplified)"
+msgstr "簡體中文"
+
+msgid "Polish"
+msgstr "波蘭文"
+
+msgid "Turkish"
+msgstr "土耳其文"
+
+msgid "Indonesian"
+msgstr "印尼文"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "繁體中文（台灣）"
+
+msgid "Korean"
+msgstr "韓文"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "用於通關密語、文章撰寫、確認及完成畫面。"
+
+msgid "New article"
+msgstr "新文章"
+
+msgid "Create an article"
+msgstr "建立文章"
+
+msgid "Article title"
+msgstr "文章標題"
+
+msgid "Article text"
+msgstr "文章內容"
+
+msgid "Write the article here"
+msgstr "在這裡撰寫文章"
+
+msgid "Writing hints"
+msgstr "撰寫提示"
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr "一般輸入的文字會自動成為段落。只有需要更多編排時，才需要使用以下方式。"
+
+msgid "Leave a blank line between paragraphs."
+msgstr "段落之間請空一行。"
+
+msgid "Start a line with ・ to make a list."
+msgstr "在行首輸入 ・ 即可建立清單。"
+
+msgid "A short line on its own becomes a heading."
+msgstr "單獨一行的簡短文字會成為標題。"
+
+msgid "The imported image URL could not be created."
+msgstr "無法建立匯入圖片的網址。"
+
+msgid "This image URL is not allowed."
+msgstr "不允許使用這個圖片網址。"
+
+msgid "You are not allowed to attach images to this post."
+msgstr "你沒有權限將圖片附加到這篇文章。"
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "你沒有權限重複使用這張媒體庫圖片。"
+
+msgid "The temporary file could not be created."
+msgstr "無法建立暫存檔。"
+
+msgid "The remote image could not be downloaded."
+msgstr "無法下載遠端圖片。"
+
+msgid "The remote image returned an unexpected response."
+msgstr "遠端圖片傳回非預期的回應。"
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "遠端圖片超過上傳大小限制。"
+
+msgid "The downloaded file is not a supported image."
+msgstr "下載的檔案不是支援的圖片格式。"
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt，最大 2 MB"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "請選擇最大 2 MB 的 .md、.markdown 或 .txt 檔案。"
+
+msgid "Copy AI authoring rules"
+msgstr "複製 AI 撰寫規則"
+
+msgid "AI authoring rules copied."
+msgstr "已複製 AI 撰寫規則。"
+
+msgid "AI authoring rules could not be copied."
+msgstr "無法複製 AI 撰寫規則。"
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr "與 Front Matter 標題相同的 H1 會自動移除，以免在文章內容中重複。"
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr "Front Matter 標題與第一個 H1 不同。套用時會從文章內容中移除該 H1。"
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "找不到 Front Matter 的結尾 ---。"
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "找到多個 H1 標題。請保留一個 H1 作為文章標題。"
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "HTML 會以文字插入，不會當作 HTML 執行。"
+
+msgid "Markdown insertion method"
+msgstr "Markdown 插入方式"
+
+msgid "The Markdown import could not be completed."
+msgstr "無法完成 Markdown 匯入。"
+
+msgid "Back to Markdown"
+msgstr "返回 Markdown"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "無法將 Markdown 轉換成區塊。"
+
+msgid "Enter some Markdown."
+msgstr "請輸入 Markdown 內容。"
+
+msgid "Markdown file"
+msgstr "Markdown 檔案"
+
+msgid "Load a Markdown file"
+msgstr "載入 Markdown 檔案"
+
+msgid "Markdown file loaded."
+msgstr "已載入 Markdown 檔案。"
+
+msgid "Choose a Markdown file"
+msgstr "選擇 Markdown 檔案"
+
+msgid "Markdown source"
+msgstr "Markdown 原始內容"
+
+msgid "Markdown posting"
+msgstr "Markdown 投稿"
+
+msgid "Drop here"
+msgstr "拖放到這裡"
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr "因為沒有對應的專用區塊，這段程式碼會以一般程式碼區塊插入。"
+
+msgid ". Check the heading hierarchy."
+msgstr "。請檢查標題層級。"
+
+msgid " is followed by "
+msgstr " 後面接著 "
+
+msgid "Apply featured image"
+msgstr "套用精選圖片"
+
+msgid "Error"
+msgstr "錯誤"
+
+msgid "Categories"
+msgstr "分類"
+
+msgid "Apply categories"
+msgstr "套用分類"
+
+msgid "Add at cursor"
+msgstr "在游標位置加入"
+
+msgid "Copying..."
+msgstr "正在複製…"
+
+msgid "The closing ``` for the code block was not found."
+msgstr "找不到程式碼區塊的結尾 ```。"
+
+msgid "Slug"
+msgstr "代稱"
+
+msgid "Apply slug"
+msgstr "套用代稱"
+
+msgid "Loading sample..."
+msgstr "正在載入範例…"
+
+msgid "Title"
+msgstr "標題"
+
+msgid "Tags"
+msgstr "標籤"
+
+msgid "Apply tags"
+msgstr "套用標籤"
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr "工作清單會轉換成一般清單，不會保留核取方塊狀態。"
+
+msgid "Sample Markdown loaded."
+msgstr "已載入 Markdown 範例。"
+
+msgid "Sample Markdown could not be loaded."
+msgstr "無法載入 Markdown 範例。"
+
+msgid "Load sample Markdown"
+msgstr "載入 Markdown 範例"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "巢狀清單會轉換成單一層級。"
+
+msgid "The file could not be read."
+msgstr "無法讀取檔案。"
+
+msgid "Choose file"
+msgstr "選擇檔案"
+
+msgid "Insert as blocks"
+msgstr "以區塊插入"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "區塊已插入目前游標位置。"
+
+msgid "Preview"
+msgstr "預覽"
+
+msgid "There is no source to preview."
+msgstr "沒有可預覽的原始內容。"
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr "由於此內容類型或你目前的權限限制，部分文章設定無法套用。"
+
+msgid "Some images or post settings could not be applied."
+msgstr "部分圖片或文章設定無法套用。"
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr "草稿已建立，但部分轉換步驟未能完成。 "
+
+msgid "Open draft"
+msgstr "開啟草稿"
+
+msgid "Alt text"
+msgstr "替代文字"
+
+msgid " items"
+msgstr " 個項目"
+
+msgid " categories or tags were created."
+msgstr " 個分類或標籤已建立。"
+
+msgid " remote images will be saved to the Media Library."
+msgstr " 張遠端圖片將儲存到媒體庫。"
+
+msgid " post settings were applied."
+msgstr " 項文章設定已套用。"
+
+msgid " existing blocks will be replaced in the editor."
+msgstr " 個現有區塊將在編輯器中被取代。"
+
+msgid " existing blocks: confirm replacement"
+msgstr " 個現有區塊：確認取代"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr " 張圖片無法儲存，因此文章中保留了原本的遠端網址。"
+
+msgid " images were saved to the Media Library."
+msgstr " 張圖片已儲存到媒體庫。"
+
+msgid " items to review"
+msgstr " 個項目需要檢查"
+
+msgid " settings to apply"
+msgstr " 項設定待套用"
+
+msgid "Workspace"
+msgstr "工作區"
+
+msgid "Open workspace"
+msgstr "開啟工作區"
+
+msgid "What will be saved"
+msgstr "將儲存的內容"
+
+msgid "No issues need fixing"
+msgstr "沒有需要修正的問題"
+
+msgid "Source, post settings, and review"
+msgstr "原始內容、文章設定與檢查"
+
+msgid "Clear source"
+msgstr "清除原始內容"
+
+msgid "Insertion method"
+msgstr "插入方式"
+
+msgid "Importing..."
+msgstr "正在匯入…"
+
+msgid "Conversion options"
+msgstr "轉換選項"
+
+msgid "Preflight checks"
+msgstr "事前檢查"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "請先修正事前檢查中的錯誤，再繼續。"
+
+msgid "Save remote images to the Media Library"
+msgstr "將遠端圖片儲存到媒體庫"
+
+msgid "Info"
+msgstr "資訊"
+
+msgid "The post has not been saved yet."
+msgstr "文章尚未儲存。"
+
+msgid "Apply post title"
+msgstr "套用文章標題"
+
+msgid "The post body was replaced with blocks."
+msgstr "文章內容已由區塊取代。"
+
+msgid "Post settings"
+msgstr "文章設定"
+
+msgid "Applying post settings..."
+msgstr "正在套用文章設定…"
+
+msgid "Excerpt"
+msgstr "內容摘要"
+
+msgid "Apply excerpt"
+msgstr "套用內容摘要"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "數學公式區塊不會轉換成專用的顯示格式。"
+
+msgid " characters"
+msgstr " 個字元"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "新草稿將儲存到 WordPress。"
+
+msgid "Create new draft"
+msgstr "建立新草稿"
+
+msgid "A new draft was created."
+msgstr "已建立新草稿。"
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "取代現有文章內容前，請先確認。"
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr "第一個 H1 會作為文章標題，並從文章內容中移除。"
+
+msgid "Use first H1 as post title"
+msgstr "將第一個 H1 作為文章標題"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "不支援的 Front Matter 欄位將不會套用："
+
+msgid "Unsupported fields will not be applied:"
+msgstr "不支援的欄位將不會套用："
+
+msgid "Missing categories or tags will be created."
+msgstr "不存在的分類或標籤將會建立。"
+
+msgid "Create missing categories and tags"
+msgstr "建立不存在的分類和標籤"
+
+msgid "Create missing terms"
+msgstr "建立不存在的分類法詞彙"
+
+msgid "Apply content and settings"
+msgstr "套用內容與設定"
+
+msgid "Replace content"
+msgstr "取代內容"
+
+msgid "Replace the content"
+msgstr "取代文章內容"
+
+msgid "Current Markdown source"
+msgstr "目前的 Markdown 原始內容"
+
+msgid "The current post will not be saved automatically."
+msgstr "目前文章不會自動儲存。"
+
+msgid "Image URL"
+msgstr "圖片網址"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "圖片網址必須以 http、https 或 / 開頭。"
+
+msgid "Importing images..."
+msgstr "正在匯入圖片…"
+
+msgid "Save images"
+msgstr "儲存圖片"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "無法解析圖片語法。請檢查括號與網址。"
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr "相對路徑圖片會保留原始路徑，不會儲存到媒體庫。"
+
+msgid "Review and adjust"
+msgstr "確認與調整"
+
+msgid "Review"
+msgstr "確認"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "註腳語法不會轉換成帶有連結的註腳。"
+
+msgid " line"
+msgstr " 行"
+
+msgid " line: edit in Markdown"
+msgstr " 行：請在 Markdown 中編輯"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Pasted source"
+msgstr "貼上的原始內容"
+
+msgid "Close"
+msgstr "關閉"
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr "這些文章資料是從 Front Matter 讀取的。請逐項檢查並視需要編輯；若不想變更，請取消勾選。"
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr "請檢查警告與預計變更，再選擇文章的套用方式和要使用的轉換選項。"
+
+msgid "Review before applying"
+msgstr "套用前確認"
+
+msgid "Source, post settings, and review before applying"
+msgstr "原始內容、文章設定及套用前確認"
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr "在目前游標位置加入區塊。現有內容會保留，文章不會自動儲存。"
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr "取代目前文章中的所有區塊。必須先確認，文章不會自動儲存。"
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr "目前文章維持不變，內容與所選文章設定會另存為新草稿。"
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr "# 文章標題\n\n在這裡貼上 Markdown，或拖放檔案。"
+
+msgid "The bundled Markdown is unavailable."
+msgstr "無法使用內建的 Markdown。"
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "無法載入內建的 Markdown。"
+
+msgid "The clipboard is unavailable."
+msgstr "無法使用剪貼簿。"
+
+msgid "The draft ID was not found."
+msgstr "找不到草稿 ID。"
+
+msgid "The draft blocks were not found."
+msgstr "找不到草稿區塊。"
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI 輕鬆投稿"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "輕鬆投稿設定"
+
+msgid "You are not allowed to change these settings."
+msgstr "你沒有權限變更這些設定。"
+
+msgid "Quick Post settings saved."
+msgstr "輕鬆投稿設定已儲存。"
+
+msgid "Every Quick Post browser was signed out."
+msgstr "所有使用輕鬆投稿的瀏覽器都已登出。"
+
+msgid "Choose an author who can create the selected content type."
+msgstr "請選擇能建立所選內容類型的作者。"
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "所選作者無法發佈這個內容類型。"
+
+msgid "Choose an available publishing destination."
+msgstr "請選擇可用的發佈位置。"
+
+msgid "Choose an available category."
+msgstr "請選擇可用的分類。"
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "通關密語至少要有 8 個字元。"
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "啟用輕鬆投稿前，請先設定通關密語。"
+
+msgid "Quick Post reduces the learning and memory required to publish. It is intended for people who find the WordPress admin screen difficult, including older users, people with disabilities, and anyone who needs a simpler interface."
+msgstr "輕鬆投稿能減少發佈文章所需的學習與記憶。它適合覺得 WordPress 管理畫面難以使用的人，包括年長者、身心障礙者，以及任何需要更簡單介面的人。"
+
+msgid "Anyone can start with only a title and article text. As they become comfortable, blank lines, lists, short headings, and images add more structure. Learning Markdown is not required."
+msgstr "任何人一開始只要輸入標題和文章內容即可。熟悉後，可以使用空白行、清單、簡短標題和圖片，讓內容更有層次。不需要學習 Markdown。"
+
+msgid "Quick Post"
+msgstr "輕鬆投稿"
+
+msgid "Enable the standalone posting page"
+msgstr "啟用獨立投稿頁面"
+
+msgid "Posting URL"
+msgstr "投稿網址"
+
+msgid "Open Quick Post"
+msgstr "開啟輕鬆投稿"
+
+msgid "Passphrase"
+msgstr "通關密語"
+
+msgid "Show passphrase"
+msgstr "顯示通關密語"
+
+msgid "Hide passphrase"
+msgstr "隱藏通關密語"
+
+msgid "Publishing destination"
+msgstr "發佈位置"
+
+msgid "Posts, Pages, and custom post types that support titles and the editor are shown. The contributor cannot change this choice."
+msgstr "這裡會顯示支援標題與編輯器的文章、頁面及自訂內容類型。投稿者無法變更這項選擇。"
+
+msgid "Leave blank to keep the current passphrase. Entering a new one signs out every browser."
+msgstr "留空可保留目前的通關密語。輸入新的通關密語會讓所有瀏覽器登出。"
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "至少使用 8 個字元，且只分享給獲准投稿的人。"
+
+msgid "Post author"
+msgstr "文章作者"
+
+msgid "Choose an author"
+msgstr "選擇作者"
+
+msgid "After submission"
+msgstr "送出後"
+
+msgid "Save as a draft"
+msgstr "儲存為草稿"
+
+msgid "Publish immediately"
+msgstr "立即發佈"
+
+msgid "This choice is fixed on the posting page so the contributor cannot change it by mistake."
+msgstr "這項選擇在投稿頁面中固定，避免投稿者誤改。"
+
+msgid "Default category"
+msgstr "預設分類"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "只有發佈位置支援分類時才會套用。"
+
+msgid "Use the site default"
+msgstr "使用網站預設值"
+
+msgid "Save Quick Post settings"
+msgstr "儲存輕鬆投稿設定"
+
+msgid "Sign out every Quick Post browser"
+msgstr "將所有使用輕鬆投稿的瀏覽器登出"
+
+msgid "Enter a post title."
+msgstr "請輸入文章標題。"
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "請輸入最大 2 MB 的文章草稿。"
+
+msgid "The article could not be converted into a safe post."
+msgstr "無法將文章轉換成安全的內容。"
+
+msgid "Reload the page and try again."
+msgstr "請重新載入頁面後再試一次。"
+
+msgid "The configured post author is no longer available."
+msgstr "設定的文章作者已無法使用。"
+
+msgid "The configured publishing destination is no longer available."
+msgstr "設定的發佈位置已無法使用。"
+
+msgid "The converted article contains an unsupported block."
+msgstr "轉換後的文章包含不支援的區塊。"
+
+msgid "This article was already submitted. Start a new post before submitting again."
+msgstr "這篇文章已送出。再次送出前，請先建立新文章。"
+
+msgid "Enter the passphrase"
+msgstr "輸入通關密語"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "請輸入網站管理員提供的通關密語。"
+
+msgid "Continue"
+msgstr "繼續"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "這個瀏覽器會保持登入 30 天。"
+
+msgid "Quick Post is unavailable"
+msgstr "目前無法使用輕鬆投稿"
+
+msgid "Sign out"
+msgstr "登出"
+
+msgid "Article draft"
+msgstr "文章草稿"
+
+msgid "Write or paste your article"
+msgstr "輸入或貼上文章"
+
+msgid "Type or paste an article, or open a text file. Plain text and Markdown are accepted."
+msgstr "可以輸入或貼上文章，也可以開啟文字檔案。支援純文字與 Markdown。"
+
+msgid "Write or paste the article here"
+msgstr "在這裡輸入或貼上文章"
+
+msgid "Open file"
+msgstr "開啟檔案"
+
+msgid "Add images"
+msgstr "加入圖片"
+
+msgid "Alternative text"
+msgstr "替代文字"
+
+msgid "Remove image"
+msgstr "移除圖片"
+
+msgid "Attach up to 5 images."
+msgstr "最多可附加 5 張圖片。"
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "請使用網站上傳限制內的 JPEG、PNG、GIF 或 WebP 圖片。"
+
+msgid "One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "一張或多張圖片無法上傳。請使用網站上傳限制內的 JPEG、PNG、GIF 或 WebP 圖片。"
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "一張或多張圖片無法儲存到媒體庫。"
+
+msgid "The selected post author is not allowed to upload images."
+msgstr "所選文章作者沒有上傳圖片的權限。"
+
+msgid "The attached images could not be added to the article."
+msgstr "無法將附加的圖片加入文章。"
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
+msgstr "文章無法發佈。請再試一次，或向網站管理員尋求協助。"
+
+msgid "Review post"
+msgstr "檢查文章"
+
+msgid "Check before posting"
+msgstr "投稿前確認"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "請檢查標題、預覽，以及草稿中找到的注意事項。"
+
+msgid "Post title"
+msgstr "文章標題"
+
+msgid "Points to check"
+msgstr "注意事項"
+
+msgid "I reviewed these points."
+msgstr "我已確認這些事項。"
+
+msgid "Edit draft"
+msgstr "編輯草稿"
+
+msgid "Publish post"
+msgstr "發佈文章"
+
+msgid "Save draft"
+msgstr "儲存草稿"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "需要 JavaScript 才能將文章轉換成 WordPress 區塊。"
+
+msgid "Post submitted"
+msgstr "文章已送出"
+
+msgid "Post published"
+msgstr "文章已發佈"
+
+msgid "Draft saved"
+msgstr "草稿已儲存"
+
+msgid "View post"
+msgstr "檢視文章"
+
+msgid "Create another post"
+msgstr "再建立一篇文章"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "請聯絡網站管理員啟用這個投稿頁面。"
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "嘗試次數過多。請等候 15 分鐘後再試一次。"
+
+msgid "The passphrase is not correct."
+msgstr "通關密語不正確。"
+
+msgid "The page expired. Reload it and try again."
+msgstr "頁面已過期。請重新載入後再試一次。"
+
+msgid "Line"
+msgstr "行"
+
+msgid "Paste an article draft before continuing."
+msgstr "請先貼上文章草稿再繼續。"
+
+msgid "Use an article draft up to 2 MB."
+msgstr "文章草稿不得超過 2 MB。"
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "無法將文章轉換成 WordPress 區塊。"
+
+msgid "Publishing..."
+msgstr "正在發佈…"
+
+msgid "Saving..."
+msgstr "正在儲存…"

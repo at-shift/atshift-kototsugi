@@ -97,6 +97,16 @@ try {
 	$assert( 9 === kototsugi_quick_post_passphrase_length( $japanese_passphrase ), 'Japanese passphrases should be counted as characters, not bytes.' );
 	$assert( 3 === kototsugi_quick_post_passphrase_length( '日本語' ), 'A short Japanese passphrase should remain shorter than the minimum.' );
 	$assert( wp_check_password( $japanese_passphrase, wp_hash_password( $japanese_passphrase ) ), 'Japanese passphrases should survive hashing and verification unchanged.' );
+	$quick_post_languages = kototsugi_quick_post_languages();
+	$expected_languages   = kototsugi_quick_post_locale_codes();
+	$assert( $expected_languages === array_keys( $quick_post_languages ), 'Quick Post should offer every bundled display language in the intended order.' );
+	$original_locale = determine_locale();
+	kototsugi_switch_quick_post_locale( array( 'language' => 'es_ES' ) );
+	$assert( 'es_ES' === determine_locale(), 'Quick Post should switch to a bundled locale without requiring a WordPress language pack.' );
+	$assert( 'Quick Post' !== __( 'Quick Post', 'kototsugi' ), 'Quick Post should load the bundled translation for the selected locale.' );
+	if ( 'es_ES' !== $original_locale ) {
+		restore_previous_locale();
+	}
 	$assert( isset( kototsugi_quick_post_types()[ $test_post_type ] ), 'An editable custom post type should be available as a publishing destination.' );
 
 	$session = kototsugi_create_quick_post_session( $settings );

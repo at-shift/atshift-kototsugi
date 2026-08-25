@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 12:00+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "zh_CN",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "将适合 AI 生成的 Markdown 转换为可编辑的 WordPress 区块。"
+      ],
+      "The imported image URL could not be created.": [
+        "无法生成已导入图片的 URL。"
+      ],
+      "This image URL is not allowed.": [
+        "不允许使用此图片 URL。"
+      ],
+      "You are not allowed to attach images to this post.": [
+        "您无权为此文章添加图片。"
+      ],
+      "The temporary file could not be created.": [
+        "无法创建临时文件。"
+      ],
+      "The remote image could not be downloaded.": [
+        "无法下载远程图片。"
+      ],
+      "The remote image returned an unexpected response.": [
+        "远程图片服务器返回了异常响应。"
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "远程图片超出上传大小限制。"
+      ],
+      "The downloaded file is not a supported image.": [
+        "下载的文件不是支持的图片格式。"
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt，最大 2 MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "选择一个最大 2 MB 的 .md、.markdown 或 .txt 文件。"
+      ],
+      "Copy AI authoring rules": [
+        "复制 AI 写作规则"
+      ],
+      "AI authoring rules copied.": [
+        "已复制 AI 写作规则。"
+      ],
+      "AI authoring rules could not be copied.": [
+        "无法复制 AI 写作规则。"
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "与 Front Matter 标题匹配的 H1 标题将被自动移除，以避免在正文中重复。"
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Front Matter 标题与第一个 H1 标题不同。应用后，该 H1 标题将从正文中移除。"
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "未找到 Front Matter 的结束标记“---”。"
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "发现多个 H1 标题。请只保留一个 H1 作为文章标题。"
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML 将作为文本插入，而不会作为 HTML 代码运行。"
+      ],
+      "Markdown insertion method": [
+        "Markdown 插入方式"
+      ],
+      "The Markdown import could not be completed.": [
+        "无法完成 Markdown 导入。"
+      ],
+      "Back to Markdown": [
+        "返回 Markdown"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "无法将 Markdown 转换为区块。"
+      ],
+      "Enter some Markdown.": [
+        "输入一些 Markdown 内容。"
+      ],
+      "Markdown file": [
+        "Markdown 文件"
+      ],
+      "Load a Markdown file": [
+        "加载 Markdown 文件"
+      ],
+      "Markdown file loaded.": [
+        "Markdown 文件已加载。"
+      ],
+      "Choose a Markdown file": [
+        "选择 Markdown 文件"
+      ],
+      "Markdown source": [
+        "Markdown 原文"
+      ],
+      "Markdown posting": [
+        "Markdown 发布"
+      ],
+      "Drop here": [
+        "拖放到此处"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "由于没有可用的专用区块，此代码块将作为普通代码块插入。"
+      ],
+      ". Check the heading hierarchy.": [
+        "。请检查标题层级。"
+      ],
+      " is followed by ": [
+        " 后面紧跟 "
+      ],
+      "Apply featured image": [
+        "设置特色图像"
+      ],
+      "Error": [
+        "错误"
+      ],
+      "Categories": [
+        "分类"
+      ],
+      "Apply categories": [
+        "应用分类"
+      ],
+      "Add at cursor": [
+        "在光标处添加"
+      ],
+      "Copying...": [
+        "正在复制……"
+      ],
+      "The closing ``` for the code block was not found.": [
+        "未找到代码块的结束标记 ```。"
+      ],
+      "Slug": [
+        "别名"
+      ],
+      "Apply slug": [
+        "应用别名"
+      ],
+      "Loading sample...": [
+        "正在加载示例……"
+      ],
+      "Title": [
+        "标题"
+      ],
+      "Tags": [
+        "标签"
+      ],
+      "Apply tags": [
+        "应用标签"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "任务列表将转换为普通列表，复选框状态不会保留。"
+      ],
+      "Sample Markdown loaded.": [
+        "示例 Markdown 已加载。"
+      ],
+      "Sample Markdown could not be loaded.": [
+        "无法加载示例 Markdown。"
+      ],
+      "Load sample Markdown": [
+        "加载示例 Markdown"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "嵌套列表将转换为单层列表。"
+      ],
+      "The file could not be read.": [
+        "无法读取该文件。"
+      ],
+      "Choose file": [
+        "选择文件"
+      ],
+      "Insert as blocks": [
+        "作为区块插入"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "区块已插入到当前光标位置。"
+      ],
+      "Preview": [
+        "预览"
+      ],
+      "There is no source to preview.": [
+        "没有可供预览的源内容。"
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "由于当前内容类型或您的权限限制，部分文章设置无法应用。"
+      ],
+      "Some images or post settings could not be applied.": [
+        "部分图片或文章设置无法应用。"
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "草稿已创建，但未能完成所有转换步骤。 "
+      ],
+      "Open draft": [
+        "打开草稿"
+      ],
+      "Alt text": [
+        "替代文本"
+      ],
+      " items": [
+        " 个项目"
+      ],
+      " categories or tags were created.": [
+        " 个分类或标签已创建。"
+      ],
+      " remote images will be saved to the Media Library.": [
+        " 张远程图片将保存到媒体库。"
+      ],
+      " post settings were applied.": [
+        " 项文章设置已应用。"
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " 个现有区块将在编辑器中被替换。"
+      ],
+      " existing blocks: confirm replacement": [
+        " 个现有区块：确认替换"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " 张图片无法保存，因此文章中保留了相应的远程 URL。"
+      ],
+      " images were saved to the Media Library.": [
+        " 张图片已保存到媒体库。"
+      ],
+      " items to review": [
+        " 个项目待检查"
+      ],
+      " settings to apply": [
+        " 项设置待应用"
+      ],
+      "Workspace": [
+        "工作区"
+      ],
+      "Open workspace": [
+        "打开工作区"
+      ],
+      "What will be saved": [
+        "将保存的内容"
+      ],
+      "No issues need fixing": [
+        "没有需要修复的问题"
+      ],
+      "Source, post settings, and review": [
+        "原文、文章设置和检查"
+      ],
+      "Clear source": [
+        "清除原文"
+      ],
+      "Insertion method": [
+        "插入方式"
+      ],
+      "Importing...": [
+        "正在导入……"
+      ],
+      "Conversion options": [
+        "转换选项"
+      ],
+      "Preflight checks": [
+        "应用前检查"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "请先修复应用前检查中发现的错误。"
+      ],
+      "Save remote images to the Media Library": [
+        "将远程图片保存到媒体库"
+      ],
+      "Info": [
+        "信息"
+      ],
+      "The post has not been saved yet.": [
+        "文章尚未保存。"
+      ],
+      "Apply post title": [
+        "应用文章标题"
+      ],
+      "The post body was replaced with blocks.": [
+        "文章正文已替换为区块。"
+      ],
+      "Post settings": [
+        "文章设置"
+      ],
+      "Applying post settings...": [
+        "正在应用文章设置……"
+      ],
+      "Excerpt": [
+        "摘要"
+      ],
+      "Apply excerpt": [
+        "应用摘要"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "数学公式区块不会转换为专用的显示格式。"
+      ],
+      " characters": [
+        " 字符"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "将在 WordPress 中保存为新草稿。"
+      ],
+      "Create new draft": [
+        "创建新草稿"
+      ],
+      "A new draft was created.": [
+        "已创建新草稿。"
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "在替换现有文章正文前请确认。"
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "第一个 H1 标题将用作文章标题，并从正文中移除。"
+      ],
+      "Use first H1 as post title": [
+        "使用第一个 H1 作为文章标题"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "不支持的 Front Matter 字段将不会被应用："
+      ],
+      "Unsupported fields will not be applied:": [
+        "不支持的字段将不会被应用："
+      ],
+      "Missing categories or tags will be created.": [
+        "不存在的分类或标签将会创建。"
+      ],
+      "Create missing categories and tags": [
+        "创建缺失的分类和标签"
+      ],
+      "Create missing terms": [
+        "创建缺少的分类和标签"
+      ],
+      "Apply content and settings": [
+        "应用内容和设置"
+      ],
+      "Replace content": [
+        "替换内容"
+      ],
+      "Replace the content": [
+        "替换内容"
+      ],
+      "Current Markdown source": [
+        "当前 Markdown 原文"
+      ],
+      "The current post will not be saved automatically.": [
+        "当前文章不会自动保存。"
+      ],
+      "Image URL": [
+        "图片 URL"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "图片 URL 必须以 http、https 或 / 开头。"
+      ],
+      "Importing images...": [
+        "正在导入图片……"
+      ],
+      "Save images": [
+        "保存图片"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "无法解析图片语法。请检查括号和 URL。"
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "相对路径的图片将保留其原始路径，不会保存到媒体库中。"
+      ],
+      "Review and adjust": [
+        "检查并调整"
+      ],
+      "Review": [
+        "检查"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "脚注语法不会转换为链接式脚注。"
+      ],
+      " line": [
+        " 行"
+      ],
+      " line: edit in Markdown": [
+        " 行：在 Markdown 中编辑"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Pasted source": [
+        "粘贴的源内容"
+      ],
+      "Close": [
+        "关闭"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "以下文章信息读取自 Front Matter。请逐项检查；需要时可编辑，或取消勾选以保持原值不变。"
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "请检查警告和即将发生的更改，然后选择文章的应用方式和转换选项。"
+      ],
+      "Review before applying": [
+        "应用前检查"
+      ],
+      "Source, post settings, and review before applying": [
+        "原文、文章设置和应用前检查"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "在当前光标位置添加区块。现有内容将保留，文章不会自动保存。"
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "替换当前文章中的所有区块。需要确认，且文章不会自动保存。"
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "保持当前文章不变，并将内容及所选文章设置保存为新草稿。"
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# 文章标题\n\n在此粘贴 Markdown 或拖入文件。"
+      ],
+      "The bundled Markdown is unavailable.": [
+        "内置 Markdown 不可用。"
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "无法加载内置 Markdown。"
+      ],
+      "The clipboard is unavailable.": [
+        "剪贴板不可用。"
+      ],
+      "The draft ID was not found.": [
+        "未找到草稿 ID。"
+      ],
+      "The draft blocks were not found.": [
+        "未找到草稿区块。"
+      ]
+    }
+  }
+}

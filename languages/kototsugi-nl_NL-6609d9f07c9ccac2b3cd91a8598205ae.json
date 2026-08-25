@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "nl_NL",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Alternative text": [
+        "Alternatieve tekst"
+      ],
+      "Attach up to 5 images.": [
+        "Voeg maximaal 5 afbeeldingen toe."
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Kies een .md-, .markdown- of .txt-bestand van maximaal 2 MB."
+      ],
+      "Enter a post title.": [
+        "Voer een berichttitel in."
+      ],
+      "Line": [
+        "Regel"
+      ],
+      "Paste an article draft before continuing.": [
+        "Voer een artikeltekst in voordat je doorgaat."
+      ],
+      "Publishing...": [
+        "Publiceren..."
+      ],
+      "Remove image": [
+        "Afbeelding verwijderen"
+      ],
+      "Saving...": [
+        "Opslaan..."
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "Het artikel kon niet worden omgezet in WordPress-blokken."
+      ],
+      "The file could not be read.": [
+        "Het bestand kon niet worden gelezen."
+      ],
+      "Use an article draft up to 2 MB.": [
+        "Gebruik een artikeltekst van maximaal 2 MB."
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "Gebruik JPEG-, PNG-, GIF- of WebP-afbeeldingen die binnen de uploadlimiet van de site vallen."
+      ]
+    }
+  }
+}

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KOTOTSUGI 0.5.1\n"
+"Project-Id-Version: KOTOTSUGI 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
 "POT-Creation-Date: 2026-08-23 18:05+0900\n"
-"PO-Revision-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-25 00:27+0900\n"
 "Last-Translator: @shift\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -50,6 +50,45 @@ msgstr "日本語"
 msgid "English"
 msgstr "英語"
 
+msgid "Spanish"
+msgstr "スペイン語"
+
+msgid "German"
+msgstr "ドイツ語"
+
+msgid "French"
+msgstr "フランス語"
+
+msgid "Portuguese (Brazil)"
+msgstr "ポルトガル語 (ブラジル)"
+
+msgid "Italian"
+msgstr "イタリア語"
+
+msgid "Russian"
+msgstr "ロシア語"
+
+msgid "Dutch"
+msgstr "オランダ語"
+
+msgid "Chinese (Simplified)"
+msgstr "中国語 (簡体字)"
+
+msgid "Polish"
+msgstr "ポーランド語"
+
+msgid "Turkish"
+msgstr "トルコ語"
+
+msgid "Indonesian"
+msgstr "インドネシア語"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "中国語 (繁体字・台湾)"
+
+msgid "Korean"
+msgstr "韓国語"
+
 msgid "Used on the passphrase, article, review, and completion screens."
 msgstr "合言葉、記事入力、確認、完了の各画面で使用します。"
 
@@ -81,7 +120,7 @@ msgid "Start a line with ・ to make a list."
 msgstr "行の先頭に「・」を付けると、箇条書きになります。"
 
 msgid "A short line on its own becomes a heading."
-msgstr "短い言葉を 1行だけで書くと、見出しになります。"
+msgstr "短い言葉を 1 行だけで書くと、見出しになります。"
 
 msgid "The imported image URL could not be created."
 msgstr "取り込んだ画像 URL を作成できませんでした。"
@@ -114,7 +153,7 @@ msgid ".md / .markdown / .txt, up to 2 MB"
 msgstr ".md / .markdown / .txt、最大 2MB"
 
 msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
-msgstr "2MB以下の .md、.markdown、.txt ファイルを選択してください。"
+msgstr "2MB 以下の .md、.markdown、.txt ファイルを選択してください。"
 
 msgid "Copy AI authoring rules"
 msgstr "A.I. 用ルールをコピー"

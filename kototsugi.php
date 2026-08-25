@@ -3,7 +3,7 @@
  * Plugin Name: KOTOTSUGI
  * Plugin URI: https://github.com/at-shift/atshift-kototsugi
  * Description: Turn AI-friendly Markdown into editable WordPress blocks.
- * Version: 0.5.1
+ * Version: 1.0
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: @shift
@@ -20,25 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KOTOTSUGI_VERSION', '0.5.1' );
+define( 'KOTOTSUGI_VERSION', '1.0' );
 define( 'KOTOTSUGI_FILE', __FILE__ );
 define( 'KOTOTSUGI_URL', plugin_dir_url( __FILE__ ) );
 define( 'KOTOTSUGI_MAX_REMOTE_IMAGE_BYTES', 10 * MB_IN_BYTES );
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/quick-post.php';
-
-/**
- * Loads the bundled Japanese translation.
- */
-function kototsugi_load_textdomain() {
-	// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound -- The GitHub package includes its Japanese translation for immediate use.
-	load_plugin_textdomain(
-		'kototsugi',
-		false,
-		dirname( plugin_basename( KOTOTSUGI_FILE ) ) . '/languages'
-	);
-}
-add_action( 'init', 'kototsugi_load_textdomain' );
 
 /**
  * Registers the authenticated endpoint used to sideload remote article images.
@@ -383,6 +370,22 @@ add_action( 'enqueue_block_editor_assets', 'kototsugi_enqueue_editor_assets' );
  * Keeps generated callouts readable on the public site without changing a theme's base styles.
  */
 function kototsugi_enqueue_public_styles() {
+	global $wp_query;
+
+	$posts = isset( $wp_query->posts ) && is_array( $wp_query->posts ) ? $wp_query->posts : array();
+	$uses_kototsugi_callout = false;
+
+	foreach ( $posts as $post ) {
+		if ( $post instanceof WP_Post && false !== strpos( $post->post_content, 'kototsugi-callout' ) ) {
+			$uses_kototsugi_callout = true;
+			break;
+		}
+	}
+
+	if ( ! $uses_kototsugi_callout ) {
+		return;
+	}
+
 	$shared_style = plugin_dir_path( __FILE__ ) . 'assets/style.css';
 
 	wp_enqueue_style(

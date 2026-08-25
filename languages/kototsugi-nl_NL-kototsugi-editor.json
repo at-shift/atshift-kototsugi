@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "nl_NL",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "Zet AI-vriendelijke Markdown om in bewerkbare WordPress-blokken."
+      ],
+      "The imported image URL could not be created.": [
+        "De URL voor de geïmporteerde afbeelding kon niet worden aangemaakt."
+      ],
+      "This image URL is not allowed.": [
+        "Deze afbeeldings-URL is niet toegestaan."
+      ],
+      "You are not allowed to attach images to this post.": [
+        "Je hebt geen toestemming om afbeeldingen aan dit bericht toe te voegen."
+      ],
+      "The temporary file could not be created.": [
+        "Het tijdelijke bestand kon niet worden aangemaakt."
+      ],
+      "The remote image could not be downloaded.": [
+        "De externe afbeelding kon niet worden gedownload."
+      ],
+      "The remote image returned an unexpected response.": [
+        "De externe afbeelding gaf een onverwacht antwoord."
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "De externe afbeelding is groter dan de toegestane uploadlimiet."
+      ],
+      "The downloaded file is not a supported image.": [
+        "Het gedownloade bestand is geen ondersteunde afbeelding."
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt, tot 2 MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Kies een .md-, .markdown- of .txt-bestand van maximaal 2 MB."
+      ],
+      "Copy AI authoring rules": [
+        "Schrijfregels voor AI kopiëren"
+      ],
+      "AI authoring rules copied.": [
+        "Schrijfregels voor AI gekopieerd."
+      ],
+      "AI authoring rules could not be copied.": [
+        "De schrijfregels voor AI konden niet worden gekopieerd."
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "De H1 die overeenkomt met de titel in Front Matter wordt automatisch verwijderd, zodat de titel niet dubbel in de berichtinhoud staat."
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "De titel in Front Matter wijkt af van de eerste H1. Bij het toepassen wordt deze H1 uit de berichtinhoud verwijderd."
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "De afsluitende --- van Front Matter is niet gevonden."
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "Er zijn meerdere H1-koppen gevonden. Behoud één H1 om als berichttitel te gebruiken."
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML wordt als tekst ingevoegd en niet als HTML uitgevoerd."
+      ],
+      "Markdown insertion method": [
+        "Manier om Markdown in te voegen"
+      ],
+      "The Markdown import could not be completed.": [
+        "Het importeren van Markdown kon niet worden voltooid."
+      ],
+      "Back to Markdown": [
+        "Terug naar Markdown"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Markdown kon niet worden omgezet in blokken."
+      ],
+      "Enter some Markdown.": [
+        "Voer Markdown in."
+      ],
+      "Markdown file": [
+        "Markdown-bestand"
+      ],
+      "Load a Markdown file": [
+        "Markdown-bestand laden"
+      ],
+      "Markdown file loaded.": [
+        "Markdown-bestand geladen."
+      ],
+      "Choose a Markdown file": [
+        "Markdown-bestand kiezen"
+      ],
+      "Markdown source": [
+        "Markdown-brontekst"
+      ],
+      "Markdown posting": [
+        "Publiceren met Markdown"
+      ],
+      "Drop here": [
+        "Zet hier neer"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "Dit codeblok wordt als gewoon codeblok ingevoegd, omdat er geen speciaal blok beschikbaar is."
+      ],
+      ". Check the heading hierarchy.": [
+        ". Controleer de volgorde van de koppen."
+      ],
+      " is followed by ": [
+        " wordt gevolgd door "
+      ],
+      "Apply featured image": [
+        "Uitgelichte afbeelding overnemen"
+      ],
+      "Error": [
+        "Fout"
+      ],
+      "Categories": [
+        "Categorieën"
+      ],
+      "Apply categories": [
+        "Categorieën overnemen"
+      ],
+      "Add at cursor": [
+        "Bij de cursor invoegen"
+      ],
+      "Copying...": [
+        "Kopiëren..."
+      ],
+      "The closing ``` for the code block was not found.": [
+        "De afsluitende ``` van het codeblok is niet gevonden."
+      ],
+      "Slug": [
+        "Slug"
+      ],
+      "Apply slug": [
+        "Slug overnemen"
+      ],
+      "Loading sample...": [
+        "Voorbeeld laden..."
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Tags": [
+        "Tags"
+      ],
+      "Apply tags": [
+        "Tags overnemen"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "Takenlijsten worden omgezet in gewone lijsten. De status van de selectievakjes blijft niet behouden."
+      ],
+      "Sample Markdown loaded.": [
+        "Markdown-voorbeeld geladen."
+      ],
+      "Sample Markdown could not be loaded.": [
+        "Het Markdown-voorbeeld kon niet worden geladen."
+      ],
+      "Load sample Markdown": [
+        "Markdown-voorbeeld laden"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "Geneste lijsten worden teruggebracht tot één niveau."
+      ],
+      "The file could not be read.": [
+        "Het bestand kon niet worden gelezen."
+      ],
+      "Choose file": [
+        "Bestand kiezen"
+      ],
+      "Insert as blocks": [
+        "Als blokken invoegen"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "De blokken zijn op de huidige cursorpositie ingevoegd."
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "There is no source to preview.": [
+        "Er is geen brontekst om te bekijken."
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "Sommige berichtinstellingen konden voor dit berichttype of met je huidige rechten niet worden toegepast."
+      ],
+      "Some images or post settings could not be applied.": [
+        "Sommige afbeeldingen of berichtinstellingen konden niet worden toegepast."
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "Het concept is aangemaakt, maar niet alle omzettingsstappen konden worden voltooid. "
+      ],
+      "Open draft": [
+        "Concept openen"
+      ],
+      "Alt text": [
+        "Alternatieve tekst"
+      ],
+      " items": [
+        " items"
+      ],
+      " categories or tags were created.": [
+        " categorieën of tags zijn aangemaakt."
+      ],
+      " remote images will be saved to the Media Library.": [
+        " externe afbeeldingen worden in de Mediabibliotheek opgeslagen."
+      ],
+      " post settings were applied.": [
+        " berichtinstellingen zijn toegepast."
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " bestaande blokken worden in de editor vervangen."
+      ],
+      " existing blocks: confirm replacement": [
+        " bestaande blokken: bevestig het vervangen"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " afbeeldingen konden niet worden opgeslagen. Daarom zijn de externe URL’s in het bericht behouden."
+      ],
+      " images were saved to the Media Library.": [
+        " afbeeldingen zijn in de Mediabibliotheek opgeslagen."
+      ],
+      " items to review": [
+        " aandachtspunten"
+      ],
+      " settings to apply": [
+        " instellingen om toe te passen"
+      ],
+      "Workspace": [
+        "Werkruimte"
+      ],
+      "Open workspace": [
+        "Werkruimte openen"
+      ],
+      "What will be saved": [
+        "Wat wordt opgeslagen"
+      ],
+      "No issues need fixing": [
+        "Geen problemen om op te lossen"
+      ],
+      "Source, post settings, and review": [
+        "Brontekst, berichtinstellingen en controle"
+      ],
+      "Clear source": [
+        "Brontekst wissen"
+      ],
+      "Insertion method": [
+        "Manier van invoegen"
+      ],
+      "Importing...": [
+        "Importeren..."
+      ],
+      "Conversion options": [
+        "Opties voor omzetten"
+      ],
+      "Preflight checks": [
+        "Controle vooraf"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "Los de fouten uit de controle vooraf op voordat je doorgaat."
+      ],
+      "Save remote images to the Media Library": [
+        "Externe afbeeldingen in de Mediabibliotheek opslaan"
+      ],
+      "Info": [
+        "Info"
+      ],
+      "The post has not been saved yet.": [
+        "Het bericht is nog niet opgeslagen."
+      ],
+      "Apply post title": [
+        "Berichttitel overnemen"
+      ],
+      "The post body was replaced with blocks.": [
+        "De berichtinhoud is vervangen door blokken."
+      ],
+      "Post settings": [
+        "Berichtinstellingen"
+      ],
+      "Applying post settings...": [
+        "Berichtinstellingen toepassen..."
+      ],
+      "Excerpt": [
+        "Samenvatting"
+      ],
+      "Apply excerpt": [
+        "Samenvatting overnemen"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "Wiskundeblokken worden niet omgezet in een speciale weergavevorm."
+      ],
+      " characters": [
+        " tekens"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "Er wordt een nieuw concept in WordPress opgeslagen."
+      ],
+      "Create new draft": [
+        "Nieuw concept maken"
+      ],
+      "A new draft was created.": [
+        "Er is een nieuw concept aangemaakt."
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "Bevestig eerst dat je de bestaande berichtinhoud wilt vervangen."
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "De eerste H1 wordt gebruikt als berichttitel en uit de berichtinhoud verwijderd."
+      ],
+      "Use first H1 as post title": [
+        "Eerste H1 als berichttitel gebruiken"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "Niet-ondersteunde velden in Front Matter worden niet toegepast:"
+      ],
+      "Unsupported fields will not be applied:": [
+        "Niet-ondersteunde velden worden niet toegepast:"
+      ],
+      "Missing categories or tags will be created.": [
+        "Ontbrekende categorieën of tags worden aangemaakt."
+      ],
+      "Create missing categories and tags": [
+        "Ontbrekende categorieën en tags aanmaken"
+      ],
+      "Create missing terms": [
+        "Ontbrekende termen aanmaken"
+      ],
+      "Apply content and settings": [
+        "Inhoud en instellingen toepassen"
+      ],
+      "Replace content": [
+        "Inhoud vervangen"
+      ],
+      "Replace the content": [
+        "De inhoud vervangen"
+      ],
+      "Current Markdown source": [
+        "Huidige Markdown-brontekst"
+      ],
+      "The current post will not be saved automatically.": [
+        "Het huidige bericht wordt niet automatisch opgeslagen."
+      ],
+      "Image URL": [
+        "Afbeeldings-URL"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "Afbeeldings-URL’s moeten beginnen met http, https of /."
+      ],
+      "Importing images...": [
+        "Afbeeldingen importeren..."
+      ],
+      "Save images": [
+        "Afbeeldingen opslaan"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "De afbeeldingssyntaxis kon niet worden verwerkt. Controleer de haakjes en de URL."
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "Afbeeldingen met relatieve paden behouden hun oorspronkelijke pad en worden niet in de Mediabibliotheek opgeslagen."
+      ],
+      "Review and adjust": [
+        "Controleren en aanpassen"
+      ],
+      "Review": [
+        "Controleren"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "Voetnootsyntaxis wordt niet omgezet in gekoppelde voetnoten."
+      ],
+      " line": [
+        " regel"
+      ],
+      " line: edit in Markdown": [
+        " regel: bewerk in Markdown"
+      ],
+      "Warning": [
+        "Waarschuwing"
+      ],
+      "Pasted source": [
+        "Geplakte brontekst"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "Deze berichtgegevens zijn uit Front Matter gelezen. Controleer elk onderdeel, pas het zo nodig aan of haal het vinkje weg om dat gegeven niet toe te passen."
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "Controleer de waarschuwingen en verwachte wijzigingen. Kies daarna hoe je het artikel wilt invoegen en welke omzettingsopties je wilt gebruiken."
+      ],
+      "Review before applying": [
+        "Controleren vóór toepassen"
+      ],
+      "Source, post settings, and review before applying": [
+        "Brontekst, berichtinstellingen en controle vóór toepassen"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "Voeg blokken in op de huidige cursorpositie. Bestaande inhoud blijft staan en het bericht wordt niet automatisch opgeslagen."
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "Vervang alle blokken in het huidige bericht. Je moet dit bevestigen en het bericht wordt niet automatisch opgeslagen."
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "Laat het huidige bericht ongewijzigd en sla de inhoud en geselecteerde berichtinstellingen op als nieuw concept."
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# Artikeltitel\n\nPlak hier Markdown of zet een bestand hier neer."
+      ],
+      "The bundled Markdown is unavailable.": [
+        "De meegeleverde Markdown is niet beschikbaar."
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "De meegeleverde Markdown kon niet worden geladen."
+      ],
+      "The clipboard is unavailable.": [
+        "Het klembord is niet beschikbaar."
+      ],
+      "The draft ID was not found.": [
+        "De ID van het concept is niet gevonden."
+      ],
+      "The draft blocks were not found.": [
+        "De blokken van het concept zijn niet gevonden."
+      ]
+    }
+  }
+}

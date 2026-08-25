@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "id_ID",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "Ubah Markdown yang ramah AI menjadi blok WordPress yang dapat diedit."
+      ],
+      "The imported image URL could not be created.": [
+        "URL gambar yang diimpor tidak dapat dibuat."
+      ],
+      "This image URL is not allowed.": [
+        "URL gambar ini tidak diizinkan."
+      ],
+      "You are not allowed to attach images to this post.": [
+        "Anda tidak diizinkan melampirkan gambar pada pos ini."
+      ],
+      "The temporary file could not be created.": [
+        "File sementara tidak dapat dibuat."
+      ],
+      "The remote image could not be downloaded.": [
+        "Gambar jarak jauh tidak dapat diunduh."
+      ],
+      "The remote image returned an unexpected response.": [
+        "Server gambar jarak jauh memberikan respons yang tidak terduga."
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "Ukuran gambar jarak jauh melebihi batas ukuran unggahan."
+      ],
+      "The downloaded file is not a supported image.": [
+        "File yang diunduh bukan gambar yang didukung."
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt, hingga 2 MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Pilih file .md, .markdown, atau .txt dengan ukuran maksimal 2 MB."
+      ],
+      "Copy AI authoring rules": [
+        "Salin panduan penulisan untuk AI"
+      ],
+      "AI authoring rules copied.": [
+        "Panduan penulisan untuk AI telah disalin."
+      ],
+      "AI authoring rules could not be copied.": [
+        "Panduan penulisan untuk AI tidak dapat disalin."
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "H1 yang sama dengan judul Front Matter akan dihapus secara otomatis agar tidak muncul dua kali dalam isi pos."
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Judul Front Matter berbeda dengan H1 pertama. H1 tersebut akan dihapus dari isi pos saat diterapkan."
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "Penutup --- untuk Front Matter tidak ditemukan."
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "Ditemukan beberapa tajuk H1. Sisakan satu H1 untuk digunakan sebagai judul pos."
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML akan disisipkan sebagai teks dan tidak akan dijalankan sebagai HTML."
+      ],
+      "Markdown insertion method": [
+        "Metode penyisipan Markdown"
+      ],
+      "The Markdown import could not be completed.": [
+        "Impor Markdown tidak dapat diselesaikan."
+      ],
+      "Back to Markdown": [
+        "Kembali ke Markdown"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Markdown tidak dapat dikonversi menjadi blok."
+      ],
+      "Enter some Markdown.": [
+        "Masukkan Markdown."
+      ],
+      "Markdown file": [
+        "File Markdown"
+      ],
+      "Load a Markdown file": [
+        "Muat file Markdown"
+      ],
+      "Markdown file loaded.": [
+        "File Markdown telah dimuat."
+      ],
+      "Choose a Markdown file": [
+        "Pilih file Markdown"
+      ],
+      "Markdown source": [
+        "Sumber Markdown"
+      ],
+      "Markdown posting": [
+        "Publikasi dengan Markdown"
+      ],
+      "Drop here": [
+        "Letakkan di sini"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "Blok kode ini akan disisipkan sebagai blok kode biasa karena tidak tersedia blok khusus."
+      ],
+      ". Check the heading hierarchy.": [
+        ". Periksa hierarki tajuk."
+      ],
+      " is followed by ": [
+        " diikuti oleh "
+      ],
+      "Apply featured image": [
+        "Terapkan gambar andalan"
+      ],
+      "Error": [
+        "Kesalahan"
+      ],
+      "Categories": [
+        "Kategori"
+      ],
+      "Apply categories": [
+        "Terapkan kategori"
+      ],
+      "Add at cursor": [
+        "Tambahkan di posisi kursor"
+      ],
+      "Copying...": [
+        "Menyalin..."
+      ],
+      "The closing ``` for the code block was not found.": [
+        "Penutup ``` untuk blok kode tidak ditemukan."
+      ],
+      "Slug": [
+        "Slug"
+      ],
+      "Apply slug": [
+        "Terapkan slug"
+      ],
+      "Loading sample...": [
+        "Memuat contoh..."
+      ],
+      "Title": [
+        "Judul"
+      ],
+      "Tags": [
+        "Tag"
+      ],
+      "Apply tags": [
+        "Terapkan tag"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "Daftar tugas akan diubah menjadi daftar biasa tanpa mempertahankan status kotak centang."
+      ],
+      "Sample Markdown loaded.": [
+        "Contoh Markdown dimuat."
+      ],
+      "Sample Markdown could not be loaded.": [
+        "Contoh Markdown tidak dapat dimuat."
+      ],
+      "Load sample Markdown": [
+        "Muat contoh Markdown"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "Daftar bersarang akan diratakan menjadi satu tingkat."
+      ],
+      "The file could not be read.": [
+        "File tidak dapat dibaca."
+      ],
+      "Choose file": [
+        "Pilih file"
+      ],
+      "Insert as blocks": [
+        "Sisipkan sebagai blok"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "Blok disisipkan pada posisi kursor saat ini."
+      ],
+      "Preview": [
+        "Pratinjau"
+      ],
+      "There is no source to preview.": [
+        "Tidak ada sumber untuk pratinjau."
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "Beberapa pengaturan pos tidak dapat diterapkan pada tipe pos ini atau dengan izin Anda saat ini."
+      ],
+      "Some images or post settings could not be applied.": [
+        "Beberapa gambar atau pengaturan pos tidak dapat diterapkan."
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "Draf telah dibuat, namun tidak semua langkah konversi dapat diselesaikan. "
+      ],
+      "Open draft": [
+        "Buka draf"
+      ],
+      "Alt text": [
+        "Teks alternatif"
+      ],
+      " items": [
+        " item"
+      ],
+      " categories or tags were created.": [
+        " kategori atau tag telah dibuat."
+      ],
+      " remote images will be saved to the Media Library.": [
+        " gambar jarak jauh akan disimpan ke Pustaka Media."
+      ],
+      " post settings were applied.": [
+        " pengaturan pos telah diterapkan."
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " blok yang ada akan diganti di editor."
+      ],
+      " existing blocks: confirm replacement": [
+        " blok yang ada: konfirmasi penggantian"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " gambar tidak dapat disimpan, sehingga URL jarak jauhnya tetap ada di dalam pos."
+      ],
+      " images were saved to the Media Library.": [
+        " gambar telah disimpan ke Pustaka Media."
+      ],
+      " items to review": [
+        " item untuk ditinjau"
+      ],
+      " settings to apply": [
+        " pengaturan untuk diterapkan"
+      ],
+      "Workspace": [
+        "Ruang kerja"
+      ],
+      "Open workspace": [
+        "Buka ruang kerja"
+      ],
+      "What will be saved": [
+        "Apa yang akan disimpan"
+      ],
+      "No issues need fixing": [
+        "Tidak ada masalah yang perlu diperbaiki"
+      ],
+      "Source, post settings, and review": [
+        "Sumber, pengaturan pos, dan peninjauan"
+      ],
+      "Clear source": [
+        "Hapus sumber"
+      ],
+      "Insertion method": [
+        "Metode penyisipan"
+      ],
+      "Importing...": [
+        "Mengimpor..."
+      ],
+      "Conversion options": [
+        "Opsi konversi"
+      ],
+      "Preflight checks": [
+        "Pemeriksaan sebelum penerapan"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "Perbaiki kesalahan hasil pemeriksaan sebelum melanjutkan."
+      ],
+      "Save remote images to the Media Library": [
+        "Simpan gambar jarak jauh ke Pustaka Media"
+      ],
+      "Info": [
+        "Informasi"
+      ],
+      "The post has not been saved yet.": [
+        "Pos belum disimpan."
+      ],
+      "Apply post title": [
+        "Terapkan judul pos"
+      ],
+      "The post body was replaced with blocks.": [
+        "Isi pos telah diganti dengan blok."
+      ],
+      "Post settings": [
+        "Pengaturan pos"
+      ],
+      "Applying post settings...": [
+        "Menerapkan pengaturan pos..."
+      ],
+      "Excerpt": [
+        "Kutipan"
+      ],
+      "Apply excerpt": [
+        "Terapkan kutipan"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "Blok matematika tidak akan dikonversi ke format tampilan khusus."
+      ],
+      " characters": [
+        " karakter"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "Draf baru akan disimpan ke WordPress."
+      ],
+      "Create new draft": [
+        "Buat draf baru"
+      ],
+      "A new draft was created.": [
+        "Draf baru telah dibuat."
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "Konfirmasi penggantian sebelum mengganti isi pos yang ada."
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "H1 pertama akan digunakan sebagai judul pos dan dihapus dari isi pos."
+      ],
+      "Use first H1 as post title": [
+        "Gunakan H1 pertama sebagai judul pos"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "Kolom Front Matter yang tidak didukung tidak akan diterapkan:"
+      ],
+      "Unsupported fields will not be applied:": [
+        "Kolom yang tidak didukung tidak akan diterapkan:"
+      ],
+      "Missing categories or tags will be created.": [
+        "Kategori atau tag yang belum ada akan dibuat."
+      ],
+      "Create missing categories and tags": [
+        "Buat kategori dan tag yang belum ada"
+      ],
+      "Create missing terms": [
+        "Buat istilah yang belum ada"
+      ],
+      "Apply content and settings": [
+        "Terapkan konten dan pengaturan"
+      ],
+      "Replace content": [
+        "Ganti konten"
+      ],
+      "Replace the content": [
+        "Ganti konten"
+      ],
+      "Current Markdown source": [
+        "Sumber Markdown saat ini"
+      ],
+      "The current post will not be saved automatically.": [
+        "Pos saat ini tidak akan disimpan secara otomatis."
+      ],
+      "Image URL": [
+        "URL gambar"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "URL gambar harus diawali dengan http, https, atau /."
+      ],
+      "Importing images...": [
+        "Mengimpor gambar..."
+      ],
+      "Save images": [
+        "Simpan gambar"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "Sintaks gambar tidak dapat diurai. Periksa tanda kurung dan URL-nya."
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "Gambar dengan jalur relatif akan tetap menggunakan jalur aslinya dan tidak akan disimpan ke Pustaka Media."
+      ],
+      "Review and adjust": [
+        "Periksa dan sesuaikan"
+      ],
+      "Review": [
+        "Tinjau"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "Sintaks catatan kaki tidak akan diubah menjadi catatan kaki tertaut."
+      ],
+      " line": [
+        " baris"
+      ],
+      " line: edit in Markdown": [
+        " baris: edit dalam Markdown"
+      ],
+      "Warning": [
+        "Peringatan"
+      ],
+      "Pasted source": [
+        "Sumber yang ditempel"
+      ],
+      "Close": [
+        "Tutup"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "Detail pos ini dibaca dari Front Matter. Periksa setiap item, edit jika perlu, atau hapus centangnya agar detail tersebut tidak diterapkan."
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "Tinjau peringatan dan perubahan yang diharapkan, lalu pilih cara penerapan artikel serta opsi konversi yang akan digunakan."
+      ],
+      "Review before applying": [
+        "Tinjau sebelum menerapkan"
+      ],
+      "Source, post settings, and review before applying": [
+        "Sumber, pengaturan pos, dan peninjauan sebelum penerapan"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "Tambahkan blok pada posisi kursor saat ini. Konten yang ada tetap dipertahankan, dan pos tidak akan disimpan secara otomatis."
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "Ganti semua blok dalam pos saat ini. Tindakan ini memerlukan konfirmasi, dan pos tidak akan disimpan secara otomatis."
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "Biarkan pos saat ini tetap seperti semula, lalu simpan konten dan pengaturan pos yang dipilih sebagai draf baru."
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# Judul artikel\n\nTempel Markdown di sini atau letakkan file."
+      ],
+      "The bundled Markdown is unavailable.": [
+        "Markdown yang disertakan tidak tersedia."
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "Markdown yang disertakan tidak dapat dimuat."
+      ],
+      "The clipboard is unavailable.": [
+        "Papan klip tidak tersedia."
+      ],
+      "The draft ID was not found.": [
+        "ID draf tidak ditemukan."
+      ],
+      "The draft blocks were not found.": [
+        "Blok draf tidak ditemukan."
+      ]
+    }
+  }
+}

@@ -1,10 +1,10 @@
 === KOTOTSUGI ===
-Contributors: kototsugi
+Contributors: atshift
 Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.5.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,10 @@ KOTOTSUGI recognizes a focused YAML-compatible subset intended for AI-generated 
 Unknown Front Matter keys are listed in the workspace and are not applied. KOTOTSUGI does not change the post author, publication status, or publication date from Front Matter.
 
 == Changelog ==
+
+= 1.0 =
+* Add bundled translations for 13 more locales.
+* Add all 15 bundled languages to the Quick Post display-language setting.
 
 = 0.5.1 =
 * Enforce custom post type creation and media upload capabilities in Quick Post.

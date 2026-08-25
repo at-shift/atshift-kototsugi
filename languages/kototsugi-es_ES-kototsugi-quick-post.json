@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 00:00+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Alternative text": [
+        "Texto alternativo"
+      ],
+      "Attach up to 5 images.": [
+        "Adjunta hasta 5 imágenes."
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Elige un archivo .md, .markdown o .txt de hasta 2 MB."
+      ],
+      "Enter a post title.": [
+        "Introduce un título para la entrada."
+      ],
+      "Line": [
+        "Línea"
+      ],
+      "Paste an article draft before continuing.": [
+        "Pega un borrador de artículo antes de continuar."
+      ],
+      "Publishing...": [
+        "Publicando..."
+      ],
+      "Remove image": [
+        "Quitar imagen"
+      ],
+      "Saving...": [
+        "Guardando..."
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "No se pudo convertir el artículo en bloques de WordPress."
+      ],
+      "The file could not be read.": [
+        "No se pudo leer el archivo."
+      ],
+      "Use an article draft up to 2 MB.": [
+        "Usa un borrador de artículo de hasta 2 MB."
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "Usa imágenes JPEG, PNG, GIF o WebP que no superen el límite de subida del sitio."
+      ]
+    }
+  }
+}

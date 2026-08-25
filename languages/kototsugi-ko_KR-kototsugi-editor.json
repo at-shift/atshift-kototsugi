@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 12:00+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "ko_KR",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "AI 생성에 적합한 Markdown을 편집 가능한 WordPress 블록으로 변환합니다."
+      ],
+      "The imported image URL could not be created.": [
+        "가져온 이미지의 URL을 만들 수 없습니다."
+      ],
+      "This image URL is not allowed.": [
+        "허용되지 않은 이미지 URL입니다."
+      ],
+      "You are not allowed to attach images to this post.": [
+        "이 글에 이미지를 첨부할 권한이 없습니다."
+      ],
+      "The temporary file could not be created.": [
+        "임시 파일을 만들 수 없습니다."
+      ],
+      "The remote image could not be downloaded.": [
+        "외부 이미지를 다운로드할 수 없습니다."
+      ],
+      "The remote image returned an unexpected response.": [
+        "외부 이미지 서버에서 예상하지 못한 응답을 보냈습니다."
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "외부 이미지가 업로드 용량 제한을 초과합니다."
+      ],
+      "The downloaded file is not a supported image.": [
+        "다운로드한 파일은 지원되는 이미지 형식이 아닙니다."
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt, 최대 2 MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "2 MB 이하의 .md, .markdown 또는 .txt 파일을 선택하세요."
+      ],
+      "Copy AI authoring rules": [
+        "AI 작성 규칙 복사"
+      ],
+      "AI authoring rules copied.": [
+        "AI 작성 규칙을 복사했습니다."
+      ],
+      "AI authoring rules could not be copied.": [
+        "AI 작성 규칙을 복사할 수 없습니다."
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "Front Matter 제목과 같은 H1은 본문에서 중복되지 않도록 자동으로 제거됩니다."
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Front Matter 제목과 첫 번째 H1이 다릅니다. 적용할 때 H1은 글 본문에서 제거됩니다."
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "Front Matter를 닫는 ---를 찾을 수 없습니다."
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "H1 제목이 여러 개 있습니다. 글 제목으로 사용할 H1 하나만 남기세요."
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML은 일반 텍스트로 삽입되며 HTML로 실행되지 않습니다."
+      ],
+      "Markdown insertion method": [
+        "Markdown 삽입 방법"
+      ],
+      "The Markdown import could not be completed.": [
+        "Markdown 가져오기를 완료할 수 없습니다."
+      ],
+      "Back to Markdown": [
+        "Markdown으로 돌아가기"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Markdown을 블록으로 변환할 수 없습니다."
+      ],
+      "Enter some Markdown.": [
+        "Markdown을 입력하세요."
+      ],
+      "Markdown file": [
+        "Markdown 파일"
+      ],
+      "Load a Markdown file": [
+        "Markdown 파일 불러오기"
+      ],
+      "Markdown file loaded.": [
+        "Markdown 파일을 불러왔습니다."
+      ],
+      "Choose a Markdown file": [
+        "Markdown 파일 선택"
+      ],
+      "Markdown source": [
+        "Markdown 원문"
+      ],
+      "Markdown posting": [
+        "Markdown 게시"
+      ],
+      "Drop here": [
+        "여기에 놓으세요"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "전용 블록이 없어 이 코드 블록은 일반 코드 블록으로 삽입됩니다."
+      ],
+      ". Check the heading hierarchy.": [
+        "이 이어집니다. 제목 계층을 확인하세요."
+      ],
+      " is followed by ": [
+        " 다음에 "
+      ],
+      "Apply featured image": [
+        "특성 이미지 적용"
+      ],
+      "Error": [
+        "오류"
+      ],
+      "Categories": [
+        "카테고리"
+      ],
+      "Apply categories": [
+        "카테고리 적용"
+      ],
+      "Add at cursor": [
+        "커서 위치에 추가"
+      ],
+      "Copying...": [
+        "복사 중..."
+      ],
+      "The closing ``` for the code block was not found.": [
+        "코드 블록을 닫는 ```를 찾을 수 없습니다."
+      ],
+      "Slug": [
+        "슬러그"
+      ],
+      "Apply slug": [
+        "슬러그 적용"
+      ],
+      "Loading sample...": [
+        "예제 불러오는 중..."
+      ],
+      "Title": [
+        "제목"
+      ],
+      "Tags": [
+        "태그"
+      ],
+      "Apply tags": [
+        "태그 적용"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "작업 목록은 체크 상태를 유지하지 않고 일반 목록으로 변환됩니다."
+      ],
+      "Sample Markdown loaded.": [
+        "Markdown 예제를 불러왔습니다."
+      ],
+      "Sample Markdown could not be loaded.": [
+        "Markdown 예제를 불러올 수 없습니다."
+      ],
+      "Load sample Markdown": [
+        "Markdown 예제 불러오기"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "중첩 목록은 한 단계의 목록으로 변환됩니다."
+      ],
+      "The file could not be read.": [
+        "파일을 읽을 수 없습니다."
+      ],
+      "Choose file": [
+        "파일 선택"
+      ],
+      "Insert as blocks": [
+        "블록으로 삽입"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "현재 커서 위치에 블록을 삽입했습니다."
+      ],
+      "Preview": [
+        "미리보기"
+      ],
+      "There is no source to preview.": [
+        "미리 볼 원문이 없습니다."
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "이 콘텐츠 유형이나 현재 권한에서는 일부 글 설정을 적용할 수 없습니다."
+      ],
+      "Some images or post settings could not be applied.": [
+        "일부 이미지 또는 글 설정을 적용할 수 없습니다."
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "임시글을 만들었지만 일부 변환 단계를 완료하지 못했습니다. "
+      ],
+      "Open draft": [
+        "임시글 열기"
+      ],
+      "Alt text": [
+        "대체 텍스트"
+      ],
+      " items": [
+        " 개 항목"
+      ],
+      " categories or tags were created.": [
+        " 개 카테고리 또는 태그를 만들었습니다."
+      ],
+      " remote images will be saved to the Media Library.": [
+        " 개 외부 이미지가 미디어 라이브러리에 저장됩니다."
+      ],
+      " post settings were applied.": [
+        " 개 글 설정을 적용했습니다."
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " 개 기존 블록이 편집기에서 교체됩니다."
+      ],
+      " existing blocks: confirm replacement": [
+        " 개 기존 블록: 교체 확인 필요"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " 개 이미지를 저장할 수 없어 외부 URL을 글에 그대로 두었습니다."
+      ],
+      " images were saved to the Media Library.": [
+        " 개 이미지를 미디어 라이브러리에 저장했습니다."
+      ],
+      " items to review": [
+        " 개 확인할 항목"
+      ],
+      " settings to apply": [
+        " 개 적용할 설정"
+      ],
+      "Workspace": [
+        "작업 공간"
+      ],
+      "Open workspace": [
+        "작업 공간 열기"
+      ],
+      "What will be saved": [
+        "저장될 내용"
+      ],
+      "No issues need fixing": [
+        "수정할 문제가 없습니다"
+      ],
+      "Source, post settings, and review": [
+        "원문, 글 설정 및 확인"
+      ],
+      "Clear source": [
+        "원문 지우기"
+      ],
+      "Insertion method": [
+        "삽입 방법"
+      ],
+      "Importing...": [
+        "가져오는 중..."
+      ],
+      "Conversion options": [
+        "변환 옵션"
+      ],
+      "Preflight checks": [
+        "사전 점검"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "계속하기 전에 사전 점검 오류를 수정하세요."
+      ],
+      "Save remote images to the Media Library": [
+        "외부 이미지를 미디어 라이브러리에 저장"
+      ],
+      "Info": [
+        "안내"
+      ],
+      "The post has not been saved yet.": [
+        "아직 글을 저장하지 않았습니다."
+      ],
+      "Apply post title": [
+        "글 제목 적용"
+      ],
+      "The post body was replaced with blocks.": [
+        "글 본문을 블록으로 교체했습니다."
+      ],
+      "Post settings": [
+        "글 설정"
+      ],
+      "Applying post settings...": [
+        "글 설정 적용 중..."
+      ],
+      "Excerpt": [
+        "요약"
+      ],
+      "Apply excerpt": [
+        "요약 적용"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "수식 블록은 전용 표시 형식으로 변환되지 않습니다."
+      ],
+      " characters": [
+        " 자"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "새 임시글이 WordPress에 저장됩니다."
+      ],
+      "Create new draft": [
+        "새 임시글 만들기"
+      ],
+      "A new draft was created.": [
+        "새 임시글을 만들었습니다."
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "기존 글 본문을 교체하기 전에 확인하세요."
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "첫 번째 H1은 글 제목으로 사용되고 글 본문에서는 제거됩니다."
+      ],
+      "Use first H1 as post title": [
+        "첫 번째 H1을 글 제목으로 사용"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "지원되지 않는 Front Matter 필드는 적용되지 않습니다:"
+      ],
+      "Unsupported fields will not be applied:": [
+        "지원되지 않는 필드는 적용되지 않습니다:"
+      ],
+      "Missing categories or tags will be created.": [
+        "없는 카테고리 또는 태그를 새로 만듭니다."
+      ],
+      "Create missing categories and tags": [
+        "없는 카테고리와 태그 만들기"
+      ],
+      "Create missing terms": [
+        "없는 용어 만들기"
+      ],
+      "Apply content and settings": [
+        "내용 및 설정 적용"
+      ],
+      "Replace content": [
+        "내용 교체"
+      ],
+      "Replace the content": [
+        "내용 교체"
+      ],
+      "Current Markdown source": [
+        "현재 Markdown 원문"
+      ],
+      "The current post will not be saved automatically.": [
+        "현재 글은 자동으로 저장되지 않습니다."
+      ],
+      "Image URL": [
+        "이미지 URL"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "이미지 URL은 http, https 또는 /로 시작해야 합니다."
+      ],
+      "Importing images...": [
+        "이미지 가져오는 중..."
+      ],
+      "Save images": [
+        "이미지 저장"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "이미지 문법을 해석할 수 없습니다. 괄호와 URL을 확인하세요."
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "상대 경로 이미지는 원래 경로를 유지하며 미디어 라이브러리에 저장되지 않습니다."
+      ],
+      "Review and adjust": [
+        "확인 및 조정"
+      ],
+      "Review": [
+        "확인"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "각주 문법은 링크된 각주로 변환되지 않습니다."
+      ],
+      " line": [
+        " 줄"
+      ],
+      " line: edit in Markdown": [
+        " 줄: Markdown에서 수정"
+      ],
+      "Warning": [
+        "경고"
+      ],
+      "Pasted source": [
+        "붙여 넣은 원문"
+      ],
+      "Close": [
+        "닫기"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "이 글 정보는 Front Matter에서 읽었습니다. 각 항목을 확인하고 필요하면 수정하거나, 변경하지 않을 항목은 체크를 해제하세요."
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "경고와 예상 변경 사항을 확인한 다음, 글을 적용할 방법과 사용할 변환 옵션을 선택하세요."
+      ],
+      "Review before applying": [
+        "적용 전 확인"
+      ],
+      "Source, post settings, and review before applying": [
+        "원문, 글 설정 및 적용 전 확인"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "현재 커서 위치에 블록을 추가합니다. 기존 내용은 유지되며 글은 자동으로 저장되지 않습니다."
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "현재 글의 모든 블록을 교체합니다. 확인이 필요하며 글은 자동으로 저장되지 않습니다."
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "현재 글은 변경하지 않고 내용과 선택한 글 설정을 새 임시글로 저장합니다."
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# 글 제목\n\n여기에 Markdown을 붙여 넣거나 파일을 놓으세요."
+      ],
+      "The bundled Markdown is unavailable.": [
+        "포함된 Markdown을 사용할 수 없습니다."
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "포함된 Markdown을 불러올 수 없습니다."
+      ],
+      "The clipboard is unavailable.": [
+        "클립보드를 사용할 수 없습니다."
+      ],
+      "The draft ID was not found.": [
+        "임시글 ID를 찾을 수 없습니다."
+      ],
+      "The draft blocks were not found.": [
+        "임시글 블록을 찾을 수 없습니다."
+      ]
+    }
+  }
+}

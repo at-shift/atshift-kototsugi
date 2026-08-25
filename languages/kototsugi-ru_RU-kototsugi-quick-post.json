@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "ru_RU",
+        "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
+      },
+      "Alternative text": [
+        "Альтернативный текст"
+      ],
+      "Attach up to 5 images.": [
+        "Добавьте не более 5 изображений."
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Выберите файл .md, .markdown или .txt размером до 2 МБ."
+      ],
+      "Enter a post title.": [
+        "Введите заголовок записи."
+      ],
+      "Line": [
+        "Строка"
+      ],
+      "Paste an article draft before continuing.": [
+        "Перед продолжением введите или вставьте текст статьи."
+      ],
+      "Publishing...": [
+        "Публикация…"
+      ],
+      "Remove image": [
+        "Удалить изображение"
+      ],
+      "Saving...": [
+        "Сохранение…"
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "Не удалось преобразовать статью в блоки WordPress."
+      ],
+      "The file could not be read.": [
+        "Не удалось прочитать файл."
+      ],
+      "Use an article draft up to 2 MB.": [
+        "Текст статьи должен быть не больше 2 МБ."
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "Используйте изображения JPEG, PNG, GIF или WebP, размер которых не превышает ограничение сайта."
+      ]
+    }
+  }
+}

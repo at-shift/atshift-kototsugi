@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 10:11+09:00",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "zh_TW",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "將適合 AI 產生的 Markdown 轉換成可編輯的 WordPress 區塊。"
+      ],
+      "The imported image URL could not be created.": [
+        "無法建立匯入圖片的網址。"
+      ],
+      "This image URL is not allowed.": [
+        "不允許使用這個圖片網址。"
+      ],
+      "You are not allowed to attach images to this post.": [
+        "你沒有權限將圖片附加到這篇文章。"
+      ],
+      "The temporary file could not be created.": [
+        "無法建立暫存檔。"
+      ],
+      "The remote image could not be downloaded.": [
+        "無法下載遠端圖片。"
+      ],
+      "The remote image returned an unexpected response.": [
+        "遠端圖片傳回非預期的回應。"
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "遠端圖片超過上傳大小限制。"
+      ],
+      "The downloaded file is not a supported image.": [
+        "下載的檔案不是支援的圖片格式。"
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt，最大 2 MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "請選擇最大 2 MB 的 .md、.markdown 或 .txt 檔案。"
+      ],
+      "Copy AI authoring rules": [
+        "複製 AI 撰寫規則"
+      ],
+      "AI authoring rules copied.": [
+        "已複製 AI 撰寫規則。"
+      ],
+      "AI authoring rules could not be copied.": [
+        "無法複製 AI 撰寫規則。"
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "與 Front Matter 標題相同的 H1 會自動移除，以免在文章內容中重複。"
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Front Matter 標題與第一個 H1 不同。套用時會從文章內容中移除該 H1。"
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "找不到 Front Matter 的結尾 ---。"
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "找到多個 H1 標題。請保留一個 H1 作為文章標題。"
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML 會以文字插入，不會當作 HTML 執行。"
+      ],
+      "Markdown insertion method": [
+        "Markdown 插入方式"
+      ],
+      "The Markdown import could not be completed.": [
+        "無法完成 Markdown 匯入。"
+      ],
+      "Back to Markdown": [
+        "返回 Markdown"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "無法將 Markdown 轉換成區塊。"
+      ],
+      "Enter some Markdown.": [
+        "請輸入 Markdown 內容。"
+      ],
+      "Markdown file": [
+        "Markdown 檔案"
+      ],
+      "Load a Markdown file": [
+        "載入 Markdown 檔案"
+      ],
+      "Markdown file loaded.": [
+        "已載入 Markdown 檔案。"
+      ],
+      "Choose a Markdown file": [
+        "選擇 Markdown 檔案"
+      ],
+      "Markdown source": [
+        "Markdown 原始內容"
+      ],
+      "Markdown posting": [
+        "Markdown 投稿"
+      ],
+      "Drop here": [
+        "拖放到這裡"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "因為沒有對應的專用區塊，這段程式碼會以一般程式碼區塊插入。"
+      ],
+      ". Check the heading hierarchy.": [
+        "。請檢查標題層級。"
+      ],
+      " is followed by ": [
+        " 後面接著 "
+      ],
+      "Apply featured image": [
+        "套用精選圖片"
+      ],
+      "Error": [
+        "錯誤"
+      ],
+      "Categories": [
+        "分類"
+      ],
+      "Apply categories": [
+        "套用分類"
+      ],
+      "Add at cursor": [
+        "在游標位置加入"
+      ],
+      "Copying...": [
+        "正在複製…"
+      ],
+      "The closing ``` for the code block was not found.": [
+        "找不到程式碼區塊的結尾 ```。"
+      ],
+      "Slug": [
+        "代稱"
+      ],
+      "Apply slug": [
+        "套用代稱"
+      ],
+      "Loading sample...": [
+        "正在載入範例…"
+      ],
+      "Title": [
+        "標題"
+      ],
+      "Tags": [
+        "標籤"
+      ],
+      "Apply tags": [
+        "套用標籤"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "工作清單會轉換成一般清單，不會保留核取方塊狀態。"
+      ],
+      "Sample Markdown loaded.": [
+        "已載入 Markdown 範例。"
+      ],
+      "Sample Markdown could not be loaded.": [
+        "無法載入 Markdown 範例。"
+      ],
+      "Load sample Markdown": [
+        "載入 Markdown 範例"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "巢狀清單會轉換成單一層級。"
+      ],
+      "The file could not be read.": [
+        "無法讀取檔案。"
+      ],
+      "Choose file": [
+        "選擇檔案"
+      ],
+      "Insert as blocks": [
+        "以區塊插入"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "區塊已插入目前游標位置。"
+      ],
+      "Preview": [
+        "預覽"
+      ],
+      "There is no source to preview.": [
+        "沒有可預覽的原始內容。"
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "由於此內容類型或你目前的權限限制，部分文章設定無法套用。"
+      ],
+      "Some images or post settings could not be applied.": [
+        "部分圖片或文章設定無法套用。"
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "草稿已建立，但部分轉換步驟未能完成。 "
+      ],
+      "Open draft": [
+        "開啟草稿"
+      ],
+      "Alt text": [
+        "替代文字"
+      ],
+      " items": [
+        " 個項目"
+      ],
+      " categories or tags were created.": [
+        " 個分類或標籤已建立。"
+      ],
+      " remote images will be saved to the Media Library.": [
+        " 張遠端圖片將儲存到媒體庫。"
+      ],
+      " post settings were applied.": [
+        " 項文章設定已套用。"
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " 個現有區塊將在編輯器中被取代。"
+      ],
+      " existing blocks: confirm replacement": [
+        " 個現有區塊：確認取代"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " 張圖片無法儲存，因此文章中保留了原本的遠端網址。"
+      ],
+      " images were saved to the Media Library.": [
+        " 張圖片已儲存到媒體庫。"
+      ],
+      " items to review": [
+        " 個項目需要檢查"
+      ],
+      " settings to apply": [
+        " 項設定待套用"
+      ],
+      "Workspace": [
+        "工作區"
+      ],
+      "Open workspace": [
+        "開啟工作區"
+      ],
+      "What will be saved": [
+        "將儲存的內容"
+      ],
+      "No issues need fixing": [
+        "沒有需要修正的問題"
+      ],
+      "Source, post settings, and review": [
+        "原始內容、文章設定與檢查"
+      ],
+      "Clear source": [
+        "清除原始內容"
+      ],
+      "Insertion method": [
+        "插入方式"
+      ],
+      "Importing...": [
+        "正在匯入…"
+      ],
+      "Conversion options": [
+        "轉換選項"
+      ],
+      "Preflight checks": [
+        "事前檢查"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "請先修正事前檢查中的錯誤，再繼續。"
+      ],
+      "Save remote images to the Media Library": [
+        "將遠端圖片儲存到媒體庫"
+      ],
+      "Info": [
+        "資訊"
+      ],
+      "The post has not been saved yet.": [
+        "文章尚未儲存。"
+      ],
+      "Apply post title": [
+        "套用文章標題"
+      ],
+      "The post body was replaced with blocks.": [
+        "文章內容已由區塊取代。"
+      ],
+      "Post settings": [
+        "文章設定"
+      ],
+      "Applying post settings...": [
+        "正在套用文章設定…"
+      ],
+      "Excerpt": [
+        "內容摘要"
+      ],
+      "Apply excerpt": [
+        "套用內容摘要"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "數學公式區塊不會轉換成專用的顯示格式。"
+      ],
+      " characters": [
+        " 個字元"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "新草稿將儲存到 WordPress。"
+      ],
+      "Create new draft": [
+        "建立新草稿"
+      ],
+      "A new draft was created.": [
+        "已建立新草稿。"
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "取代現有文章內容前，請先確認。"
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "第一個 H1 會作為文章標題，並從文章內容中移除。"
+      ],
+      "Use first H1 as post title": [
+        "將第一個 H1 作為文章標題"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "不支援的 Front Matter 欄位將不會套用："
+      ],
+      "Unsupported fields will not be applied:": [
+        "不支援的欄位將不會套用："
+      ],
+      "Missing categories or tags will be created.": [
+        "不存在的分類或標籤將會建立。"
+      ],
+      "Create missing categories and tags": [
+        "建立不存在的分類和標籤"
+      ],
+      "Create missing terms": [
+        "建立不存在的分類法詞彙"
+      ],
+      "Apply content and settings": [
+        "套用內容與設定"
+      ],
+      "Replace content": [
+        "取代內容"
+      ],
+      "Replace the content": [
+        "取代文章內容"
+      ],
+      "Current Markdown source": [
+        "目前的 Markdown 原始內容"
+      ],
+      "The current post will not be saved automatically.": [
+        "目前文章不會自動儲存。"
+      ],
+      "Image URL": [
+        "圖片網址"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "圖片網址必須以 http、https 或 / 開頭。"
+      ],
+      "Importing images...": [
+        "正在匯入圖片…"
+      ],
+      "Save images": [
+        "儲存圖片"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "無法解析圖片語法。請檢查括號與網址。"
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "相對路徑圖片會保留原始路徑，不會儲存到媒體庫。"
+      ],
+      "Review and adjust": [
+        "確認與調整"
+      ],
+      "Review": [
+        "確認"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "註腳語法不會轉換成帶有連結的註腳。"
+      ],
+      " line": [
+        " 行"
+      ],
+      " line: edit in Markdown": [
+        " 行：請在 Markdown 中編輯"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Pasted source": [
+        "貼上的原始內容"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "這些文章資料是從 Front Matter 讀取的。請逐項檢查並視需要編輯；若不想變更，請取消勾選。"
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "請檢查警告與預計變更，再選擇文章的套用方式和要使用的轉換選項。"
+      ],
+      "Review before applying": [
+        "套用前確認"
+      ],
+      "Source, post settings, and review before applying": [
+        "原始內容、文章設定及套用前確認"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "在目前游標位置加入區塊。現有內容會保留，文章不會自動儲存。"
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "取代目前文章中的所有區塊。必須先確認，文章不會自動儲存。"
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "目前文章維持不變，內容與所選文章設定會另存為新草稿。"
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# 文章標題\n\n在這裡貼上 Markdown，或拖放檔案。"
+      ],
+      "The bundled Markdown is unavailable.": [
+        "無法使用內建的 Markdown。"
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "無法載入內建的 Markdown。"
+      ],
+      "The clipboard is unavailable.": [
+        "無法使用剪貼簿。"
+      ],
+      "The draft ID was not found.": [
+        "找不到草稿 ID。"
+      ],
+      "The draft blocks were not found.": [
+        "找不到草稿區塊。"
+      ]
+    }
+  }
+}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KOTOTSUGI 0.5.1\n"
+"Project-Id-Version: KOTOTSUGI 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
-"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"POT-Creation-Date: 2026-08-24 10:40+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,6 +42,45 @@ msgid "Japanese"
 msgstr ""
 
 msgid "English"
+msgstr ""
+
+msgid "Spanish"
+msgstr ""
+
+msgid "German"
+msgstr ""
+
+msgid "French"
+msgstr ""
+
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+msgid "Italian"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "Dutch"
+msgstr ""
+
+msgid "Chinese (Simplified)"
+msgstr ""
+
+msgid "Polish"
+msgstr ""
+
+msgid "Turkish"
+msgstr ""
+
+msgid "Indonesian"
+msgstr ""
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr ""
+
+msgid "Korean"
 msgstr ""
 
 msgid "Used on the passphrase, article, review, and completion screens."

@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 10:11+09:00",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "zh_TW",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Alternative text": [
+        "替代文字"
+      ],
+      "Attach up to 5 images.": [
+        "最多可附加 5 張圖片。"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "請選擇最大 2 MB 的 .md、.markdown 或 .txt 檔案。"
+      ],
+      "Enter a post title.": [
+        "請輸入文章標題。"
+      ],
+      "Line": [
+        "行"
+      ],
+      "Paste an article draft before continuing.": [
+        "請先貼上文章草稿再繼續。"
+      ],
+      "Publishing...": [
+        "正在發佈…"
+      ],
+      "Remove image": [
+        "移除圖片"
+      ],
+      "Saving...": [
+        "正在儲存…"
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "無法將文章轉換成 WordPress 區塊。"
+      ],
+      "The file could not be read.": [
+        "無法讀取檔案。"
+      ],
+      "Use an article draft up to 2 MB.": [
+        "文章草稿不得超過 2 MB。"
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "請使用網站上傳限制內的 JPEG、PNG、GIF 或 WebP 圖片。"
+      ]
+    }
+  }
+}

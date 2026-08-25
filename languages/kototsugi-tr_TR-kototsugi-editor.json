@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "tr_TR",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "Yapay zekâ ile kullanıma uygun Markdown metnini düzenlenebilir WordPress bloklarına dönüştürün."
+      ],
+      "The imported image URL could not be created.": [
+        "İçe aktarılan görsel için URL oluşturulamadı."
+      ],
+      "This image URL is not allowed.": [
+        "Bu görsel URL’sine izin verilmiyor."
+      ],
+      "You are not allowed to attach images to this post.": [
+        "Bu yazıya görsel ekleme izniniz yok."
+      ],
+      "The temporary file could not be created.": [
+        "Geçici dosya oluşturulamadı."
+      ],
+      "The remote image could not be downloaded.": [
+        "Harici görsel indirilemedi."
+      ],
+      "The remote image returned an unexpected response.": [
+        "Harici görsel sunucusu beklenmeyen bir yanıt verdi."
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "Harici görsel, yükleme boyutu sınırını aşıyor."
+      ],
+      "The downloaded file is not a supported image.": [
+        "İndirilen dosyanın görsel biçimi desteklenmiyor."
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt, en fazla 2 MB"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "En fazla 2 MB boyutunda bir .md, .markdown veya .txt dosyası seçin."
+      ],
+      "Copy AI authoring rules": [
+        "Yapay zekâ için yazım kurallarını kopyala"
+      ],
+      "AI authoring rules copied.": [
+        "Yapay zekâ için yazım kuralları kopyalandı."
+      ],
+      "AI authoring rules could not be copied.": [
+        "Yapay zekâ için yazım kuralları kopyalanamadı."
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "Yazı içeriğinde başlığın tekrarlanmaması için Front Matter başlığıyla eşleşen H1 otomatik olarak kaldırılacak."
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Front Matter başlığı ilk H1’den farklı. İçerik uygulandığında H1 yazı içeriğinden kaldırılacak."
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "Front Matter bölümünü kapatan --- bulunamadı."
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "Birden fazla H1 başlığı bulundu. Yazı başlığı olarak kullanılacak tek bir H1 bırakın."
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML, metin olarak eklenecek ve HTML olarak çalıştırılmayacak."
+      ],
+      "Markdown insertion method": [
+        "Markdown ekleme yöntemi"
+      ],
+      "The Markdown import could not be completed.": [
+        "Markdown içe aktarılamadı."
+      ],
+      "Back to Markdown": [
+        "Markdown’a dön"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Markdown bloklara dönüştürülemedi."
+      ],
+      "Enter some Markdown.": [
+        "Bir Markdown metni girin."
+      ],
+      "Markdown file": [
+        "Markdown dosyası"
+      ],
+      "Load a Markdown file": [
+        "Markdown dosyası yükle"
+      ],
+      "Markdown file loaded.": [
+        "Markdown dosyası yüklendi."
+      ],
+      "Choose a Markdown file": [
+        "Bir Markdown dosyası seçin"
+      ],
+      "Markdown source": [
+        "Markdown kaynağı"
+      ],
+      "Markdown posting": [
+        "Markdown ile yayınlama"
+      ],
+      "Drop here": [
+        "Buraya bırakın"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "Buna özel bir blok bulunmadığından, bu kod normal bir kod bloğu olarak eklenecek."
+      ],
+      ". Check the heading hierarchy.": [
+        ". Başlık sıralamasını kontrol edin."
+      ],
+      " is followed by ": [
+        " öğesinin ardından "
+      ],
+      "Apply featured image": [
+        "Öne çıkan görseli uygula"
+      ],
+      "Error": [
+        "Hata"
+      ],
+      "Categories": [
+        "Kategoriler"
+      ],
+      "Apply categories": [
+        "Kategorileri uygula"
+      ],
+      "Add at cursor": [
+        "İmlecin bulunduğu yere ekle"
+      ],
+      "Copying...": [
+        "Kopyalanıyor..."
+      ],
+      "The closing ``` for the code block was not found.": [
+        "Kod bloğunu kapatan ``` bulunamadı."
+      ],
+      "Slug": [
+        "Kısa isim (slug)"
+      ],
+      "Apply slug": [
+        "Kısa ismi uygula"
+      ],
+      "Loading sample...": [
+        "Örnek yükleniyor..."
+      ],
+      "Title": [
+        "Başlık"
+      ],
+      "Tags": [
+        "Etiketler"
+      ],
+      "Apply tags": [
+        "Etiketleri uygula"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "Görev listeleri, işaret kutularının durumu korunmadan normal listelere dönüştürülecek."
+      ],
+      "Sample Markdown loaded.": [
+        "Örnek Markdown yüklendi."
+      ],
+      "Sample Markdown could not be loaded.": [
+        "Örnek Markdown yüklenemedi."
+      ],
+      "Load sample Markdown": [
+        "Örnek Markdown yükle"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "İç içe listeler tek düzeyli listeye dönüştürülecek."
+      ],
+      "The file could not be read.": [
+        "Dosya okunamadı."
+      ],
+      "Choose file": [
+        "Dosya seç"
+      ],
+      "Insert as blocks": [
+        "Blok olarak ekle"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "Bloklar imlecin bulunduğu yere eklendi."
+      ],
+      "Preview": [
+        "Önizleme"
+      ],
+      "There is no source to preview.": [
+        "Önizlenecek bir kaynak yok."
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "Bu yazı türü veya mevcut izinleriniz nedeniyle bazı yazı ayarları uygulanamadı."
+      ],
+      "Some images or post settings could not be applied.": [
+        "Bazı görseller veya yazı ayarları uygulanamadı."
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "Taslak oluşturuldu ancak dönüştürme adımlarının tümü tamamlanamadı. "
+      ],
+      "Open draft": [
+        "Taslağı aç"
+      ],
+      "Alt text": [
+        "Alternatif metin"
+      ],
+      " items": [
+        " öğe"
+      ],
+      " categories or tags were created.": [
+        " kategori veya etiket oluşturuldu."
+      ],
+      " remote images will be saved to the Media Library.": [
+        " harici görsel Ortam Kütüphanesi’ne kaydedilecek."
+      ],
+      " post settings were applied.": [
+        " yazı ayarı uygulandı."
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " mevcut blok düzenleyicide değiştirilecek."
+      ],
+      " existing blocks: confirm replacement": [
+        " mevcut blok: değiştirmeyi onaylayın"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " görsel kaydedilemedi; bu nedenle harici URL’leri yazıda korundu."
+      ],
+      " images were saved to the Media Library.": [
+        " görsel Ortam Kütüphanesi’ne kaydedildi."
+      ],
+      " items to review": [
+        " incelenecek öğe"
+      ],
+      " settings to apply": [
+        " uygulanacak ayar"
+      ],
+      "Workspace": [
+        "Çalışma alanı"
+      ],
+      "Open workspace": [
+        "Çalışma alanını aç"
+      ],
+      "What will be saved": [
+        "Kaydedilecek içerik"
+      ],
+      "No issues need fixing": [
+        "Düzeltilmesi gereken bir sorun yok"
+      ],
+      "Source, post settings, and review": [
+        "Kaynak, yazı ayarları ve kontrol"
+      ],
+      "Clear source": [
+        "Kaynağı temizle"
+      ],
+      "Insertion method": [
+        "Ekleme yöntemi"
+      ],
+      "Importing...": [
+        "İçe aktarılıyor..."
+      ],
+      "Conversion options": [
+        "Dönüştürme seçenekleri"
+      ],
+      "Preflight checks": [
+        "Ön kontroller"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "Devam etmeden önce ön kontrol hatalarını düzeltin."
+      ],
+      "Save remote images to the Media Library": [
+        "Harici görselleri Ortam Kütüphanesi’ne kaydet"
+      ],
+      "Info": [
+        "Bilgi"
+      ],
+      "The post has not been saved yet.": [
+        "Yazı henüz kaydedilmedi."
+      ],
+      "Apply post title": [
+        "Yazı başlığını uygula"
+      ],
+      "The post body was replaced with blocks.": [
+        "Yazı içeriği bloklarla değiştirildi."
+      ],
+      "Post settings": [
+        "Yazı ayarları"
+      ],
+      "Applying post settings...": [
+        "Yazı ayarları uygulanıyor..."
+      ],
+      "Excerpt": [
+        "Özet"
+      ],
+      "Apply excerpt": [
+        "Özeti uygula"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "Matematik blokları kendilerine özel bir görüntüleme biçimine dönüştürülmeyecek."
+      ],
+      " characters": [
+        " karakter"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "WordPress’e yeni bir taslak kaydedilecek."
+      ],
+      "Create new draft": [
+        "Yeni taslak oluştur"
+      ],
+      "A new draft was created.": [
+        "Yeni bir taslak oluşturuldu."
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "Mevcut yazı içeriğini değiştirmeden önce işlemi onaylayın."
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "İlk H1 yazı başlığı olarak kullanılacak ve yazı içeriğinden kaldırılacak."
+      ],
+      "Use first H1 as post title": [
+        "İlk H1’i yazı başlığı olarak kullan"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "Desteklenmeyen Front Matter alanları uygulanmayacak:"
+      ],
+      "Unsupported fields will not be applied:": [
+        "Desteklenmeyen alanlar uygulanmayacak:"
+      ],
+      "Missing categories or tags will be created.": [
+        "Bulunmayan kategori veya etiketler oluşturulacak."
+      ],
+      "Create missing categories and tags": [
+        "Bulunmayan kategori ve etiketleri oluştur"
+      ],
+      "Create missing terms": [
+        "Bulunmayan terimleri oluştur"
+      ],
+      "Apply content and settings": [
+        "İçeriği ve ayarları uygula"
+      ],
+      "Replace content": [
+        "İçeriği değiştir"
+      ],
+      "Replace the content": [
+        "İçeriği değiştir"
+      ],
+      "Current Markdown source": [
+        "Mevcut Markdown kaynağı"
+      ],
+      "The current post will not be saved automatically.": [
+        "Geçerli yazı otomatik olarak kaydedilmeyecek."
+      ],
+      "Image URL": [
+        "Görsel URL’si"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "Görsel URL’leri http, https veya / ile başlamalıdır."
+      ],
+      "Importing images...": [
+        "Görseller içe aktarılıyor..."
+      ],
+      "Save images": [
+        "Görselleri kaydet"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "Görsel söz dizimi çözümlenemedi. Parantezleri ve URL’yi kontrol edin."
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "Göreli yola sahip görseller özgün yollarını koruyacak ve Ortam Kütüphanesi’ne kaydedilmeyecek."
+      ],
+      "Review and adjust": [
+        "Kontrol ve düzenleme"
+      ],
+      "Review": [
+        "Kontrol et"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "Dipnot söz dizimi bağlantılı dipnotlara dönüştürülmeyecek."
+      ],
+      " line": [
+        " satır"
+      ],
+      " line: edit in Markdown": [
+        " satır: Markdown içinde düzenleyin"
+      ],
+      "Warning": [
+        "Uyarı"
+      ],
+      "Pasted source": [
+        "Yapıştırılan kaynak"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "Bu yazı bilgileri Front Matter bölümünden okundu. Her öğeyi kontrol edin; gerekirse düzenleyin veya ilgili bilgiyi uygulamamak için işaretini kaldırın."
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "Uyarıları ve yapılacak değişiklikleri kontrol edin. Ardından yazının nasıl uygulanacağını ve kullanılacak dönüştürme seçeneklerini belirleyin."
+      ],
+      "Review before applying": [
+        "Uygulamadan önce kontrol edin"
+      ],
+      "Source, post settings, and review before applying": [
+        "Kaynak, yazı ayarları ve uygulama öncesi kontrol"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "Blokları imlecin bulunduğu yere ekler. Mevcut içerik korunur ve yazı otomatik olarak kaydedilmez."
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "Geçerli yazıdaki tüm blokları değiştirir. Onay gerekir ve yazı otomatik olarak kaydedilmez."
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "Geçerli yazıyı değiştirmeden bırakır; içeriği ve seçili yazı ayarlarını yeni bir taslak olarak kaydeder."
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# Yazı başlığı\n\nMarkdown metnini buraya yapıştırın veya bir dosya bırakın."
+      ],
+      "The bundled Markdown is unavailable.": [
+        "Paketle birlikte gelen Markdown kullanılamıyor."
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "Paketle birlikte gelen Markdown yüklenemedi."
+      ],
+      "The clipboard is unavailable.": [
+        "Pano kullanılamıyor."
+      ],
+      "The draft ID was not found.": [
+        "Taslak kimliği bulunamadı."
+      ],
+      "The draft blocks were not found.": [
+        "Taslak blokları bulunamadı."
+      ]
+    }
+  }
+}

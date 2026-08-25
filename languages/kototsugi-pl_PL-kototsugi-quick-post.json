@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 10:27+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pl_PL",
+        "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
+      },
+      "Alternative text": [
+        "Tekst alternatywny"
+      ],
+      "Attach up to 5 images.": [
+        "Dołącz do 5 obrazów."
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Wybierz plik .md, .markdown lub .txt o rozmiarze do 2 MB."
+      ],
+      "Enter a post title.": [
+        "Wprowadź tytuł wpisu."
+      ],
+      "Line": [
+        "Wiersz"
+      ],
+      "Paste an article draft before continuing.": [
+        "Przed kontynuowaniem wklej szkic artykułu."
+      ],
+      "Publishing...": [
+        "Publikowanie..."
+      ],
+      "Remove image": [
+        "Usuń obraz"
+      ],
+      "Saving...": [
+        "Zapisywanie..."
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "Nie udało się przekonwertować artykułu na bloki WordPress."
+      ],
+      "The file could not be read.": [
+        "Nie udało się odczytać pliku."
+      ],
+      "Use an article draft up to 2 MB.": [
+        "Szkic artykułu może mieć maksymalnie 2 MB."
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "Użyj obrazów w formatach JPEG, PNG, GIF lub WebP, mieszczących się w limicie przesyłania witryny."
+      ]
+    }
+  }
+}

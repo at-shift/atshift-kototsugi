@@ -1,0 +1,54 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/quick-post.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "id_ID",
+        "plural-forms": "nplurals=1; plural=0;"
+      },
+      "Alternative text": [
+        "Teks alternatif"
+      ],
+      "Attach up to 5 images.": [
+        "Lampirkan hingga 5 gambar."
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Pilih file .md, .markdown, atau .txt dengan ukuran maksimal 2 MB."
+      ],
+      "Enter a post title.": [
+        "Masukkan judul pos."
+      ],
+      "Line": [
+        "Baris"
+      ],
+      "Paste an article draft before continuing.": [
+        "Tempel draf artikel sebelum melanjutkan."
+      ],
+      "Publishing...": [
+        "Menerbitkan..."
+      ],
+      "Remove image": [
+        "Hapus gambar"
+      ],
+      "Saving...": [
+        "Menyimpan..."
+      ],
+      "The article could not be converted into WordPress blocks.": [
+        "Artikel tidak dapat dikonversi menjadi blok WordPress."
+      ],
+      "The file could not be read.": [
+        "File tidak dapat dibaca."
+      ],
+      "Use an article draft up to 2 MB.": [
+        "Gunakan draf artikel dengan ukuran hingga 2 MB."
+      ],
+      "Use JPEG, PNG, GIF, or WebP images within the site upload limit.": [
+        "Gunakan gambar JPEG, PNG, GIF, atau WebP sesuai batas unggahan situs."
+      ]
+    }
+  }
+}

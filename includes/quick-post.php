@@ -35,6 +35,83 @@ function kototsugi_quick_post_defaults() {
 }
 
 /**
+ * Returns locale codes supported by the bundled Quick Post translations.
+ *
+ * @return string[]
+ */
+function kototsugi_quick_post_locale_codes() {
+	return array(
+		'ja',
+		'en_US',
+		'es_ES',
+		'de_DE',
+		'fr_FR',
+		'pt_BR',
+		'it_IT',
+		'ru_RU',
+		'nl_NL',
+		'zh_CN',
+		'pl_PL',
+		'tr_TR',
+		'id_ID',
+		'zh_TW',
+		'ko_KR',
+	);
+}
+
+/**
+ * Makes bundled locales available to WordPress' locale switcher.
+ *
+ * The filter is removed on init so these plugin-only translations are not
+ * advertised as complete WordPress language packs elsewhere in wp-admin.
+ *
+ * @param string[]    $languages Available WordPress locales.
+ * @param string|null $directory Language directory, or null for the default.
+ * @return string[]
+ */
+function kototsugi_register_quick_post_locales( $languages, $directory = null ) {
+	if ( null !== $directory ) {
+		return $languages;
+	}
+
+	return array_values( array_unique( array_merge( $languages, kototsugi_quick_post_locale_codes() ) ) );
+}
+add_filter( 'get_available_languages', 'kototsugi_register_quick_post_locales', 10, 2 );
+
+/**
+ * Stops exposing plugin-only locales after WordPress initializes its switcher.
+ */
+function kototsugi_remove_quick_post_locale_filter() {
+	remove_filter( 'get_available_languages', 'kototsugi_register_quick_post_locales', 10 );
+}
+add_action( 'init', 'kototsugi_remove_quick_post_locale_filter', 0 );
+
+/**
+ * Returns the display languages bundled with Quick Post.
+ *
+ * @return array<string, string>
+ */
+function kototsugi_quick_post_languages() {
+	return array(
+		'ja'    => __( 'Japanese', 'kototsugi' ),
+		'en_US' => __( 'English', 'kototsugi' ),
+		'es_ES' => __( 'Spanish', 'kototsugi' ),
+		'de_DE' => __( 'German', 'kototsugi' ),
+		'fr_FR' => __( 'French', 'kototsugi' ),
+		'pt_BR' => __( 'Portuguese (Brazil)', 'kototsugi' ),
+		'it_IT' => __( 'Italian', 'kototsugi' ),
+		'ru_RU' => __( 'Russian', 'kototsugi' ),
+		'nl_NL' => __( 'Dutch', 'kototsugi' ),
+		'zh_CN' => __( 'Chinese (Simplified)', 'kototsugi' ),
+		'pl_PL' => __( 'Polish', 'kototsugi' ),
+		'tr_TR' => __( 'Turkish', 'kototsugi' ),
+		'id_ID' => __( 'Indonesian', 'kototsugi' ),
+		'zh_TW' => __( 'Chinese (Traditional, Taiwan)', 'kototsugi' ),
+		'ko_KR' => __( 'Korean', 'kototsugi' ),
+	);
+}
+
+/**
  * Returns content types suitable for Quick Post articles.
  *
  * @return array<string, WP_Post_Type>
@@ -99,7 +176,7 @@ function kototsugi_get_quick_post_settings() {
 
 	$settings['enabled']         = (bool) $settings['enabled'];
 	$settings['status']          = 'publish' === $settings['status'] ? 'publish' : 'draft';
-	$settings['language']        = in_array( $settings['language'], array( 'site', 'ja', 'en_US' ), true ) ? $settings['language'] : 'site';
+	$settings['language']        = isset( kototsugi_quick_post_languages()[ $settings['language'] ] ) || 'site' === $settings['language'] ? $settings['language'] : 'site';
 	$settings['post_type']       = sanitize_key( $settings['post_type'] );
 	$settings['author_id']       = absint( $settings['author_id'] );
 	$settings['category_id']     = absint( $settings['category_id'] );
@@ -123,7 +200,16 @@ function kototsugi_switch_quick_post_locale( $settings ) {
 		return;
 	}
 
-	switch_to_locale( $settings['language'] );
+	$locale = $settings['language'];
+	if ( ! switch_to_locale( $locale ) && determine_locale() !== $locale ) {
+		return;
+	}
+
+	unload_textdomain( 'kototsugi', true );
+	$mofile = plugin_dir_path( KOTOTSUGI_FILE ) . 'languages/kototsugi-' . $locale . '.mo';
+	if ( is_readable( $mofile ) ) {
+		load_textdomain( 'kototsugi', $mofile, $locale );
+	}
 }
 
 /**
@@ -300,7 +386,7 @@ function kototsugi_save_quick_post_settings() {
 	$post_types  = kototsugi_quick_post_types();
 	$type_object = isset( $post_types[ $post_type ] ) ? $post_types[ $post_type ] : null;
 	$author      = $author_id ? get_user_by( 'id', $author_id ) : false;
-	$language    = in_array( $language, array( 'site', 'ja', 'en_US' ), true ) ? $language : 'site';
+	$language    = isset( kototsugi_quick_post_languages()[ $language ] ) || 'site' === $language ? $language : 'site';
 
 	if ( ! $type_object ) {
 		kototsugi_quick_post_settings_redirect( 'invalid-post-type' );
@@ -415,8 +501,9 @@ function kototsugi_render_quick_post_settings_page() {
 					<td>
 						<select id="kototsugi-quick-post-language" name="language">
 							<option value="site" <?php selected( $settings['language'], 'site' ); ?>><?php esc_html_e( 'Use the site language', 'kototsugi' ); ?></option>
-							<option value="ja" <?php selected( $settings['language'], 'ja' ); ?>><?php esc_html_e( 'Japanese', 'kototsugi' ); ?></option>
-							<option value="en_US" <?php selected( $settings['language'], 'en_US' ); ?>><?php esc_html_e( 'English', 'kototsugi' ); ?></option>
+							<?php foreach ( kototsugi_quick_post_languages() as $locale => $language_name ) : ?>
+								<option value="<?php echo esc_attr( $locale ); ?>" <?php selected( $settings['language'], $locale ); ?>><?php echo esc_html( $language_name ); ?></option>
+							<?php endforeach; ?>
 						</select>
 						<p class="description"><?php esc_html_e( 'Used on the passphrase, article, review, and completion screens.', 'kototsugi' ); ?></p>
 					</td>
@@ -1428,6 +1515,7 @@ function kototsugi_render_quick_post_form( $settings, $error = '', $values = arr
 		<a class="kototsugi-quick-brand" href="<?php echo esc_url( kototsugi_quick_post_url() ); ?>">KOTOTSUGI <span><?php esc_html_e( 'Quick Post', 'kototsugi' ); ?></span></a>
 		<form id="kototsugi-quick-logout-form" method="post" action="<?php echo esc_url( kototsugi_quick_post_url() ); ?>">
 			<input type="hidden" name="kototsugi_action" value="logout">
+			<?php wp_nonce_field( 'kototsugi_quick_post_logout', 'kototsugi_logout_nonce' ); ?>
 			<input type="hidden" name="kototsugi_form_token" value="<?php echo esc_attr( kototsugi_quick_post_form_token( 'logout', $cookie ) ); ?>">
 			<button class="kototsugi-quick-icon-button" type="submit" aria-label="<?php esc_attr_e( 'Sign out', 'kototsugi' ); ?>" title="<?php esc_attr_e( 'Sign out', 'kototsugi' ); ?>"><span class="dashicons dashicons-exit" aria-hidden="true"></span></button>
 		</form>
@@ -1435,6 +1523,7 @@ function kototsugi_render_quick_post_form( $settings, $error = '', $values = arr
 	<main class="kototsugi-quick-shell">
 		<form id="kototsugi-quick-post-form" method="post" enctype="multipart/form-data" action="<?php echo esc_url( kototsugi_quick_post_url() ); ?>" data-status="<?php echo esc_attr( $settings['status'] ); ?>">
 			<input type="hidden" name="kototsugi_action" value="publish">
+			<?php wp_nonce_field( 'kototsugi_quick_post_publish', 'kototsugi_publish_nonce' ); ?>
 			<input type="hidden" name="kototsugi_form_token" value="<?php echo esc_attr( kototsugi_quick_post_form_token( 'publish', $cookie ) ); ?>">
 			<input id="kototsugi-quick-content" type="hidden" name="content" value="">
 			<input id="kototsugi-quick-excerpt" type="hidden" name="excerpt" value="">
@@ -1522,6 +1611,11 @@ function kototsugi_render_quick_post_success( $post_id, $settings ) {
 	$post        = get_post( $post_id );
 	$storage_key = kototsugi_quick_post_storage_key( kototsugi_get_quick_post_cookie(), $settings );
 	kototsugi_enqueue_quick_post_assets( false, false );
+	wp_add_inline_script(
+		'kototsugi-passphrase-toggle',
+		'try { window.localStorage.removeItem(' . wp_json_encode( $storage_key ) . '); window.localStorage.removeItem(' . wp_json_encode( $storage_key . '-title' ) . '); } catch (error) {}',
+		'after'
+	);
 	kototsugi_quick_post_document_start( __( 'Post submitted', 'kototsugi' ) );
 	?>
 	<main class="kototsugi-quick-shell kototsugi-quick-shell--success">
@@ -1536,7 +1630,6 @@ function kototsugi_render_quick_post_success( $post_id, $settings ) {
 			</div>
 		</section>
 	</main>
-	<script>try { window.localStorage.removeItem(<?php echo wp_json_encode( $storage_key ); ?>); window.localStorage.removeItem(<?php echo wp_json_encode( $storage_key . '-title' ); ?>); } catch (error) {}</script>
 	<?php
 	kototsugi_quick_post_document_end();
 }
@@ -1595,8 +1688,9 @@ function kototsugi_handle_quick_post_request() {
 	}
 
 	if ( 'logout' === $action && $authenticated ) {
+		$nonce = isset( $_POST['kototsugi_logout_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['kototsugi_logout_nonce'] ) ) : '';
 		$token = isset( $_POST['kototsugi_form_token'] ) ? sanitize_text_field( wp_unslash( $_POST['kototsugi_form_token'] ) ) : '';
-		if ( kototsugi_verify_quick_post_form_token( $token, 'logout', $cookie ) ) {
+		if ( wp_verify_nonce( $nonce, 'kototsugi_quick_post_logout' ) && kototsugi_verify_quick_post_form_token( $token, 'logout', $cookie ) ) {
 			kototsugi_revoke_quick_post_session( $cookie, $settings );
 			kototsugi_set_quick_post_cookie( '', time() - HOUR_IN_SECONDS );
 		}
@@ -1610,6 +1704,7 @@ function kototsugi_handle_quick_post_request() {
 	}
 
 	if ( 'publish' === $action ) {
+		$nonce  = isset( $_POST['kototsugi_publish_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['kototsugi_publish_nonce'] ) ) : '';
 		$token  = isset( $_POST['kototsugi_form_token'] ) ? sanitize_text_field( wp_unslash( $_POST['kototsugi_form_token'] ) ) : '';
 		$values = array(
 			'title'       => isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '',
@@ -1622,7 +1717,7 @@ function kototsugi_handle_quick_post_request() {
 			'idempotency' => isset( $_POST['idempotency'] ) ? sanitize_key( wp_unslash( $_POST['idempotency'] ) ) : '',
 		);
 
-		if ( ! kototsugi_verify_quick_post_form_token( $token, 'publish', $cookie ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'kototsugi_quick_post_publish' ) || ! kototsugi_verify_quick_post_form_token( $token, 'publish', $cookie ) ) {
 			kototsugi_render_quick_post_form( $settings, __( 'The page expired. Reload it and try again.', 'kototsugi' ), $values );
 			exit;
 		}

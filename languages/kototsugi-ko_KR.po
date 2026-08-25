@@ -1,0 +1,855 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: kototsugi\n"
+"PO-Revision-Date: 2026-08-24 12:00+0900\n"
+"Last-Translator: KOTOTSUGI Translation Team\n"
+"Language-Team: Korean\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "AI 생성에 적합한 Markdown을 편집 가능한 WordPress 블록으로 변환합니다."
+
+msgid "More ways to write"
+msgstr "더 다양한 작성 방법"
+
+msgid "Place"
+msgstr "장소"
+
+msgid "Important"
+msgstr "중요"
+
+msgid "Note"
+msgstr "참고"
+
+msgid "Price"
+msgstr "가격"
+
+msgid "Phone"
+msgstr "전화번호"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "장소: 또는 전화번호: 같은 항목 이름을 붙여 쓸 수도 있습니다."
+
+msgid "Display language"
+msgstr "표시 언어"
+
+msgid "Use the site language"
+msgstr "사이트 언어 사용"
+
+msgid "Japanese"
+msgstr "일본어"
+
+msgid "English"
+msgstr "영어"
+
+msgid "Spanish"
+msgstr "스페인어"
+
+msgid "German"
+msgstr "독일어"
+
+msgid "French"
+msgstr "프랑스어"
+
+msgid "Portuguese (Brazil)"
+msgstr "포르투갈어(브라질)"
+
+msgid "Italian"
+msgstr "이탈리아어"
+
+msgid "Russian"
+msgstr "러시아어"
+
+msgid "Dutch"
+msgstr "네덜란드어"
+
+msgid "Chinese (Simplified)"
+msgstr "중국어(간체)"
+
+msgid "Polish"
+msgstr "폴란드어"
+
+msgid "Turkish"
+msgstr "튀르키예어"
+
+msgid "Indonesian"
+msgstr "인도네시아어"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "중국어(번체, 대만)"
+
+msgid "Korean"
+msgstr "한국어"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "접속 암호, 글 작성, 확인 및 완료 화면에 사용됩니다."
+
+msgid "New article"
+msgstr "새 글"
+
+msgid "Create an article"
+msgstr "글 작성"
+
+msgid "Article title"
+msgstr "글 제목"
+
+msgid "Article text"
+msgstr "글 내용"
+
+msgid "Write the article here"
+msgstr "여기에 글을 작성하세요"
+
+msgid "Writing hints"
+msgstr "작성 도움말"
+
+msgid ""
+"Writing normally creates paragraphs. Use these hints only when you want more "
+"structure."
+msgstr "평소처럼 쓰면 문단이 만들어집니다. 글에 구조를 더하고 싶을 때만 아래 방법을 사용하세요."
+
+msgid "Leave a blank line between paragraphs."
+msgstr "문단 사이는 한 줄 비우세요."
+
+msgid "Start a line with ・ to make a list."
+msgstr "줄 맨 앞에 ・를 붙이면 목록이 됩니다."
+
+msgid "A short line on its own becomes a heading."
+msgstr "짧은 내용만 있는 한 줄은 제목이 됩니다."
+
+msgid "The imported image URL could not be created."
+msgstr "가져온 이미지의 URL을 만들 수 없습니다."
+
+msgid "This image URL is not allowed."
+msgstr "허용되지 않은 이미지 URL입니다."
+
+msgid "You are not allowed to attach images to this post."
+msgstr "이 글에 이미지를 첨부할 권한이 없습니다."
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "이 미디어 라이브러리 이미지를 다시 사용할 권한이 없습니다."
+
+msgid "The temporary file could not be created."
+msgstr "임시 파일을 만들 수 없습니다."
+
+msgid "The remote image could not be downloaded."
+msgstr "외부 이미지를 다운로드할 수 없습니다."
+
+msgid "The remote image returned an unexpected response."
+msgstr "외부 이미지 서버에서 예상하지 못한 응답을 보냈습니다."
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "외부 이미지가 업로드 용량 제한을 초과합니다."
+
+msgid "The downloaded file is not a supported image."
+msgstr "다운로드한 파일은 지원되는 이미지 형식이 아닙니다."
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt, 최대 2 MB"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "2 MB 이하의 .md, .markdown 또는 .txt 파일을 선택하세요."
+
+msgid "Copy AI authoring rules"
+msgstr "AI 작성 규칙 복사"
+
+msgid "AI authoring rules copied."
+msgstr "AI 작성 규칙을 복사했습니다."
+
+msgid "AI authoring rules could not be copied."
+msgstr "AI 작성 규칙을 복사할 수 없습니다."
+
+msgid ""
+"The H1 matching the Front Matter title will be removed automatically to "
+"avoid duplication in the post body."
+msgstr "Front Matter 제목과 같은 H1은 본문에서 중복되지 않도록 자동으로 제거됩니다."
+
+msgid ""
+"The Front Matter title differs from the first H1. The H1 will be removed "
+"from the post body when applied."
+msgstr "Front Matter 제목과 첫 번째 H1이 다릅니다. 적용할 때 H1은 글 본문에서 제거됩니다."
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "Front Matter를 닫는 ---를 찾을 수 없습니다."
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "H1 제목이 여러 개 있습니다. 글 제목으로 사용할 H1 하나만 남기세요."
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "HTML은 일반 텍스트로 삽입되며 HTML로 실행되지 않습니다."
+
+msgid "Markdown insertion method"
+msgstr "Markdown 삽입 방법"
+
+msgid "The Markdown import could not be completed."
+msgstr "Markdown 가져오기를 완료할 수 없습니다."
+
+msgid "Back to Markdown"
+msgstr "Markdown으로 돌아가기"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "Markdown을 블록으로 변환할 수 없습니다."
+
+msgid "Enter some Markdown."
+msgstr "Markdown을 입력하세요."
+
+msgid "Markdown file"
+msgstr "Markdown 파일"
+
+msgid "Load a Markdown file"
+msgstr "Markdown 파일 불러오기"
+
+msgid "Markdown file loaded."
+msgstr "Markdown 파일을 불러왔습니다."
+
+msgid "Choose a Markdown file"
+msgstr "Markdown 파일 선택"
+
+msgid "Markdown source"
+msgstr "Markdown 원문"
+
+msgid "Markdown posting"
+msgstr "Markdown 게시"
+
+msgid "Drop here"
+msgstr "여기에 놓으세요"
+
+msgid ""
+"This code block will be inserted as a regular code block because no "
+"dedicated block is available."
+msgstr "전용 블록이 없어 이 코드 블록은 일반 코드 블록으로 삽입됩니다."
+
+msgid ". Check the heading hierarchy."
+msgstr "이 이어집니다. 제목 계층을 확인하세요."
+
+msgid " is followed by "
+msgstr " 다음에 "
+
+msgid "Apply featured image"
+msgstr "특성 이미지 적용"
+
+msgid "Error"
+msgstr "오류"
+
+msgid "Categories"
+msgstr "카테고리"
+
+msgid "Apply categories"
+msgstr "카테고리 적용"
+
+msgid "Add at cursor"
+msgstr "커서 위치에 추가"
+
+msgid "Copying..."
+msgstr "복사 중..."
+
+msgid "The closing ``` for the code block was not found."
+msgstr "코드 블록을 닫는 ```를 찾을 수 없습니다."
+
+msgid "Slug"
+msgstr "슬러그"
+
+msgid "Apply slug"
+msgstr "슬러그 적용"
+
+msgid "Loading sample..."
+msgstr "예제 불러오는 중..."
+
+msgid "Title"
+msgstr "제목"
+
+msgid "Tags"
+msgstr "태그"
+
+msgid "Apply tags"
+msgstr "태그 적용"
+
+msgid ""
+"Task lists will be converted to regular lists without preserving checkbox "
+"states."
+msgstr "작업 목록은 체크 상태를 유지하지 않고 일반 목록으로 변환됩니다."
+
+msgid "Sample Markdown loaded."
+msgstr "Markdown 예제를 불러왔습니다."
+
+msgid "Sample Markdown could not be loaded."
+msgstr "Markdown 예제를 불러올 수 없습니다."
+
+msgid "Load sample Markdown"
+msgstr "Markdown 예제 불러오기"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "중첩 목록은 한 단계의 목록으로 변환됩니다."
+
+msgid "The file could not be read."
+msgstr "파일을 읽을 수 없습니다."
+
+msgid "Choose file"
+msgstr "파일 선택"
+
+msgid "Insert as blocks"
+msgstr "블록으로 삽입"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "현재 커서 위치에 블록을 삽입했습니다."
+
+msgid "Preview"
+msgstr "미리보기"
+
+msgid "There is no source to preview."
+msgstr "미리 볼 원문이 없습니다."
+
+msgid ""
+"Some post settings could not be applied for this post type or with your "
+"current permissions."
+msgstr "이 콘텐츠 유형이나 현재 권한에서는 일부 글 설정을 적용할 수 없습니다."
+
+msgid "Some images or post settings could not be applied."
+msgstr "일부 이미지 또는 글 설정을 적용할 수 없습니다."
+
+msgid ""
+"The draft was created, but not all conversion steps could be completed. "
+msgstr "임시글을 만들었지만 일부 변환 단계를 완료하지 못했습니다. "
+
+msgid "Open draft"
+msgstr "임시글 열기"
+
+msgid "Alt text"
+msgstr "대체 텍스트"
+
+msgid " items"
+msgstr " 개 항목"
+
+msgid " categories or tags were created."
+msgstr " 개 카테고리 또는 태그를 만들었습니다."
+
+msgid " remote images will be saved to the Media Library."
+msgstr " 개 외부 이미지가 미디어 라이브러리에 저장됩니다."
+
+msgid " post settings were applied."
+msgstr " 개 글 설정을 적용했습니다."
+
+msgid " existing blocks will be replaced in the editor."
+msgstr " 개 기존 블록이 편집기에서 교체됩니다."
+
+msgid " existing blocks: confirm replacement"
+msgstr " 개 기존 블록: 교체 확인 필요"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr " 개 이미지를 저장할 수 없어 외부 URL을 글에 그대로 두었습니다."
+
+msgid " images were saved to the Media Library."
+msgstr " 개 이미지를 미디어 라이브러리에 저장했습니다."
+
+msgid " items to review"
+msgstr " 개 확인할 항목"
+
+msgid " settings to apply"
+msgstr " 개 적용할 설정"
+
+msgid "Workspace"
+msgstr "작업 공간"
+
+msgid "Open workspace"
+msgstr "작업 공간 열기"
+
+msgid "What will be saved"
+msgstr "저장될 내용"
+
+msgid "No issues need fixing"
+msgstr "수정할 문제가 없습니다"
+
+msgid "Source, post settings, and review"
+msgstr "원문, 글 설정 및 확인"
+
+msgid "Clear source"
+msgstr "원문 지우기"
+
+msgid "Insertion method"
+msgstr "삽입 방법"
+
+msgid "Importing..."
+msgstr "가져오는 중..."
+
+msgid "Conversion options"
+msgstr "변환 옵션"
+
+msgid "Preflight checks"
+msgstr "사전 점검"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "계속하기 전에 사전 점검 오류를 수정하세요."
+
+msgid "Save remote images to the Media Library"
+msgstr "외부 이미지를 미디어 라이브러리에 저장"
+
+msgid "Info"
+msgstr "안내"
+
+msgid "The post has not been saved yet."
+msgstr "아직 글을 저장하지 않았습니다."
+
+msgid "Apply post title"
+msgstr "글 제목 적용"
+
+msgid "The post body was replaced with blocks."
+msgstr "글 본문을 블록으로 교체했습니다."
+
+msgid "Post settings"
+msgstr "글 설정"
+
+msgid "Applying post settings..."
+msgstr "글 설정 적용 중..."
+
+msgid "Excerpt"
+msgstr "요약"
+
+msgid "Apply excerpt"
+msgstr "요약 적용"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "수식 블록은 전용 표시 형식으로 변환되지 않습니다."
+
+msgid " characters"
+msgstr " 자"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "새 임시글이 WordPress에 저장됩니다."
+
+msgid "Create new draft"
+msgstr "새 임시글 만들기"
+
+msgid "A new draft was created."
+msgstr "새 임시글을 만들었습니다."
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "기존 글 본문을 교체하기 전에 확인하세요."
+
+msgid ""
+"The first H1 will be used as the post title and removed from the post body."
+msgstr "첫 번째 H1은 글 제목으로 사용되고 글 본문에서는 제거됩니다."
+
+msgid "Use first H1 as post title"
+msgstr "첫 번째 H1을 글 제목으로 사용"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "지원되지 않는 Front Matter 필드는 적용되지 않습니다:"
+
+msgid "Unsupported fields will not be applied:"
+msgstr "지원되지 않는 필드는 적용되지 않습니다:"
+
+msgid "Missing categories or tags will be created."
+msgstr "없는 카테고리 또는 태그를 새로 만듭니다."
+
+msgid "Create missing categories and tags"
+msgstr "없는 카테고리와 태그 만들기"
+
+msgid "Create missing terms"
+msgstr "없는 용어 만들기"
+
+msgid "Apply content and settings"
+msgstr "내용 및 설정 적용"
+
+msgid "Replace content"
+msgstr "내용 교체"
+
+msgid "Replace the content"
+msgstr "내용 교체"
+
+msgid "Current Markdown source"
+msgstr "현재 Markdown 원문"
+
+msgid "The current post will not be saved automatically."
+msgstr "현재 글은 자동으로 저장되지 않습니다."
+
+msgid "Image URL"
+msgstr "이미지 URL"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "이미지 URL은 http, https 또는 /로 시작해야 합니다."
+
+msgid "Importing images..."
+msgstr "이미지 가져오는 중..."
+
+msgid "Save images"
+msgstr "이미지 저장"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "이미지 문법을 해석할 수 없습니다. 괄호와 URL을 확인하세요."
+
+msgid ""
+"Relative images will keep their original paths and will not be saved to the "
+"Media Library."
+msgstr "상대 경로 이미지는 원래 경로를 유지하며 미디어 라이브러리에 저장되지 않습니다."
+
+msgid "Review and adjust"
+msgstr "확인 및 조정"
+
+msgid "Review"
+msgstr "확인"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "각주 문법은 링크된 각주로 변환되지 않습니다."
+
+msgid " line"
+msgstr " 줄"
+
+msgid " line: edit in Markdown"
+msgstr " 줄: Markdown에서 수정"
+
+msgid "Warning"
+msgstr "경고"
+
+msgid "Pasted source"
+msgstr "붙여 넣은 원문"
+
+msgid "Close"
+msgstr "닫기"
+
+msgid ""
+"These post details were read from Front Matter. Review each item, edit it if "
+"needed, or clear its checkbox to leave it unchanged."
+msgstr "이 글 정보는 Front Matter에서 읽었습니다. 각 항목을 확인하고 필요하면 수정하거나, 변경하지 않을 항목은 체크를 해제하세요."
+
+msgid ""
+"Review warnings and expected changes, then choose how the article should be "
+"applied and which conversion options to use."
+msgstr "경고와 예상 변경 사항을 확인한 다음, 글을 적용할 방법과 사용할 변환 옵션을 선택하세요."
+
+msgid "Review before applying"
+msgstr "적용 전 확인"
+
+msgid "Source, post settings, and review before applying"
+msgstr "원문, 글 설정 및 적용 전 확인"
+
+msgid ""
+"Add blocks at the current cursor position. Existing content remains, and the "
+"post will not be saved automatically."
+msgstr "현재 커서 위치에 블록을 추가합니다. 기존 내용은 유지되며 글은 자동으로 저장되지 않습니다."
+
+msgid ""
+"Replace all blocks in the current post. Confirmation is required, and the "
+"post will not be saved automatically."
+msgstr "현재 글의 모든 블록을 교체합니다. 확인이 필요하며 글은 자동으로 저장되지 않습니다."
+
+msgid ""
+"Leave the current post unchanged and save the content and selected post "
+"settings as a new draft."
+msgstr "현재 글은 변경하지 않고 내용과 선택한 글 설정을 새 임시글로 저장합니다."
+
+msgid ""
+"# Article title\n"
+"\n"
+"Paste Markdown here or drop a file."
+msgstr "# 글 제목\n\n여기에 Markdown을 붙여 넣거나 파일을 놓으세요."
+
+msgid "The bundled Markdown is unavailable."
+msgstr "포함된 Markdown을 사용할 수 없습니다."
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "포함된 Markdown을 불러올 수 없습니다."
+
+msgid "The clipboard is unavailable."
+msgstr "클립보드를 사용할 수 없습니다."
+
+msgid "The draft ID was not found."
+msgstr "임시글 ID를 찾을 수 없습니다."
+
+msgid "The draft blocks were not found."
+msgstr "임시글 블록을 찾을 수 없습니다."
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI 간편 게시"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "간편 게시 설정"
+
+msgid "You are not allowed to change these settings."
+msgstr "이 설정을 변경할 권한이 없습니다."
+
+msgid "Quick Post settings saved."
+msgstr "간편 게시 설정을 저장했습니다."
+
+msgid "Every Quick Post browser was signed out."
+msgstr "간편 게시를 사용하던 모든 브라우저에서 로그아웃했습니다."
+
+msgid "Choose an author who can create the selected content type."
+msgstr "선택한 콘텐츠 유형을 작성할 수 있는 작성자를 선택하세요."
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "선택한 작성자는 이 콘텐츠 유형을 공개할 수 없습니다."
+
+msgid "Choose an available publishing destination."
+msgstr "사용 가능한 게시 대상을 선택하세요."
+
+msgid "Choose an available category."
+msgstr "사용 가능한 카테고리를 선택하세요."
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "접속 암호는 8자 이상으로 입력하세요."
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "간편 게시를 활성화하기 전에 접속 암호를 설정하세요."
+
+msgid ""
+"Quick Post reduces the learning and memory required to publish. It is "
+"intended for people who find the WordPress admin screen difficult, including "
+"older users, people with disabilities, and anyone who needs a simpler "
+"interface."
+msgstr "간편 게시는 글을 올리기 위해 배우고 기억해야 할 내용을 줄여 줍니다. 고령자, 장애가 있는 사용자 등 WordPress 관리 화면이 어렵거나 더 간단한 화면이 필요한 사람을 위한 기능입니다."
+
+msgid ""
+"Anyone can start with only a title and article text. As they become "
+"comfortable, blank lines, lists, short headings, and images add more "
+"structure. Learning Markdown is not required."
+msgstr "누구나 제목과 글 내용만으로 시작할 수 있습니다. 익숙해지면 빈 줄, 목록, 짧은 제목, 이미지를 사용해 글을 더 보기 좋게 구성할 수 있습니다. Markdown을 배울 필요는 없습니다."
+
+msgid "Quick Post"
+msgstr "간편 게시"
+
+msgid "Enable the standalone posting page"
+msgstr "별도의 게시 페이지 활성화"
+
+msgid "Posting URL"
+msgstr "게시 URL"
+
+msgid "Open Quick Post"
+msgstr "간편 게시 열기"
+
+msgid "Passphrase"
+msgstr "접속 암호"
+
+msgid "Show passphrase"
+msgstr "접속 암호 표시"
+
+msgid "Hide passphrase"
+msgstr "접속 암호 숨기기"
+
+msgid "Publishing destination"
+msgstr "게시 대상"
+
+msgid ""
+"Posts, Pages, and custom post types that support titles and the editor are "
+"shown. The contributor cannot change this choice."
+msgstr "제목과 편집기를 지원하는 글, 페이지 및 사용자 정의 글 유형이 표시됩니다. 작성자는 이 선택을 변경할 수 없습니다."
+
+msgid ""
+"Leave blank to keep the current passphrase. Entering a new one signs out "
+"every browser."
+msgstr "현재 접속 암호를 유지하려면 비워 두세요. 새 암호를 입력하면 모든 브라우저에서 로그아웃됩니다."
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "8자 이상을 사용하세요. 글을 올릴 수 있는 사람에게만 알려 주세요."
+
+msgid "Post author"
+msgstr "글 작성자"
+
+msgid "Choose an author"
+msgstr "작성자 선택"
+
+msgid "After submission"
+msgstr "제출 후 처리"
+
+msgid "Save as a draft"
+msgstr "임시글로 저장"
+
+msgid "Publish immediately"
+msgstr "즉시 공개"
+
+msgid ""
+"This choice is fixed on the posting page so the contributor cannot change it "
+"by mistake."
+msgstr "작성자가 실수로 변경하지 않도록 게시 페이지에서는 이 선택이 고정됩니다."
+
+msgid "Default category"
+msgstr "기본 카테고리"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "게시 대상이 카테고리를 지원하는 경우에만 적용됩니다."
+
+msgid "Use the site default"
+msgstr "사이트 기본값 사용"
+
+msgid "Save Quick Post settings"
+msgstr "간편 게시 설정 저장"
+
+msgid "Sign out every Quick Post browser"
+msgstr "간편 게시를 사용 중인 모든 브라우저에서 로그아웃"
+
+msgid "Enter a post title."
+msgstr "글 제목을 입력하세요."
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "2 MB 이하의 글 초안을 입력하세요."
+
+msgid "The article could not be converted into a safe post."
+msgstr "글을 안전한 게시물로 변환할 수 없습니다."
+
+msgid "Reload the page and try again."
+msgstr "페이지를 새로고침한 후 다시 시도하세요."
+
+msgid "The configured post author is no longer available."
+msgstr "설정된 글 작성자를 더 이상 사용할 수 없습니다."
+
+msgid "The configured publishing destination is no longer available."
+msgstr "설정된 게시 대상을 더 이상 사용할 수 없습니다."
+
+msgid "The converted article contains an unsupported block."
+msgstr "변환된 글에 지원되지 않는 블록이 포함되어 있습니다."
+
+msgid ""
+"This article was already submitted. Start a new post before submitting again."
+msgstr "이 글은 이미 제출되었습니다. 다시 제출하려면 새 글을 시작하세요."
+
+msgid "Enter the passphrase"
+msgstr "접속 암호 입력"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "사이트 관리자가 알려 준 접속 암호를 입력하세요."
+
+msgid "Continue"
+msgstr "계속"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "이 브라우저에서는 30일 동안 로그인 상태가 유지됩니다."
+
+msgid "Quick Post is unavailable"
+msgstr "간편 게시를 사용할 수 없습니다"
+
+msgid "Sign out"
+msgstr "로그아웃"
+
+msgid "Article draft"
+msgstr "글 초안"
+
+msgid "Write or paste your article"
+msgstr "글을 쓰거나 붙여 넣으세요"
+
+msgid ""
+"Type or paste an article, or open a text file. Plain text and Markdown are "
+"accepted."
+msgstr "글을 직접 쓰거나 붙여 넣거나 텍스트 파일을 여세요. 일반 텍스트와 Markdown을 모두 사용할 수 있습니다."
+
+msgid "Write or paste the article here"
+msgstr "여기에 글을 쓰거나 붙여 넣으세요"
+
+msgid "Open file"
+msgstr "파일 열기"
+
+msgid "Add images"
+msgstr "이미지 추가"
+
+msgid "Alternative text"
+msgstr "대체 텍스트"
+
+msgid "Remove image"
+msgstr "이미지 제거"
+
+msgid "Attach up to 5 images."
+msgstr "이미지는 최대 5개까지 첨부할 수 있습니다."
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "사이트 업로드 제한 이내의 JPEG, PNG, GIF 또는 WebP 이미지를 사용하세요."
+
+msgid ""
+"One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images "
+"within the site upload limit."
+msgstr "하나 이상의 이미지를 업로드할 수 없습니다. 사이트 업로드 제한 이내의 JPEG, PNG, GIF 또는 WebP 이미지를 사용하세요."
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "하나 이상의 이미지를 미디어 라이브러리에 저장할 수 없습니다."
+
+msgid "The selected post author is not allowed to upload images."
+msgstr "선택한 글 작성자는 이미지를 업로드할 권한이 없습니다."
+
+msgid "The attached images could not be added to the article."
+msgstr "첨부한 이미지를 글에 추가할 수 없습니다."
+
+msgid ""
+"The article could not be published. Try again or ask the site administrator "
+"for help."
+msgstr "글을 공개할 수 없습니다. 다시 시도하거나 사이트 관리자에게 도움을 요청하세요."
+
+msgid "Review post"
+msgstr "글 확인"
+
+msgid "Check before posting"
+msgstr "게시 전 확인"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "제목과 미리보기, 초안에서 발견된 확인 사항을 살펴보세요."
+
+msgid "Post title"
+msgstr "글 제목"
+
+msgid "Points to check"
+msgstr "확인할 사항"
+
+msgid "I reviewed these points."
+msgstr "위 사항을 확인했습니다."
+
+msgid "Edit draft"
+msgstr "초안 수정"
+
+msgid "Publish post"
+msgstr "글 공개"
+
+msgid "Save draft"
+msgstr "임시글 저장"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "글을 WordPress 블록으로 변환하려면 JavaScript가 필요합니다."
+
+msgid "Post submitted"
+msgstr "글을 제출했습니다"
+
+msgid "Post published"
+msgstr "글을 공개했습니다"
+
+msgid "Draft saved"
+msgstr "임시글을 저장했습니다"
+
+msgid "View post"
+msgstr "글 보기"
+
+msgid "Create another post"
+msgstr "다른 글 작성"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "사이트 관리자에게 이 게시 페이지를 활성화해 달라고 요청하세요."
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "시도 횟수가 너무 많습니다. 15분 후 다시 시도하세요."
+
+msgid "The passphrase is not correct."
+msgstr "접속 암호가 올바르지 않습니다."
+
+msgid "The page expired. Reload it and try again."
+msgstr "페이지가 만료되었습니다. 새로고침한 후 다시 시도하세요."
+
+msgid "Line"
+msgstr "줄"
+
+msgid "Paste an article draft before continuing."
+msgstr "계속하기 전에 글 초안을 붙여 넣으세요."
+
+msgid "Use an article draft up to 2 MB."
+msgstr "2 MB 이하의 글 초안을 사용하세요."
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "글을 WordPress 블록으로 변환할 수 없습니다."
+
+msgid "Publishing..."
+msgstr "공개 중..."
+
+msgid "Saving..."
+msgstr "저장 중..."

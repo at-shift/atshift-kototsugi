@@ -1,0 +1,808 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KOTOTSUGI 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/at-shift/atshift-kototsugi/issues\n"
+"POT-Creation-Date: 2026-08-23 18:05+0900\n"
+"PO-Revision-Date: 2026-08-24 10:12+0900\n"
+"Last-Translator: KOTOTSUGI contributors\n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: kototsugi\n"
+"X-Generator: KOTOTSUGI translation workflow\n"
+
+
+msgid "Turn AI-friendly Markdown into editable WordPress blocks."
+msgstr "Yapay zekâ ile kullanıma uygun Markdown metnini düzenlenebilir WordPress bloklarına dönüştürün."
+
+msgid "More ways to write"
+msgstr "Yazınızı zenginleştirin"
+
+msgid "Place"
+msgstr "Yer"
+
+msgid "Important"
+msgstr "Önemli"
+
+msgid "Note"
+msgstr "Not"
+
+msgid "Price"
+msgstr "Fiyat"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "You can also write labels such as Place: or Phone:."
+msgstr "Yer: veya Telefon: gibi etiketler de kullanabilirsiniz."
+
+msgid "Display language"
+msgstr "Görüntüleme dili"
+
+msgid "Use the site language"
+msgstr "Site dilini kullan"
+
+msgid "Japanese"
+msgstr "Japonca"
+
+msgid "English"
+msgstr "İngilizce"
+
+msgid "Spanish"
+msgstr "İspanyolca"
+
+msgid "German"
+msgstr "Almanca"
+
+msgid "French"
+msgstr "Fransızca"
+
+msgid "Portuguese (Brazil)"
+msgstr "Portekizce (Brezilya)"
+
+msgid "Italian"
+msgstr "İtalyanca"
+
+msgid "Russian"
+msgstr "Rusça"
+
+msgid "Dutch"
+msgstr "Felemenkçe"
+
+msgid "Chinese (Simplified)"
+msgstr "Basitleştirilmiş Çince"
+
+msgid "Polish"
+msgstr "Lehçe"
+
+msgid "Turkish"
+msgstr "Türkçe"
+
+msgid "Indonesian"
+msgstr "Endonezce"
+
+msgid "Chinese (Traditional, Taiwan)"
+msgstr "Geleneksel Çince (Tayvan)"
+
+msgid "Korean"
+msgstr "Korece"
+
+msgid "Used on the passphrase, article, review, and completion screens."
+msgstr "Erişim parolası, yazı oluşturma, kontrol ve tamamlanma ekranlarında kullanılır."
+
+msgid "New article"
+msgstr "Yeni yazı"
+
+msgid "Create an article"
+msgstr "Yazı oluşturun"
+
+msgid "Article title"
+msgstr "Yazı başlığı"
+
+msgid "Article text"
+msgstr "Yazı metni"
+
+msgid "Write the article here"
+msgstr "Yazınızı buraya yazın"
+
+msgid "Writing hints"
+msgstr "Yazma ipuçları"
+
+msgid "Writing normally creates paragraphs. Use these hints only when you want more structure."
+msgstr "Normal şekilde yazdığınız metin paragraflara dönüştürülür. Yalnızca yazınıza daha fazla yapı kazandırmak istediğinizde bu ipuçlarını kullanın."
+
+msgid "Leave a blank line between paragraphs."
+msgstr "Paragraflar arasında boş bir satır bırakın."
+
+msgid "Start a line with ・ to make a list."
+msgstr "Liste oluşturmak için satırın başına ・ işareti koyun."
+
+msgid "A short line on its own becomes a heading."
+msgstr "Tek başına yazılan kısa bir satır başlığa dönüşür."
+
+msgid "The imported image URL could not be created."
+msgstr "İçe aktarılan görsel için URL oluşturulamadı."
+
+msgid "This image URL is not allowed."
+msgstr "Bu görsel URL’sine izin verilmiyor."
+
+msgid "You are not allowed to attach images to this post."
+msgstr "Bu yazıya görsel ekleme izniniz yok."
+
+msgid "You are not allowed to reuse this Media Library image."
+msgstr "Ortam Kütüphanesi’ndeki bu görseli yeniden kullanma izniniz yok."
+
+msgid "The temporary file could not be created."
+msgstr "Geçici dosya oluşturulamadı."
+
+msgid "The remote image could not be downloaded."
+msgstr "Harici görsel indirilemedi."
+
+msgid "The remote image returned an unexpected response."
+msgstr "Harici görsel sunucusu beklenmeyen bir yanıt verdi."
+
+msgid "The remote image exceeds the upload size limit."
+msgstr "Harici görsel, yükleme boyutu sınırını aşıyor."
+
+msgid "The downloaded file is not a supported image."
+msgstr "İndirilen dosyanın görsel biçimi desteklenmiyor."
+
+msgid ".md / .markdown / .txt, up to 2 MB"
+msgstr ".md / .markdown / .txt, en fazla 2 MB"
+
+msgid "Choose a .md, .markdown, or .txt file up to 2 MB."
+msgstr "En fazla 2 MB boyutunda bir .md, .markdown veya .txt dosyası seçin."
+
+msgid "Copy AI authoring rules"
+msgstr "Yapay zekâ için yazım kurallarını kopyala"
+
+msgid "AI authoring rules copied."
+msgstr "Yapay zekâ için yazım kuralları kopyalandı."
+
+msgid "AI authoring rules could not be copied."
+msgstr "Yapay zekâ için yazım kuralları kopyalanamadı."
+
+msgid "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body."
+msgstr "Yazı içeriğinde başlığın tekrarlanmaması için Front Matter başlığıyla eşleşen H1 otomatik olarak kaldırılacak."
+
+msgid "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied."
+msgstr "Front Matter başlığı ilk H1’den farklı. İçerik uygulandığında H1 yazı içeriğinden kaldırılacak."
+
+msgid "The closing --- for Front Matter was not found."
+msgstr "Front Matter bölümünü kapatan --- bulunamadı."
+
+msgid "Multiple H1 headings were found. Keep one H1 to use as the post title."
+msgstr "Birden fazla H1 başlığı bulundu. Yazı başlığı olarak kullanılacak tek bir H1 bırakın."
+
+msgid "HTML will be inserted as text and will not run as HTML."
+msgstr "HTML, metin olarak eklenecek ve HTML olarak çalıştırılmayacak."
+
+msgid "Markdown insertion method"
+msgstr "Markdown ekleme yöntemi"
+
+msgid "The Markdown import could not be completed."
+msgstr "Markdown içe aktarılamadı."
+
+msgid "Back to Markdown"
+msgstr "Markdown’a dön"
+
+msgid "Markdown could not be converted to blocks."
+msgstr "Markdown bloklara dönüştürülemedi."
+
+msgid "Enter some Markdown."
+msgstr "Bir Markdown metni girin."
+
+msgid "Markdown file"
+msgstr "Markdown dosyası"
+
+msgid "Load a Markdown file"
+msgstr "Markdown dosyası yükle"
+
+msgid "Markdown file loaded."
+msgstr "Markdown dosyası yüklendi."
+
+msgid "Choose a Markdown file"
+msgstr "Bir Markdown dosyası seçin"
+
+msgid "Markdown source"
+msgstr "Markdown kaynağı"
+
+msgid "Markdown posting"
+msgstr "Markdown ile yayınlama"
+
+msgid "Drop here"
+msgstr "Buraya bırakın"
+
+msgid "This code block will be inserted as a regular code block because no dedicated block is available."
+msgstr "Buna özel bir blok bulunmadığından, bu kod normal bir kod bloğu olarak eklenecek."
+
+msgid ". Check the heading hierarchy."
+msgstr ". Başlık sıralamasını kontrol edin."
+
+msgid " is followed by "
+msgstr " öğesinin ardından "
+
+msgid "Apply featured image"
+msgstr "Öne çıkan görseli uygula"
+
+msgid "Error"
+msgstr "Hata"
+
+msgid "Categories"
+msgstr "Kategoriler"
+
+msgid "Apply categories"
+msgstr "Kategorileri uygula"
+
+msgid "Add at cursor"
+msgstr "İmlecin bulunduğu yere ekle"
+
+msgid "Copying..."
+msgstr "Kopyalanıyor..."
+
+msgid "The closing ``` for the code block was not found."
+msgstr "Kod bloğunu kapatan ``` bulunamadı."
+
+msgid "Slug"
+msgstr "Kısa isim (slug)"
+
+msgid "Apply slug"
+msgstr "Kısa ismi uygula"
+
+msgid "Loading sample..."
+msgstr "Örnek yükleniyor..."
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Tags"
+msgstr "Etiketler"
+
+msgid "Apply tags"
+msgstr "Etiketleri uygula"
+
+msgid "Task lists will be converted to regular lists without preserving checkbox states."
+msgstr "Görev listeleri, işaret kutularının durumu korunmadan normal listelere dönüştürülecek."
+
+msgid "Sample Markdown loaded."
+msgstr "Örnek Markdown yüklendi."
+
+msgid "Sample Markdown could not be loaded."
+msgstr "Örnek Markdown yüklenemedi."
+
+msgid "Load sample Markdown"
+msgstr "Örnek Markdown yükle"
+
+msgid "Nested lists will be flattened to one level."
+msgstr "İç içe listeler tek düzeyli listeye dönüştürülecek."
+
+msgid "The file could not be read."
+msgstr "Dosya okunamadı."
+
+msgid "Choose file"
+msgstr "Dosya seç"
+
+msgid "Insert as blocks"
+msgstr "Blok olarak ekle"
+
+msgid "Blocks were inserted at the current cursor position."
+msgstr "Bloklar imlecin bulunduğu yere eklendi."
+
+msgid "Preview"
+msgstr "Önizleme"
+
+msgid "There is no source to preview."
+msgstr "Önizlenecek bir kaynak yok."
+
+msgid "Some post settings could not be applied for this post type or with your current permissions."
+msgstr "Bu yazı türü veya mevcut izinleriniz nedeniyle bazı yazı ayarları uygulanamadı."
+
+msgid "Some images or post settings could not be applied."
+msgstr "Bazı görseller veya yazı ayarları uygulanamadı."
+
+msgid "The draft was created, but not all conversion steps could be completed. "
+msgstr "Taslak oluşturuldu ancak dönüştürme adımlarının tümü tamamlanamadı. "
+
+msgid "Open draft"
+msgstr "Taslağı aç"
+
+msgid "Alt text"
+msgstr "Alternatif metin"
+
+msgid " items"
+msgstr " öğe"
+
+msgid " categories or tags were created."
+msgstr " kategori veya etiket oluşturuldu."
+
+msgid " remote images will be saved to the Media Library."
+msgstr " harici görsel Ortam Kütüphanesi’ne kaydedilecek."
+
+msgid " post settings were applied."
+msgstr " yazı ayarı uygulandı."
+
+msgid " existing blocks will be replaced in the editor."
+msgstr " mevcut blok düzenleyicide değiştirilecek."
+
+msgid " existing blocks: confirm replacement"
+msgstr " mevcut blok: değiştirmeyi onaylayın"
+
+msgid " images could not be saved, so their remote URLs were kept in the post."
+msgstr " görsel kaydedilemedi; bu nedenle harici URL’leri yazıda korundu."
+
+msgid " images were saved to the Media Library."
+msgstr " görsel Ortam Kütüphanesi’ne kaydedildi."
+
+msgid " items to review"
+msgstr " incelenecek öğe"
+
+msgid " settings to apply"
+msgstr " uygulanacak ayar"
+
+msgid "Workspace"
+msgstr "Çalışma alanı"
+
+msgid "Open workspace"
+msgstr "Çalışma alanını aç"
+
+msgid "What will be saved"
+msgstr "Kaydedilecek içerik"
+
+msgid "No issues need fixing"
+msgstr "Düzeltilmesi gereken bir sorun yok"
+
+msgid "Source, post settings, and review"
+msgstr "Kaynak, yazı ayarları ve kontrol"
+
+msgid "Clear source"
+msgstr "Kaynağı temizle"
+
+msgid "Insertion method"
+msgstr "Ekleme yöntemi"
+
+msgid "Importing..."
+msgstr "İçe aktarılıyor..."
+
+msgid "Conversion options"
+msgstr "Dönüştürme seçenekleri"
+
+msgid "Preflight checks"
+msgstr "Ön kontroller"
+
+msgid "Fix the preflight errors before continuing."
+msgstr "Devam etmeden önce ön kontrol hatalarını düzeltin."
+
+msgid "Save remote images to the Media Library"
+msgstr "Harici görselleri Ortam Kütüphanesi’ne kaydet"
+
+msgid "Info"
+msgstr "Bilgi"
+
+msgid "The post has not been saved yet."
+msgstr "Yazı henüz kaydedilmedi."
+
+msgid "Apply post title"
+msgstr "Yazı başlığını uygula"
+
+msgid "The post body was replaced with blocks."
+msgstr "Yazı içeriği bloklarla değiştirildi."
+
+msgid "Post settings"
+msgstr "Yazı ayarları"
+
+msgid "Applying post settings..."
+msgstr "Yazı ayarları uygulanıyor..."
+
+msgid "Excerpt"
+msgstr "Özet"
+
+msgid "Apply excerpt"
+msgstr "Özeti uygula"
+
+msgid "Math blocks will not be converted to a dedicated display format."
+msgstr "Matematik blokları kendilerine özel bir görüntüleme biçimine dönüştürülmeyecek."
+
+msgid " characters"
+msgstr " karakter"
+
+msgid "A new draft will be saved to WordPress."
+msgstr "WordPress’e yeni bir taslak kaydedilecek."
+
+msgid "Create new draft"
+msgstr "Yeni taslak oluştur"
+
+msgid "A new draft was created."
+msgstr "Yeni bir taslak oluşturuldu."
+
+msgid "Confirm replacement before replacing the existing post body."
+msgstr "Mevcut yazı içeriğini değiştirmeden önce işlemi onaylayın."
+
+msgid "The first H1 will be used as the post title and removed from the post body."
+msgstr "İlk H1 yazı başlığı olarak kullanılacak ve yazı içeriğinden kaldırılacak."
+
+msgid "Use first H1 as post title"
+msgstr "İlk H1’i yazı başlığı olarak kullan"
+
+msgid "Unsupported Front Matter fields will not be applied:"
+msgstr "Desteklenmeyen Front Matter alanları uygulanmayacak:"
+
+msgid "Unsupported fields will not be applied:"
+msgstr "Desteklenmeyen alanlar uygulanmayacak:"
+
+msgid "Missing categories or tags will be created."
+msgstr "Bulunmayan kategori veya etiketler oluşturulacak."
+
+msgid "Create missing categories and tags"
+msgstr "Bulunmayan kategori ve etiketleri oluştur"
+
+msgid "Create missing terms"
+msgstr "Bulunmayan terimleri oluştur"
+
+msgid "Apply content and settings"
+msgstr "İçeriği ve ayarları uygula"
+
+msgid "Replace content"
+msgstr "İçeriği değiştir"
+
+msgid "Replace the content"
+msgstr "İçeriği değiştir"
+
+msgid "Current Markdown source"
+msgstr "Mevcut Markdown kaynağı"
+
+msgid "The current post will not be saved automatically."
+msgstr "Geçerli yazı otomatik olarak kaydedilmeyecek."
+
+msgid "Image URL"
+msgstr "Görsel URL’si"
+
+msgid "Image URLs must begin with http, https, or /."
+msgstr "Görsel URL’leri http, https veya / ile başlamalıdır."
+
+msgid "Importing images..."
+msgstr "Görseller içe aktarılıyor..."
+
+msgid "Save images"
+msgstr "Görselleri kaydet"
+
+msgid "The image syntax could not be parsed. Check its parentheses and URL."
+msgstr "Görsel söz dizimi çözümlenemedi. Parantezleri ve URL’yi kontrol edin."
+
+msgid "Relative images will keep their original paths and will not be saved to the Media Library."
+msgstr "Göreli yola sahip görseller özgün yollarını koruyacak ve Ortam Kütüphanesi’ne kaydedilmeyecek."
+
+msgid "Review and adjust"
+msgstr "Kontrol ve düzenleme"
+
+msgid "Review"
+msgstr "Kontrol et"
+
+msgid "Footnote syntax will not be converted to linked footnotes."
+msgstr "Dipnot söz dizimi bağlantılı dipnotlara dönüştürülmeyecek."
+
+msgid " line"
+msgstr " satır"
+
+msgid " line: edit in Markdown"
+msgstr " satır: Markdown içinde düzenleyin"
+
+msgid "Warning"
+msgstr "Uyarı"
+
+msgid "Pasted source"
+msgstr "Yapıştırılan kaynak"
+
+msgid "Close"
+msgstr "Kapat"
+
+msgid "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged."
+msgstr "Bu yazı bilgileri Front Matter bölümünden okundu. Her öğeyi kontrol edin; gerekirse düzenleyin veya ilgili bilgiyi uygulamamak için işaretini kaldırın."
+
+msgid "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use."
+msgstr "Uyarıları ve yapılacak değişiklikleri kontrol edin. Ardından yazının nasıl uygulanacağını ve kullanılacak dönüştürme seçeneklerini belirleyin."
+
+msgid "Review before applying"
+msgstr "Uygulamadan önce kontrol edin"
+
+msgid "Source, post settings, and review before applying"
+msgstr "Kaynak, yazı ayarları ve uygulama öncesi kontrol"
+
+msgid "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically."
+msgstr "Blokları imlecin bulunduğu yere ekler. Mevcut içerik korunur ve yazı otomatik olarak kaydedilmez."
+
+msgid "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically."
+msgstr "Geçerli yazıdaki tüm blokları değiştirir. Onay gerekir ve yazı otomatik olarak kaydedilmez."
+
+msgid "Leave the current post unchanged and save the content and selected post settings as a new draft."
+msgstr "Geçerli yazıyı değiştirmeden bırakır; içeriği ve seçili yazı ayarlarını yeni bir taslak olarak kaydeder."
+
+msgid "# Article title\n\nPaste Markdown here or drop a file."
+msgstr "# Yazı başlığı\n\nMarkdown metnini buraya yapıştırın veya bir dosya bırakın."
+
+msgid "The bundled Markdown is unavailable."
+msgstr "Paketle birlikte gelen Markdown kullanılamıyor."
+
+msgid "The bundled Markdown could not be loaded."
+msgstr "Paketle birlikte gelen Markdown yüklenemedi."
+
+msgid "The clipboard is unavailable."
+msgstr "Pano kullanılamıyor."
+
+msgid "The draft ID was not found."
+msgstr "Taslak kimliği bulunamadı."
+
+msgid "The draft blocks were not found."
+msgstr "Taslak blokları bulunamadı."
+
+msgid "KOTOTSUGI Quick Post"
+msgstr "KOTOTSUGI - Kolay Yayınlama"
+
+msgid "KOTOTSUGI"
+msgstr "KOTOTSUGI"
+
+msgid "Quick Post settings"
+msgstr "Kolay Yayınlama ayarları"
+
+msgid "You are not allowed to change these settings."
+msgstr "Bu ayarları değiştirme izniniz yok."
+
+msgid "Quick Post settings saved."
+msgstr "Kolay Yayınlama ayarları kaydedildi."
+
+msgid "Every Quick Post browser was signed out."
+msgstr "Kolay Yayınlama kullanan tüm tarayıcılardaki oturumlar kapatıldı."
+
+msgid "Choose an author who can create the selected content type."
+msgstr "Seçilen içerik türünü oluşturma izni olan bir yazar seçin."
+
+msgid "The selected author cannot publish the selected content type."
+msgstr "Seçilen yazarın bu içerik türünü yayımlama izni yok."
+
+msgid "Choose an available publishing destination."
+msgstr "Kullanılabilir bir yayın hedefi seçin."
+
+msgid "Choose an available category."
+msgstr "Mevcut bir kategori seçin."
+
+msgid "Use at least 8 characters for the passphrase."
+msgstr "Erişim parolası en az 8 karakter olmalıdır."
+
+msgid "Set a passphrase before enabling Quick Post."
+msgstr "Kolay Yayınlama’yı etkinleştirmeden önce bir erişim parolası belirleyin."
+
+msgid "Quick Post reduces the learning and memory required to publish. It is intended for people who find the WordPress admin screen difficult, including older users, people with disabilities, and anyone who needs a simpler interface."
+msgstr "Kolay Yayınlama, yayınlama için gereken öğrenme ve hatırlama yükünü azaltır. WordPress yönetim ekranını kullanmakta zorlanan yaşlılar, engelli bireyler ve daha sade bir arayüze ihtiyaç duyan herkes için tasarlanmıştır."
+
+msgid "Anyone can start with only a title and article text. As they become comfortable, blank lines, lists, short headings, and images add more structure. Learning Markdown is not required."
+msgstr "Başlamak için yalnızca bir başlık ve yazı metni yeterlidir. Kullanıcı alıştıkça boş satırlar, listeler, kısa başlıklar ve görsellerle yazısını daha düzenli hâle getirebilir. Markdown öğrenmesi gerekmez."
+
+msgid "Quick Post"
+msgstr "Kolay Yayınlama"
+
+msgid "Enable the standalone posting page"
+msgstr "Bağımsız yayınlama sayfasını etkinleştir"
+
+msgid "Posting URL"
+msgstr "Yayınlama sayfası URL’si"
+
+msgid "Open Quick Post"
+msgstr "Kolay Yayınlama’yı aç"
+
+msgid "Passphrase"
+msgstr "Erişim parolası"
+
+msgid "Show passphrase"
+msgstr "Erişim parolasını göster"
+
+msgid "Hide passphrase"
+msgstr "Erişim parolasını gizle"
+
+msgid "Publishing destination"
+msgstr "Yayın hedefi"
+
+msgid "Posts, Pages, and custom post types that support titles and the editor are shown. The contributor cannot change this choice."
+msgstr "Başlığı ve düzenleyiciyi destekleyen Yazılar, Sayfalar ve özel yazı türleri gösterilir. Kolay Yayınlama kullanıcısı bu seçimi değiştiremez."
+
+msgid "Leave blank to keep the current passphrase. Entering a new one signs out every browser."
+msgstr "Geçerli erişim parolasını korumak için alanı boş bırakın. Yeni bir parola girildiğinde tüm tarayıcılardaki oturumlar kapatılır."
+
+msgid "Use at least 8 characters. Share it only with people allowed to post."
+msgstr "En az 8 karakter kullanın. Yalnızca yazı gönderme izni olan kişilerle paylaşın."
+
+msgid "Post author"
+msgstr "Yazının yazarı"
+
+msgid "Choose an author"
+msgstr "Yazar seçin"
+
+msgid "After submission"
+msgstr "Gönderimden sonra"
+
+msgid "Save as a draft"
+msgstr "Taslak olarak kaydet"
+
+msgid "Publish immediately"
+msgstr "Hemen yayımla"
+
+msgid "This choice is fixed on the posting page so the contributor cannot change it by mistake."
+msgstr "Kullanıcının yanlışlıkla değiştirmemesi için bu seçim yayınlama sayfasında sabit tutulur."
+
+msgid "Default category"
+msgstr "Varsayılan kategori"
+
+msgid "Applied only when the publishing destination supports categories."
+msgstr "Yalnızca yayın hedefi kategorileri destekliyorsa uygulanır."
+
+msgid "Use the site default"
+msgstr "Site varsayılanını kullan"
+
+msgid "Save Quick Post settings"
+msgstr "Kolay Yayınlama ayarlarını kaydet"
+
+msgid "Sign out every Quick Post browser"
+msgstr "Kolay Yayınlama kullanan tüm tarayıcılardaki oturumları kapat"
+
+msgid "Enter a post title."
+msgstr "Yazı başlığını girin."
+
+msgid "Enter an article draft up to 2 MB."
+msgstr "En fazla 2 MB boyutunda bir yazı taslağı girin."
+
+msgid "The article could not be converted into a safe post."
+msgstr "Yazı güvenli bir WordPress yazısına dönüştürülemedi."
+
+msgid "Reload the page and try again."
+msgstr "Sayfayı yenileyin ve tekrar deneyin."
+
+msgid "The configured post author is no longer available."
+msgstr "Ayarlanan yazı yazarı artık kullanılamıyor."
+
+msgid "The configured publishing destination is no longer available."
+msgstr "Ayarlanan yayın hedefi artık kullanılamıyor."
+
+msgid "The converted article contains an unsupported block."
+msgstr "Dönüştürülen yazıda desteklenmeyen bir blok var."
+
+msgid "This article was already submitted. Start a new post before submitting again."
+msgstr "Bu yazı daha önce gönderildi. Yeniden göndermeden önce yeni bir yazı başlatın."
+
+msgid "Enter the passphrase"
+msgstr "Erişim parolasını girin"
+
+msgid "Use the passphrase shared by the site administrator."
+msgstr "Site yöneticisinin paylaştığı erişim parolasını kullanın."
+
+msgid "Continue"
+msgstr "Devam et"
+
+msgid "This browser stays signed in for 30 days."
+msgstr "Bu tarayıcıdaki oturum 30 gün açık kalır."
+
+msgid "Quick Post is unavailable"
+msgstr "Kolay Yayınlama kullanılamıyor"
+
+msgid "Sign out"
+msgstr "Oturumu kapat"
+
+msgid "Article draft"
+msgstr "Yazı taslağı"
+
+msgid "Write or paste your article"
+msgstr "Yazınızı yazın veya yapıştırın"
+
+msgid "Type or paste an article, or open a text file. Plain text and Markdown are accepted."
+msgstr "Yazınızı yazın ya da yapıştırın veya bir metin dosyası açın. Düz metin ve Markdown kullanabilirsiniz."
+
+msgid "Write or paste the article here"
+msgstr "Yazınızı buraya yazın veya yapıştırın"
+
+msgid "Open file"
+msgstr "Dosya aç"
+
+msgid "Add images"
+msgstr "Görsel ekle"
+
+msgid "Alternative text"
+msgstr "Alternatif metin"
+
+msgid "Remove image"
+msgstr "Görseli kaldır"
+
+msgid "Attach up to 5 images."
+msgstr "En fazla 5 görsel ekleyebilirsiniz."
+
+msgid "Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Sitenin yükleme sınırını aşmayan JPEG, PNG, GIF veya WebP görselleri kullanın."
+
+msgid "One or more images could not be uploaded. Use JPEG, PNG, GIF, or WebP images within the site upload limit."
+msgstr "Bir veya daha fazla görsel yüklenemedi. Sitenin yükleme sınırını aşmayan JPEG, PNG, GIF veya WebP görselleri kullanın."
+
+msgid "One or more images could not be saved to the Media Library."
+msgstr "Bir veya daha fazla görsel Ortam Kütüphanesi’ne kaydedilemedi."
+
+msgid "The selected post author is not allowed to upload images."
+msgstr "Seçilen yazı yazarının görsel yükleme izni yok."
+
+msgid "The attached images could not be added to the article."
+msgstr "Eklenen görseller yazıya yerleştirilemedi."
+
+msgid "The article could not be published. Try again or ask the site administrator for help."
+msgstr "Yazı yayımlanamadı. Yeniden deneyin veya site yöneticisinden yardım isteyin."
+
+msgid "Review post"
+msgstr "Yazıyı kontrol et"
+
+msgid "Check before posting"
+msgstr "Göndermeden önce kontrol edin"
+
+msgid "Check the title, preview, and any points found in the draft."
+msgstr "Başlığı, önizlemeyi ve taslakta belirtilen noktaları kontrol edin."
+
+msgid "Post title"
+msgstr "Yazı başlığı"
+
+msgid "Points to check"
+msgstr "Kontrol edilecek noktalar"
+
+msgid "I reviewed these points."
+msgstr "Bu noktaları kontrol ettim."
+
+msgid "Edit draft"
+msgstr "Taslağı düzenle"
+
+msgid "Publish post"
+msgstr "Yazıyı yayımla"
+
+msgid "Save draft"
+msgstr "Taslağı kaydet"
+
+msgid "JavaScript is required to convert the article into WordPress blocks."
+msgstr "Yazıyı WordPress bloklarına dönüştürmek için JavaScript gereklidir."
+
+msgid "Post submitted"
+msgstr "Yazı gönderildi"
+
+msgid "Post published"
+msgstr "Yazı yayımlandı"
+
+msgid "Draft saved"
+msgstr "Taslak kaydedildi"
+
+msgid "View post"
+msgstr "Yazıyı görüntüle"
+
+msgid "Create another post"
+msgstr "Başka bir yazı oluştur"
+
+msgid "Ask the site administrator to enable this posting page."
+msgstr "Site yöneticisinden bu yayınlama sayfasını etkinleştirmesini isteyin."
+
+msgid "Too many attempts. Wait 15 minutes and try again."
+msgstr "Çok fazla deneme yapıldı. 15 dakika bekleyip tekrar deneyin."
+
+msgid "The passphrase is not correct."
+msgstr "Erişim parolası yanlış."
+
+msgid "The page expired. Reload it and try again."
+msgstr "Sayfanın süresi doldu. Sayfayı yenileyin ve tekrar deneyin."
+
+msgid "Line"
+msgstr "Satır"
+
+msgid "Paste an article draft before continuing."
+msgstr "Devam etmeden önce bir yazı taslağı yapıştırın."
+
+msgid "Use an article draft up to 2 MB."
+msgstr "En fazla 2 MB boyutunda bir yazı taslağı kullanın."
+
+msgid "The article could not be converted into WordPress blocks."
+msgstr "Yazı, WordPress bloklarına dönüştürülemedi."
+
+msgid "Publishing..."
+msgstr "Yayımlanıyor..."
+
+msgid "Saving..."
+msgstr "Kaydediliyor..."

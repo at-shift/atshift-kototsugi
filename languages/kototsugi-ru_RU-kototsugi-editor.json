@@ -1,0 +1,429 @@
+{
+  "translation-revision-date": "2026-08-24 10:12+0900",
+  "generator": "KOTOTSUGI",
+  "source": "assets/editor.js",
+  "domain": "kototsugi",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "ru_RU",
+        "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
+      },
+      "Turn AI-friendly Markdown into editable WordPress blocks.": [
+        "Преобразуйте Markdown, удобный для ИИ, в редактируемые блоки WordPress."
+      ],
+      "The imported image URL could not be created.": [
+        "Не удалось создать URL импортированного изображения."
+      ],
+      "This image URL is not allowed.": [
+        "Этот URL изображения недопустим."
+      ],
+      "You are not allowed to attach images to this post.": [
+        "У вас нет прав на добавление изображений к этой записи."
+      ],
+      "The temporary file could not be created.": [
+        "Не удалось создать временный файл."
+      ],
+      "The remote image could not be downloaded.": [
+        "Не удалось загрузить удалённое изображение."
+      ],
+      "The remote image returned an unexpected response.": [
+        "При загрузке удалённого изображения получен неожиданный ответ."
+      ],
+      "The remote image exceeds the upload size limit.": [
+        "Удалённое изображение превышает допустимый размер загрузки."
+      ],
+      "The downloaded file is not a supported image.": [
+        "Формат загруженного изображения не поддерживается."
+      ],
+      ".md / .markdown / .txt, up to 2 MB": [
+        ".md / .markdown / .txt, до 2 МБ"
+      ],
+      "Choose a .md, .markdown, or .txt file up to 2 MB.": [
+        "Выберите файл .md, .markdown или .txt размером до 2 МБ."
+      ],
+      "Copy AI authoring rules": [
+        "Скопировать правила подготовки текста для ИИ"
+      ],
+      "AI authoring rules copied.": [
+        "Правила подготовки текста для ИИ скопированы."
+      ],
+      "AI authoring rules could not be copied.": [
+        "Не удалось скопировать правила подготовки текста для ИИ."
+      ],
+      "The H1 matching the Front Matter title will be removed automatically to avoid duplication in the post body.": [
+        "H1, совпадающий с заголовком из Front Matter, будет автоматически удалён, чтобы не дублировать заголовок в содержимом записи."
+      ],
+      "The Front Matter title differs from the first H1. The H1 will be removed from the post body when applied.": [
+        "Заголовок из Front Matter отличается от первого H1. При применении H1 будет удалён из содержимого записи."
+      ],
+      "The closing --- for Front Matter was not found.": [
+        "Не найден закрывающий маркер --- для Front Matter."
+      ],
+      "Multiple H1 headings were found. Keep one H1 to use as the post title.": [
+        "Найдено несколько H1. Оставьте один H1, который станет заголовком записи."
+      ],
+      "HTML will be inserted as text and will not run as HTML.": [
+        "HTML будет вставлен как обычный текст и не будет интерпретироваться как HTML."
+      ],
+      "Markdown insertion method": [
+        "Способ вставки Markdown"
+      ],
+      "The Markdown import could not be completed.": [
+        "Не удалось завершить импорт Markdown."
+      ],
+      "Back to Markdown": [
+        "Вернуться к Markdown"
+      ],
+      "Markdown could not be converted to blocks.": [
+        "Не удалось преобразовать Markdown в блоки."
+      ],
+      "Enter some Markdown.": [
+        "Введите текст Markdown."
+      ],
+      "Markdown file": [
+        "Файл Markdown"
+      ],
+      "Load a Markdown file": [
+        "Загрузить файл Markdown"
+      ],
+      "Markdown file loaded.": [
+        "Файл Markdown загружен."
+      ],
+      "Choose a Markdown file": [
+        "Выберите файл Markdown"
+      ],
+      "Markdown source": [
+        "Исходный текст Markdown"
+      ],
+      "Markdown posting": [
+        "Публикация из Markdown"
+      ],
+      "Drop here": [
+        "Перетащите сюда"
+      ],
+      "This code block will be inserted as a regular code block because no dedicated block is available.": [
+        "Этот фрагмент будет вставлен как обычный блок кода, поскольку специальный блок для него недоступен."
+      ],
+      ". Check the heading hierarchy.": [
+        ". Проверьте иерархию заголовков."
+      ],
+      " is followed by ": [
+        " сменяется "
+      ],
+      "Apply featured image": [
+        "Использовать изображение записи"
+      ],
+      "Error": [
+        "Ошибка"
+      ],
+      "Categories": [
+        "Рубрики"
+      ],
+      "Apply categories": [
+        "Применить рубрики"
+      ],
+      "Add at cursor": [
+        "Добавить в позиции курсора"
+      ],
+      "Copying...": [
+        "Копирование…"
+      ],
+      "The closing ``` for the code block was not found.": [
+        "Не найден закрывающий маркер ``` для блока кода."
+      ],
+      "Slug": [
+        "Ярлык"
+      ],
+      "Apply slug": [
+        "Применить ярлык"
+      ],
+      "Loading sample...": [
+        "Загрузка примера…"
+      ],
+      "Title": [
+        "Заголовок"
+      ],
+      "Tags": [
+        "Метки"
+      ],
+      "Apply tags": [
+        "Применить метки"
+      ],
+      "Task lists will be converted to regular lists without preserving checkbox states.": [
+        "Списки задач будут преобразованы в обычные списки; состояние флажков не сохранится."
+      ],
+      "Sample Markdown loaded.": [
+        "Пример Markdown загружен."
+      ],
+      "Sample Markdown could not be loaded.": [
+        "Не удалось загрузить пример Markdown."
+      ],
+      "Load sample Markdown": [
+        "Загрузить пример Markdown"
+      ],
+      "Nested lists will be flattened to one level.": [
+        "Вложенные списки будут преобразованы в одноуровневые."
+      ],
+      "The file could not be read.": [
+        "Не удалось прочитать файл."
+      ],
+      "Choose file": [
+        "Выберите файл"
+      ],
+      "Insert as blocks": [
+        "Вставить как блоки"
+      ],
+      "Blocks were inserted at the current cursor position.": [
+        "Блоки добавлены в текущей позиции курсора."
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ],
+      "There is no source to preview.": [
+        "Нет исходного текста для предварительного просмотра."
+      ],
+      "Some post settings could not be applied for this post type or with your current permissions.": [
+        "Некоторые настройки нельзя применить к этому типу записи или с вашими текущими правами."
+      ],
+      "Some images or post settings could not be applied.": [
+        "Не удалось применить некоторые изображения или настройки записи."
+      ],
+      "The draft was created, but not all conversion steps could be completed. ": [
+        "Черновик создан, но некоторые этапы преобразования не удалось выполнить. "
+      ],
+      "Open draft": [
+        "Открыть черновик"
+      ],
+      "Alt text": [
+        "Альтернативный текст"
+      ],
+      " items": [
+        " элементов"
+      ],
+      " categories or tags were created.": [
+        " — создано рубрик или меток."
+      ],
+      " remote images will be saved to the Media Library.": [
+        " — удалённые изображения будут сохранены в Библиотеке файлов."
+      ],
+      " post settings were applied.": [
+        " — применены настройки записи."
+      ],
+      " existing blocks will be replaced in the editor.": [
+        " — существующие блоки будут заменены в редакторе."
+      ],
+      " existing blocks: confirm replacement": [
+        " — существующих блоков: подтвердите замену"
+      ],
+      " images could not be saved, so their remote URLs were kept in the post.": [
+        " — изображения не удалось сохранить, поэтому в записи оставлены их удалённые URL."
+      ],
+      " images were saved to the Media Library.": [
+        " — изображения сохранены в Библиотеке файлов."
+      ],
+      " items to review": [
+        " — пунктов для проверки"
+      ],
+      " settings to apply": [
+        " — настроек для применения"
+      ],
+      "Workspace": [
+        "Рабочая область"
+      ],
+      "Open workspace": [
+        "Открыть рабочую область"
+      ],
+      "What will be saved": [
+        "Что сохранится"
+      ],
+      "No issues need fixing": [
+        "Исправлять ничего не нужно"
+      ],
+      "Source, post settings, and review": [
+        "Исходный текст, настройки записи и проверка"
+      ],
+      "Clear source": [
+        "Очистить исходный текст"
+      ],
+      "Insertion method": [
+        "Способ вставки"
+      ],
+      "Importing...": [
+        "Импорт…"
+      ],
+      "Conversion options": [
+        "Параметры преобразования"
+      ],
+      "Preflight checks": [
+        "Проверка перед импортом"
+      ],
+      "Fix the preflight errors before continuing.": [
+        "Перед продолжением исправьте ошибки, найденные при проверке."
+      ],
+      "Save remote images to the Media Library": [
+        "Сохранить удалённые изображения в Библиотеке файлов"
+      ],
+      "Info": [
+        "Информация"
+      ],
+      "The post has not been saved yet.": [
+        "Запись ещё не сохранена."
+      ],
+      "Apply post title": [
+        "Применить заголовок записи"
+      ],
+      "The post body was replaced with blocks.": [
+        "Содержимое записи заменено блоками."
+      ],
+      "Post settings": [
+        "Настройки записи"
+      ],
+      "Applying post settings...": [
+        "Применение настроек записи…"
+      ],
+      "Excerpt": [
+        "Отрывок"
+      ],
+      "Apply excerpt": [
+        "Применить отрывок"
+      ],
+      "Math blocks will not be converted to a dedicated display format.": [
+        "Математические блоки не будут преобразованы в отдельный формат отображения."
+      ],
+      " characters": [
+        " символов"
+      ],
+      "A new draft will be saved to WordPress.": [
+        "Новый черновик будет сохранён в WordPress."
+      ],
+      "Create new draft": [
+        "Создать новый черновик"
+      ],
+      "A new draft was created.": [
+        "Новый черновик создан."
+      ],
+      "Confirm replacement before replacing the existing post body.": [
+        "Подтвердите замену существующего содержимого записи."
+      ],
+      "The first H1 will be used as the post title and removed from the post body.": [
+        "Первый H1 станет заголовком записи и будет удалён из её содержимого."
+      ],
+      "Use first H1 as post title": [
+        "Использовать первый H1 в качестве заголовка записи"
+      ],
+      "Unsupported Front Matter fields will not be applied:": [
+        "Неподдерживаемые поля Front Matter будут пропущены:"
+      ],
+      "Unsupported fields will not be applied:": [
+        "Неподдерживаемые поля будут пропущены:"
+      ],
+      "Missing categories or tags will be created.": [
+        "Недостающие рубрики или метки будут созданы."
+      ],
+      "Create missing categories and tags": [
+        "Создать недостающие рубрики и метки"
+      ],
+      "Create missing terms": [
+        "Создать недостающие рубрики и метки"
+      ],
+      "Apply content and settings": [
+        "Применить содержимое и настройки"
+      ],
+      "Replace content": [
+        "Заменить содержимое"
+      ],
+      "Replace the content": [
+        "Заменить содержимое"
+      ],
+      "Current Markdown source": [
+        "Текущий исходный текст Markdown"
+      ],
+      "The current post will not be saved automatically.": [
+        "Текущая запись не будет сохранена автоматически."
+      ],
+      "Image URL": [
+        "URL изображения"
+      ],
+      "Image URLs must begin with http, https, or /.": [
+        "URL изображений должны начинаться с http, https или /."
+      ],
+      "Importing images...": [
+        "Импорт изображений…"
+      ],
+      "Save images": [
+        "Сохранить изображения"
+      ],
+      "The image syntax could not be parsed. Check its parentheses and URL.": [
+        "Не удалось распознать запись изображения. Проверьте скобки и URL."
+      ],
+      "Relative images will keep their original paths and will not be saved to the Media Library.": [
+        "Изображения с относительными путями сохранят исходные пути и не будут добавлены в Библиотеку файлов."
+      ],
+      "Review and adjust": [
+        "Проверка и правка"
+      ],
+      "Review": [
+        "Проверка"
+      ],
+      "Footnote syntax will not be converted to linked footnotes.": [
+        "Ссылки между знаками сносок и текстом сносок созданы не будут."
+      ],
+      " line": [
+        " — строка"
+      ],
+      " line: edit in Markdown": [
+        " — строка: изменить в Markdown"
+      ],
+      "Warning": [
+        "Предупреждение"
+      ],
+      "Pasted source": [
+        "Вставленный исходный текст"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "These post details were read from Front Matter. Review each item, edit it if needed, or clear its checkbox to leave it unchanged.": [
+        "Эти данные записи получены из Front Matter. Проверьте каждый пункт, при необходимости измените его или снимите флажок, чтобы не применять его."
+      ],
+      "Review warnings and expected changes, then choose how the article should be applied and which conversion options to use.": [
+        "Проверьте предупреждения и ожидаемые изменения, затем выберите способ добавления статьи и параметры преобразования."
+      ],
+      "Review before applying": [
+        "Проверка перед применением"
+      ],
+      "Source, post settings, and review before applying": [
+        "Исходный текст, настройки записи и проверка перед применением"
+      ],
+      "Add blocks at the current cursor position. Existing content remains, and the post will not be saved automatically.": [
+        "Добавить блоки в текущую позицию курсора. Существующее содержимое сохранится, а запись не будет сохранена автоматически."
+      ],
+      "Replace all blocks in the current post. Confirmation is required, and the post will not be saved automatically.": [
+        "Заменить все блоки в текущей записи. Требуется подтверждение; запись не будет сохранена автоматически."
+      ],
+      "Leave the current post unchanged and save the content and selected post settings as a new draft.": [
+        "Оставить текущую запись без изменений, а содержимое и выбранные настройки сохранить как новый черновик."
+      ],
+      "# Article title\n\nPaste Markdown here or drop a file.": [
+        "# Заголовок статьи\n\nВставьте сюда Markdown или перетащите файл."
+      ],
+      "The bundled Markdown is unavailable.": [
+        "Встроенный файл Markdown недоступен."
+      ],
+      "The bundled Markdown could not be loaded.": [
+        "Не удалось загрузить встроенный файл Markdown."
+      ],
+      "The clipboard is unavailable.": [
+        "Буфер обмена недоступен."
+      ],
+      "The draft ID was not found.": [
+        "Идентификатор черновика не найден."
+      ],
+      "The draft blocks were not found.": [
+        "Блоки черновика не найдены."
+      ]
+    }
+  }
+}
