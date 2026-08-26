@@ -20,6 +20,23 @@ The importer supports headings, paragraphs, emphasis, links, images, lists, tabl
 
 Quick Post adds a separate, passphrase-protected posting page for contributors who should not need the WordPress admin screen. An administrator fixes the display language, post author, default category, and whether a submission is saved as a draft or published immediately.
 
+Version 1.0 includes:
+
+* A source-and-preview workspace inside the WordPress block editor.
+* Local `.md`, `.markdown`, and `.txt` file loading with drag and drop.
+* A bundled sample article localized for all 15 supported languages.
+* Service-neutral AI authoring rules for ChatGPT, Claude, Gemini, and other writing tools.
+* Editable WordPress blocks for headings, paragraphs, lists, tables, quotes, code, links, images, and callouts.
+* Focused YAML Front Matter for titles, excerpts, slugs, tags, categories, and featured images.
+* Preflight checks for unsupported syntax, heading hierarchy, image URLs, and title conflicts.
+* Three insertion methods: add at the cursor, replace the current body, or create a separate draft.
+* Permission-checked remote image import with private-network and SVG rejection.
+* A separate Quick Post page for ordinary text, simple notation, local images, review, and submission.
+* Administrator controls for the Quick Post destination, author, category, display language, and draft or publish behavior.
+* Bundled translations for 15 locales.
+
+GitHub and WordPress.org release packages include the same translations for English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
+
 == Installation ==
 
 1. Upload the `kototsugi` directory to `/wp-content/plugins/`.
@@ -83,6 +100,37 @@ KOTOTSUGI recognizes a focused YAML-compatible subset intended for AI-generated 
 * `featured_image_alt` or `image_alt`: featured image alternative text
 
 Unknown Front Matter keys are listed in the workspace and are not applied. KOTOTSUGI does not change the post author, publication status, or publication date from Front Matter.
+
+== Links ==
+
+* Official website: [upf.at-shift.net/en/kototsugi](https://upf.at-shift.net/en/kototsugi/)
+* GitHub repository: [github.com/at-shift/atshift-kototsugi](https://github.com/at-shift/atshift-kototsugi)
+* AI authoring rules: [KOTOTSUGI-RULES.md](https://github.com/at-shift/atshift-kototsugi/blob/main/rules/KOTOTSUGI-RULES.md)
+
+== Privacy ==
+
+KOTOTSUGI does not send site data, article drafts, or uploaded files to the plugin author or an AI service. It does not include analytics, telemetry, advertising, or remote executable code.
+
+Markdown files are read locally in the browser. Quick Post submissions and attached images are sent only to the WordPress site where KOTOTSUGI is installed. When an administrator enables remote image import, WordPress requests only the image URLs referenced by the submitted Markdown after validating permissions, network destinations, formats, and size limits.
+
+KOTOTSUGI does not include an AI model or connect to ChatGPT, Claude, Gemini, or another writing service. Contributors decide separately whether to use an external AI service and are responsible for that service's privacy terms.
+
+== Screenshots ==
+
+1. Review Markdown source and the resulting WordPress article preview together in the full workspace.
+2. Review and edit Front Matter values for the title, excerpt, slug, tags, categories, and featured image before applying them.
+3. Inspect preflight results, choose an insertion method, and adjust conversion options before changing the editor.
+4. Use the focused Quick Post page with a title, article text, writing hints, image attachments, and a final review action.
+5. Open Markdown Posting from the KOTOTSUGI pencil button in the WordPress block editor toolbar.
+
+== Related Projects ==
+
+These are separate, optional WordPress plugins from the same publisher. KOTOTSUGI does not depend on them.
+
+* [atshift User Profile Fields](https://wordpress.org/plugins/atshift-user-profile-fields/) - create and manage configurable WordPress user profile fields.
+* [atshift Fields](https://wordpress.org/plugins/atshift-fields-maintenance-for-custom-field-suite/) - create and organize custom fields for posts, pages, and custom post types.
+* [atshift Freeform Login](https://wordpress.org/plugins/atshift-freeform-login/) - customize the WordPress login screen and add reusable login forms.
+* [atshift Feed Builder](https://wordpress.org/plugins/atshift-feed-builder/) - build purpose-specific RSS 2.0 and JSON Feed 1.1 feeds from structured WordPress content.
 
 == Changelog ==
 
