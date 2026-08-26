@@ -117,7 +117,7 @@ const notationHtml = parser.markdownToHtml(notationDraft.source, false);
 assert.ok(notationDraft.source.includes('**場所:** [京都駅](https://www.google.com/maps/search/?api=1&query='));
 assert.ok(notationDraft.source.includes('> [!IMPORTANT]'));
 assert.ok(notationDraft.source.includes('> [!NOTE]'));
-assert.ok(notationDraft.source.includes('**料金:** 1,000円'));
+assert.ok(notationDraft.source.includes('**料金:** ¥ 1,000円'));
 assert.ok(notationDraft.source.includes('**電話:** [075-000-0000](tel:0750000000)'));
 assert.ok(notationHtml.includes('kototsugi-callout--important'));
 assert.ok(notationHtml.includes('kototsugi-callout--note'));
@@ -127,6 +127,86 @@ const naturalNotationDraft = parser.prepareSimpleText('場所：京都駅\n料�
 assert.ok(naturalNotationDraft.source.includes('**Place:**'));
 assert.ok(naturalNotationDraft.source.includes('**Price:**'));
 assert.ok(naturalNotationDraft.source.includes('**Phone:**'));
+
+const multilingualNotationCases = [
+	['Location: London', '**Place:**'],
+	['補足：雨天中止', '[!NOTE]'],
+	['Ubicación: Madrid', '**Place:**'],
+	['Hinweis: Bitte reservieren', '[!NOTE]'],
+	['Téléphone : +33 1 23 45 67 89', '**Phone:**'],
+	['Preço: R$ 25', '**Price:** R$ 25'],
+	['Importante: Prenotazione richiesta', '[!IMPORTANT]'],
+	['Место: Москва', '**Place:**'],
+	['Opmerking: Neem een jas mee', '[!NOTE]'],
+	['价格：20元', '**Price:** 20元'],
+	['Telefon: +48 12 345 67 89', '**Phone:**'],
+	['Önemli: Rezervasyon gerekli', '[!IMPORTANT]'],
+	['Lokasi: Jakarta', '**Place:**'],
+	['備註：請提前到場', '[!NOTE]'],
+	['전화: 02-1234-5678', '**Phone:**']
+];
+
+multilingualNotationCases.forEach(function (testCase) {
+	const draft = parser.prepareSimpleText(testCase[0], 'Localized notation');
+	assert.ok(draft.source.includes(testCase[1]), 'Expected localized notation to be recognized: ' + testCase[0]);
+});
+
+[
+	'$10', '10 USD', '¥1,000', '1,000円', '10 €', 'R$ 25', '10 ₽', '€ 10',
+	'10 zł', '10 ₺', 'Rp10.000', 'NT$10', '₩10', '10원', '10元'
+].forEach(function (price) {
+	const draft = parser.prepareSimpleText(price, 'Currency notation');
+	assert.ok(draft.source.includes('**Price:** ' + price), 'Expected currency order to be preserved: ' + price);
+});
+
+[
+	[{ before: '', after: '円', space: false }, '1000円'],
+	[{ before: '$', after: '', space: false }, '$1000'],
+	[{ before: '', after: '€', space: true }, '1000 €'],
+	[{ before: 'R$', after: '', space: true }, 'R$ 1000'],
+	[{ before: '', after: '₽', space: true }, '1000 ₽'],
+	[{ before: '€', after: '', space: true }, '€ 1000'],
+	[{ before: '', after: '元', space: false }, '1000元'],
+	[{ before: '', after: 'zł', space: true }, '1000 zł'],
+	[{ before: '', after: '₺', space: true }, '1000 ₺'],
+	[{ before: 'Rp', after: '', space: false }, 'Rp1000'],
+	[{ before: 'NT$', after: '', space: false }, 'NT$1000'],
+	[{ before: '₩', after: '', space: false }, '₩1000']
+].forEach(function (testCase) {
+	const draft = parser.prepareSimpleText('$ 1000', 'Locale currency shortcut', {
+		currency: testCase[0],
+		price: 'Price'
+	});
+	assert.ok(draft.source.includes('**Price:** ' + testCase[1]), 'Expected the locale currency position: ' + testCase[1]);
+});
+
+const explicitDollarDraft = parser.prepareSimpleText('$10', 'Explicit US dollar', {
+	currency: { before: '', after: '円', space: false },
+	price: '料金'
+});
+assert.ok(explicitDollarDraft.source.includes('**料金:** $10'));
+
+const nonNumericPriceDraft = parser.prepareSimpleText('$ Free for children', 'Non-numeric price', {
+	currency: { before: '', after: '円', space: false },
+	price: '料金'
+});
+assert.ok(!nonNumericPriceDraft.source.includes('**料金:**'));
+assert.ok(nonNumericPriceDraft.source.includes('$ Free for children'));
+
+['・財布', '• Wallet', '‣ Schlüssel', '⁃ Clés', '▪ Portafoglio', '◦ 지갑'].forEach(function (item) {
+	const draft = parser.prepareSimpleText(item, 'List notation');
+	assert.ok(draft.source.startsWith('- '), 'Expected a Unicode list marker to become a Markdown list: ' + item);
+});
+
+const notationFalsePositives = parser.prepareSimpleText([
+	'Contact us at person@example.com.',
+	'The budget is $10.',
+	'Important work continues.',
+	'2026 update'
+].join('\n\n'), 'Ordinary text');
+assert.ok(!notationFalsePositives.source.includes('**Place:**'));
+assert.ok(!notationFalsePositives.source.includes('**Price:**'));
+assert.ok(!notationFalsePositives.source.includes('[!IMPORTANT]'));
 
 const fullMarkdown = [
 	'# 公開タイトル',

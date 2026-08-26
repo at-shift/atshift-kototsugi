@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ The importer supports headings, paragraphs, emphasis, links, images, lists, tabl
 
 Quick Post adds a separate, passphrase-protected posting page for contributors who should not need the WordPress admin screen. An administrator fixes the display language, post author, default category, and whether a submission is saved as a draft or published immediately.
 
-Version 1.0 includes:
+Version 1.1 includes:
 
 * A source-and-preview workspace inside the WordPress block editor.
 * Local `.md`, `.markdown`, and `.txt` file loading with drag and drop.
@@ -36,6 +36,7 @@ Version 1.0 includes:
 * A separate Quick Post page for ordinary text, simple notation, local images, review, and submission.
 * Administrator controls for the Quick Post destination, author, category, display language, and draft or publish behavior.
 * Bundled translations for 15 locales.
+* Language-appropriate writing hints and multilingual plain-text notation recognition.
 
 GitHub and WordPress.org release packages include the same translations for English (US), Japanese, Spanish (Spain), German, French, Portuguese (Brazil), Italian, Russian, Dutch, Chinese (Simplified), Polish, Turkish, Indonesian, Chinese (Traditional, Taiwan), and Korean.
 
@@ -69,9 +70,9 @@ Before asking ChatGPT, Claude, Gemini, or another AI to write, choose **Copy AI 
 
 Quick Post is intended for shop staff, older adults, people with disabilities, anyone who finds the WordPress admin screen difficult, and anyone who wants to publish without learning many controls. It keeps only the steps needed to write, review, and submit an article; no knowledge of Markdown or the block editor is required.
 
-Quick Post keeps the contributor flow narrow: enter a title and article text, review the preview, acknowledge relevant conversion warnings, and submit. Plain text and pasted Markdown are both accepted. Blank lines create paragraphs, `・` creates lists, and a short line on its own becomes a heading.
+Quick Post keeps the contributor flow narrow: enter a title and article text, review the preview, acknowledge relevant conversion warnings, and submit. Plain text and pasted Markdown are both accepted. Blank lines create paragraphs, common bullet characters create lists, and a short line on its own becomes a heading.
 
-An optional "More ways to write" section introduces `@` for a map-linked place, `!` for important information, `※` for a note, `¥` for a price, and `☎` for a telephone link. Natural labels such as `Place:` and `Phone:` work too. Up to five JPEG, PNG, GIF, or WebP images can be attached with editable alternative text. KOTOTSUGI saves them to the Media Library and adds image blocks after the article.
+An optional "More ways to write" section shows notation examples appropriate for the selected display language. KOTOTSUGI accepts symbols and natural labels for places, important information, notes, prices, and phone numbers across all 15 bundled languages, regardless of the displayed language. Currency amounts can place the symbol or code before or after the number, and the original price notation is preserved. As an optional shortcut, `$ ` followed by an amount applies the selected locale's default currency without changing the entered digits; `$10` without a space remains an explicit US-dollar amount. Brackets, quotation marks, and similar punctuation keep their normal meaning and are not used as Quick Post shortcuts. Up to five JPEG, PNG, GIF, or WebP images can be attached with editable alternative text. KOTOTSUGI saves them to the Media Library and adds image blocks after the article.
 
 Front Matter `status` and `author` values are silently ignored in Quick Post because the administrator fixes those choices in its settings.
 
@@ -141,6 +142,13 @@ These are separate, optional WordPress plugins from the same publisher. KOTOTSUG
 * [atshift Feed Builder](https://wordpress.org/plugins/atshift-feed-builder/) - build purpose-specific RSS 2.0 and JSON Feed 1.1 feeds from structured WordPress content.
 
 == Changelog ==
+
+= 1.1 =
+* Show language-appropriate Quick Post writing hints for all 15 bundled languages.
+* Recognize localized labels for places, important information, notes, prices, and phone numbers regardless of the displayed language.
+* Accept common Unicode bullet characters as simple lists.
+* Recognize currency symbols and codes before or after amounts while preserving the entered price notation.
+* Add `$ ` as an optional locale-aware price shortcut while preserving `$10` as an explicit US-dollar amount.
 
 = 1.0 =
 * Add bundled translations for 13 more locales.

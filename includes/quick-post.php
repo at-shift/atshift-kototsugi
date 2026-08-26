@@ -112,6 +112,58 @@ function kototsugi_quick_post_languages() {
 }
 
 /**
+ * Returns language-appropriate Quick Post notation examples.
+ *
+ * The parser accepts every supported notation regardless of the displayed
+ * language. These profiles only keep the writing hints familiar and concise.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function kototsugi_quick_post_notation_profiles() {
+	return array(
+		'ja'    => array( 'list' => '-', 'place' => '場所：', 'important' => '重要：', 'note' => '補足：', 'price' => '料金：1,000円 / $ 1000', 'phone' => '電話：', 'currency' => array( 'before' => '', 'after' => '円', 'space' => false ) ),
+		'en_US' => array( 'list' => '-', 'place' => 'Location:', 'important' => 'Important:', 'note' => 'Note:', 'price' => 'Price: $10 / $ 1000', 'phone' => 'Phone:', 'currency' => array( 'before' => '$', 'after' => '', 'space' => false ) ),
+		'es_ES' => array( 'list' => '-', 'place' => 'Ubicación:', 'important' => 'Importante:', 'note' => 'Nota:', 'price' => 'Precio: 10 € / $ 1000', 'phone' => 'Teléfono:', 'currency' => array( 'before' => '', 'after' => '€', 'space' => true ) ),
+		'de_DE' => array( 'list' => '-', 'place' => 'Ort:', 'important' => 'Wichtig:', 'note' => 'Hinweis:', 'price' => 'Preis: 10 € / $ 1000', 'phone' => 'Telefon:', 'currency' => array( 'before' => '', 'after' => '€', 'space' => true ) ),
+		'fr_FR' => array( 'list' => '-', 'place' => 'Lieu :', 'important' => 'Important :', 'note' => 'Remarque :', 'price' => 'Prix : 10 € / $ 1000', 'phone' => 'Téléphone :', 'currency' => array( 'before' => '', 'after' => '€', 'space' => true ) ),
+		'pt_BR' => array( 'list' => '-', 'place' => 'Local:', 'important' => 'Importante:', 'note' => 'Nota:', 'price' => 'Preço: R$ 10 / $ 1000', 'phone' => 'Telefone:', 'currency' => array( 'before' => 'R$', 'after' => '', 'space' => true ) ),
+		'it_IT' => array( 'list' => '-', 'place' => 'Luogo:', 'important' => 'Importante:', 'note' => 'Nota:', 'price' => 'Prezzo: 10 € / $ 1000', 'phone' => 'Telefono:', 'currency' => array( 'before' => '', 'after' => '€', 'space' => true ) ),
+		'ru_RU' => array( 'list' => '-', 'place' => 'Место:', 'important' => 'Важно:', 'note' => 'Примечание:', 'price' => 'Цена: 10 ₽ / $ 1000', 'phone' => 'Телефон:', 'currency' => array( 'before' => '', 'after' => '₽', 'space' => true ) ),
+		'nl_NL' => array( 'list' => '-', 'place' => 'Locatie:', 'important' => 'Belangrijk:', 'note' => 'Opmerking:', 'price' => 'Prijs: € 10 / $ 1000', 'phone' => 'Telefoon:', 'currency' => array( 'before' => '€', 'after' => '', 'space' => true ) ),
+		'zh_CN' => array( 'list' => '-', 'place' => '地点：', 'important' => '重要：', 'note' => '备注：', 'price' => '价格：10元 / $ 1000', 'phone' => '电话：', 'currency' => array( 'before' => '', 'after' => '元', 'space' => false ) ),
+		'pl_PL' => array( 'list' => '-', 'place' => 'Miejsce:', 'important' => 'Ważne:', 'note' => 'Notatka:', 'price' => 'Cena: 10 zł / $ 1000', 'phone' => 'Telefon:', 'currency' => array( 'before' => '', 'after' => 'zł', 'space' => true ) ),
+		'tr_TR' => array( 'list' => '-', 'place' => 'Yer:', 'important' => 'Önemli:', 'note' => 'Not:', 'price' => 'Fiyat: 10 ₺ / $ 1000', 'phone' => 'Telefon:', 'currency' => array( 'before' => '', 'after' => '₺', 'space' => true ) ),
+		'id_ID' => array( 'list' => '-', 'place' => 'Lokasi:', 'important' => 'Penting:', 'note' => 'Catatan:', 'price' => 'Harga: Rp10.000 / $ 1000', 'phone' => 'Telepon:', 'currency' => array( 'before' => 'Rp', 'after' => '', 'space' => false ) ),
+		'zh_TW' => array( 'list' => '-', 'place' => '地點：', 'important' => '重要：', 'note' => '備註：', 'price' => '價格：NT$10 / $ 1000', 'phone' => '電話：', 'currency' => array( 'before' => 'NT$', 'after' => '', 'space' => false ) ),
+		'ko_KR' => array( 'list' => '-', 'place' => '장소:', 'important' => '중요:', 'note' => '참고:', 'price' => '가격: ₩10 / $ 1000', 'phone' => '전화:', 'currency' => array( 'before' => '₩', 'after' => '', 'space' => false ) ),
+	);
+}
+
+/**
+ * Returns the notation example profile for a locale.
+ *
+ * @param string|null $locale Locale to resolve. Defaults to the active locale.
+ * @return array<string, mixed>
+ */
+function kototsugi_quick_post_notation_profile( $locale = null ) {
+	$profiles = kototsugi_quick_post_notation_profiles();
+	$locale   = str_replace( '-', '_', $locale ? $locale : determine_locale() );
+
+	if ( isset( $profiles[ $locale ] ) ) {
+		return $profiles[ $locale ];
+	}
+
+	$language = strtolower( strtok( $locale, '_' ) );
+	foreach ( array_keys( $profiles ) as $profile_locale ) {
+		if ( strtolower( strtok( $profile_locale, '_' ) ) === $language ) {
+			return $profiles[ $profile_locale ];
+		}
+	}
+
+	return $profiles['en_US'];
+}
+
+/**
  * Returns content types suitable for Quick Post articles.
  *
  * @return array<string, WP_Post_Type>
@@ -1375,9 +1427,10 @@ function kototsugi_enqueue_quick_post_assets( $clear_draft = false, $include_scr
 			array(
 				'clearDraft'    => (bool) $clear_draft,
 				'labels'        => array(
-					'phone' => __( 'Phone', 'kototsugi' ),
-					'place' => __( 'Place', 'kototsugi' ),
-					'price' => __( 'Price', 'kototsugi' ),
+					'currency' => kototsugi_quick_post_notation_profile()['currency'],
+					'phone'    => __( 'Phone', 'kototsugi' ),
+					'place'    => __( 'Place', 'kototsugi' ),
+					'price'    => __( 'Price', 'kototsugi' ),
 				),
 				'maxImageBytes' => kototsugi_quick_post_max_image_bytes(),
 				'maxImages'     => KOTOTSUGI_QUICK_POST_MAX_IMAGES,
@@ -1507,7 +1560,8 @@ function kototsugi_render_quick_post_unavailable( $message ) {
  * @param array<string, mixed> $values   Values to restore after an error.
  */
 function kototsugi_render_quick_post_form( $settings, $error = '', $values = array() ) {
-	$cookie = kototsugi_get_quick_post_cookie();
+	$cookie           = kototsugi_get_quick_post_cookie();
+	$notation_profile = kototsugi_quick_post_notation_profile();
 	kototsugi_enqueue_quick_post_assets();
 	kototsugi_quick_post_document_start( __( 'KOTOTSUGI Quick Post', 'kototsugi' ) );
 	?>
@@ -1551,17 +1605,17 @@ function kototsugi_render_quick_post_form( $settings, $error = '', $values = arr
 						<p><?php esc_html_e( 'Writing normally creates paragraphs. Use these hints only when you want more structure.', 'kototsugi' ); ?></p>
 						<ul>
 							<li><?php esc_html_e( 'Leave a blank line between paragraphs.', 'kototsugi' ); ?></li>
-							<li><?php esc_html_e( 'Start a line with ・ to make a list.', 'kototsugi' ); ?></li>
+							<li><?php echo esc_html( str_replace( '・', $notation_profile['list'], __( 'Start a line with ・ to make a list.', 'kototsugi' ) ) ); ?></li>
 							<li><?php esc_html_e( 'A short line on its own becomes a heading.', 'kototsugi' ); ?></li>
 						</ul>
 						<details class="kototsugi-quick-hints__more">
 							<summary><?php esc_html_e( 'More ways to write', 'kototsugi' ); ?></summary>
 							<ul class="kototsugi-quick-hints__notations">
-								<li><code>@</code><span><?php esc_html_e( 'Place', 'kototsugi' ); ?></span></li>
-								<li><code>!</code><span><?php esc_html_e( 'Important', 'kototsugi' ); ?></span></li>
-								<li><code>※</code><span><?php esc_html_e( 'Note', 'kototsugi' ); ?></span></li>
-								<li><code>¥</code><span><?php esc_html_e( 'Price', 'kototsugi' ); ?></span></li>
-								<li><code>☎</code><span><?php esc_html_e( 'Phone', 'kototsugi' ); ?></span></li>
+								<li><code><?php echo esc_html( $notation_profile['place'] ); ?></code><span><?php esc_html_e( 'Place', 'kototsugi' ); ?></span></li>
+								<li><code><?php echo esc_html( $notation_profile['important'] ); ?></code><span><?php esc_html_e( 'Important', 'kototsugi' ); ?></span></li>
+								<li><code><?php echo esc_html( $notation_profile['note'] ); ?></code><span><?php esc_html_e( 'Note', 'kototsugi' ); ?></span></li>
+								<li><code><?php echo esc_html( $notation_profile['price'] ); ?></code><span><?php esc_html_e( 'Price', 'kototsugi' ); ?></span></li>
+								<li><code><?php echo esc_html( $notation_profile['phone'] ); ?></code><span><?php esc_html_e( 'Phone', 'kototsugi' ); ?></span></li>
 							</ul>
 							<p><?php esc_html_e( 'You can also write labels such as Place: or Phone:.', 'kototsugi' ); ?></p>
 						</details>

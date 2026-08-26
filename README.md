@@ -48,6 +48,7 @@ Compare the Markdown structure with the article that will be inserted into WordP
 - Generate standard WordPress blocks that remain editable after insertion and plugin deactivation
 - Offer a standalone Quick Post page without exposing the WordPress admin screen
 - Accept ordinary text and simple notation in Quick Post, with Markdown available when needed
+- Show language-appropriate writing hints and recognize notation from all 15 bundled languages
 - Attach up to five JPEG, PNG, GIF, or WebP images with editable alternative text
 - Let administrators fix the Quick Post author, category, destination, display language, and submission status
 - Protect Quick Post with a passphrase, throttled login attempts, revocable browser sessions, CSRF protection, capability checks, and duplicate-submission prevention
@@ -137,7 +138,7 @@ Administrators configure it from **Settings > KOTOTSUGI**:
 4. Set a passphrase of at least eight characters and enable Quick Post.
 5. Share the displayed posting URL and passphrase with the contributor.
 
-Ordinary text becomes paragraphs. Blank lines separate sections, `・` can create lists, and short standalone lines can become headings. Optional prefixes add more structure: `@` for a place, `!` for important information, `※` for a note, `¥` for a price, and `☎` for a phone number. Plain text and pasted Markdown are both accepted.
+Ordinary text becomes paragraphs. Blank lines separate sections, common bullet characters create lists, and short standalone lines can become headings. Optional symbols and natural-language labels add places, important information, notes, prices, and telephone links. The hints use examples appropriate for the selected display language, while the parser accepts notation from all 15 bundled languages. Currency formats are recognized with symbols or codes before or after the amount, including `$10`, `10 €`, `Rp10.000`, and `1,000円`, without rewriting the entered price. As an optional shortcut, `$ ` followed by an amount applies the selected locale's default currency while `$10` remains an explicit US-dollar amount. Brackets, quotation marks, and similar punctuation keep their normal meaning and are not used as Quick Post shortcuts. Plain text and pasted Markdown are both accepted.
 
 The source field works with the operating system's standard dictation. KOTOTSUGI does not request microphone access, record audio, or connect to a speech service.
 

@@ -100,6 +100,17 @@ try {
 	$quick_post_languages = kototsugi_quick_post_languages();
 	$expected_languages   = kototsugi_quick_post_locale_codes();
 	$assert( $expected_languages === array_keys( $quick_post_languages ), 'Quick Post should offer every bundled display language in the intended order.' );
+	$notation_profiles = kototsugi_quick_post_notation_profiles();
+	$assert( $expected_languages === array_keys( $notation_profiles ), 'Every bundled language should have a Quick Post notation profile.' );
+	foreach ( $notation_profiles as $notation_locale => $notation_profile ) {
+		$assert( array( 'list', 'place', 'important', 'note', 'price', 'phone', 'currency' ) === array_keys( $notation_profile ), 'Every notation profile should provide all writing hint types and a default currency format.' );
+		$assert( '-' === $notation_profile['list'], 'Writing hints should use a keyboard-friendly list marker in every language.' );
+		$assert( '' !== $notation_profile['price'], 'Every notation profile should provide a language-appropriate price example.' );
+		$assert( isset( $notation_profile['currency']['before'], $notation_profile['currency']['after'], $notation_profile['currency']['space'] ), 'Every notation profile should define the default currency position.' );
+		$assert( $notation_profile === kototsugi_quick_post_notation_profile( $notation_locale ), 'Each locale should resolve to its own notation profile.' );
+	}
+	$assert( 'Price: $10 / $ 1000' === kototsugi_quick_post_notation_profile( 'en_GB' )['price'], 'Related locale variants should use the matching language profile.' );
+	$assert( 'Price: $10 / $ 1000' === kototsugi_quick_post_notation_profile( 'xx_XX' )['price'], 'Unknown locales should use the English notation profile.' );
 	$expected_sample_files = array(
 		'ja'    => 'kototsugi-sample.md',
 		'en_US' => 'kototsugi-sample-en.md',

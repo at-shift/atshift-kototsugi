@@ -668,49 +668,176 @@
 		return document.title || (match ? plainText(match[1]) : '');
 	}
 
-	function findSimpleNotation(value) {
+	var simpleNotationLabels = {
+		place: [
+			'place', 'location', 'venue', 'address',
+			'場所', '会場', '所在地', '住所',
+			'lugar', 'ubicación', 'dirección',
+			'ort', 'standort', 'veranstaltungsort', 'adresse',
+			'lieu', 'emplacement', 'adresse',
+			'local', 'localização', 'endereço',
+			'luogo', 'posizione', 'sede', 'indirizzo',
+			'место', 'локация', 'адрес',
+			'plaats', 'locatie', 'adres',
+			'地点', '位置', '场所', '会场', '地址',
+			'miejsce', 'lokalizacja', 'adres',
+			'yer', 'konum', 'mekan', 'adres',
+			'tempat', 'lokasi', 'alamat',
+			'地點', '場所', '會場', '地址',
+			'장소', '위치', '주소'
+		],
+		important: [
+			'important', 'warning', 'caution', 'alert',
+			'重要', '注意', '警告',
+			'importante', 'aviso', 'advertencia', 'atención',
+			'wichtig', 'warnung', 'achtung',
+			'important', 'attention', 'avertissement',
+			'importante', 'aviso', 'atenção',
+			'importante', 'avviso', 'attenzione',
+			'важно', 'предупреждение', 'внимание',
+			'belangrijk', 'waarschuwing', 'let op',
+			'ważne', 'ostrzeżenie', 'uwaga',
+			'önemli', 'uyarı', 'dikkat',
+			'penting', 'peringatan', 'perhatian',
+			'중요', '주의', '경고'
+		],
+		note: [
+			'note', 'notes', 'nb',
+			'補足', '注記', '備考', 'メモ', '注',
+			'nota', 'notas',
+			'hinweis', 'anmerkung', 'notiz',
+			'remarque',
+			'observação',
+			'annotazione',
+			'примечание', 'заметка',
+			'opmerking', 'notitie',
+			'备注', '说明',
+			'notatka', 'informacja',
+			'not', 'bilgi notu',
+			'catatan', 'keterangan',
+			'備註', '說明',
+			'참고', '메모'
+		],
+		price: [
+			'price', 'cost', 'fee', 'amount',
+			'料金', '価格', '費用', '金額',
+			'precio', 'coste', 'costo', 'tarifa',
+			'preis', 'kosten', 'gebühr',
+			'prix', 'coût', 'tarif',
+			'preço', 'custo', 'valor',
+			'prezzo', 'costo', 'tariffa',
+			'цена', 'стоимость', 'тариф',
+			'prijs', 'kosten', 'tarief',
+			'价格', '费用', '金额',
+			'cena', 'koszt', 'opłata',
+			'fiyat', 'ücret', 'maliyet',
+			'harga', 'biaya', 'tarif',
+			'價格', '費用', '金額',
+			'가격', '비용', '요금'
+		],
+		phone: [
+			'phone', 'telephone', 'tel', 'mobile', 'phone number', 'telephone number',
+			'電話', '電話番号', '携帯', '連絡先',
+			'teléfono', 'móvil', 'número de teléfono',
+			'telefon', 'telefonnummer', 'handy',
+			'téléphone', 'tél', 'portable', 'numéro de téléphone',
+			'telefone', 'celular', 'número de telefone',
+			'telefono', 'cellulare', 'numero di telefono',
+			'телефон', 'номер телефона', 'мобильный',
+			'telefoon', 'telefoonnummer', 'mobiel',
+			'电话', '电话号码', '手机', '联系电话',
+			'numer telefonu', 'komórka',
+			'telefon numarası', 'cep telefonu',
+			'telepon', 'nomor telepon', 'ponsel',
+			'電話號碼', '手機', '聯絡電話',
+			'전화', '전화번호', '휴대폰', '연락처'
+		]
+	};
+
+	function normalizeSimpleNotationLabel(value) {
+		return String(value || '').trim().toLocaleLowerCase().replace(/\s+/g, ' ');
+	}
+
+	function findLabeledSimpleNotation(line) {
+		var match = line.match(/^(.{1,40}?)\s*[:：]\s*(.+)$/);
+		var label;
+		var types;
+		var index;
+
+		if (!match) {
+			return null;
+		}
+
+		label = normalizeSimpleNotationLabel(match[1]);
+		types = Object.keys(simpleNotationLabels);
+		for (index = 0; index < types.length; index += 1) {
+			if (simpleNotationLabels[types[index]].indexOf(label) !== -1) {
+				return { type: types[index], value: match[2].trim() };
+			}
+		}
+
+		return null;
+	}
+
+	function isCurrencyNotation(line) {
+		var amount = '[+-]?[0-9０-９][0-9０-９\\s.,\'’]*';
+		var prefix = '(?:US\\$|CA\\$|AU\\$|NZ\\$|HK\\$|SG\\$|NT\\$|R\\$|Rp|CHF|USD|EUR|GBP|JPY|CNY|RMB|KRW|RUB|BRL|PLN|TRY|IDR|[$€£¥￥₩₽₺₹₫₱฿₪₴₦₡₲₵₸₭₮₼₾])';
+		var suffix = '(?:US\\$|CA\\$|AU\\$|NZ\\$|HK\\$|SG\\$|NT\\$|R\\$|USD|EUR|GBP|JPY|CNY|RMB|KRW|RUB|BRL|PLN|TRY|IDR|CHF|Rp|zł|Kč|kr|TL|руб\\.?|円|元|원|[$€£¥￥₩₽₺₹₫₱฿₪₴₦₡₲₵₸₭₮₼₾])';
+
+		return new RegExp('^' + prefix + '\\s*' + amount, 'i').test(line) ||
+			new RegExp('^' + amount + '\\s*' + suffix + '(?:\\s|$|[（(])', 'i').test(line);
+	}
+
+	function formatLocaleCurrency(value, currency) {
+		var amount = String(value || '').trim();
+		var separator;
+
+		if (!currency || !/^[+-]?[0-9０-９]/.test(amount) || isCurrencyNotation(amount)) {
+			return amount;
+		}
+
+		separator = currency.space ? ' ' : '';
+		if (currency.before) {
+			return currency.before + separator + amount;
+		}
+		if (currency.after) {
+			return amount + separator + currency.after;
+		}
+
+		return amount;
+	}
+
+	function findSimpleNotation(value, currency) {
 		var line = String(value || '').trim();
 		var match;
+		var labeled = findLabeledSimpleNotation(line);
 
-		match = line.match(/^@\s+(.+)$/);
+		if (labeled) {
+			return labeled;
+		}
+		match = line.match(/^\$\s+([+-]?[0-9０-９].*)$/);
+		if (match && currency) {
+			return { type: 'price', value: formatLocaleCurrency(match[1], currency) };
+		}
+
+		match = line.match(/^(?:@\s+|📍\s*)(.+)$/);
 		if (match) {
 			return { type: 'place', value: match[1].trim() };
 		}
-		match = line.match(/^(?:場所|会場|所在地|place|location|venue)\s*[:：]\s*(.+)$/i);
-		if (match) {
-			return { type: 'place', value: match[1].trim() };
-		}
-		match = line.match(/^!\s+(.+)$/);
+		match = line.match(/^(?:!\s+|⚠️?\s*|❗\s*)(.+)$/);
 		if (match) {
 			return { type: 'important', value: match[1].trim() };
 		}
-		match = line.match(/^(?:重要|注意|警告|important|warning)\s*[:：]\s*(.+)$/i);
-		if (match) {
-			return { type: 'important', value: match[1].trim() };
-		}
-		match = line.match(/^※\s*(.+)$/);
+		match = line.match(/^(?:※\s*|ℹ️?\s*|📝\s*)(.+)$/);
 		if (match) {
 			return { type: 'note', value: match[1].trim() };
 		}
-		match = line.match(/^(?:補足|注記|note)\s*[:：]\s*(.+)$/i);
-		if (match) {
-			return { type: 'note', value: match[1].trim() };
-		}
-		match = line.match(/^[¥￥]\s*(.+)$/);
-		if (match) {
-			return { type: 'price', value: match[1].trim() };
-		}
-		match = line.match(/^(?:料金|価格|費用|price|cost)\s*[:：]\s*(.+)$/i);
-		if (match) {
-			return { type: 'price', value: match[1].trim() };
-		}
-		match = line.match(/^☎\s*(.+)$/);
+		match = line.match(/^(?:☎️?\s*|☏\s*|📞\s*|📱\s*)(.+)$/);
 		if (match) {
 			return { type: 'phone', value: match[1].trim() };
 		}
-		match = line.match(/^(?:電話|電話番号|tel|phone)\s*[:：]\s*(.+)$/i);
-		if (match) {
-			return { type: 'phone', value: match[1].trim() };
+		if (isCurrencyNotation(line)) {
+			return { type: 'price', value: line };
 		}
 
 		return null;
@@ -781,6 +908,7 @@
 		var displaySource;
 		var removedTitleFromBody = false;
 		var simpleLabels = {
+			currency: labels && labels.currency ? labels.currency : null,
 			place: labels && labels.place ? plainText(labels.place) : 'Place',
 			price: labels && labels.price ? plainText(labels.price) : 'Price',
 			phone: labels && labels.phone ? plainText(labels.phone) : 'Phone'
@@ -816,9 +944,10 @@
 
 		displaySource = body.trim();
 		body.split('\n').forEach(function (line) {
-			var normalizedLine = line.replace(/^(\s*)[・●○]\s*/, '$1- ');
+			var listMatch = line.match(/^(\s*)[・●○•‣⁃∙·▪▫◦]\s*(\S.*)$/);
+			var normalizedLine = listMatch ? listMatch[1] + '- ' + listMatch[2] : line;
 
-			notation = findSimpleNotation(normalizedLine);
+			notation = findSimpleNotation(normalizedLine, simpleLabels.currency);
 			if (notation && preparedLines.length && preparedLines[preparedLines.length - 1].trim()) {
 				preparedLines.push('');
 			}
@@ -851,7 +980,7 @@
 
 		blocks = blocks.map(function (block, blockIndex) {
 			var trimmed = block.trim();
-			var simpleNotation = findSimpleNotation(trimmed);
+			var simpleNotation = findSimpleNotation(trimmed, simpleLabels.currency);
 
 			if (simpleNotation) {
 				return renderSimpleNotation(simpleNotation, simpleLabels);

@@ -201,7 +201,7 @@ html {
 
 .kototsugi-quick-hints__notations li {
 	display: grid;
-	grid-template-columns: 30px 1fr;
+	grid-template-columns: minmax(0, 1fr) max-content;
 	align-items: baseline;
 	gap: 8px;
 }
@@ -210,6 +210,8 @@ html {
 	color: var(--kototsugi-ink);
 	font-size: 15px;
 	font-weight: 700;
+	overflow-wrap: anywhere;
+	white-space: normal;
 }
 
 .kototsugi-quick-hints__more > p:last-child {
