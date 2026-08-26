@@ -81,7 +81,9 @@ Open KOTOTSUGI in the block editor, then choose **Load sample Markdown** for a o
 
 Review optional Front Matter values under **Post settings**. Open **Review before applying** to check warnings, choose an insertion method, and adjust conversion options. Adding at the cursor or replacing the current body never saves the current post automatically.
 
-For AI-assisted writing, choose **Copy AI authoring rules** or use [`rules/KOTOTSUGI-RULES.md`](rules/KOTOTSUGI-RULES.md). The rules ask the writing tool to create portable Markdown and to write titles, labels, image alternative text, and other reader-facing text in the reader's requested language.
+## Tell the AI how to write for KOTOTSUGI
+
+Before asking ChatGPT, Claude, Gemini, or another AI to write, choose **Copy AI authoring rules** in KOTOTSUGI and paste the text into the conversation, or give the AI the bundled [**`KOTOTSUGI-RULES.md`**](rules/KOTOTSUGI-RULES.md) file. The rules cover supported structure, Front Matter, heading order, and image alternative text, helping the AI produce a draft that is ready to review and import. Although the file is written in English, it tells the AI to write the article, reader-facing post settings, and alternative text in the language you request, including your native language.
 
 ## Markdown Posting
 

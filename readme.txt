@@ -51,7 +51,7 @@ GitHub and WordPress.org release packages include the same translations for Engl
 
 Open KOTOTSUGI from the editor sidebar, then choose a `.md`, `.markdown`, or `.txt` file or open the workspace and paste Markdown. The desktop workspace shows the source and preview side by side; narrow screens use workspace tabs. Use "Post settings" to review Front Matter values and "Review before applying" to check warnings, choose an insertion method, and adjust conversion options.
 
-For a first trial, choose "Load sample Markdown" in the sidebar. KOTOTSUGI loads a bundled sample and opens the workspace immediately. Choose "Copy AI authoring rules" to copy service-neutral Markdown rules for ChatGPT, Claude, Gemini, or another AI writing tool.
+For a first trial, choose "Load sample Markdown" in the sidebar. KOTOTSUGI loads a bundled sample and opens the workspace immediately.
 
 The preflight check reports unsupported syntax, malformed or relative image URLs, heading-level jumps, multiple H1 headings, and title conflicts before content is applied. Each result links back to the relevant Markdown line. Informational adjustments do not block insertion; errors do.
 
@@ -60,6 +60,10 @@ Choose "Add at cursor" to insert blocks at the current position, "Replace post c
 Files are read locally in the browser and are not uploaded by KOTOTSUGI. The maximum file size is 2 MB.
 
 When remote image import is enabled, HTTP and HTTPS images referenced in Markdown are downloaded by WordPress and saved as media attachments. Images are limited to the site's upload limit or 10 MB, whichever is smaller. Private-network URLs, unsupported image types, and SVG files are rejected. If an image cannot be imported, KOTOTSUGI keeps its original external URL and continues inserting the article.
+
+== Tell the AI how to write for KOTOTSUGI ==
+
+Before asking ChatGPT, Claude, Gemini, or another AI to write, choose **Copy AI authoring rules** in KOTOTSUGI and paste the text into the conversation, or give the AI the bundled [**`KOTOTSUGI-RULES.md`**](https://github.com/at-shift/atshift-kototsugi/blob/main/rules/KOTOTSUGI-RULES.md) file. The rules cover supported structure, Front Matter, heading order, and image alternative text, helping the AI produce a draft that is ready to review and import. Although the file is written in English, it tells the AI to write the article, reader-facing post settings, and alternative text in the language you request, including your native language.
 
 == Quick Post ==
 
