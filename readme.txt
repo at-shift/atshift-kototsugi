@@ -14,6 +14,8 @@ Turn AI-friendly Markdown into editable WordPress blocks.
 
 KOTOTSUGI is a standalone WordPress plugin. It is not an add-on or module for atshift Fields or atshift User Profile Fields, and neither plugin is required.
 
+The name KOTOTSUGI is written as **言継ぎ** in Japanese. It combines *koto*, evoking words or an utterance, with *tsugi*, meaning to continue, inherit, or pass something onward. The name reflects the plugin's role in carrying an AI-created Markdown draft into WordPress, where a person can keep editing and refining it.
+
 KOTOTSUGI gives the block editor a focused Markdown import workspace. Paste a draft from ChatGPT, Claude, Gemini, or any Markdown-aware writing tool, or load a local Markdown file. Review the generated article in a wide preview, then add editable blocks at the current cursor position, replace the current body, or create a separate draft.
 
 The importer supports headings, paragraphs, emphasis, links, images, lists, tables, quotes, fenced code blocks, horizontal rules, and GitHub-style callouts such as `[!NOTE]` and `[!WARNING]`.
@@ -60,6 +62,8 @@ Files are read locally in the browser and are not uploaded by KOTOTSUGI. The max
 When remote image import is enabled, HTTP and HTTPS images referenced in Markdown are downloaded by WordPress and saved as media attachments. Images are limited to the site's upload limit or 10 MB, whichever is smaller. Private-network URLs, unsupported image types, and SVG files are rejected. If an image cannot be imported, KOTOTSUGI keeps its original external URL and continues inserting the article.
 
 == Quick Post ==
+
+Quick Post is intended for shop staff, older adults, people with disabilities, anyone who finds the WordPress admin screen difficult, and anyone who wants to publish without learning many controls. It keeps only the steps needed to write, review, and submit an article; no knowledge of Markdown or the block editor is required.
 
 Quick Post keeps the contributor flow narrow: enter a title and article text, review the preview, acknowledge relevant conversion warnings, and submit. Plain text and pasted Markdown are both accepted. Blank lines create paragraphs, `・` creates lists, and a short line on its own becomes a heading.
 

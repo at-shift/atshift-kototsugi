@@ -123,6 +123,8 @@ Every supported value can be reviewed, edited, or disabled before it is applied.
 
 ## Quick Post
 
+Quick Post is intended for shop staff, older adults, people with disabilities, anyone who finds the WordPress admin screen difficult, and anyone who wants to publish without learning many controls. It keeps only the steps needed to write, review, and submit an article; no knowledge of Markdown or the block editor is required.
+
 Quick Post keeps the contributor flow deliberately narrow: enter a title and article text, attach images when needed, review the result, and submit.
 
 Administrators configure it from **Settings > KOTOTSUGI**:
