@@ -4,7 +4,7 @@
   <p><strong>Carry AI-friendly Markdown into editable WordPress articles.</strong></p>
   <p>
     <a href="https://upf.at-shift.net/en/kototsugi/">Official Website</a> ·
-    <a href="https://github.com/at-shift/atshift-kototsugi/releases">Releases</a> ·
+    <a href="https://wordpress.org/plugins/kototsugi/">WordPress.org</a> ·
     <a href="https://upf.at-shift.net/kototsugi/">日本語</a>
   </p>
 </div>
@@ -69,9 +69,9 @@ The Markdown workspace follows each WordPress user's profile language. Quick Pos
 
 ## Installation
 
-1. Download the latest ZIP from [GitHub Releases](https://github.com/at-shift/atshift-kototsugi/releases).
-2. In WordPress, open **Plugins > Add Plugin > Upload Plugin**.
-3. Upload the ZIP and activate KOTOTSUGI.
+1. In WordPress, open **Plugins > Add Plugin**.
+2. Search for **KOTOTSUGI**, then choose **Install Now** and **Activate**.
+3. You can also download the ZIP from [WordPress.org](https://wordpress.org/plugins/kototsugi/) and install it with **Upload Plugin**.
 4. Open a post, page, or supported custom post type in the block editor.
 5. Select KOTOTSUGI from the editor's Options menu or its pinned pencil button.
 
@@ -161,7 +161,7 @@ Remote images are limited to the lower of the site's upload limit or 10 MB. When
 | Topic | English | 日本語 |
 | --- | --- | --- |
 | Product guide | [KOTOTSUGI](https://upf.at-shift.net/en/kototsugi/) | [KOTOTSUGI](https://upf.at-shift.net/kototsugi/) |
-| Releases | [GitHub Releases](https://github.com/at-shift/atshift-kototsugi/releases) | [GitHub Releases](https://github.com/at-shift/atshift-kototsugi/releases) |
+| Plugin directory | [WordPress.org](https://wordpress.org/plugins/kototsugi/) | [WordPress.org](https://wordpress.org/plugins/kototsugi/) |
 | AI authoring rules | [KOTOTSUGI Rules](rules/KOTOTSUGI-RULES.md) | [KOTOTSUGI Rules](rules/KOTOTSUGI-RULES.md) |
 | Sample article | [English sample](examples/kototsugi-sample-en.md) | [日本語サンプル](examples/kototsugi-sample.md) |
 
