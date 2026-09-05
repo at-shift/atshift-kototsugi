@@ -3,9 +3,9 @@
   <h1>KOTOTSUGI</h1>
   <p><strong>Carry AI-friendly Markdown into editable WordPress articles.</strong></p>
   <p>
-    <a href="https://upf.at-shift.net/en/kototsugi/">Official Website</a> ·
+    <a href="https://plugins.at-shift.net/en/kototsugi/">Official Website</a> ·
     <a href="https://wordpress.org/plugins/kototsugi/">WordPress.org</a> ·
-    <a href="https://upf.at-shift.net/kototsugi/">日本語</a>
+    <a href="https://plugins.at-shift.net/kototsugi/">日本語</a>
   </p>
 </div>
 
@@ -161,7 +161,7 @@ Remote images are limited to the lower of the site's upload limit or 10 MB. When
 
 | Topic | English | 日本語 |
 | --- | --- | --- |
-| Product guide | [KOTOTSUGI](https://upf.at-shift.net/en/kototsugi/) | [KOTOTSUGI](https://upf.at-shift.net/kototsugi/) |
+| Product guide | [KOTOTSUGI](https://plugins.at-shift.net/en/kototsugi/) | [KOTOTSUGI](https://plugins.at-shift.net/kototsugi/) |
 | Plugin directory | [WordPress.org](https://wordpress.org/plugins/kototsugi/) | [WordPress.org](https://wordpress.org/plugins/kototsugi/) |
 | AI authoring rules | [KOTOTSUGI Rules](rules/KOTOTSUGI-RULES.md) | [KOTOTSUGI Rules](rules/KOTOTSUGI-RULES.md) |
 | Sample article | [English sample](examples/kototsugi-sample-en.md) | [日本語サンプル](examples/kototsugi-sample.md) |

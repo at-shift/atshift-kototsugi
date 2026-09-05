@@ -112,7 +112,7 @@ Unknown Front Matter keys are listed in the workspace and are not applied. KOTOT
 
 == Links ==
 
-* Official website: [upf.at-shift.net/en/kototsugi](https://upf.at-shift.net/en/kototsugi/)
+* Official website: [plugins.at-shift.net/en/kototsugi](https://plugins.at-shift.net/en/kototsugi/)
 * GitHub repository: [github.com/at-shift/atshift-kototsugi](https://github.com/at-shift/atshift-kototsugi)
 * AI authoring rules: [KOTOTSUGI-RULES.md](https://github.com/at-shift/atshift-kototsugi/blob/main/rules/KOTOTSUGI-RULES.md)
 
