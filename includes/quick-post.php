@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'KOTOTSUGI_QUICK_POST_OPTION', 'kototsugi_quick_post_settings' );
 define( 'KOTOTSUGI_QUICK_POST_COOKIE', 'kototsugi_quick_post_session' );
+define( 'KOTOTSUGI_QUICK_POST_TRUSTED_COOKIE', 'kototsugi_quick_post_trusted' );
+define( 'KOTOTSUGI_QUICK_POST_TRUSTED_LIFETIME', 180 * DAY_IN_SECONDS );
+define( 'KOTOTSUGI_QUICK_POST_FREE_LOGIN_FAILURES', 3 );
+define( 'KOTOTSUGI_QUICK_POST_LOGIN_ALERT_FAILURES', 30 );
 define( 'KOTOTSUGI_QUICK_POST_MAX_SOURCE_BYTES', 2 * MB_IN_BYTES );
 define( 'KOTOTSUGI_QUICK_POST_MAX_IMAGES', 5 );
 define( 'KOTOTSUGI_QUICK_POST_MAX_BLOCK_DEPTH', 20 );
@@ -781,23 +785,25 @@ function kototsugi_quick_post_storage_key( $cookie, $settings ) {
 }
 
 /**
- * Returns the raw session cookie.
+ * Returns a raw Quick Post cookie.
  *
+ * @param string $name Cookie name. Defaults to the session cookie.
  * @return string
  */
-function kototsugi_get_quick_post_cookie() {
-	return isset( $_COOKIE[ KOTOTSUGI_QUICK_POST_COOKIE ] ) ? sanitize_text_field( wp_unslash( $_COOKIE[ KOTOTSUGI_QUICK_POST_COOKIE ] ) ) : '';
+function kototsugi_get_quick_post_cookie( $name = KOTOTSUGI_QUICK_POST_COOKIE ) {
+	return isset( $_COOKIE[ $name ] ) ? sanitize_text_field( wp_unslash( $_COOKIE[ $name ] ) ) : '';
 }
 
 /**
- * Sets or removes the Quick Post session cookie.
+ * Sets or removes a Quick Post cookie.
  *
  * @param string $value      Cookie value.
  * @param int    $expiration Expiration timestamp.
+ * @param string $name       Cookie name. Defaults to the session cookie.
  */
-function kototsugi_set_quick_post_cookie( $value, $expiration ) {
+function kototsugi_set_quick_post_cookie( $value, $expiration, $name = KOTOTSUGI_QUICK_POST_COOKIE ) {
 	setcookie(
-		KOTOTSUGI_QUICK_POST_COOKIE,
+		$name,
 		$value,
 		array(
 			'expires'  => $expiration,
@@ -888,11 +894,16 @@ function kototsugi_verify_quick_post_receipt_token( $token, $post_id, $cookie ) 
 }
 
 /**
- * Returns a privacy-preserving login throttle key.
+ * Returns a privacy-preserving login throttle key for an address or trusted browser.
  *
+ * @param string $trusted_token Validated trusted-browser token, if available.
  * @return string
  */
-function kototsugi_quick_post_throttle_key() {
+function kototsugi_quick_post_throttle_key( $trusted_token = '' ) {
+	if ( $trusted_token ) {
+		return 'kototsugi_qp_t_' . substr( hash_hmac( 'sha256', $trusted_token, wp_salt( 'auth' ) ), 0, 32 );
+	}
+
 	$address = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : 'unknown';
 
 	return 'kototsugi_qp_' . substr( hash_hmac( 'sha256', $address, wp_salt( 'auth' ) ), 0, 32 );
@@ -958,30 +969,259 @@ function kototsugi_quick_post_release_lock( $lock ) {
 }
 
 /**
- * Atomically reserves one passphrase verification attempt.
+ * Returns the wait that follows a number of consecutive failures.
  *
- * @return bool Whether the attempt may proceed.
+ * @param int $failures Consecutive failed passphrase checks.
+ * @return int Seconds.
  */
-function kototsugi_claim_quick_post_login_attempt() {
-	$key      = kototsugi_quick_post_throttle_key();
-	$lock = kototsugi_quick_post_acquire_lock( $key );
+function kototsugi_quick_post_login_delay( $failures ) {
+	$failures = (int) $failures;
+	$delays   = array(
+		KOTOTSUGI_QUICK_POST_FREE_LOGIN_FAILURES + 1 => MINUTE_IN_SECONDS,
+		KOTOTSUGI_QUICK_POST_FREE_LOGIN_FAILURES + 2 => 5 * MINUTE_IN_SECONDS,
+		KOTOTSUGI_QUICK_POST_FREE_LOGIN_FAILURES + 3 => 15 * MINUTE_IN_SECONDS,
+	);
+
+	if ( $failures <= KOTOTSUGI_QUICK_POST_FREE_LOGIN_FAILURES ) {
+		$delay = 0;
+	} else {
+		$delay = isset( $delays[ $failures ] ) ? $delays[ $failures ] : HOUR_IN_SECONDS;
+	}
+
+	/**
+	 * Filters the wait after consecutive failed Quick Post passphrase checks.
+	 *
+	 * @param int $delay    Seconds to wait.
+	 * @param int $failures Consecutive failures from the same address.
+	 */
+	return max( 0, (int) apply_filters( 'kototsugi_quick_post_login_delay', $delay, $failures ) );
+}
+
+/**
+ * Atomically reserves one passphrase verification attempt for an address or trusted browser.
+ *
+ * The attempt is counted as a failure up front and cleared by
+ * kototsugi_reset_quick_post_login_failures() after a successful check, so
+ * parallel requests cannot slip past the wait. Failures are forgotten after
+ * 24 hours without another attempt.
+ *
+ * @param string $trusted_token Validated trusted-browser token, if available.
+ * @return int Seconds to wait, or 0 when the attempt may proceed.
+ */
+function kototsugi_claim_quick_post_login_attempt( $trusted_token = '' ) {
+	$key  = kototsugi_quick_post_throttle_key( $trusted_token );
+	$lock = false;
+
+	for ( $try = 0; $try < 10 && ! $lock; ++$try ) {
+		$lock = kototsugi_quick_post_acquire_lock( $key );
+		if ( ! $lock ) {
+			usleep( 100000 );
+		}
+	}
 
 	if ( ! $lock ) {
-		return false;
+		return MINUTE_IN_SECONDS;
 	}
 
 	try {
-		$count = (int) get_transient( $key );
-		if ( $count >= 5 ) {
-			return false;
+		$state        = get_transient( $key );
+		$failures     = is_array( $state ) && isset( $state['failures'] ) ? absint( $state['failures'] ) : 0;
+		$locked_until = is_array( $state ) && isset( $state['locked_until'] ) ? absint( $state['locked_until'] ) : 0;
+		$now          = time();
+
+		if ( $locked_until > $now ) {
+			return $locked_until - $now;
 		}
 
-		set_transient( $key, $count + 1, 15 * MINUTE_IN_SECONDS );
-		return true;
+		++$failures;
+		$delay = kototsugi_quick_post_login_delay( $failures );
+		set_transient(
+			$key,
+			array(
+				'failures'     => $failures,
+				'locked_until' => $delay ? $now + $delay : 0,
+			),
+			DAY_IN_SECONDS
+		);
+
+		return 0;
 	} finally {
 		kototsugi_quick_post_release_lock( $lock );
 	}
 }
+
+/**
+ * Clears failed passphrase checks for an address or trusted browser.
+ *
+ * @param string $trusted_token Validated trusted-browser token, if available.
+ */
+function kototsugi_reset_quick_post_login_failures( $trusted_token = '' ) {
+	delete_transient( kototsugi_quick_post_throttle_key( $trusted_token ) );
+}
+
+/**
+ * Returns consecutive failed passphrase checks for an address or trusted browser.
+ *
+ * @param string $trusted_token Validated trusted-browser token, if available.
+ * @return int
+ */
+function kototsugi_quick_post_login_failures( $trusted_token = '' ) {
+	$state = get_transient( kototsugi_quick_post_throttle_key( $trusted_token ) );
+
+	return is_array( $state ) && isset( $state['failures'] ) ? absint( $state['failures'] ) : 0;
+}
+
+/**
+ * Returns the message for an incorrect passphrase.
+ *
+ * Contributors are told when a wait has started, or warned when the next
+ * mistake would start one, instead of being blocked without notice.
+ *
+ * @param int $failures Consecutive failures including the current one.
+ * @return string
+ */
+function kototsugi_quick_post_login_error_message( $failures ) {
+	$current_wait = kototsugi_quick_post_login_delay( $failures );
+	if ( $current_wait ) {
+		$minutes = max( 1, (int) ceil( $current_wait / MINUTE_IN_SECONDS ) );
+		/* translators: %d: Minutes to wait. */
+		return sprintf( _n( 'The passphrase is not correct. Wait %d minute and try again.', 'The passphrase is not correct. Wait %d minutes and try again.', $minutes, 'kototsugi' ), $minutes );
+	}
+
+	$next_wait = kototsugi_quick_post_login_delay( $failures + 1 );
+	if ( $next_wait ) {
+		$minutes = max( 1, (int) ceil( $next_wait / MINUTE_IN_SECONDS ) );
+		/* translators: %d: Minutes to wait after the next incorrect passphrase. */
+		return sprintf( _n( 'The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode.', 'The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode.', $minutes, 'kototsugi' ), $minutes );
+	}
+
+	return __( 'The passphrase is not correct.', 'kototsugi' );
+}
+
+/**
+ * Signs a trusted-browser payload separately from session cookies.
+ *
+ * @param string               $payload  Encoded payload.
+ * @param array<string, mixed> $settings Quick Post settings.
+ * @return string
+ */
+function kototsugi_quick_post_trusted_signature( $payload, $settings ) {
+	return hash_hmac( 'sha256', 'trusted|' . $payload, kototsugi_quick_post_signing_key( $settings ) );
+}
+
+/**
+ * Creates a token that marks a browser as having entered the passphrase before.
+ *
+ * Trusted browsers skip the per-address wait so a shared network address cannot
+ * lock out people who already use Quick Post. Changing the passphrase or signing
+ * out every browser revokes the token through the signing key.
+ *
+ * @param array<string, mixed> $settings Quick Post settings.
+ * @return string
+ */
+function kototsugi_create_quick_post_trusted_token( $settings ) {
+	$payload = kototsugi_quick_post_base64url_encode(
+		wp_json_encode(
+			array(
+				'expires' => time() + KOTOTSUGI_QUICK_POST_TRUSTED_LIFETIME,
+				'id'      => wp_generate_password( 32, false, false ),
+				'version' => (int) $settings['session_version'],
+			)
+		)
+	);
+
+	return $payload . '.' . kototsugi_quick_post_trusted_signature( $payload, $settings );
+}
+
+/**
+ * Returns whether a trusted-browser token is valid.
+ *
+ * @param string               $token    Trusted-browser cookie value.
+ * @param array<string, mixed> $settings Quick Post settings.
+ * @return bool
+ */
+function kototsugi_is_quick_post_trusted_browser( $token, $settings ) {
+	$parts = explode( '.', (string) $token, 2 );
+
+	if ( 2 !== count( $parts ) || ! $parts[0] || ! $parts[1] ) {
+		return false;
+	}
+	if ( ! hash_equals( kototsugi_quick_post_trusted_signature( $parts[0], $settings ), $parts[1] ) ) {
+		return false;
+	}
+
+	$decoded = kototsugi_quick_post_base64url_decode( $parts[0] );
+	$payload = $decoded ? json_decode( $decoded, true ) : null;
+
+	if ( ! is_array( $payload ) || ! isset( $payload['expires'], $payload['id'], $payload['version'] ) || ! is_string( $payload['id'] ) || 32 !== strlen( $payload['id'] ) ) {
+		return false;
+	}
+
+	return (int) $payload['expires'] >= time() && (int) $payload['version'] === (int) $settings['session_version'];
+}
+
+/**
+ * Counts a failed passphrase check site-wide and schedules one administrator alert per hour.
+ *
+ * The count is approximate under heavy concurrency, which is sufficient for a notification.
+ */
+function kototsugi_record_quick_post_login_failure() {
+	$now   = time();
+	$state = get_transient( 'kototsugi_qp_login_failures' );
+	$start = is_array( $state ) && isset( $state['start'] ) ? absint( $state['start'] ) : 0;
+	$count = is_array( $state ) && isset( $state['count'] ) ? absint( $state['count'] ) : 0;
+
+	if ( $start <= $now - HOUR_IN_SECONDS ) {
+		$start = $now;
+		$count = 0;
+	}
+
+	++$count;
+	set_transient(
+		'kototsugi_qp_login_failures',
+		array(
+			'start' => $start,
+			'count' => $count,
+		),
+		2 * HOUR_IN_SECONDS
+	);
+
+	/**
+	 * Filters how many failed Quick Post passphrase checks within one hour notify the administrator.
+	 *
+	 * @param int $threshold Failures per hour. Return 0 to disable the alert.
+	 */
+	$threshold = (int) apply_filters( 'kototsugi_quick_post_login_alert_threshold', KOTOTSUGI_QUICK_POST_LOGIN_ALERT_FAILURES );
+
+	if ( $threshold < 1 || $count < $threshold || get_transient( 'kototsugi_qp_login_alert_sent' ) ) {
+		return;
+	}
+
+	set_transient( 'kototsugi_qp_login_alert_sent', 1, HOUR_IN_SECONDS );
+	// Sending from cron keeps the site language and never delays the posting page.
+	wp_schedule_single_event( $now, 'kototsugi_quick_post_login_alert', array( $count ) );
+}
+
+/**
+ * Emails the site administrator about many failed passphrase checks.
+ *
+ * @param int $count Failed checks counted within one hour.
+ * @return bool Whether the email was accepted for delivery.
+ */
+function kototsugi_send_quick_post_login_alert( $count ) {
+	$site_name = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
+	/* translators: %s: Site name. */
+	$subject = sprintf( __( '[%s] Many incorrect Quick Post passphrases', 'kototsugi' ), $site_name );
+	$message = sprintf(
+		/* translators: 1: Number of failed passphrase checks, 2: Quick Post settings URL. */
+		__( "Quick Post received at least %1\$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2\$s", 'kototsugi' ),
+		absint( $count ),
+		admin_url( 'options-general.php?page=kototsugi' )
+	);
+
+	return wp_mail( get_option( 'admin_email' ), $subject, $message );
+}
+add_action( 'kototsugi_quick_post_login_alert', 'kototsugi_send_quick_post_login_alert' );
 
 /**
  * Returns whether a block tree is safe for Quick Post.
@@ -1218,11 +1458,12 @@ function kototsugi_quick_post_image_blocks( $attachment_ids ) {
 	$blocks = array();
 
 	foreach ( $attachment_ids as $attachment_id ) {
-		$image = wp_get_attachment_image( $attachment_id, 'large', false, array( 'class' => 'wp-image-' . (int) $attachment_id ) );
-		if ( ! $image ) {
+		$url = wp_get_attachment_image_url( $attachment_id, 'large' );
+		if ( ! $url ) {
 			continue;
 		}
 
+		$alt        = (string) get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
 		$attributes = wp_json_encode(
 			array(
 				'id'              => (int) $attachment_id,
@@ -1230,6 +1471,8 @@ function kototsugi_quick_post_image_blocks( $attachment_ids ) {
 				'linkDestination' => 'none',
 			)
 		);
+		// Match the core/image save markup exactly; srcset and sizes are added when the post is rendered.
+		$image    = '<img src="' . esc_url( $url ) . '" alt="' . esc_attr( $alt ) . '" class="wp-image-' . (int) $attachment_id . '"/>';
 		$blocks[] = '<!-- wp:image ' . $attributes . ' -->' . "\n" . '<figure class="wp-block-image size-large">' . $image . '</figure>' . "\n" . '<!-- /wp:image -->';
 	}
 
@@ -1724,19 +1967,29 @@ function kototsugi_handle_quick_post_request() {
 			kototsugi_render_quick_post_login( __( 'The passphrase is not correct.', 'kototsugi' ) );
 			exit;
 		}
-		if ( ! kototsugi_claim_quick_post_login_attempt() ) {
+		$trusted_token = kototsugi_get_quick_post_cookie( KOTOTSUGI_QUICK_POST_TRUSTED_COOKIE );
+		$trusted       = kototsugi_is_quick_post_trusted_browser( $trusted_token, $settings );
+		$throttle_token = $trusted ? $trusted_token : '';
+		$wait          = kototsugi_claim_quick_post_login_attempt( $throttle_token );
+		if ( $wait ) {
+			$minutes = max( 1, (int) ceil( $wait / MINUTE_IN_SECONDS ) );
 			status_header( 429 );
-			kototsugi_render_quick_post_login( __( 'Too many attempts. Wait 15 minutes and try again.', 'kototsugi' ) );
+			header( 'Retry-After: ' . (int) $wait );
+			/* translators: %d: Minutes to wait. */
+			kototsugi_render_quick_post_login( sprintf( _n( 'Too many incorrect passphrases. Wait %d minute and try again.', 'Too many incorrect passphrases. Wait %d minutes and try again.', $minutes, 'kototsugi' ), $minutes ) );
 			exit;
 		}
 		if ( ! wp_check_password( $passphrase, $settings['password_hash'] ) ) {
-			kototsugi_render_quick_post_login( __( 'The passphrase is not correct.', 'kototsugi' ) );
+			kototsugi_record_quick_post_login_failure();
+			kototsugi_render_quick_post_login( kototsugi_quick_post_login_error_message( kototsugi_quick_post_login_failures( $throttle_token ) ) );
 			exit;
 		}
 
-		delete_transient( kototsugi_quick_post_throttle_key() );
+		// A trusted browser must not clear failures that someone else caused from the same address.
+		kototsugi_reset_quick_post_login_failures( $throttle_token );
 		$cookie = kototsugi_create_quick_post_session( $settings );
 		kototsugi_set_quick_post_cookie( $cookie, time() + MONTH_IN_SECONDS );
+		kototsugi_set_quick_post_cookie( kototsugi_create_quick_post_trusted_token( $settings ), time() + KOTOTSUGI_QUICK_POST_TRUSTED_LIFETIME, KOTOTSUGI_QUICK_POST_TRUSTED_COOKIE );
 		wp_safe_redirect( kototsugi_quick_post_url() );
 		exit;
 	}

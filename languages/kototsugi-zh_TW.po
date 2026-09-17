@@ -806,3 +806,21 @@ msgstr "正在發佈…"
 
 msgid "Saving..."
 msgstr "正在儲存…"
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "通關密語輸入錯誤次數過多。請等候 %d 分鐘後再試。"
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] 快速發文的通關密語多次輸入錯誤"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "過去一小時內，快速發文至少有 %1$d 次通關密語輸入錯誤。\n\n如果發文者並未遇到登入困難，可能有人正在嘗試猜測通關密語。請考慮更換通關密語，或暫時停用快速發文。\n\n快速發文設定：%2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "通關密語不正確。請等候 %d 分鐘後再試。"
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "通關密語不正確。如果下次仍輸入錯誤，就需要等候 %d 分鐘。請檢查英文字母大小寫及鍵盤輸入模式。"

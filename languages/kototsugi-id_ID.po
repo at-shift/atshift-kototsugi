@@ -805,3 +805,21 @@ msgstr "Menerbitkan..."
 
 msgid "Saving..."
 msgstr "Menyimpan..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Terlalu banyak frasa sandi yang salah. Tunggu %d menit, lalu coba lagi."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Banyak frasa sandi Quick Post yang salah"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "Quick Post menerima setidaknya %1$d frasa sandi yang salah dalam satu jam.\n\nJika orang yang biasanya memposting tidak mengalami kesulitan masuk, mungkin ada seseorang yang mencoba menebak frasa sandi. Pertimbangkan untuk mengganti frasa sandi atau menonaktifkan Quick Post sementara.\n\nPengaturan Quick Post: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "Frasa sandi tidak benar. Tunggu %d menit, lalu coba lagi."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "Frasa sandi tidak benar. Jika percobaan berikutnya juga salah, Anda harus menunggu %d menit. Periksa huruf besar dan kecil serta mode input papan ketik."

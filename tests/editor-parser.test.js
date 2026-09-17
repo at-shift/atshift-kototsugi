@@ -9,6 +9,8 @@ const editorPath = path.join(__dirname, '..', 'assets', 'editor.js');
 const marker = "\n\tregisterPlugin('kototsugi', {";
 let source = fs.readFileSync(editorPath, 'utf8');
 
+assert.ok(!source.includes('\0'), 'Editor JavaScript must not contain literal NUL bytes.');
+
 assert.ok(source.includes(marker), 'Could not find the KOTOTSUGI test injection point.');
 
 source = source.replace(
@@ -470,5 +472,16 @@ const importedImageHtml = parser.markdownToHtml(
 assert.ok(importedImageHtml.includes('src="https://wordpress.example.com/uploads/photo.jpg"'));
 assert.ok(importedImageHtml.includes('class="wp-image-42"'));
 assert.ok(importedImageHtml.includes('alt="保存画像"'));
+
+const inlineHtml = parser.markdownToHtml(
+	'See [docs](https://example.com/my_page_name?utm_source=a_b&n=2*3*4) with `snake_case_name` and `a*b*c`, then _emphasis_ and **[bold link](https://example.com/x_y)**.',
+	false
+);
+
+assert.ok(inlineHtml.includes('<a href="https://example.com/my_page_name?utm_source=a_b&amp;n=2*3*4">docs</a>'), 'Link URLs must not receive emphasis markup.');
+assert.ok(inlineHtml.includes('<code>snake_case_name</code>'), 'Underscores in code spans must stay literal.');
+assert.ok(inlineHtml.includes('<code>a*b*c</code>'), 'Asterisks in code spans must stay literal.');
+assert.ok(inlineHtml.includes('<em>emphasis</em>'));
+assert.ok(inlineHtml.includes('<strong><a href="https://example.com/x_y">bold link</a></strong>'));
 
 console.log('KOTOTSUGI editor parser: all tests passed.');

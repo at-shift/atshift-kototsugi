@@ -33,19 +33,30 @@
 
 	function renderInline(value) {
 		var html = escapeHtml(value);
+		var tokens = [];
 
+		// Keep code spans and link URLs away from the emphasis rules below.
+		function stash(markup) {
+			tokens.push(markup);
+			return '\0' + (tokens.length - 1) + '\0';
+		}
+
+		html = html.replace(/`([^`]+)`/g, function (match, code) {
+			return stash('<code>' + code + '</code>');
+		});
 		html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (match, label, url) {
 			var safeUrl = sanitizeUrl(url.replace(/&amp;/g, '&'));
 
-			return safeUrl ? '<a href="' + escapeHtml(safeUrl) + '">' + label + '</a>' : label;
+			return safeUrl ? stash('<a href="' + escapeHtml(safeUrl) + '">') + label + stash('</a>') : label;
 		});
-		html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
 		html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 		html = html.replace(/__([^_]+)__/g, '<strong>$1</strong>');
 		html = html.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
 		html = html.replace(/(^|[^_])_([^_]+)_(?!_)/g, '$1<em>$2</em>');
 
-		return html;
+		return html.replace(/\0(\d+)\0/g, function (match, index) {
+			return tokens[Number(index)];
+		});
 	}
 
 	function plainText(value) {

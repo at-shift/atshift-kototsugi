@@ -792,3 +792,24 @@ msgstr "Wird veröffentlicht ..."
 
 msgid "Saving..."
 msgstr "Wird gespeichert ..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Zu viele falsche Passphrasen. Warten Sie %d Minute und versuchen Sie es erneut."
+msgstr[1] "Zu viele falsche Passphrasen. Warten Sie %d Minuten und versuchen Sie es erneut."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Viele falsche Passphrasen für Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "Bei Quick Post wurden innerhalb einer Stunde mindestens %1$d falsche Passphrasen eingegeben.\n\nWenn die Personen, die Beiträge veröffentlichen, keine Anmeldeprobleme hatten, versucht möglicherweise jemand, die Passphrase zu erraten. Erwägen Sie, die Passphrase zu ändern oder Quick Post vorübergehend zu deaktivieren.\n\nQuick-Post-Einstellungen: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "Die Passphrase ist falsch. Warten Sie %d Minute und versuchen Sie es erneut."
+msgstr[1] "Die Passphrase ist falsch. Warten Sie %d Minuten und versuchen Sie es erneut."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "Die Passphrase ist falsch. Ist der nächste Versuch ebenfalls falsch, müssen Sie %d Minute warten. Prüfen Sie Groß- und Kleinschreibung sowie die Tastatureingabe."
+msgstr[1] "Die Passphrase ist falsch. Ist der nächste Versuch ebenfalls falsch, müssen Sie %d Minuten warten. Prüfen Sie Groß- und Kleinschreibung sowie die Tastatureingabe."

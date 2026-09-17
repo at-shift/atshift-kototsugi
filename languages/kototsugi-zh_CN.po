@@ -805,3 +805,21 @@ msgstr "正在发布……"
 
 msgid "Saving..."
 msgstr "正在保存……"
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "口令输入错误次数过多。请等待 %d 分钟后重试。"
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] 快速投稿口令多次输入错误"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "过去一小时内，快速投稿至少有 %1$d 次口令输入错误。\n\n如果投稿人员并未遇到登录困难，可能有人正在尝试猜测口令。请考虑更换口令或暂时关闭快速投稿。\n\n快速投稿设置：%2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "口令不正确。请等待 %d 分钟后重试。"
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "口令不正确。如果下次仍输入错误，您需要等待 %d 分钟。请检查字母大小写和键盘输入模式。"

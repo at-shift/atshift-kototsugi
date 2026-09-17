@@ -853,3 +853,21 @@ msgstr "공개 중..."
 
 msgid "Saving..."
 msgstr "저장 중..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "암호 문구를 여러 번 잘못 입력했습니다. %d분 기다린 후 다시 시도하세요."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] 빠른 게시 암호 문구 입력 오류가 여러 번 발생했습니다"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "지난 한 시간 동안 빠른 게시에서 암호 문구를 잘못 입력한 횟수가 최소 %1$d회입니다.\n\n게시 담당자가 로그인에 어려움을 겪지 않았다면 누군가 암호 문구를 추측하고 있을 수 있습니다. 암호 문구를 변경하거나 빠른 게시를 잠시 꺼 두는 것을 고려하세요.\n\n빠른 게시 설정: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "암호 문구가 올바르지 않습니다. %d분 기다린 후 다시 시도하세요."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "암호 문구가 올바르지 않습니다. 다음에도 틀리면 %d분 기다려야 합니다. 대소문자와 키보드 입력 모드를 확인하세요."

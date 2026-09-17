@@ -805,3 +805,27 @@ msgstr "Публикация…"
 
 msgid "Saving..."
 msgstr "Сохранение…"
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Слишком много неверных парольных фраз. Подождите %d минуту и повторите попытку."
+msgstr[1] "Слишком много неверных парольных фраз. Подождите %d минуты и повторите попытку."
+msgstr[2] "Слишком много неверных парольных фраз. Подождите %d минут и повторите попытку."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Много неверных парольных фраз для Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "За один час в Quick Post было введено не менее %1$d неверных парольных фраз.\n\nЕсли у публикующих записи не было проблем со входом, возможно, кто-то пытается подобрать парольную фразу. Рассмотрите возможность сменить её или временно отключить Quick Post.\n\nНастройки Quick Post: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "Парольная фраза неверна. Подождите %d минуту и повторите попытку."
+msgstr[1] "Парольная фраза неверна. Подождите %d минуты и повторите попытку."
+msgstr[2] "Парольная фраза неверна. Подождите %d минут и повторите попытку."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "Парольная фраза неверна. Если следующая попытка тоже будет неудачной, придётся подождать %d минуту. Проверьте регистр букв и раскладку клавиатуры."
+msgstr[1] "Парольная фраза неверна. Если следующая попытка тоже будет неудачной, придётся подождать %d минуты. Проверьте регистр букв и раскладку клавиатуры."
+msgstr[2] "Парольная фраза неверна. Если следующая попытка тоже будет неудачной, придётся подождать %d минут. Проверьте регистр букв и раскладку клавиатуры."

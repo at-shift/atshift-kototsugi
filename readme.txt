@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ The importer supports headings, paragraphs, emphasis, links, images, lists, tabl
 
 Quick Post adds a separate, passphrase-protected posting page for contributors who should not need the WordPress admin screen. An administrator fixes the display language, post author, default category, and whether a submission is saved as a draft or published immediately.
 
-Version 1.1 includes:
+Version 1.2 includes:
 
 * A source-and-preview workspace inside the WordPress block editor.
 * Local `.md`, `.markdown`, and `.txt` file loading with drag and drop.
@@ -142,6 +142,16 @@ These are separate, optional WordPress plugins from the same publisher. KOTOTSUG
 * [atshift Feed Builder](https://wordpress.org/plugins/atshift-feed-builder/) - build purpose-specific RSS 2.0 and JSON Feed 1.1 feeds from structured WordPress content.
 
 == Changelog ==
+
+= 1.2 =
+* Fix Quick Post image attachments so the block editor accepts the generated image blocks.
+* Keep underscores and asterisks in link URLs and inline code from turning into emphasis.
+* Fix Quick Post code blocks with a language label so the block editor accepts them.
+* Load the Markdown workspace only in the post editor to avoid script warnings in the widgets editor, Customizer, and site editor.
+* Allow three incorrect Quick Post passphrases, then require growing waits of 1, 5, 15, and 60 minutes from the same address.
+* Warn contributors when the next incorrect passphrase would start a wait, and show how long to wait once it starts.
+* Give browsers that already entered the passphrase separate waits, so a shared network address does not lock out existing contributors or permit unlimited guesses.
+* Email the site administrator once per hour when Quick Post receives many incorrect passphrases.
 
 = 1.1 =
 * Show language-appropriate Quick Post writing hints for all 15 bundled languages.

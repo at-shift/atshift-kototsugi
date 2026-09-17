@@ -805,3 +805,24 @@ msgstr "Publicando..."
 
 msgid "Saving..."
 msgstr "Salvando..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Muitas frases de acesso incorretas. Aguarde %d minuto e tente novamente."
+msgstr[1] "Muitas frases de acesso incorretas. Aguarde %d minutos e tente novamente."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Muitas frases de acesso incorretas no Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "O Quick Post recebeu pelo menos %1$d frases de acesso incorretas em uma hora.\n\nSe as pessoas que publicam não tiveram dificuldade para entrar, alguém pode estar tentando adivinhar a frase de acesso. Considere alterá-la ou desativar o Quick Post temporariamente.\n\nConfigurações do Quick Post: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "A frase de acesso está incorreta. Aguarde %d minuto e tente novamente."
+msgstr[1] "A frase de acesso está incorreta. Aguarde %d minutos e tente novamente."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "A frase de acesso está incorreta. Se a próxima tentativa também falhar, você terá que aguardar %d minuto. Verifique as letras maiúsculas e minúsculas e o modo de entrada do teclado."
+msgstr[1] "A frase de acesso está incorreta. Se a próxima tentativa também falhar, você terá que aguardar %d minutos. Verifique as letras maiúsculas e minúsculas e o modo de entrada do teclado."

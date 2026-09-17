@@ -3,7 +3,7 @@
  * Plugin Name: KOTOTSUGI
  * Plugin URI: https://github.com/at-shift/atshift-kototsugi
  * Description: Turn AI-friendly Markdown into editable WordPress blocks.
- * Version: 1.1
+ * Version: 1.2
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: @shift
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KOTOTSUGI_VERSION', '1.1' );
+define( 'KOTOTSUGI_VERSION', '1.2' );
 define( 'KOTOTSUGI_FILE', __FILE__ );
 define( 'KOTOTSUGI_URL', plugin_dir_url( __FILE__ ) );
 define( 'KOTOTSUGI_MAX_REMOTE_IMAGE_BYTES', 10 * MB_IN_BYTES );
@@ -326,9 +326,18 @@ function kototsugi_sample_markdown_name( $locale = null ) {
 }
 
 /**
- * Loads the importer only where block editing is available.
+ * Loads the importer only in the post block editor.
+ *
+ * enqueue_block_editor_assets also fires in the widgets editor, the Customizer, and
+ * the site editor, where wp-editor and wp-edit-post must not be loaded.
  */
 function kototsugi_enqueue_editor_assets() {
+	$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+
+	if ( ! $screen || 'post' !== $screen->base ) {
+		return;
+	}
+
 	$editor_script = plugin_dir_path( __FILE__ ) . 'assets/editor.js';
 	$editor_style  = plugin_dir_path( __FILE__ ) . 'assets/editor.css';
 	$shared_style  = plugin_dir_path( __FILE__ ) . 'assets/style.css';

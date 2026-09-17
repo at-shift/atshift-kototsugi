@@ -805,3 +805,24 @@ msgstr "Publication en cours..."
 
 msgid "Saving..."
 msgstr "Enregistrement en cours..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Trop de phrases secrètes incorrectes. Attendez %d minute avant de réessayer."
+msgstr[1] "Trop de phrases secrètes incorrectes. Attendez %d minutes avant de réessayer."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Nombreuses phrases secrètes incorrectes pour Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "Au moins %1$d phrases secrètes incorrectes ont été saisies dans Quick Post en une heure.\n\nSi les personnes qui publient n’ont pas eu de difficulté à se connecter, quelqu’un essaie peut-être de deviner la phrase secrète. Envisagez de la modifier ou de désactiver temporairement Quick Post.\n\nRéglages de Quick Post : %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "La phrase secrète est incorrecte. Attendez %d minute avant de réessayer."
+msgstr[1] "La phrase secrète est incorrecte. Attendez %d minutes avant de réessayer."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "La phrase secrète est incorrecte. Si la prochaine tentative échoue aussi, vous devrez attendre %d minute. Vérifiez les majuscules, les minuscules et le mode de saisie du clavier."
+msgstr[1] "La phrase secrète est incorrecte. Si la prochaine tentative échoue aussi, vous devrez attendre %d minutes. Vérifiez les majuscules, les minuscules et le mode de saisie du clavier."

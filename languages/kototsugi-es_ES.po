@@ -810,3 +810,24 @@ msgstr "Publicando..."
 
 msgid "Saving..."
 msgstr "Guardando..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Demasiadas contraseñas de acceso incorrectas. Espera %d minuto y vuelve a intentarlo."
+msgstr[1] "Demasiadas contraseñas de acceso incorrectas. Espera %d minutos y vuelve a intentarlo."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Muchos intentos con una contraseña de acceso incorrecta en Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "Se han introducido al menos %1$d contraseñas de acceso incorrectas en Quick Post durante la última hora.\n\nSi las personas que publican no han tenido problemas para acceder, es posible que alguien esté intentando adivinar la contraseña de acceso. Considera cambiarla o desactivar Quick Post temporalmente.\n\nAjustes de Quick Post: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "La contraseña de acceso no es correcta. Espera %d minuto y vuelve a intentarlo."
+msgstr[1] "La contraseña de acceso no es correcta. Espera %d minutos y vuelve a intentarlo."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "La contraseña de acceso no es correcta. Si vuelves a equivocarte, tendrás que esperar %d minuto. Comprueba las mayúsculas, las minúsculas y el modo de entrada del teclado."
+msgstr[1] "La contraseña de acceso no es correcta. Si vuelves a equivocarte, tendrás que esperar %d minutos. Comprueba las mayúsculas, las minúsculas y el modo de entrada del teclado."

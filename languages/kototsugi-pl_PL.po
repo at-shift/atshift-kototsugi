@@ -805,3 +805,27 @@ msgstr "Publikowanie..."
 
 msgid "Saving..."
 msgstr "Zapisywanie..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Zbyt wiele błędnych haseł dostępu. Odczekaj %d minutę i spróbuj ponownie."
+msgstr[1] "Zbyt wiele błędnych haseł dostępu. Odczekaj %d minuty i spróbuj ponownie."
+msgstr[2] "Zbyt wiele błędnych haseł dostępu. Odczekaj %d minut i spróbuj ponownie."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Wiele błędnych haseł dostępu do Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "W ciągu godziny w Quick Post co najmniej %1$d razy wpisano błędne hasło dostępu.\n\nJeśli osoby publikujące wpisy nie miały problemów z logowaniem, ktoś może próbować odgadnąć hasło dostępu. Rozważ jego zmianę lub tymczasowe wyłączenie Quick Post.\n\nUstawienia Quick Post: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "Hasło dostępu jest nieprawidłowe. Odczekaj %d minutę i spróbuj ponownie."
+msgstr[1] "Hasło dostępu jest nieprawidłowe. Odczekaj %d minuty i spróbuj ponownie."
+msgstr[2] "Hasło dostępu jest nieprawidłowe. Odczekaj %d minut i spróbuj ponownie."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "Hasło dostępu jest nieprawidłowe. Jeśli następna próba też się nie powiedzie, trzeba będzie odczekać %d minutę. Sprawdź wielkość liter i układ klawiatury."
+msgstr[1] "Hasło dostępu jest nieprawidłowe. Jeśli następna próba też się nie powiedzie, trzeba będzie odczekać %d minuty. Sprawdź wielkość liter i układ klawiatury."
+msgstr[2] "Hasło dostępu jest nieprawidłowe. Jeśli następna próba też się nie powiedzie, trzeba będzie odczekać %d minut. Sprawdź wielkość liter i układ klawiatury."

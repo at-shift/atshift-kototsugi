@@ -50,6 +50,10 @@ $restricted_user_id = 0;
 $throttle_key       = '';
 $previous_address   = isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : null;
 $extra_duplicate_keys = array();
+$trusted_throttle_keys = array();
+// null means the site-wide login alert state was not touched yet.
+$previous_login_failures = null;
+$previous_alert_sent     = null;
 $png_bytes         = base64_decode( 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', true );
 if ( ! $image_tmp || false === file_put_contents( $image_tmp, $png_bytes ) ) {
 	throw new RuntimeException( 'The Quick Post image fixture could not be created.' );
@@ -165,10 +169,85 @@ try {
 	$_SERVER['REMOTE_ADDR'] = '192.0.2.55';
 	$throttle_key = kototsugi_quick_post_throttle_key();
 	delete_transient( $throttle_key );
-	for ( $attempt = 0; $attempt < 5; ++$attempt ) {
-		$assert( kototsugi_claim_quick_post_login_attempt(), 'The first five login attempts should be reserved.' );
+	for ( $attempt = 1; $attempt <= 4; ++$attempt ) {
+		$assert( 0 === kototsugi_claim_quick_post_login_attempt(), 'Three failures and the following check should proceed without waiting.' );
 	}
-	$assert( ! kototsugi_claim_quick_post_login_attempt(), 'A sixth login attempt must be throttled.' );
+	$wait = kototsugi_claim_quick_post_login_attempt();
+	$assert( $wait > 0 && $wait <= MINUTE_IN_SECONDS, 'The fourth failure should start a one-minute wait.' );
+	$throttle_state                 = get_transient( $throttle_key );
+	$throttle_state['locked_until'] = time() - 1;
+	set_transient( $throttle_key, $throttle_state, DAY_IN_SECONDS );
+	$assert( 0 === kototsugi_claim_quick_post_login_attempt(), 'A check should proceed after the wait ends.' );
+	$wait = kototsugi_claim_quick_post_login_attempt();
+	$assert( $wait > 4 * MINUTE_IN_SECONDS && $wait <= 5 * MINUTE_IN_SECONDS, 'The fifth failure should start a five-minute wait.' );
+	$assert(
+		0 === kototsugi_quick_post_login_delay( 3 ) && 15 * MINUTE_IN_SECONDS === kototsugi_quick_post_login_delay( 6 ) && HOUR_IN_SECONDS === kototsugi_quick_post_login_delay( 7 ) && HOUR_IN_SECONDS === kototsugi_quick_post_login_delay( 50 ),
+		'Waits should grow to 15 minutes and stop at one hour.'
+	);
+	$assert( kototsugi_quick_post_login_failures() >= 5, 'The current failure count should be readable for the error message.' );
+	$assert( __( 'The passphrase is not correct.', 'kototsugi' ) === kototsugi_quick_post_login_error_message( 2 ), 'Early failures should show only the incorrect passphrase message.' );
+	$assert(
+		sprintf( _n( 'The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode.', 'The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode.', 1, 'kototsugi' ), 1 ) === kototsugi_quick_post_login_error_message( 3 ),
+		'The last failure before a wait should warn about the one-minute wait.'
+	);
+	$assert(
+		sprintf( _n( 'The passphrase is not correct. Wait %d minute and try again.', 'The passphrase is not correct. Wait %d minutes and try again.', 5, 'kototsugi' ), 5 ) === kototsugi_quick_post_login_error_message( 5 ),
+		'A failure that starts a wait should say how long to wait.'
+	);
+	kototsugi_reset_quick_post_login_failures();
+	$assert( 0 === kototsugi_claim_quick_post_login_attempt(), 'A successful sign-in should clear earlier failures.' );
+	kototsugi_reset_quick_post_login_failures();
+
+	$trusted_token = kototsugi_create_quick_post_trusted_token( $settings );
+	$assert( kototsugi_is_quick_post_trusted_browser( $trusted_token, $settings ), 'A browser that entered the passphrase should be trusted.' );
+	$other_trusted_token = kototsugi_create_quick_post_trusted_token( $settings );
+	$assert( $trusted_token !== $other_trusted_token, 'Each trusted browser must receive a different token.' );
+	$trusted_throttle_keys[] = kototsugi_quick_post_throttle_key( $trusted_token );
+	$trusted_throttle_keys[] = kototsugi_quick_post_throttle_key( $other_trusted_token );
+	for ( $attempt = 0; $attempt < 4; ++$attempt ) {
+		$assert( 0 === kototsugi_claim_quick_post_login_attempt( $trusted_token ), 'A trusted browser should get its own attempts.' );
+	}
+	$assert( kototsugi_claim_quick_post_login_attempt( $trusted_token ) > 0, 'A trusted browser must be throttled after repeated mistakes.' );
+	$assert( 0 === kototsugi_claim_quick_post_login_attempt( $other_trusted_token ), 'Another trusted browser must not inherit the first browser wait.' );
+	$assert( 0 === kototsugi_claim_quick_post_login_attempt(), 'Trusted-browser failures must not lock the shared address.' );
+	kototsugi_reset_quick_post_login_failures( $trusted_token );
+	$assert( 0 === kototsugi_quick_post_login_failures( $trusted_token ), 'A successful trusted-browser sign-in should clear only its own failures.' );
+	kototsugi_reset_quick_post_login_failures( $other_trusted_token );
+	kototsugi_reset_quick_post_login_failures();
+	$assert( ! kototsugi_is_quick_post_trusted_browser( $trusted_token . 'tampered', $settings ), 'A modified trusted-browser token must be rejected.' );
+	$assert( ! kototsugi_is_quick_post_trusted_browser( $session, $settings ), 'A session cookie must not be accepted as a trusted-browser token.' );
+	$revoked_settings                    = $settings;
+	$revoked_settings['session_version'] = (int) $settings['session_version'] + 1;
+	$assert( ! kototsugi_is_quick_post_trusted_browser( $trusted_token, $revoked_settings ), 'Signing out every browser must revoke trusted browsers.' );
+
+	$previous_login_failures = get_transient( 'kototsugi_qp_login_failures' );
+	$previous_alert_sent     = get_transient( 'kototsugi_qp_login_alert_sent' );
+	delete_transient( 'kototsugi_qp_login_failures' );
+	delete_transient( 'kototsugi_qp_login_alert_sent' );
+	$alert_threshold = static function () {
+		return 3;
+	};
+	add_filter( 'kototsugi_quick_post_login_alert_threshold', $alert_threshold );
+	kototsugi_record_quick_post_login_failure();
+	kototsugi_record_quick_post_login_failure();
+	$assert( ! get_transient( 'kototsugi_qp_login_alert_sent' ), 'Failures below the threshold must not alert the administrator.' );
+	kototsugi_record_quick_post_login_failure();
+	$assert( false !== wp_next_scheduled( 'kototsugi_quick_post_login_alert', array( 3 ) ), 'Reaching the threshold should schedule an administrator alert.' );
+	kototsugi_record_quick_post_login_failure();
+	$assert( false === wp_next_scheduled( 'kototsugi_quick_post_login_alert', array( 4 ) ), 'Only one administrator alert should be scheduled per hour.' );
+	remove_filter( 'kototsugi_quick_post_login_alert_threshold', $alert_threshold );
+	wp_clear_scheduled_hook( 'kototsugi_quick_post_login_alert', array( 3 ) );
+
+	$captured_mail = null;
+	$capture_mail  = static function ( $return, $atts ) use ( &$captured_mail ) {
+		$captured_mail = $atts;
+		return true;
+	};
+	add_filter( 'pre_wp_mail', $capture_mail, 10, 2 );
+	kototsugi_send_quick_post_login_alert( 3 );
+	remove_filter( 'pre_wp_mail', $capture_mail, 10 );
+	$assert( is_array( $captured_mail ) && get_option( 'admin_email' ) === $captured_mail['to'], 'The alert should be sent to the site administrator email address.' );
+	$assert( false !== strpos( $captured_mail['message'], '3' ) && false !== strpos( $captured_mail['message'], admin_url( 'options-general.php?page=kototsugi' ) ), 'The alert should include the failure count and the settings link.' );
 
 	$first_lock = kototsugi_quick_post_acquire_lock( 'kototsugi-lock-owner-test' );
 	$assert( is_array( $first_lock ), 'The lock owner test could not acquire its first lock.' );
@@ -288,6 +367,10 @@ try {
 	);
 	$assert( 1 === count( $attachment_ids ), 'The selected image should be saved as a post attachment.' );
 	$assert( 'Quick Post test image' === get_post_meta( $attachment_ids[0], '_wp_attachment_image_alt', true ), 'The submitted image alternative text should be saved.' );
+	$image_block_found = preg_match( '#<!-- wp:image [^>]*-->\s*(<figure class="wp-block-image size-large">.*?</figure>)\s*<!-- /wp:image -->#s', get_post_field( 'post_content', $post_id ), $image_block );
+	$assert( 1 === $image_block_found, 'The uploaded image block markup should be readable.' );
+	$assert( false !== strpos( $image_block[1], 'class="wp-image-' . (int) $attachment_ids[0] . '"' ) && false !== strpos( $image_block[1], 'alt="Quick Post test image"' ), 'The image block should reference the attachment and its alternative text.' );
+	$assert( 1 !== preg_match( '/\s(?:width|height|srcset|sizes|loading|decoding)=/', $image_block[1] ), 'The image block must match the core/image save markup so the block editor accepts it.' );
 
 	$duplicate = kototsugi_insert_quick_post(
 		array(
@@ -355,6 +438,24 @@ try {
 	}
 	if ( $throttle_key ) {
 		delete_transient( $throttle_key );
+	}
+	foreach ( $trusted_throttle_keys as $trusted_throttle_key ) {
+		delete_transient( $trusted_throttle_key );
+	}
+	wp_clear_scheduled_hook( 'kototsugi_quick_post_login_alert', array( 3 ) );
+	if ( null !== $previous_login_failures ) {
+		if ( false === $previous_login_failures ) {
+			delete_transient( 'kototsugi_qp_login_failures' );
+		} else {
+			set_transient( 'kototsugi_qp_login_failures', $previous_login_failures, 2 * HOUR_IN_SECONDS );
+		}
+	}
+	if ( null !== $previous_alert_sent ) {
+		if ( false === $previous_alert_sent ) {
+			delete_transient( 'kototsugi_qp_login_alert_sent' );
+		} else {
+			set_transient( 'kototsugi_qp_login_alert_sent', $previous_alert_sent, HOUR_IN_SECONDS );
+		}
 	}
 	foreach ( $session_keys as $session_key ) {
 		delete_transient( $session_key );

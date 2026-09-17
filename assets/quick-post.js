@@ -125,7 +125,12 @@
 			return serializeQuote(element);
 		}
 		if (tag === 'pre') {
-			return blockComment('code', null, element.outerHTML);
+			// core/code saves a bare <code>; a language class would make the block invalid.
+			clone = element.cloneNode(true);
+			Array.from(clone.querySelectorAll('code')).forEach(function (code) {
+				code.removeAttribute('class');
+			});
+			return blockComment('code', null, clone.outerHTML);
 		}
 		if (tag === 'figure' && element.classList.contains('wp-block-table')) {
 			return blockComment('table', null, element.outerHTML);

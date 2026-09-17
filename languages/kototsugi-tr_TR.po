@@ -806,3 +806,21 @@ msgstr "Yayımlanıyor..."
 
 msgid "Saving..."
 msgstr "Kaydediliyor..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Çok fazla yanlış parola ifadesi girildi. %d dakika bekleyip yeniden deneyin."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Quick Post için çok sayıda yanlış parola ifadesi girildi"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "Quick Post'a bir saat içinde en az %1$d yanlış parola ifadesi girildi.\n\nYazı yayımlayan kişiler oturum açarken sorun yaşamadıysa birisi parola ifadesini tahmin etmeye çalışıyor olabilir. Parola ifadesini değiştirmeyi veya Quick Post'u bir süreliğine kapatmayı düşünün.\n\nQuick Post ayarları: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "Parola ifadesi yanlış. %d dakika bekleyip yeniden deneyin."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "Parola ifadesi yanlış. Sonraki deneme de yanlış olursa %d dakika beklemeniz gerekecek. Büyük ve küçük harfleri ve klavye giriş modunu kontrol edin."

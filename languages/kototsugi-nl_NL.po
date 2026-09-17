@@ -805,3 +805,24 @@ msgstr "Publiceren..."
 
 msgid "Saving..."
 msgstr "Opslaan..."
+
+msgid "Too many incorrect passphrases. Wait %d minute and try again."
+msgid_plural "Too many incorrect passphrases. Wait %d minutes and try again."
+msgstr[0] "Te veel onjuiste wachtzinnen. Wacht %d minuut en probeer het opnieuw."
+msgstr[1] "Te veel onjuiste wachtzinnen. Wacht %d minuten en probeer het opnieuw."
+
+msgid "[%s] Many incorrect Quick Post passphrases"
+msgstr "[%s] Veel onjuiste wachtzinnen voor Quick Post"
+
+msgid "Quick Post received at least %1$d incorrect passphrases within one hour.\n\nIf the people who post were not having trouble signing in, someone may be trying to guess the passphrase. Consider changing the passphrase or turning Quick Post off for a while.\n\nQuick Post settings: %2$s"
+msgstr "Bij Quick Post zijn binnen één uur minstens %1$d onjuiste wachtzinnen ingevoerd.\n\nAls de mensen die berichten plaatsen geen problemen hadden met inloggen, probeert iemand mogelijk de wachtzin te raden. Overweeg de wachtzin te wijzigen of Quick Post tijdelijk uit te schakelen.\n\nInstellingen voor Quick Post: %2$s"
+
+msgid "The passphrase is not correct. Wait %d minute and try again."
+msgid_plural "The passphrase is not correct. Wait %d minutes and try again."
+msgstr[0] "De wachtzin is onjuist. Wacht %d minuut en probeer het opnieuw."
+msgstr[1] "De wachtzin is onjuist. Wacht %d minuten en probeer het opnieuw."
+
+msgid "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minute. Check uppercase and lowercase letters and the keyboard input mode."
+msgid_plural "The passphrase is not correct. If the next one is also incorrect, you will need to wait %d minutes. Check uppercase and lowercase letters and the keyboard input mode."
+msgstr[0] "De wachtzin is onjuist. Als de volgende poging ook mislukt, moet je %d minuut wachten. Controleer hoofdletters, kleine letters en de toetsenbordinstelling."
+msgstr[1] "De wachtzin is onjuist. Als de volgende poging ook mislukt, moet je %d minuten wachten. Controleer hoofdletters, kleine letters en de toetsenbordinstelling."

@@ -152,7 +152,8 @@ KOTOTSUGI is designed around review before insertion or submission.
 - Remote image imports require the WordPress `upload_files` capability
 - Private-network URLs, SVG files, unsupported formats, and oversized files are rejected
 - Quick Post validates the configured author's create, publish, and upload capabilities
-- Login attempts are throttled and browser sessions can be revoked
+- Incorrect passphrases trigger growing waits per address or trusted browser, and the administrator is emailed about unusual numbers of failures
+- Browser sessions can be revoked
 - Submission tokens and duplicate-submission locks protect the posting flow
 
 Remote images are limited to the lower of the site's upload limit or 10 MB. When an image cannot be imported, KOTOTSUGI retains its original external URL and continues inserting the article.
