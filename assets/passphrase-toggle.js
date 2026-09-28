@@ -17,24 +17,30 @@
 
 	Array.prototype.forEach.call(document.querySelectorAll('.kototsugi-passphrase-input'), function (field) {
 		var wrapper = field.closest('.kototsugi-passphrase-field');
+		var color;
 
-		field.classList.add('is-masked');
-		updateMask(field);
-
-		field.addEventListener('input', function () {
-			updateMask(field);
-		});
-		field.addEventListener('compositionstart', function () {
-			if (wrapper) {
-				wrapper.classList.add('is-composing');
+		if (wrapper) {
+			field.classList.add('is-masked');
+			color = window.getComputedStyle ? window.getComputedStyle(field).color : '';
+			if (color === 'transparent' || color === 'rgba(0, 0, 0, 0)') {
+				updateMask(field);
+				wrapper.classList.add('is-custom-mask');
+				field.type = 'text';
+				field.addEventListener('input', function () {
+					updateMask(field);
+				});
+				field.addEventListener('compositionstart', function () {
+					wrapper.classList.add('is-composing');
+				});
+				field.addEventListener('compositionend', function () {
+					wrapper.classList.remove('is-composing');
+					updateMask(field);
+				});
+			} else {
+				field.classList.remove('is-masked');
 			}
-		});
-		field.addEventListener('compositionend', function () {
-			if (wrapper) {
-				wrapper.classList.remove('is-composing');
-			}
-			updateMask(field);
-		});
+			wrapper.classList.add('is-enhanced');
+		}
 	});
 
 	document.addEventListener('click', function (event) {
@@ -43,6 +49,7 @@
 		var icon;
 		var label;
 		var showing;
+		var wrapper;
 
 		if (!button) {
 			return;
@@ -53,9 +60,15 @@
 			return;
 		}
 
-		showing = field.classList.contains('is-masked');
-		field.classList.toggle('is-masked', !showing);
-		updateMask(field);
+		wrapper = field.closest('.kototsugi-passphrase-field');
+		if (wrapper && wrapper.classList.contains('is-custom-mask')) {
+			showing = field.classList.contains('is-masked');
+			field.classList.toggle('is-masked', !showing);
+			updateMask(field);
+		} else {
+			showing = field.type === 'password';
+			field.type = showing ? 'text' : 'password';
+		}
 		label = showing ? button.dataset.hideLabel : button.dataset.showLabel;
 		button.setAttribute('aria-pressed', showing ? 'true' : 'false');
 		button.setAttribute('aria-label', label);

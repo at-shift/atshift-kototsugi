@@ -31,9 +31,48 @@
 		return '';
 	}
 
+	function parseMarkdownLink(source, start, image) {
+		var labelStart = start + (image ? 2 : 1);
+		var labelEnd = source.indexOf(']', labelStart);
+		var depth = 1;
+		var index;
+
+		if (source.slice(start, labelStart) !== (image ? '![' : '[') || labelEnd < labelStart ||
+			(!image && labelEnd === labelStart) || source.charAt(labelEnd + 1) !== '(') {
+			return null;
+		}
+
+		for (index = labelEnd + 2; index < source.length; index += 1) {
+			if (source.charAt(index) === '\\' && /[()]/.test(source.charAt(index + 1))) {
+				index += 1;
+			} else if (source.charAt(index) === '(') {
+				depth += 1;
+			} else if (source.charAt(index) === ')') {
+				depth -= 1;
+				if (!depth) {
+					return {
+						label: source.slice(labelStart, labelEnd),
+						url: source.slice(labelEnd + 2, index).replace(/\\([()])/g, '$1'),
+						end: index + 1
+					};
+				}
+			} else if (source.charAt(index) === '\n') {
+				return null;
+			}
+		}
+
+		return null;
+	}
+
 	function renderInline(value) {
 		var html = escapeHtml(value);
 		var tokens = [];
+		var links = /\[([^\]]+)\]\(/g;
+		var match;
+		var link;
+		var rendered = '';
+		var lastIndex = 0;
+		var safeUrl;
 
 		// Keep code spans and link URLs away from the emphasis rules below.
 		function stash(markup) {
@@ -44,11 +83,17 @@
 		html = html.replace(/`([^`]+)`/g, function (match, code) {
 			return stash('<code>' + code + '</code>');
 		});
-		html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (match, label, url) {
-			var safeUrl = sanitizeUrl(url.replace(/&amp;/g, '&'));
-
-			return safeUrl ? stash('<a href="' + escapeHtml(safeUrl) + '">') + label + stash('</a>') : label;
-		});
+		while ((match = links.exec(html)) !== null) {
+			link = parseMarkdownLink(html, match.index, false);
+			if (!link || /\s/.test(link.url)) {
+				continue;
+			}
+			safeUrl = sanitizeUrl(link.url.replace(/&amp;/g, '&'));
+			rendered += html.slice(lastIndex, match.index) + (safeUrl ? stash('<a href="' + escapeHtml(safeUrl) + '">') + link.label + stash('</a>') : link.label);
+			lastIndex = link.end;
+			links.lastIndex = link.end;
+		}
+		html = rendered + html.slice(lastIndex);
 		html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 		html = html.replace(/__([^_]+)__/g, '<strong>$1</strong>');
 		html = html.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
@@ -60,9 +105,24 @@
 	}
 
 	function plainText(value) {
-		return String(value || '')
-			.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
-			.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+		var source = String(value || '');
+		var links = /!?\[([^\]]*)\]\(/g;
+		var result = '';
+		var lastIndex = 0;
+		var match;
+		var link;
+
+		while ((match = links.exec(source)) !== null) {
+			link = parseMarkdownLink(source, match.index, match[0].charAt(0) === '!');
+			if (!link) {
+				continue;
+			}
+			result += source.slice(lastIndex, match.index) + link.label;
+			lastIndex = link.end;
+			links.lastIndex = link.end;
+		}
+
+		return (result + source.slice(lastIndex))
 			.replace(/[`*_]/g, '')
 			.trim();
 	}
@@ -379,6 +439,7 @@
 		var match;
 		var imageMatch;
 		var imageExpression;
+		var parsedImage;
 		var rawUrl;
 		var firstH1;
 		var previousHeading;
@@ -463,18 +524,24 @@
 			}
 
 			if (line.indexOf('![') !== -1) {
-				imageExpression = /!\[([^\]]*)\]\(([^)]*)\)/g;
+				imageExpression = /!\[([^\]]*)\]\(/g;
 				imageMatch = imageExpression.exec(line);
 				if (!imageMatch) {
 					addIssue('malformed_image', 'warning', lineNumber, text('The image syntax could not be parsed. Check its parentheses and URL.'));
 				} else {
 					do {
-						rawUrl = String(imageMatch[2] || '').trim();
+						parsedImage = parseMarkdownLink(line, imageMatch.index, true);
+						if (!parsedImage) {
+							addIssue('malformed_image', 'warning', lineNumber, text('The image syntax could not be parsed. Check its parentheses and URL.'));
+							continue;
+						}
+						rawUrl = parsedImage.url.trim();
 						if (!rawUrl || /\s/.test(rawUrl) || !/^(https?:\/\/|\/)/i.test(rawUrl)) {
 							addIssue('invalid_image_url', 'warning', lineNumber, text('Image URLs must begin with http, https, or /.'));
 						} else if (rawUrl.charAt(0) === '/') {
 							addIssue('local_image_url', 'info', lineNumber, text('Relative images will keep their original paths and will not be saved to the Media Library.'));
 						}
+						imageExpression.lastIndex = parsedImage.end;
 					} while ((imageMatch = imageExpression.exec(line)) !== null);
 				}
 			}
@@ -525,17 +592,24 @@
 	}
 
 	function extractRemoteImages(source) {
-		var expression = /!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)/gi;
+		var markdown = String(source || '');
+		var expression = /!\[([^\]]*)\]\(/g;
 		var images = [];
 		var seen = Object.create(null);
 		var match;
+		var image;
 		var url;
 
-		while ((match = expression.exec(String(source || ''))) !== null) {
-			url = sanitizeUrl(match[2]);
-			if (url && !seen[url]) {
+		while ((match = expression.exec(markdown)) !== null) {
+			image = parseMarkdownLink(markdown, match.index, true);
+			if (!image) {
+				continue;
+			}
+			expression.lastIndex = image.end;
+			url = image.url;
+			if (/^https?:\/\//i.test(url) && !/\s/.test(url) && !seen[url]) {
 				seen[url] = true;
-				images.push({ url: url, alt: plainText(match[1]) });
+				images.push({ url: url, alt: plainText(image.label) });
 			}
 		}
 
@@ -642,14 +716,17 @@
 				continue;
 			}
 
-			match = line.match(/^\s*!\[([^\]]*)\]\(([^)\s]+)\)\s*$/);
+			match = parseMarkdownLink(line.trim(), 0, true);
+			if (match && match.end !== line.trim().length) {
+				match = null;
+			}
 			if (match) {
-				var imageUrl = sanitizeUrl(match[2]);
+				var imageUrl = !/\s/.test(match.url) ? sanitizeUrl(match.url) : '';
 				var importedImage = imageUrl && importedImages ? importedImages[imageUrl] : null;
 				var renderedImageUrl = importedImage && importedImage.url ? importedImage.url : imageUrl;
 				var imageClass = importedImage && importedImage.id ? ' class="wp-image-' + Number(importedImage.id) + '"' : '';
 				if (renderedImageUrl) {
-					html.push('<figure class="wp-block-image"><img src="' + escapeHtml(renderedImageUrl) + '" alt="' + escapeHtml(match[1]) + '"' + imageClass + '></figure>');
+					html.push('<figure class="wp-block-image"><img src="' + escapeHtml(renderedImageUrl) + '" alt="' + escapeHtml(match.label) + '"' + imageClass + '></figure>');
 				} else {
 					html.push('<p>' + renderInline(line) + '</p>');
 				}

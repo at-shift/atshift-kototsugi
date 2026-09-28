@@ -568,7 +568,7 @@ function kototsugi_render_quick_post_settings_page() {
 					<th scope="row"><label for="kototsugi-quick-post-password"><?php esc_html_e( 'Passphrase', 'kototsugi' ); ?></label></th>
 					<td>
 						<div class="kototsugi-passphrase-field">
-							<input id="kototsugi-quick-post-password" class="regular-text kototsugi-passphrase-input" type="text" name="quick_post_password" minlength="8" autocomplete="new-password" inputmode="text" autocapitalize="none" autocorrect="off" spellcheck="false">
+							<input id="kototsugi-quick-post-password" class="regular-text kototsugi-passphrase-input" type="password" name="quick_post_password" minlength="8" autocomplete="new-password" inputmode="text" autocapitalize="none" autocorrect="off" spellcheck="false">
 							<button class="kototsugi-passphrase-toggle" type="button" aria-controls="kototsugi-quick-post-password" aria-pressed="false" aria-label="<?php esc_attr_e( 'Show passphrase', 'kototsugi' ); ?>" title="<?php esc_attr_e( 'Show passphrase', 'kototsugi' ); ?>" data-kototsugi-passphrase-toggle data-show-label="<?php esc_attr_e( 'Show passphrase', 'kototsugi' ); ?>" data-hide-label="<?php esc_attr_e( 'Hide passphrase', 'kototsugi' ); ?>">
 								<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
 								<span class="screen-reader-text"><?php esc_html_e( 'Show passphrase', 'kototsugi' ); ?></span>
@@ -1760,7 +1760,7 @@ function kototsugi_render_quick_post_login( $error = '' ) {
 				<input type="hidden" name="kototsugi_login_nonce" value="<?php echo esc_attr( wp_create_nonce( 'kototsugi_quick_post_login' ) ); ?>">
 				<label for="kototsugi-quick-passphrase"><?php esc_html_e( 'Passphrase', 'kototsugi' ); ?></label>
 				<div class="kototsugi-passphrase-field">
-					<input id="kototsugi-quick-passphrase" class="kototsugi-passphrase-input" type="text" name="passphrase" required autocomplete="current-password" inputmode="text" autocapitalize="none" autocorrect="off" spellcheck="false" autofocus>
+					<input id="kototsugi-quick-passphrase" class="kototsugi-passphrase-input" type="password" name="passphrase" required autocomplete="current-password" inputmode="text" autocapitalize="none" autocorrect="off" spellcheck="false" autofocus>
 					<button class="kototsugi-passphrase-toggle" type="button" aria-controls="kototsugi-quick-passphrase" aria-pressed="false" aria-label="<?php esc_attr_e( 'Show passphrase', 'kototsugi' ); ?>" title="<?php esc_attr_e( 'Show passphrase', 'kototsugi' ); ?>" data-kototsugi-passphrase-toggle data-show-label="<?php esc_attr_e( 'Show passphrase', 'kototsugi' ); ?>" data-hide-label="<?php esc_attr_e( 'Hide passphrase', 'kototsugi' ); ?>">
 						<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
 						<span class="screen-reader-text"><?php esc_html_e( 'Show passphrase', 'kototsugi' ); ?></span>

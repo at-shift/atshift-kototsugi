@@ -484,4 +484,28 @@ assert.ok(inlineHtml.includes('<code>a*b*c</code>'), 'Asterisks in code spans mu
 assert.ok(inlineHtml.includes('<em>emphasis</em>'));
 assert.ok(inlineHtml.includes('<strong><a href="https://example.com/x_y">bold link</a></strong>'));
 
+const parenthesizedUrl = 'https://cdn.example.com/map_(Tokyo_(East)).png?x=1&y=2';
+const parenthesizedImage = '![Map](' + parenthesizedUrl + ')';
+assert.ok(
+	parser.markdownToHtml('See [map](' + parenthesizedUrl + ').', false)
+		.includes('<a href="https://cdn.example.com/map_(Tokyo_(East)).png?x=1&amp;y=2">map</a>'),
+	'Nested parentheses must remain part of a link URL.'
+);
+assert.equal(parser.findTitle('# [Map](' + parenthesizedUrl + ')'), 'Map');
+assert.ok(parser.markdownToHtml(parenthesizedImage, false).includes('<img src="https://cdn.example.com/map_(Tokyo_(East)).png?x=1&amp;y=2" alt="Map">'));
+assert.deepEqual(JSON.parse(JSON.stringify(parser.extractRemoteImages(parenthesizedImage))), [
+	{ url: parenthesizedUrl, alt: 'Map' }
+]);
+assert.ok(parser.markdownToHtml(parenthesizedImage, false, {
+	[parenthesizedUrl]: { id: 42, url: 'https://wordpress.example.com/uploads/map.png' }
+}).includes('src="https://wordpress.example.com/uploads/map.png"'));
+assert.ok(!parser.analyzeMarkdown(parenthesizedImage, { applyTitle: true }).some(function (issue) {
+	return issue.code === 'malformed_image' || issue.code === 'invalid_image_url';
+}));
+assert.ok(parser.analyzeMarkdown('![Map](https://cdn.example.com/map_(Tokyo.png)', { applyTitle: true }).some(function (issue) {
+	return issue.code === 'malformed_image';
+}));
+assert.ok(parser.markdownToHtml('See [map](https://example.com/map_\\(Tokyo\\).png).', false)
+	.includes('<a href="https://example.com/map_(Tokyo).png">map</a>'));
+
 console.log('KOTOTSUGI editor parser: all tests passed.');

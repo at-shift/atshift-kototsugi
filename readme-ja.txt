@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,6 +87,10 @@ KOTOTSUGIは、AIが作成するMarkdown向けの限定的なYAML互換形式に
 未対応のFront Matter項目は作業画面へ表示し、投稿には反映しません。KOTOTSUGIはFront Matterから投稿者、公開状態、公開日時を変更しません。
 
 == Changelog ==
+
+= 1.2.1 =
+* URLに入れ子の括弧やエスケープした括弧を含むMarkdownのリンク・画像を正しく処理し、事前チェックと外部画像の取り込みにも反映。
+* JavaScriptや伏せ字用スタイルが使えない場合も、かんたん投稿の合言葉を伏せて表示。拡張表示時の日本語入力にも引き続き対応。
 
 = 1.2 =
 * かんたん投稿で添付した画像のブロックが、ブロックエディタで無効と表示される不具合を修正。

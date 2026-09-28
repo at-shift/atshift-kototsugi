@@ -4,7 +4,7 @@ Tags: markdown, gutenberg, ai, editor, blocks
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -142,6 +142,10 @@ These are separate, optional WordPress plugins from the same publisher. KOTOTSUG
 * [atshift Feed Builder](https://wordpress.org/plugins/atshift-feed-builder/) - build purpose-specific RSS 2.0 and JSON Feed 1.1 feeds from structured WordPress content.
 
 == Changelog ==
+
+= 1.2.1 =
+* Correctly parse Markdown links and images whose URLs contain balanced or escaped parentheses, including preflight checks and remote image import.
+* Keep Quick Post passphrase inputs masked when JavaScript or masking styles are unavailable, while preserving Japanese input support when enhanced masking is active.
 
 = 1.2 =
 * Fix Quick Post image attachments so the block editor accepts the generated image blocks.
